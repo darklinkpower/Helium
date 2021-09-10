@@ -12,7 +12,8 @@
     <Thickness x:Key="PopupBorderThickness">1</Thickness>
     <Thickness x:Key="ControlBorderThickness">1</Thickness>
     <sys:Double x:Key="EllipseBorderThickness">1</sys:Double>
-    <CornerRadius x:Key="ControlCornerRadius">1</CornerRadius>
+    <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
+    <CornerRadius x:Key="ControlCornerRadiusSmall">3</CornerRadius>
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
 
     <Color x:Key="BlackColor">#FF000000</Color>
@@ -31,7 +32,7 @@
     <Color x:Key="GridItemBackgroundColor">#151e3d</Color>
     <Color x:Key="PanelSeparatorColor">#662C3A67</Color>
 
-    
+    <SolidColorBrush x:Key="DatePickerBackgroundBrush" Color="Red" />
     <!--region Default Controls background brushes-->
     <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="Red" />
@@ -84,7 +85,6 @@
     <SolidColorBrush x:Key="TopPanelItemIsMouseOverBackgroundBrush" Color="Yellow" />
     <SolidColorBrush x:Key="TrayContextMenuBackgroundBrush" Color="Green" />
     <!--region end-->
-
 
     <!--region Unused Custom Controls background brushes-->
     <SolidColorBrush x:Key="ExtendedDataGridBackgroundBrush" Color="Green" />

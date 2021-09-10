@@ -18,7 +18,7 @@
                     <Border Background="Transparent"
                             Padding="{TemplateBinding Padding}">
                         <StackPanel Orientation="Horizontal">
-                            <Border x:Name="BulletBorder" CornerRadius="{DynamicResource ControlCornerRadius}"
+                            <Border x:Name="BulletBorder" CornerRadius="{DynamicResource ControlCornerRadiusSmall}"
                                     BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"
                                     Style="{DynamicResource HighlightBorder}" >
                                 <Grid Width="18" Height="18" Background="Transparent">
