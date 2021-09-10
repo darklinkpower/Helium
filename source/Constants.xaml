@@ -42,7 +42,7 @@
     <!--region Custom theme colors-->
 
     <!--region Default Controls background brushes-->
-    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="#2D73FF" />
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="CheckboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="CheckboxIsCheckedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />

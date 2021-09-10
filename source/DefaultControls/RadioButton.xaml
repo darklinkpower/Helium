@@ -20,7 +20,7 @@
                             <Border Background="Transparent">
                                 <Grid Width="18" Height="18">
                                     <Ellipse x:Name="BulletBorder" Width="18" Height="18"
-                                            Stroke="{DynamicResource NormalBorderBrush}"
+                                            Stroke="{DynamicResource NormalBorderBrush}" Fill="{TemplateBinding Background}"
                                             StrokeThickness="{DynamicResource EllipseBorderThickness}" />
                                     <Viewbox x:Name="CheckIcon" Visibility="Collapsed" >
                                         <TextBlock Text="h" FontFamily="Marlett" Foreground="{DynamicResource GlyphBrush}"
