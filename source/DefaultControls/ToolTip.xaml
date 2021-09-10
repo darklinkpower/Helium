@@ -8,7 +8,7 @@
 
     <Style TargetType="{x:Type ToolTip}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{DynamicResource TooltipBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PopupBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
         <Setter Property="BorderBrush" Value="{DynamicResource PopupBorderBrush}" />
