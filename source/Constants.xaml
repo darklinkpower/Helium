@@ -164,6 +164,8 @@
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
     <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource PopupBorderColor}" />
     <SolidColorBrush x:Key="TooltipBackgroundBrush" Color="{DynamicResource BackgroundToneColor}" />
+
+    <SolidColorBrush x:Key="GroupCountBackgroundBrush" Color="#41464F" />
     
     <LinearGradientBrush x:Key="GridItemBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
         <GradientStop Color="#049BC3" Offset="0"/>

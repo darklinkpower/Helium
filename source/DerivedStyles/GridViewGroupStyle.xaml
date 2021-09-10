@@ -5,11 +5,13 @@
         <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FontSize" Value="15" />
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GroupItem}">
                     <ExpanderEx BorderThickness="0" SaveGameGroupId="{Binding Name, Mode=OneWay}"
-                                IsExpanded="True" Padding="10">
+                                IsExpanded="True" Padding="10" Background="Transparent"
+                                Cursor="Hand" >
                         <ExpanderEx.Header>                            
                             <DockPanel Background="Transparent">
                                 <DockPanel.ContextMenu>
@@ -32,11 +34,22 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBlock Text="{Binding Items.Count, Mode=OneWay, StringFormat=({0})}"
-                                           VerticalAlignment="Center" HorizontalAlignment="Left"
-                                           Style="{DynamicResource BaseTextBlockStyle}"
-                                           DockPanel.Dock="Left" TextAlignment="Center"
-                                           Visibility="{Settings ShowGroupCount}"/>
+                                <Grid DockPanel.Dock="Left" Margin="10,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" CornerRadius="4" Background="{DynamicResource GroupCountBackgroundBrush}"  Width="Auto">
+                                        <TextBlock Text="{Binding Items.Count, Mode=OneWay, StringFormat={}{0}}"
+                                               Foreground="#A5A7A9"
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               Style="{DynamicResource BaseTextBlockStyle}"
+                                               TextAlignment="Center" FontSize="{DynamicResource FontSizeSmall}"
+                                               Visibility="{Settings ShowGroupCount}"
+                                               Margin="7,0,7,0"/>
+                                    </Border>
+                                </Grid>
+                                <Border Background="#30343B"
+                                        VerticalAlignment="Center" Height="2"/>
                             </DockPanel>
                         </ExpanderEx.Header>
                         <ItemsPresenter />
