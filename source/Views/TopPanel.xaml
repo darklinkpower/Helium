@@ -83,7 +83,7 @@
     <Style x:Key="TopPanelFilterToggle" TargetType="CheckBox">
         <Setter Property="MinWidth" Value="35" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Background" Value="#990a0e1e" />
+        <Setter Property="Background" Value="{DynamicResource TopPanelItemBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Margin" Value="10,6,0,6" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />

@@ -15,13 +15,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
-                    <Border Background="{TemplateBinding Background}"
+                    <Border Background="Transparent"
                             Padding="{TemplateBinding Padding}">
                         <StackPanel Orientation="Horizontal">
                             <Border x:Name="BulletBorder" CornerRadius="{DynamicResource ControlCornerRadius}"
                                     BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"
                                     Style="{DynamicResource HighlightBorder}" >
-                                <Grid Width="18" Height="18" Background="{DynamicResource CheckBoxCheckMarkBkBrush}">
+                                <Grid Width="18" Height="18" Background="{TemplateBinding Background}">
                                     <Viewbox x:Name="CheckIcon" Visibility="Collapsed">
                                         <TextBlock Text="b" FontFamily="Marlett" Foreground="{DynamicResource GlyphBrush}"
                                                     HorizontalAlignment="Center" VerticalAlignment="Center"/>

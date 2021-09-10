@@ -46,6 +46,7 @@
     <SolidColorBrush x:Key="MenuBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="PasswordBoxBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="PopupBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="RadioButtonBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="RepeatButtonBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="RichTextBoxBackgroundBrush" Color="Red" />
@@ -62,9 +63,33 @@
     <SolidColorBrush x:Key="HyperlinkBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="LabelBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="ListViewBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="PopupBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="TextBlockBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="TreeViewBackgroundBrush" Color="Red" />
+    <!--region end-->
+
+    <!--region Custom Controls background brushes-->
+    <SolidColorBrush x:Key="ComboBoxListBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="ExpanderExBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="ExtendedListBoxBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="FilterSelectionBoxBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="GameGroupMenuBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="GameMenuBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="HtmlTextViewBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="NumericBoxesBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="SearchBoxBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="SidebarItemBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="SidebarItemIsMouseOverBackgroundBrush" Color="Yellow" />
+    <SolidColorBrush x:Key="SidebarItemIsSelectedBackgroundBrush" Color="Blue" />
+    <SolidColorBrush x:Key="TopPanelItemBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="TopPanelItemIsMouseOverBackgroundBrush" Color="Yellow" />
+    <SolidColorBrush x:Key="TrayContextMenuBackgroundBrush" Color="Green" />
+    <!--region end-->
+
+
+    <!--region Unused Custom Controls background brushes-->
+    <SolidColorBrush x:Key="ExtendedDataGridBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="ExtendedListViewBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="WindowBaseBackgroundBrush" Color="Green" />
     <!--region end-->
     
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="Transparent" />

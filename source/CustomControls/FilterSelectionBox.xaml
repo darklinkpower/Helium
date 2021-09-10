@@ -6,7 +6,7 @@
         <Border BorderThickness="{DynamicResource ControlBorderThickness}"
                 CornerRadius="{DynamicResource ControlCornerRadius}"
                 Style="{DynamicResource HighlightBorder}"
-                Background="{TemplateBinding Background}"
+                Background="{DynamicResource FilterSelectionBoxBackgroundBrush}"
                 x:Name="Root">
             <Grid>
                 <DockPanel>
@@ -15,7 +15,7 @@
                                    Foreground="{DynamicResource GlyphBrush}"
                                    VerticalAlignment="Center"/>
                     </Viewbox>
-                    <TextBlock x:Name="PART_TextFilterString"
+                    <TextBlock x:Name="PART_TextFilterString" Background="Transparent"
                                Style="{StaticResource BaseTextBlockStyle}"
                                TextTrimming="CharacterEllipsis" HorizontalAlignment="Stretch" 
                                VerticalAlignment="Center" DockPanel.Dock="Left"
@@ -40,7 +40,7 @@
                     </ToggleButton.Style>
                 </ToggleButton>
                 <TextBox x:Name="PART_TextFilterInput" BorderThickness="0"
-                         VerticalAlignment="Center" Margin="1,0,30,0"/>
+                         VerticalAlignment="Center" Margin="1,0,30,0" Background="Transparent"/>
                 <Button x:Name="PART_ButtonClearFilter"
                         Margin="0,0,20,0" FontSize="18"
                         Background="Transparent" HorizontalAlignment="Right"

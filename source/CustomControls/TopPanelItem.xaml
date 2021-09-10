@@ -5,7 +5,7 @@
         <Setter Property="MinWidth" Value="35" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Margin" Value="8,0,0,0" />
-        <Setter Property="Background" Value="#990a0e1e" />
+        <Setter Property="Background" Value="{DynamicResource TopPanelItemBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -26,6 +26,7 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                <Setter Property="Background" Value="{DynamicResource TopPanelItemIsMouseOverBackgroundBrush}"/>
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>

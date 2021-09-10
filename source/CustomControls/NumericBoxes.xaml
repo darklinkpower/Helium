@@ -3,7 +3,7 @@
 
     <ControlTemplate x:Key="NumericBoxTemplate" TargetType="{x:Type TextBox}">
         <Border x:Name="Border" Padding="3"
-                Background="{TemplateBinding Background}"
+                Background="{DynamicResource NumericBoxesBackgroundBrush}"
                 Style="{DynamicResource HighlightBorder}">
             <ScrollViewer x:Name="PART_ContentHost"
                           VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}"

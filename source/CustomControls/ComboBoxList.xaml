@@ -6,7 +6,7 @@
         <Border BorderThickness="{DynamicResource ControlBorderThickness}"
                 CornerRadius="{DynamicResource ControlCornerRadius}"
                 Style="{DynamicResource HighlightBorder}"
-                Background="{TemplateBinding Background}"
+                Background="{DynamicResource ComboBoxListBackgroundBrush}"
                 x:Name="Root">
             <Grid>
                 <DockPanel>
