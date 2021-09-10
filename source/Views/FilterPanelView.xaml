@@ -8,7 +8,7 @@
         <Setter Property="Margin" Value="8,2,6,8" />
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="{StaticResource False}">
-                <Setter Property="Opacity" Value="0.6" />
+                <Setter Property="Opacity" Value="1.0" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -17,7 +17,7 @@
         <Setter Property="Margin" Value="8,10,6,4" />
         <Style.Triggers>
             <Trigger Property="Tag" Value="{StaticResource False}">
-                <Setter Property="Opacity" Value="0.6"/>
+                <Setter Property="Opacity" Value="0.5"/>
             </Trigger>
         </Style.Triggers>
     </Style>

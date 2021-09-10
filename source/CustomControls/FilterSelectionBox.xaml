@@ -68,6 +68,12 @@
                 </Popup>
             </Grid>
         </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SearchBoxIsMouseOverBackgroundBrush}" TargetName="Root"/>
+            </Trigger>
+
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style x:Key="FilterSelectionBoxItemStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">

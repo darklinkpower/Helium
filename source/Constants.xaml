@@ -206,6 +206,12 @@
         <GradientStop Color="#2E52B5" Offset="1"/>
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="ProgressBarBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#2E52B5" Offset="0"/>
+        <GradientStop Color="#217BBB" Offset="0.5"/>
+        <GradientStop Color="#049BC3" Offset="1"/>
+    </LinearGradientBrush>
+    
     <SolidColorBrush x:Key="LibraryDetailsViewBackgroundBrush" Color="#24282f" />
 
     <LinearGradientBrush x:Key="MenuBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
