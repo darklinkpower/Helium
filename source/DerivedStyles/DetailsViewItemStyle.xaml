@@ -6,15 +6,12 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
+        <Setter Property="Background" Value="{DynamicResource DetailsViewItemBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
                     <Grid>
-                        <Border x:Name="SelectedRectangle" IsHitTestVisible="False" Visibility="Collapsed"
-                                                        BorderThickness="5,0,0,0" BorderBrush="{DynamicResource GlyphBrush}"/>
-                        <Border x:Name="HoverRectangle" IsHitTestVisible="False" Visibility="Collapsed"
-                                                        BorderThickness="5,0,0,0" BorderBrush="{DynamicResource GlyphBrush}"/>
-                        <Border Padding="{TemplateBinding Padding}" Background="Transparent">
+                        <Border x:Name="Border" Padding="{TemplateBinding Padding}" Background="Transparent">
                             <ContentPresenter />
                         </Border>
                     </Grid>
@@ -24,15 +21,20 @@
                         </DataTrigger>
                         <DataTrigger Binding="{Binding IsInstalled}" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
-                        </DataTrigger>                        
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedRectangle" />
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
-                        </Trigger>
+                        </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedRectangle" />
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource DetailsViewItemIsMouseOverBackgroundBrush}" TargetName="Border"/>
                         </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource DetailsViewItemIsSelectedBackgroundBrush}" TargetName="Border"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{DynamicResource DetailsViewItemIsMouseOverInstalledBackgroundBrush}" TargetName="Border"/>
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

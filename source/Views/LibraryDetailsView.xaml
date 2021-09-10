@@ -12,6 +12,7 @@
                                d:DataContext="{x:Static DesignMainViewModel.DesignIntance}">
                         <Grid DockPanel.Dock="{Settings DetailsListPosition}"
                               Width="{Settings DetailsListWitdh}">
+                            <Border Background="{DynamicResource LibraryDetailsViewBackgroundBrush}" />
                             <ExtendedListBox x:Name="PART_ListGames"
                                          BorderBrush="{DynamicResource PanelSeparatorBrush}"
                                          ItemContainerStyle="{DynamicResource DetailsViewItemStyle}"

@@ -38,6 +38,7 @@
     <Color x:Key="ControlBackgroundColor">#383C43</Color>
     <Color x:Key="ControlBackgroundColorDarker">#25272d</Color>
     <Color x:Key="ControlBackgroundColorDark">#222429</Color>
+    <Color x:Key="ControlBackgroundColorDarkHover">#3e4047</Color>
     <!--region Custom theme colors-->
 
     <!--region Default Controls background brushes-->
@@ -64,7 +65,8 @@
     <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="TextBlockBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
-    <SolidColorBrush x:Key="ThumbBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="ThumbBackgroundBrush" Color="#606774" />
+    <SolidColorBrush x:Key="ThumbIsMouseOverBackgroundBrush" Color="#7d8594" />
     <SolidColorBrush x:Key="ToggleButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="ToolTipBackgroundBrush" Color="Red" />
     <!--region end-->
@@ -78,7 +80,18 @@
 
     <!--region Custom Controls background brushes-->
     <SolidColorBrush x:Key="ComboBoxListBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
-    <SolidColorBrush x:Key="ExpanderExBackgroundBrush" Color="Green" />
+    <LinearGradientBrush x:Key="ExpanderExBackgroundBrush" StartPoint="-0.1, 0.5" EndPoint="1.0, 0.5" >
+        <GradientStop Color="#292f3b" Offset="0"/>
+        <GradientStop Color="#292f3b" Offset="0.5"/>
+        <GradientStop Color="#00292f3b" Offset="0.95"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ExpanderExIsMouseOverBackgroundBrush" Color="#3E4E69" />
+
+    <SolidColorBrush x:Key="DetailsViewItemIsSelectedBackgroundBrush" Color="#3E4E69" />
+    <SolidColorBrush x:Key="DetailsViewItemIsMouseOverBackgroundBrush" Color="#323A4B" />
+    <SolidColorBrush x:Key="DetailsViewItemIsMouseOverInstalledBackgroundBrush" Color="#586F96" />
+    
+    
     <SolidColorBrush x:Key="ExtendedListBoxBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="FilterSelectionBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="GameGroupMenuBackgroundBrush" Color="Green" />
@@ -86,6 +99,7 @@
     <SolidColorBrush x:Key="HtmlTextViewBackgroundBrush" Color="Green" />
     <SolidColorBrush x:Key="NumericBoxesBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="SearchBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="SearchBoxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="SidebarItemBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="SidebarItemIsMouseOverBackgroundBrush" Color="Yellow" />
     <SolidColorBrush x:Key="SidebarItemIsSelectedBackgroundBrush" Color="Blue" />
@@ -159,5 +173,6 @@
         <GradientStop Color="#2E52B5" Offset="1"/>
     </LinearGradientBrush>
 
+    <SolidColorBrush x:Key="LibraryDetailsViewBackgroundBrush" Color="#24282f" />
 
 </ResourceDictionary>

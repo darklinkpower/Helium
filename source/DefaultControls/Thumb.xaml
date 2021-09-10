@@ -13,17 +13,17 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Grid>
                         <Rectangle x:Name="HoverRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                                   Width="Auto" Height="Auto" RadiusX="3" RadiusY="4"
+                                   Width="Auto" Height="Auto" RadiusX="3" RadiusY="4" MaxWidth="5.5"
                                    Stroke="{x:Null}" Margin="4.5,1,4.5,1" MinHeight="10"
                                    Fill="{TemplateBinding Background}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True" />
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Fill" Value="{DynamicResource GlyphBrush}" TargetName="HoverRectangle" />
+                            <Setter Property="Fill" Value="{DynamicResource ThumbIsMouseOverBackgroundBrush}" TargetName="HoverRectangle" />
                         </Trigger>
                         <DataTrigger Binding="{Binding IsFocused, RelativeSource={RelativeSource AncestorType=Track}}" Value="True">
-                            <Setter Property="Fill" Value="{DynamicResource GlyphBrush}" TargetName="HoverRectangle" />
+                            <Setter Property="Fill" Value="{DynamicResource ThumbIsMouseOverBackgroundBrush}" TargetName="HoverRectangle" />
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
