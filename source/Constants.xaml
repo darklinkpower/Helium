@@ -90,8 +90,9 @@
     <SolidColorBrush x:Key="DetailsViewItemIsSelectedBackgroundBrush" Color="#3E4E69" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverBackgroundBrush" Color="#323A4B" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverInstalledBackgroundBrush" Color="#586F96" />
-    
-    
+
+    <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#202022" />
+
     <SolidColorBrush x:Key="ExtendedListBoxBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="FilterSelectionBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="GameGroupMenuBackgroundBrush" Color="Green" />
@@ -101,10 +102,10 @@
     <SolidColorBrush x:Key="SearchBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="SearchBoxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="SidebarItemBackgroundBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="SidebarItemIsMouseOverBackgroundBrush" Color="Yellow" />
-    <SolidColorBrush x:Key="SidebarItemIsSelectedBackgroundBrush" Color="Blue" />
-    <SolidColorBrush x:Key="TopPanelItemBackgroundBrush" Color="Green" />
-    <SolidColorBrush x:Key="TopPanelItemIsMouseOverBackgroundBrush" Color="Yellow" />
+    <SolidColorBrush x:Key="SidebarItemIsMouseOverBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="SidebarItemIsSelectedBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="TopPanelItemBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="TopPanelItemIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="TrayContextMenuBackgroundBrush" Color="Green" />
     <!--region end-->
 
@@ -113,7 +114,12 @@
     <SolidColorBrush x:Key="ExtendedListViewBackgroundBrush" Color="Green" />
     <SolidColorBrush x:Key="WindowBaseBackgroundBrush" Color="Green" />
     <!--region end-->
-    
+
+    <!--region Foreground-->
+    <SolidColorBrush x:Key="TopPanelItemForegroundBrush" Color="#4C4D50" />
+    <SolidColorBrush x:Key="TopPanelItemIsMouseOverForegroundBrush" Color="#ffffff" />
+    <!--region end-->
+
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
     <SolidColorBrush x:Key="TextBrushDarker" Color="{DynamicResource TextColorDarker}" />

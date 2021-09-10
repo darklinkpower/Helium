@@ -86,7 +86,7 @@
         <Setter Property="Background" Value="{DynamicResource TopPanelItemBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Margin" Value="10,6,0,6" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TopPanelItemForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -106,7 +106,8 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="Tag" Value="{StaticResource True}">
                             <Setter Property="Visibility" Value="Visible" TargetName="TextFilter" />
-                            <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource TopPanelItemIsMouseOverBackgroundBrush}" />
                         </Trigger>
                         <Trigger Property="Tag" Value="{StaticResource False}">
                             <Setter Property="Visibility" Value="Collapsed" TargetName="TextFilter" />
@@ -117,7 +118,8 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
+                <Setter Property="Background" Value="{DynamicResource TopPanelItemIsMouseOverBackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -126,7 +128,7 @@
         <Setter Property="Margin" Value="10,6,0,6" />
         <Setter Property="MinWidth" Value="35" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
@@ -159,6 +161,7 @@
     </Style>
 
     <Style TargetType="{x:Type TopPanel}">
+        <Setter Property="Background" Value="{DynamicResource TopPanelBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TopPanel}">
