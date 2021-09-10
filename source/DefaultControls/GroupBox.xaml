@@ -9,7 +9,7 @@
     <Style TargetType="{x:Type GroupBox}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource GroupBoxBackgroundBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
         <Setter Property="Padding" Value="5" />
         <Setter Property="Template">

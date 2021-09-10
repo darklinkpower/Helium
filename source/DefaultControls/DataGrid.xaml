@@ -11,7 +11,7 @@
 
     <Style TargetType="{x:Type DataGrid}">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource DataGridBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />

@@ -20,7 +20,7 @@
                             <RowDefinition Height="Auto" x:Name="RowDefinition0" />
                             <RowDefinition Height="*" x:Name="RowDefinition1" />
                         </Grid.RowDefinitions>
-                        <Border x:Name="HeaderBorder" Background="{DynamicResource ControlBackgroundBrush}"
+                        <Border x:Name="HeaderBorder" Background="{DynamicResource TabControlBackgroundBrush}"
                                 BorderThickness="0,0,0,1" BorderBrush="{DynamicResource NormalBorderBrush}">
                             <TabPanel x:Name="HeaderPanel" IsItemsHost="True" Panel.ZIndex="1" Width="Auto" Height="Auto"
                                       KeyboardNavigation.TabIndex="1" RenderTransformOrigin="0.5,0.5">

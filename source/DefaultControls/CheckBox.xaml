@@ -8,7 +8,7 @@
 
     <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource CheckboxBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />

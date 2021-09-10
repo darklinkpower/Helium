@@ -7,7 +7,7 @@
                     mc:Ignorable="d">
 
     <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{DynamicResource NormalBrushDark}" />
+        <Setter Property="Background" Value="{DynamicResource ToggleButtonBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />

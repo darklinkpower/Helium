@@ -7,7 +7,7 @@
                     mc:Ignorable="d">
 
     <Style TargetType="{x:Type Thumb}">
-        <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThumbBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
