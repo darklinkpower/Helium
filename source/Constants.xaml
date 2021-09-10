@@ -9,9 +9,9 @@
     <sys:Double x:Key="FontSizeLargest">29</sys:Double>
     <FontFamily x:Key="FontFamily">Trebuchet MS</FontFamily>
     <FontFamily x:Key="MonospaceFontFamily">Consolas</FontFamily>
-    <Thickness x:Key="PopupBorderThickness">1</Thickness>
-    <Thickness x:Key="ControlBorderThickness">1</Thickness>
-    <sys:Double x:Key="EllipseBorderThickness">1</sys:Double>
+    <Thickness x:Key="PopupBorderThickness">0</Thickness>
+    <Thickness x:Key="ControlBorderThickness">0</Thickness>
+    <sys:Double x:Key="EllipseBorderThickness">0</sys:Double>
     <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
     <CornerRadius x:Key="ControlCornerRadiusSmall">3</CornerRadius>
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
@@ -32,7 +32,13 @@
     <Color x:Key="GridItemBackgroundColor">#151e3d</Color>
     <Color x:Key="PanelSeparatorColor">#662C3A67</Color>
 
-    <SolidColorBrush x:Key="DatePickerBackgroundBrush" Color="Red" />
+
+    <!--region Custom theme colors-->
+    <Color x:Key="ControlBackgroundColor">#383C43</Color>
+    <Color x:Key="ControlBackgroundColorDarker">#25272d</Color>
+    <Color x:Key="ControlBackgroundColorDark">#222429</Color>
+    <!--region Custom theme colors-->
+
     <!--region Default Controls background brushes-->
     <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="Red" />
@@ -40,6 +46,7 @@
     <SolidColorBrush x:Key="ContextMenuBackgroundBrush" Color="Red" /> <!--Popup-->
     <SolidColorBrush x:Key="DataGridBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="DataPickerBackgroundBrush" Color="Red" />  <!--Popup-->
+    <SolidColorBrush x:Key="DatePickerBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="ExpanderBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="GridSplitterBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="GroupBoxBackgroundBrush" Color="Red" />
