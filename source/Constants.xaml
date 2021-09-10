@@ -64,6 +64,7 @@
     <SolidColorBrush x:Key="ScrollViewerBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="SliderBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="TabControlSeparatorBrush" Color="#5555CDFF" />
     <SolidColorBrush x:Key="TextBlockBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="TextBoxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
@@ -141,7 +142,7 @@
     <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
     <SolidColorBrush x:Key="NormalBrush" Color="{DynamicResource MainColor}" />
     <SolidColorBrush x:Key="NormalBrushDark" Color="{DynamicResource MainColorDark}" />
-    <SolidColorBrush x:Key="NormalBorderBrush" Color="#5555CDFF" />
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="Transparent" />
     <SolidColorBrush x:Key="HoverBrush1" Color="{DynamicResource HighlightGlyphColor}" />
     <LinearGradientBrush x:Key="HoverBrush" StartPoint="0.0, 0.5" EndPoint="1.0, 0.5" >
         <GradientStop Color="#5A6069" Offset="0"/>
