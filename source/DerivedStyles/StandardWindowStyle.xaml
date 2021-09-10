@@ -8,13 +8,13 @@
     </Style>
 
     <Style x:Key="StandardWindowStyle" TargetType="WindowBase">
-        <Setter Property="Background" Value="{DynamicResource WindowBackgourndBrush}" />
+        <Setter Property="Background" Value="{DynamicResource StandardWindowBackgroundBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Setter Property="TextOptions.TextRenderingMode" Value="Auto" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <WindowChrome CaptionHeight="25" CornerRadius="0" ResizeBorderThickness="4"
+                <WindowChrome CaptionHeight="50" CornerRadius="0" ResizeBorderThickness="4"
                               NonClientFrameEdges ="None" UseAeroCaptionButtons="False" GlassFrameThickness="0"/>
             </Setter.Value>
         </Setter>
@@ -25,8 +25,8 @@
                         <sys:Boolean x:Key="True">True</sys:Boolean>
                     </ControlTemplate.Resources>
                     <AdornerDecorator>
-                        <Border x:Name="WindowBorder" BorderBrush="{DynamicResource PopupBorderBrush}" CornerRadius="0"
-                                BorderThickness="{TemplateBinding BorderThickness}"
+                        <Border x:Name="WindowBorder" BorderBrush="{DynamicResource StandardWindowBorderBrush}" CornerRadius="0"
+                                BorderThickness="0,1,0,0"
                                 Background="{TemplateBinding Background}">
                             <Grid>
                                 <ContentPresenter Margin="0,25,0,0"/>

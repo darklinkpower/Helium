@@ -12,7 +12,7 @@
     <Thickness x:Key="PopupBorderThickness">0</Thickness>
     <Thickness x:Key="ControlBorderThickness">0</Thickness>
     <sys:Double x:Key="EllipseBorderThickness">0</sys:Double>
-    <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
+    <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
     <CornerRadius x:Key="ControlCornerRadiusSmall">3</CornerRadius>
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
 
@@ -24,7 +24,8 @@
     <Color x:Key="MainColor">#2C3A67</Color>
     <Color x:Key="MainColorDark">#0D1225</Color>
     <Color x:Key="HoverColor">#247BA0</Color>
-    <Color x:Key="GlyphColor">#55CDFF</Color>
+    <Color x:Key="GlyphColor">#0CB5FF</Color>
+    <Color x:Key="GlyphSubColor">#1E92FF</Color>
     <Color x:Key="HighlightGlyphColor">#8855CDFF</Color>
     <Color x:Key="PopupBackgroundColor">#171e26</Color>
     <Color x:Key="PopupBorderColor">#3e6184</Color>
@@ -40,30 +41,31 @@
     <!--region Custom theme colors-->
 
     <!--region Default Controls background brushes-->
-    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="ComboboxBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ComboboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="ContextMenuBackgroundBrush" Color="Red" /> <!--Popup-->
-    <SolidColorBrush x:Key="DataGridBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="DataPickerBackgroundBrush" Color="Red" />  <!--Popup-->
-    <SolidColorBrush x:Key="DatePickerBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="ExpanderBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="GridSplitterBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="GroupBoxBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="ListBoxBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="DataGridBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="DataPickerBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />  <!--Popup-->
+    <SolidColorBrush x:Key="DatePickerBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ExpanderBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="GridSplitterBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="GroupBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ListBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="MenuBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="PasswordBoxBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="PasswordBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="PopupBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="RadioButtonBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="RadioButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="RepeatButtonBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="RichTextBoxBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="RichTextBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="ScrollViewerBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="SliderBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="TextBlockBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="ThumbBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="ToggleButtonBackgroundBrush" Color="Red" />
+    <SolidColorBrush x:Key="ToggleButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="ToolTipBackgroundBrush" Color="Red" />
     <!--region end-->
 
@@ -71,20 +73,19 @@
     <SolidColorBrush x:Key="HyperlinkBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="LabelBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="ListViewBackgroundBrush" Color="Red" />
-    <SolidColorBrush x:Key="TextBlockBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="TreeViewBackgroundBrush" Color="Red" />
     <!--region end-->
 
     <!--region Custom Controls background brushes-->
-    <SolidColorBrush x:Key="ComboBoxListBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="ComboBoxListBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="ExpanderExBackgroundBrush" Color="Green" />
     <SolidColorBrush x:Key="ExtendedListBoxBackgroundBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="FilterSelectionBoxBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="FilterSelectionBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="GameGroupMenuBackgroundBrush" Color="Green" />
     <SolidColorBrush x:Key="GameMenuBackgroundBrush" Color="Green" />
     <SolidColorBrush x:Key="HtmlTextViewBackgroundBrush" Color="Green" />
-    <SolidColorBrush x:Key="NumericBoxesBackgroundBrush" Color="Green" />
-    <SolidColorBrush x:Key="SearchBoxBackgroundBrush" Color="Green" />
+    <SolidColorBrush x:Key="NumericBoxesBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="SearchBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="SidebarItemBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="SidebarItemIsMouseOverBackgroundBrush" Color="Yellow" />
     <SolidColorBrush x:Key="SidebarItemIsSelectedBackgroundBrush" Color="Blue" />
@@ -107,7 +108,11 @@
     <SolidColorBrush x:Key="NormalBrushDark" Color="{DynamicResource MainColorDark}" />
     <SolidColorBrush x:Key="NormalBorderBrush" Color="#5555CDFF" />
     <SolidColorBrush x:Key="HoverBrush" Color="{DynamicResource HighlightGlyphColor}" />
-    <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
+    <SolidColorBrush x:Key="GlyphBrush1" Color="{DynamicResource GlyphColor}" />
+    <LinearGradientBrush x:Key="GlyphBrush" StartPoint="0.0, 0.5" EndPoint="1.0, 0.5" >
+        <GradientStop Color="{DynamicResource GlyphColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource GlyphSubColor}" Offset="1"/>
+    </LinearGradientBrush>
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
     <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource PopupBorderColor}" />
     <SolidColorBrush x:Key="TooltipBackgroundBrush" Color="{DynamicResource BackgroundToneColor}" />
@@ -127,8 +132,32 @@
         <GradientStop Color="#002C3A67" Offset="0.7"/>
     </LinearGradientBrush>-->
 
-    <LinearGradientBrush x:Key="WindowBackgourndBrush" StartPoint="0.5,-0.2" EndPoint="0.4,1" >
-        <GradientStop Color="#202b4d" Offset="0"/>
-        <GradientStop Color="{DynamicResource MainColorDark}" Offset="0.4"/>
+    <LinearGradientBrush x:Key="WindowBackgourndBrush1" StartPoint="0.5,-0.2" EndPoint="0.4,1" >
+        <GradientStop Color="#282D35" Offset="0"/>
+        <GradientStop Color="#282D35" Offset="0.4"/>
     </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="WindowBackgourndBrush" GradientOrigin="0.0,0.0" Center="0.0,0.0"
+        RadiusX="1" RadiusY="1">
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="#32373F" Offset="-0.1" />
+            <GradientStop Color="#25282E" Offset="1.1" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="StandardWindowBackgroundBrush" GradientOrigin="0.0,0.0" Center="0.0,0.0"
+        RadiusX="1" RadiusY="1">
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="#32373F" Offset="-0.1" />
+            <GradientStop Color="#25282E" Offset="1.1" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+
+    <LinearGradientBrush x:Key="StandardWindowBorderBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#049BC3" Offset="0"/>
+        <GradientStop Color="#217BBB" Offset="0.5"/>
+        <GradientStop Color="#2E52B5" Offset="1"/>
+    </LinearGradientBrush>
+
+
 </ResourceDictionary>
