@@ -30,7 +30,7 @@
                                 </Grid>
                             </Border>
                         </BulletDecorator.Bullet>
-                        <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <Border Padding="{TemplateBinding Padding}" Background="Transparent">
                             <ContentPresenter RecognizesAccessKey="True" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                         </Border>
                     </BulletDecorator>

@@ -11,11 +11,13 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
                     <Grid Margin="1">
-                        <Border Padding="5,3,5,3" Style="{DynamicResource HighlightBorder}" BorderThickness="1" Background="Transparent">
+                        <Border Padding="5,3,5,3" Style="{DynamicResource HighlightBorder}" BorderThickness="{DynamicResource ControlBorderThickness}"
+                                Background="{DynamicResource ListViewHeaderBackgroundBrush}" Cursor="{TemplateBinding Cursor}">
                             <TextBlock Style="{DynamicResource BaseTextBlockStyle}">
                                 <ContentPresenter VerticalAlignment="Center" />
                             </TextBlock>
@@ -120,30 +122,42 @@
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="0,1,0,1" />
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListViewItem}">
                     <Grid>
-                        <Rectangle x:Name="HoverRectangle" Visibility="Collapsed" Fill="{DynamicResource HoverBrush}" />
-                        <Rectangle x:Name="SelectedRectangle" Visibility="Collapsed" Fill="{DynamicResource GlyphBrush}" />
-                        <Border Padding="{TemplateBinding Padding}" Background="Transparent">
+                        <Border x:Name="Border" Padding="{TemplateBinding Padding}" Background="Transparent">
                             <GridViewRowPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Stretch" />
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="Selector.IsSelected" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="SelectedRectangle" />
-                        </Trigger>
+                        <DataTrigger Binding="{Binding IsInstalled}" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsInstalled}" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
+                        </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="HoverRectangle" />
+                            <Setter Property="Background" Value="{DynamicResource DetailsViewItemIsMouseOverBackgroundBrush}" TargetName="Border"/>
                         </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource DetailsViewItemIsSelectedBackgroundBrush}" TargetName="Border"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{DynamicResource DetailsViewItemIsMouseOverInstalledBackgroundBrush}" TargetName="Border"/>
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
             <Trigger Property="Selector.IsSelected" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                <!--<Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />-->
             </Trigger>
         </Style.Triggers>
     </Style>

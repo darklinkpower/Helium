@@ -35,7 +35,7 @@
 
 
     <!--region Custom theme colors-->
-    <Color x:Key="ControlBackgroundColor">#383C43</Color>
+    <Color x:Key="ControlBackgroundColor">#3e4047</Color>
     <Color x:Key="ControlBackgroundColorDarker">#25272d</Color>
     <Color x:Key="ControlBackgroundColorDark">#222429</Color>
     <Color x:Key="ControlBackgroundColorDarkHover">#3e4047</Color>
@@ -90,10 +90,11 @@
     </LinearGradientBrush>
     <SolidColorBrush x:Key="ExpanderExIsMouseOverBackgroundBrush" Color="#3E4E69" />
 
+    
     <SolidColorBrush x:Key="DetailsViewItemIsSelectedBackgroundBrush" Color="#3E4E69" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverBackgroundBrush" Color="#323A4B" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverInstalledBackgroundBrush" Color="#586F96" />
-
+    <SolidColorBrush x:Key="ListViewHeaderBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
     <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#202022" />
 
     <SolidColorBrush x:Key="ExtendedListBoxBackgroundBrush" Color="Transparent" />
