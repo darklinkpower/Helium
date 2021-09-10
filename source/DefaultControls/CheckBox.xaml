@@ -43,11 +43,13 @@
                             </MultiTrigger.Conditions>
                             <Setter Property="Visibility" Value="Visible" TargetName="IndeterminateIcon"/>
                         </MultiTrigger>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="CheckIcon" />
-                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource CheckboxIsCheckedBackgroundBrush}" />
                             <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="BulletBorder" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource CheckboxIsCheckedBackgroundBrush}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="CheckIcon" />
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="BulletBorder" />

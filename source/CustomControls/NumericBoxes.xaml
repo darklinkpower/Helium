@@ -10,12 +10,16 @@
                           HorizontalScrollBarVisibility="{TemplateBinding HorizontalScrollBarVisibility}"/>
         </Border>
         <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource NumericBoxesIsMouseOverBackgroundBrush}" TargetName="Border"/>
+            </Trigger>
             <Trigger Property="IsFocused" Value="True">
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="Border" />
+                <Setter Property="Background" Value="{DynamicResource NumericBoxesIsMouseOverBackgroundBrush}" TargetName="Border"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-
+    
     <Style TargetType="{x:Type LongNumericBox}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="CaretBrush" Value="{DynamicResource TextBrush}" />

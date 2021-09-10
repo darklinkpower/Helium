@@ -44,17 +44,22 @@
     <!--region Default Controls background brushes-->
     <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="CheckboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
+    <SolidColorBrush x:Key="CheckboxIsCheckedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="ComboboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ComboboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="ContextMenuBackgroundBrush" Color="Red" /> <!--Popup-->
     <SolidColorBrush x:Key="DataGridBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="DataPickerBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />  <!--Popup-->
     <SolidColorBrush x:Key="DatePickerBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="DatePickerIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="ExpanderBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="GridSplitterBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="GroupBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="ListBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="MenuBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="PasswordBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="PasswordBoxIsSelectedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="PopupBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="RadioButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
@@ -65,6 +70,8 @@
     <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="TextBlockBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="TextBoxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
+    <SolidColorBrush x:Key="TextBoxIsSelectedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="ThumbBackgroundBrush" Color="#606774" />
     <SolidColorBrush x:Key="ThumbIsMouseOverBackgroundBrush" Color="#7d8594" />
     <SolidColorBrush x:Key="ToggleButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
@@ -99,6 +106,7 @@
     <SolidColorBrush x:Key="GameMenuBackgroundBrush" Color="Green" />
     <SolidColorBrush x:Key="HtmlTextViewBackgroundBrush" Color="Green" />
     <SolidColorBrush x:Key="NumericBoxesBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="NumericBoxesIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="SearchBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="SearchBoxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="SidebarItemBackgroundBrush" Color="Transparent" />
