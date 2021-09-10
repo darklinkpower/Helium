@@ -183,12 +183,14 @@
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
         <Setter Property="Padding" Value="3" />
+        <Setter Property="Background" Value="{DynamicResource DatePickerBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DatePicker">
                     <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{DynamicResource ControlCornerRadius}"
+                            Background="{TemplateBinding Background}"
                             Padding="{TemplateBinding Padding}">
                         <DockPanel>
                             <Popup x:Name="PART_Popup" StaysOpen="False"
