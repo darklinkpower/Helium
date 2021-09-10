@@ -18,14 +18,14 @@
                                    RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"
                                    Stretch="{Settings CoverArtStretch}" />
-                                <Border Background="#99000000" x:Name="TextGameName" Visibility="Collapsed">
+                                <Border Background="{DynamicResource GridItemBackgroundBrush}" x:Name="TextGameName" Visibility="Collapsed">
                                     <TextBlock Text="{Binding DisplayName}"
                                            TextWrapping="Wrap" Margin="5"
                                            Style="{StaticResource BaseTextBlockStyle}"
                                            TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
-                                <Border Background="#AA000000" x:Name="BorderMouseOver" Visibility="Collapsed" />
+                                <Border Background="Transparent" x:Name="BorderMouseOver" Visibility="Collapsed" />
                                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center"
                                          Name="GameControls"  Visibility="Collapsed">
                                     <StackPanel Orientation="Horizontal">
