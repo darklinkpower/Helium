@@ -93,7 +93,7 @@
 
     <SolidColorBrush x:Key="DetailsViewOverviewHeaderLabelBrush" Color="#ffffff" />
     <SolidColorBrush x:Key="DetailsViewOverviewHeaderTextBlockBrush" Color="#ffffff" />
-    <SolidColorBrush x:Key="DetailsViewOverviewHeaderButtonsBrush" Color="#969696" />
+    <SolidColorBrush x:Key="DetailsViewOverviewHeaderButtonsBrush" Color="#DBd3d8e0" />
     
     
     <SolidColorBrush x:Key="DetailsViewHeaderIconsFillBrush" Color="#969696" />
@@ -273,4 +273,23 @@
         <GradientStop Color="#686868" Offset="1"/>
     </LinearGradientBrush>
 
+    <SolidColorBrush x:Key="GameInfoContainerBackgroundBrush" Color="#33000000" />
+    <SolidColorBrush x:Key="GameInfoContainerBackgroundBrush2" Color="#000000" Opacity="0.2"/>
+    
+    <!--region Details View Backgrounds brushes-->
+    <LinearGradientBrush x:Key="DetailsSectionBackgroundBrush" StartPoint="0.5, 1.0" EndPoint="0.5, 0.0" >
+        <GradientStop Color="#0024282f" Offset="0"/>
+        <GradientStop Color="#332b3942" Offset="0.33"/>
+        <GradientStop Color="#1ac1cacf" Offset="0.66"/>
+        <GradientStop Color="#4d1d1d1d" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackdropGlass" StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
+        <GradientStop Color="#1a272c35" Offset="0"/>
+        <GradientStop Color="#33272c35" Offset="0.20"/>
+        <GradientStop Color="#cc272c35" Offset="0.80"/>
+        <GradientStop Color="#00272c35" Offset="1"/>
+    </LinearGradientBrush>
+    <!--region end-->
+    
 </ResourceDictionary>
