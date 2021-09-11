@@ -7,16 +7,22 @@
     <Style x:Key="NotificationMessage" TargetType="Button">
         <Setter Property="Command" Value="{Binding ActivateCommand}" />
         <Setter Property="Margin" Value="10,8,10,0" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Style="{StaticResource HighlightBorder}" Background="{DynamicResource ButtonBackgroundBrush}"
+                    <Border x:Name="NotificationMessageBorder" Style="{StaticResource HighlightBorder}" Background="{TemplateBinding Background}"
                             d:DataContext="{x:Static DesignMainViewModel.DesignNotificationIntance}">
                         <TextBlock Text="{Binding Text}"
                                    Style="{DynamicResource BaseTextBlockStyle}"
                                    Margin="6" TextWrapping="Wrap"
                                    MinHeight="38" />
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource StandardWindowBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

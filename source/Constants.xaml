@@ -7,6 +7,7 @@
     <sys:Double x:Key="FontSizeLarge">15</sys:Double>
     <sys:Double x:Key="FontSizeLarger">20</sys:Double>
     <sys:Double x:Key="FontSizeLargest">29</sys:Double>
+    <sys:Double x:Key="DetailsViewOverviewHeaderButtonsOpacity">1.0</sys:Double>
     <FontFamily x:Key="FontFamily">Trebuchet MS</FontFamily>
     <FontFamily x:Key="MonospaceFontFamily">Consolas</FontFamily>
     <Thickness x:Key="PopupBorderThickness">0</Thickness>
@@ -90,6 +91,13 @@
     </LinearGradientBrush>
     <SolidColorBrush x:Key="ExpanderExIsMouseOverBackgroundBrush" Color="#3E4E69" />
 
+    <SolidColorBrush x:Key="DetailsViewOverviewHeaderLabelBrush" Color="#ffffff" />
+    <SolidColorBrush x:Key="DetailsViewOverviewHeaderTextBlockBrush" Color="#ffffff" />
+    <SolidColorBrush x:Key="DetailsViewOverviewHeaderButtonsBrush" Color="#969696" />
+    
+    
+    <SolidColorBrush x:Key="DetailsViewHeaderIconsFillBrush" Color="#969696" />
+    
     
     <SolidColorBrush x:Key="DetailsViewItemIsSelectedBackgroundBrush" Color="#3E4E69" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverBackgroundBrush" Color="#323A4B" />
@@ -217,6 +225,44 @@
         <GradientStop Color="#2E52B5" Offset="0"/>
         <GradientStop Color="#217BBB" Offset="0.5"/>
         <GradientStop Color="#049BC3" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PlayButtonBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#4FC82F" Offset="0"/>
+        <GradientStop Color="#2BB943" Offset="0.75"/>
+        <GradientStop Color="#18B14E" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PlayButtonIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#6FD51D" Offset="0"/>
+        <GradientStop Color="#4AC632" Offset="0.75"/>
+        <GradientStop Color="#38BE3C" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="MoreButtonInstalledBackgroundBrush" Color="#18B14E" />
+    <LinearGradientBrush x:Key="MoreButtonInstalledIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#6BD41F" Offset="0"/>
+        <GradientStop Color="#52C92D" Offset="0.50"/>
+        <GradientStop Color="#38BE3C" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ContextButtonBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#399AEC" Offset="0"/>
+        <GradientStop Color="#2A71D8" Offset="0.75"/>
+        <GradientStop Color="#235ECF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ContextButtonIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#47BDFE" Offset="0"/>
+        <GradientStop Color="#3794EA" Offset="0.75"/>
+        <GradientStop Color="#3081E0" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="MoreButtonNotInstalledBackgroundBrush" Color="#235ECF" />
+    <LinearGradientBrush x:Key="MoreButtonNotInstalledIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#48b8fb" Offset="0"/>
+        <GradientStop Color="#3a9eee" Offset="0.50"/>
+        <GradientStop Color="#3287e3" Offset="1"/>
     </LinearGradientBrush>
     
     <SolidColorBrush x:Key="LibraryDetailsViewBackgroundBrush" Color="#24282f" />

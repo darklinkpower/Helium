@@ -34,7 +34,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <Grid DockPanel.Dock="Left" Margin="10,0,10,0">
+                                <Grid DockPanel.Dock="Left" Margin="5,0,10,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>

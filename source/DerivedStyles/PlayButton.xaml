@@ -2,19 +2,98 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="PlayButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+        <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         <Setter Property="Padding" Value="10,5,10,5" />
+        <Setter Property="FontFamily" Value="Corbel"/>
+        <Setter Property="FontSize" Value="26.5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid x:Name="Grid">
                         <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"  Background="{TemplateBinding Background}"
-                                Opacity="1" CornerRadius="{DynamicResource ControlCornerRadius}"/>
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                                Opacity="1" CornerRadius="2,0,0,2"/>
+                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
+                            <TextBlock x:Name="Icon" Text="&#xE102;" FontFamily="Segoe UI Symbol" FontSize="18"
+                                       Foreground="#C1FFCB" VerticalAlignment="Center" Margin="0,5,6,0"/>
+                            <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="True" />
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="Grid" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" TargetName="Icon"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource PlayButtonIsMouseOverBackgroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="MoreButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="10,5,10,5" />
+        <Setter Property="FontFamily" Value="Corbel"/>
+        <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"  Background="{TemplateBinding Background}"
+                                Opacity="1" CornerRadius="2" />
+                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
+                            <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
+                                       Foreground="#C1FFCB" VerticalAlignment="Center" Margin="0,5,6,0"/>
+                            <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ContextButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource ContextButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
+        <Setter Property="MinWidth" Value="165" />
+        <Setter Property="MinHeight" Value="45" />
+        <Setter Property="Padding" Value="10,5,10,5" />
+        <Setter Property="FontFamily" Value="Corbel"/>
+        <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"  Background="{TemplateBinding Background}"
+                                Opacity="1" CornerRadius="2,0,0,2" MinHeight="{TemplateBinding MinHeight}" MinWidth="{TemplateBinding MinWidth}"/>
+                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,5,0">
+                                <TextBlock Margin="0,8,0,0" Text="&#x2193;" Opacity="0.9" FontFamily="Lato"
+                                           FontSize="14" HorizontalAlignment="Center" FontWeight="Light"/>
+                                <TextBlock Text="&#x2423;" Opacity="0.9" FontFamily="&#x2423;" 
+                                           FontSize="25" HorizontalAlignment="Center" FontWeight="Light"/>
+                            </Grid>
+                            <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                        </DockPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="True" />
@@ -27,9 +106,18 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-                <Setter Property="BorderBrush" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Background" Value="{DynamicResource ContextButtonIsMouseOverBackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <!--<Style x:Key="ContextButton" TargetType="{x:Type Button}" BasedOn="{StaticResource PlayButton}">
+        <Setter Property="Background" Value="{DynamicResource ContextButtonBackgroundBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ContextButtonIsMouseOverBackgroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>-->
+    
 </ResourceDictionary>

@@ -4,7 +4,7 @@
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                     mc:Ignorable="d">
 
-    <Style TargetType="{x:Type DetailsViewGameOverview}">        
+    <Style TargetType="{x:Type DetailsViewGameOverview}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DetailsViewGameOverview}">
@@ -15,201 +15,193 @@
                                   d:DesignHeight="1280"
                                   d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}">
                         <Grid>
-                            <FadeImage x:Name="PART_ImageBackground" Stretch="Uniform"
-                                       HorizontalAlignment="Center" VerticalAlignment="Top">
-                                <FadeImage.ImageOpacityMask>
-                                    <RadialGradientBrush GradientOrigin="0.5,0" Center="0.5,0" RadiusX="2" RadiusY="0.9">
-                                        <RadialGradientBrush.GradientStops>
-                                            <GradientStop Color="Black" Offset="0.3" />
-                                            <GradientStop Color="Transparent" Offset="1" />
-                                        </RadialGradientBrush.GradientStops>
-                                    </RadialGradientBrush>
-                                </FadeImage.ImageOpacityMask>
-                            </FadeImage>
-
-                            <Grid HorizontalAlignment="Stretch" Margin="20,0,20,0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="{Settings CalculatedGameDetailsIndentation}"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>                                
-
-                                <DockPanel Margin="0,20,0,15" MaxWidth="1024" Grid.Row="1"
-                                           Background="Transparent">                                    
-                                    <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
-                                            DockPanel.Dock="Right"
-                                            Height="{Settings GameDetailsCoverHeight}"
-                                            StretchDirection="Both" Stretch="Uniform"
-                                            RenderOptions.BitmapScalingMode="Fant" />
-                                    <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Left">
-                                        <DockPanel>
-                                            <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
-                                                    DockPanel.Dock="Left" Margin="0,0,10,0"
-                                                    VerticalAlignment="Center"
-                                                    RenderOptions.BitmapScalingMode="Fant" />
-                                            <TextBlock FontFamily="{DynamicResource FontFamily}"
-                                                        Text="{Binding Game.DisplayName}" DockPanel.Dock="Left"
-                                                        FontSize="{DynamicResource FontSizeLargest}" Margin="0,0,10,0" TextWrapping="Wrap"
-                                                        VerticalAlignment="Center"
-                                                        Foreground="{DynamicResource TextBrush}">
-                                                <TextBlock.Effect>
-                                                    <DropShadowEffect ShadowDepth="3" RenderingBias="Quality"/>
-                                                </TextBlock.Effect>
-                                            </TextBlock>
-                                        </DockPanel>
-                                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"
-                                                    Orientation="Horizontal" Margin="0,15,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill" Height="{Settings CalculatedGameDetailsIndentation}"
+                                           MinHeight="320"
+                                       HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <FadeImage.ImageOpacityMask>
+                                        <RadialGradientBrush GradientOrigin="0.5,0" Center="0.5,0" RadiusX="2" RadiusY="0.9">
+                                            <RadialGradientBrush.GradientStops>
+                                                <GradientStop Color="Black" Offset="0.3" />
+                                                <GradientStop Color="Transparent" Offset="1" />
+                                            </RadialGradientBrush.GradientStops>
+                                        </RadialGradientBrush>
+                                    </FadeImage.ImageOpacityMask>
+                                </FadeImage>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Border Padding="10">
+                                    <DockPanel>
+                                        <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
+                                                    Margin="0,0,0,0" DockPanel.Dock="Left">
                                             <Button Name="PART_ButtonPlayAction"
-                                                    Width="150" Height="40" Style="{DynamicResource PlayButton}" />
+                                                    Width="165" Height="45" Style="{DynamicResource PlayButton}" />
                                             <Button Name="PART_ButtonContextAction" 
-                                                    Width="150" Height="40" />
-                                            <Button Name="PART_ButtonMoreActions"
-                                                    Content="{DynamicResource LOCMoreAction}"
-                                                    Width="150" Height="40" Margin="10,0,0,0" />
-                                            <Button x:Name="PART_ButtonEditGame"
-                                                    Margin="10,0,0,0" Height="40" Focusable="False"
-                                                    Content="&#xeded;" FontFamily="{DynamicResource FontIcoFont}">
+                                                    Width="165" Height="45" Style="{DynamicResource ContextButton}"/>
+                                            <Button Name="PART_ButtonMoreActions" FontFamily="{DynamicResource FontIcoFont}"
+                                                    Width="24.5" Height="45" Margin="4.7,0,0,0">
                                                 <Button.Style>
-                                                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-                                                        <Setter Property="Visibility" Value="Hidden" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=DockPanel}}"  Value="True">
-                                                                <Setter Property="Visibility" Value="Visible" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                                    <Grid x:Name="Grid">
+                                                                        <Border x:Name="DefaultBorder" CornerRadius="0,2,2,0" Background="{TemplateBinding Background}"/>
+                                                                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                                                                            <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
+                                                                                Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                                                                            <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                                                                        </DockPanel>
+                                                                    </Grid>
+                                                                    <ControlTemplate.Triggers>
+                                                                        <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
+                                                                            <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
+                                                                        </DataTrigger>
+                                                                        <MultiDataTrigger>
+                                                                            <MultiDataTrigger.Conditions>
+                                                                                <Condition Binding="{Binding Game.IsInstalled}" Value="True"/>
+                                                                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                            </MultiDataTrigger.Conditions>
+                                                                            <Setter Property="Background" Value="{DynamicResource MoreButtonInstalledIsMouseOverBackgroundBrush}"/>
+                                                                        </MultiDataTrigger>
+                                                                        <MultiDataTrigger>
+                                                                            <MultiDataTrigger.Conditions>
+                                                                                <Condition Binding="{Binding Game.IsInstalled}" Value="False"/>
+                                                                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                            </MultiDataTrigger.Conditions>
+                                                                            <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
+                                                                        </MultiDataTrigger>
+                                                                    </ControlTemplate.Triggers>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
                                                     </Style>
                                                 </Button.Style>
                                             </Button>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </DockPanel>
+                                        </DockPanel>
+                                        <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
+                                                <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
+                                                <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
+                                            </StackPanel>
+                                        </DockPanel>
 
-                                <DockPanel MaxWidth="1024" Grid.Row="2">
-                                    <StackPanel DockPanel.Dock="Left" Width="300"
-                                                Margin="2,0,0,0">
-                                        <StackPanel.Resources>
-                                            <Style TargetType="ItemsControl">
-                                                <Setter Property="VerticalAlignment" Value="Center" />
-                                            </Style>
-                                            <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
-                                                <Setter Property="Margin" Value="0,4,8,4" />
-                                                <Setter Property="VerticalAlignment" Value="Top" />
-                                                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-                                            </Style>
-                                            <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
-                                        </StackPanel.Resources>
+                                        <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                            <Viewbox Stretch="Uniform" Height="25">
+                                                <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                    <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                    <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                    <Path StrokeThickness="6" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                    </Path>
+                                                </Canvas>
+                                            </Viewbox>
+                                            <Viewbox Height="25">
+                                                <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="0" Y="0"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas.Resources/>
+                                                    <Polyline Points="85.5,149.167 128,128 128,55.167 " FillRule="NonZero" StrokeThickness="16" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                    <Path StrokeThickness="16" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                                                        <Path.Data>
+                                                            <PathGeometry Figures="M128 17.5c61.027 0 110.5 49.473 110.5 110.5S189.027 238.5 128 238.5S17.5 189.027 17.5 128" FillRule="NonZero"/>
+                                                        </Path.Data>
+                                                    </Path>
+                                                    <Ellipse Canvas.Left="20.9" Canvas.Top="80.3" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                    <Ellipse Canvas.Left="44.7" Canvas.Top="45" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                    <Ellipse Canvas.Left="80.5" Canvas.Top="21.2" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                </Canvas>
+                                            </Viewbox>
+                                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
+                                                <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCTimePlayed}"/>
+                                                <TextBlock x:Name="PART_TextPlayTime" Style="{DynamicResource HeaderTextBlock}"/>
+                                            </StackPanel>
+                                        </DockPanel>
 
-                                        <TextBlock Text="{DynamicResource LOCGameDetails}" Margin="0,15,0,5"
-                                                    Style="{DynamicResource BaseTextBlockStyle}" />
+                                        <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
+                                                <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
+                                                <Button x:Name="PART_ButtonCompletionStatus" Opacity="1" Style="{StaticResource PropertyItemButton}" Margin="0" />
+                                            </StackPanel>
+                                        </DockPanel>
 
-                                        <Separator Background="{DynamicResource PanelSeparatorBrush}" />
-                                            
-                                        <GridEx Margin="0,5,0,10"
-                                                ColumnCount="2" StarColumns="1"
-                                                RowCount="21" AutoLayoutColumns="2">
-                                            <Grid.Resources>
-                                                <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}" />
-                                            </Grid.Resources>
-
-                                            <Label Name="PART_ElemPlayTime" Content="{DynamicResource LOCTimePlayed}" />
-                                            <TextBlock Name="PART_TextPlayTime" VerticalAlignment="Center" />
-
-                                            <Label Name="PART_ElemLastPlayed" Content="{DynamicResource LOCLastPlayed}" />
-                                            <TextBlock Name="PART_TextLastActivity" VerticalAlignment="Center" />
-
-                                            <Label Name="PART_ElemCompletionStatus" Content="{DynamicResource LOCCompletionStatus}" />
-                                            <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" />
-
-                                            <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
-                                            <Button Name="PART_ButtonLibrary" VerticalAlignment="Center" />
-
-                                            <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
-                                            <ItemsControl Name="PART_ItemsPlatforms" />
-
-                                            <Label Name="PART_ElemGenres" Content="{DynamicResource LOCGenreLabel}" />
-                                            <ItemsControl Name="PART_ItemsGenres"  />
-
-                                            <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                            <ItemsControl Name="PART_ItemsDevelopers" />
-
-                                            <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                            <ItemsControl Name="PART_ItemsPublishers" />
-
-                                            <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
-                                            <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
-
-                                            <Label Name="PART_ElemCategories" Content="{DynamicResource LOCGameCategoriesTitle}" />
-                                            <ItemsControl Name="PART_ItemsCategories" />
-
-                                            <Label Name="PART_ElemFeatures" Content="{DynamicResource LOCFeaturesLabel}" />
-                                            <ItemsControl Name="PART_ItemsFeatures" />
-
-                                            <Label Name="PART_ElemTags" Content="{DynamicResource LOCTagsLabel}" />
-                                            <ItemsControl Name="PART_ItemsTags" />
-
-                                            <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
-                                            <ItemsControl Name="PART_ItemsAgeRatings" />
-
-                                            <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                            <ItemsControl Name="PART_ItemsSeries" />
-
-                                            <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
-                                            <Button Name="PART_ButtonSource" VerticalAlignment="Center" />
-
-                                            <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
-                                            <ItemsControl Name="PART_ItemsRegions" />
-
-                                            <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
-                                            <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
-
-                                            <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
-                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
-
-                                            <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
-                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
-
-                                            <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
-                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
-
-                                            <Label Name="PART_ElemLinks" Content="{DynamicResource LOCLinksLabel}" />
-                                            <ItemsControl Name="PART_ItemsLinks" />
-                                        </GridEx>
-                                    </StackPanel>
-
-                                    <StackPanel DockPanel.Dock="Right" Margin="10,0,2,0">
-                                        <StackPanel Name="PART_ElemNotes">
-                                            <TextBlock Text="{DynamicResource LOCNotesLabel}" Margin="0,15,0,5"
-                                                       Style="{DynamicResource BaseTextBlockStyle}" />
-                                            <Separator Background="{DynamicResource PanelSeparatorBrush}" />
-                                            <TextBox Name="PART_TextNotes" IsReadOnly="True"
-                                                     BorderThickness="0"
-                                                     AcceptsReturn="True" TextWrapping="Wrap"
-                                                     Margin="-1,5,-1,5" Padding="0"/>
-                                        </StackPanel>
-                                        
-                                        <StackPanel Name="PART_ElemDescription">
-                                            <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
-                                                    Style="{DynamicResource BaseTextBlockStyle}" />
-                                            <Separator Background="{DynamicResource PanelSeparatorBrush}" />
-                                            <HtmlTextView Name="PART_HtmlDescription"
-                                                        Margin="0,5,0,5"
-                                                        HtmlFontSize="{DynamicResource FontSize}"
-                                                        HtmlFontFamily="{DynamicResource FontFamily}"
-                                                        HtmlForeground="{DynamicResource TextColor}"
-                                                        LinkForeground="{DynamicResource GlyphColor}"                                      
-                                                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                                        ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </DockPanel>                              
+                                        <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
+                                            <Button x:Name="PART_ButtonEditGame" Background="{DynamicResource DetailsViewOverviewHeaderButtonsBrush}"
+                                                    Opacity="{DynamicResource DetailsViewOverviewHeaderButtonsOpacity}"
+                                                    Margin="0,0,0,0" Height="32" Width="32" Focusable="False"
+                                                    FontFamily="{DynamicResource FontIcoFont}" Padding="7">
+                                                <Button.Content>
+                                                    <Viewbox Stretch="Uniform">
+                                                        <Canvas Name="Layer_1" Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                                            <Canvas.RenderTransform>
+                                                                <TranslateTransform X="305.5" Y="-396.5"/>
+                                                            </Canvas.RenderTransform>
+                                                            <Path Fill="#ffffff" Opacity="0.5">
+                                                                <Path.Data>
+                                                                    <PathGeometry Figures="M-232.755 589.942l3.103 2.408c5.78 4.492 11.973 8.18 18.409 10.959l3.581 1.547l2.276 33.783 c0.089 1.33 1.385 2.54 2.715 2.54h48.62c1.355 0 2.745-1.273 2.852-2.621l2.74-33.284l3.602-1.496 c6.406-2.656 12.646-6.262 18.554-10.707l3.137-2.366l30.578 15.009c1.155 0.571 2.924 0.017 3.563-1.087l24.303-42.1 c0.674-1.173 0.265-3.014-0.852-3.785l-27.872-19.309l0.469-3.832c0.495-4.032 0.725-7.395 0.725-10.57 c0-3.129-0.227-6.5-0.687-10.307l-0.469-3.896l28.699-19.253c1.112-0.741 1.509-2.473 0.84-3.627l-24.3-42.104 c-0.657-1.139-2.502-1.727-3.7-1.155l-31.208 14.748l-3.091-2.341c-5.571-4.224-11.466-7.688-17.522-10.306l-3.58-1.548 l-2.34-34.887c-0.089-1.33-1.381-2.536-2.715-2.536h-48.617c-1.355 0-2.74 1.274-2.851 2.626l-2.834 34.371l-3.593 1.501 c-6.082 2.535-12.028 5.924-17.667 10.071l-3.124 2.302l-31.392-15.413c-1.168-0.575-2.924-0.025-3.559 1.074l-24.309 42.107 c-0.678 1.172-0.264 3.014 0.848 3.781l28.068 19.444l-0.524 3.883c-0.592 4.378-0.865 8.018-0.865 11.462 c0 2.988 0.179 6.065 0.55 9.403l0.431 3.853l-28.528 19.125c-1.108 0.742-1.509 2.468-0.84 3.632l24.308 42.1 c0.656 1.142 2.489 1.726 3.7 1.154L-232.755 589.942z M-177.498 560.051c-19.311 0-35.02-15.709-35.02-35.02 s15.709-35.02 35.02-35.02s35.02 15.709 35.02 35.02S-158.188 560.051-177.498 560.051z" FillRule="NonZero"/>
+                                                                </Path.Data>
+                                                            </Path>
+                                                        </Canvas>
+                                                    </Viewbox>
+                                                </Button.Content>
+                                            </Button>
+                                        </DockPanel>
+                                        <Border/>
+                                    </DockPanel>
+                                </Border>
                             </Grid>
                         </Grid>
                     </ScrollViewer>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    
+    <Style TargetType="Label" x:Key="HeaderLabel">
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeLarger}"/>
+        <Setter Property="FontFamily" Value="Corbel"/>
+        <Setter Property="Foreground" Value="{DynamicResource DetailsViewOverviewHeaderLabelBrush}"/>
+        <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Opacity" Value="0.2"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HeaderTextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
+        <Setter Property="FontFamily" Value="Corbel"/>
+        <Setter Property="Foreground" Value="{DynamicResource DetailsViewOverviewHeaderTextBlockBrush}"/>
+        <Setter Property="Opacity" Value="0.32"/>
+    </Style>
+    
+    <Style TargetType="Path" x:Key="VectorIcon">
+        <Setter Property="Fill" Value="#a3a3a3"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Opacity" Value="0.85"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"  Value="True">
+                <Setter Property="Fill" Value="White"/>
+                <Setter Property="Opacity" Value="1.00"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton}}}"  Value="True">
+                <Setter Property="Fill" Value="White"/>
+                <Setter Property="Opacity" Value="1.00"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>
