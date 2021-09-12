@@ -278,16 +278,21 @@
     
     <!--region Details View Backgrounds brushes-->
     <LinearGradientBrush x:Key="DetailsSectionBackgroundBrush" StartPoint="0.5, 1.0" EndPoint="0.5, 0.0" >
-        <GradientStop Color="#0024282f" Offset="0"/>
+        <GradientStop Color="Transparent" Offset="0"/>
+        <GradientStop Color="#0024282f" Offset="0.1"/>
         <GradientStop Color="#332b3942" Offset="0.98"/>
         <GradientStop Color="#1ac1cacf" Offset="0.99"/>
         <GradientStop Color="#4d1d1d1d" Offset="1"/>
     </LinearGradientBrush>
 
-    <LinearGradientBrush x:Key="BackdropGlass" StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
-        <GradientStop Color="#1a272c35" Offset="0"/>
-        <GradientStop Color="#B3272c35" Offset="0.20"/>
-        <GradientStop Color="#4D272c35" Offset="0.80"/>
+    <LinearGradientBrush x:Key="BackdropGlass1" StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
+        <GradientStop Color="#B3272c35" Offset="0.0"/>
+        <GradientStop Color="#1a272c35" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackdropGlass2" StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
+        <GradientStop Color="#B3272c35" Offset="0"/>
+        <GradientStop Color="#4D272c35" Offset="0.64"/>
         <GradientStop Color="#00272c35" Offset="1"/>
     </LinearGradientBrush>
     <!--region end-->

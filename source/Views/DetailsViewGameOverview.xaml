@@ -53,7 +53,7 @@
                             </Grid>
 
                             <Grid Grid.Row="1">
-                                <Border Opacity="0.38">
+                                <Border Opacity="0.30">
                                     <Border.OpacityMask>
                                         <LinearGradientBrush StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
                                             <GradientStop Color="Black" Offset="0.8" />
@@ -115,8 +115,8 @@
                                         </Grid>
                                     </Grid>
                                 </Border>
-                                <Grid Name="BackgroundsGrid">
-                                    <Border Background="{DynamicResource BackdropGlass}" Height="380"/>
+                                <Grid>
+                                    <Border Background="{DynamicResource BackdropGlass2}" Height="380" VerticalAlignment="Top"/>
                                 </Grid>
                                 <Grid Name="DetailsGrid">
                                     <Grid.RowDefinitions>
@@ -126,6 +126,7 @@
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <Grid Grid.Row="0">
+                                        <Border Background="{DynamicResource BackdropGlass1}"/>
                                         <Border Padding="20,10,30,6.5" Background="{DynamicResource DetailsSectionBackgroundBrush}">
                                             <DockPanel>
                                                 <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
