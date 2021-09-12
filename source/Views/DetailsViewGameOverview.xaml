@@ -127,19 +127,20 @@
                                     </Grid.RowDefinitions>
                                     <Grid Grid.Row="0">
                                         <Border Background="{DynamicResource BackdropGlass1}"/>
-                                        <Border Padding="20,10,30,6.5" Background="{DynamicResource DetailsSectionBackgroundBrush}">
+                                        <Border Padding="20,10,30,10" Background="{DynamicResource DetailsSectionBackgroundBrush}">
                                             <DockPanel>
                                                 <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
                                                             Margin="0,0,0,0" DockPanel.Dock="Left">
                                                     <Button Name="PART_ButtonPlayAction"
-                                                            Width="189.5" Height="45" Style="{DynamicResource PlayButton}" />
+                                                            MinWidth="189.5" Height="45" Style="{DynamicResource PlayButton}" />
                                                     <Button Name="PART_ButtonContextAction" 
-                                                            Width="185" Height="45" Style="{DynamicResource ContextButton}"/>
+                                                            MinWidth="189.5" Height="45" Style="{DynamicResource ContextButton}"/>
                                                     <Button Name="PART_ButtonMoreActions" FontFamily="{DynamicResource FontIcoFont}"
                                                             Width="24.5" Height="45" Margin="3.5,0,0,0">
                                                         <Button.Style>
                                                             <Style TargetType="Button">
                                                                 <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
+                                                                <Setter Property="Cursor" Value="Hand"/>
                                                                 <Setter Property="Template">
                                                                     <Setter.Value>
                                                                         <ControlTemplate TargetType="{x:Type Button}">
@@ -155,6 +156,9 @@
                                                                                 <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
                                                                                     <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
                                                                                 </DataTrigger>
+                                                                                <DataTrigger Binding="{Binding Game.IsRunning}" Value="True">
+                                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
+                                                                                </DataTrigger>
                                                                                 <MultiDataTrigger>
                                                                                     <MultiDataTrigger.Conditions>
                                                                                         <Condition Binding="{Binding Game.IsInstalled}" Value="True"/>
@@ -165,6 +169,13 @@
                                                                                 <MultiDataTrigger>
                                                                                     <MultiDataTrigger.Conditions>
                                                                                         <Condition Binding="{Binding Game.IsInstalled}" Value="False"/>
+                                                                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                                    </MultiDataTrigger.Conditions>
+                                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
+                                                                                </MultiDataTrigger>
+                                                                                <MultiDataTrigger>
+                                                                                    <MultiDataTrigger.Conditions>
+                                                                                        <Condition Binding="{Binding Game.IsRunning}" Value="True"/>
                                                                                         <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
                                                                                     </MultiDataTrigger.Conditions>
                                                                                     <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
@@ -242,31 +253,41 @@
                                     </Grid>
 
                                     <Grid Grid.Row="1">
-                                        <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}" Margin="20,0,30,0" Padding="15,10,15,10">
-                                            <DockPanel LastChildFill="False">
-                                                <DockPanel.Resources>
-                                                    <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
-                                                    <Style TargetType="Label">
-                                                        <Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
-                                                        <Setter Property="FontFamily" Value="Corbel"/>
-                                                        <Setter Property="Foreground" Value="{DynamicResource DetailsViewContainerLabelBrush}"/>
-                                                        <Setter Property="Padding" Value="0"/>
-                                                        <Setter Property="Height" Value="20"/>
-                                                        <Setter Property="Margin" Value="0,0,20,0"/>
-                                                    </Style>
-                                                </DockPanel.Resources>
-                                                <Border Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
-                                                <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}"
+                                                    Margin="20,0,30,0" Padding="15,10,15,10">
+                                                <DockPanel LastChildFill="False">
+                                                    <DockPanel.Resources>
+                                                        <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
+                                                        <Style TargetType="Label">
+                                                            <Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
+                                                            <Setter Property="FontFamily" Value="Corbel"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource DetailsViewContainerLabelBrush}"/>
+                                                            <Setter Property="Padding" Value="0"/>
+                                                            <Setter Property="Height" Value="20"/>
+                                                            <Setter Property="Margin" Value="0,0,20,0"/>
+                                                        </Style>
+                                                    </DockPanel.Resources>
+                                                    <Border Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
+                                                    <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
                                                         DockPanel.Dock="Left" Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}"
                                                         StretchDirection="DownOnly" Stretch="Uniform"
-                                                        RenderOptions.BitmapScalingMode="Fant" Margin="0,0,15,0"/>
+                                                        RenderOptions.BitmapScalingMode="Fant" Margin="0,0,15,0">
+                                                        <Image.Effect>
+                                                            <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
+                                                        </Image.Effect>
+                                                    </Image>
 
-                                                <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="300" Margin="0,0,15,0" Height="{Binding ElementName=PART_ImageCover, Path=ActualHeight}">
-                                                    <StackPanel>
-                                                        <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
+                                                    <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="300" Margin="0,0,15,0" Height="{Binding ElementName=PART_ImageCover, Path=ActualHeight}">
+                                                        <StackPanel>
+                                                            <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
                                                                 Style="{DynamicResource BaseTextBlockStyle}" Visibility="Collapsed"/>
-                                                        <Separator Background="{DynamicResource PanelSeparatorBrush}" Visibility="Collapsed"/>
-                                                        <HtmlTextView Name="PART_HtmlDescription"
+                                                            <Separator Background="{DynamicResource PanelSeparatorBrush}" Visibility="Collapsed"/>
+                                                            <HtmlTextView Name="PART_HtmlDescription"
                                                         Margin="0,5,0,5"
                                                         HtmlFontSize="{DynamicResource FontSize}"
                                                         HtmlFontFamily="{DynamicResource FontFamily}"
@@ -274,61 +295,104 @@
                                                         LinkForeground="{DynamicResource GlyphColor}"                                      
                                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                                         ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                                                    </StackPanel>
-                                                </ScrollViewer>
-                                                <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
+                                                        </StackPanel>
+                                                    </ScrollViewer>
+                                                    <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
                                                               DockPanel.Dock="Left">
-                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="20">
-                                                        <GridEx.Resources>
-                                                            <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
-                                                        </GridEx.Resources>
-                                                        <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
-                                                        <Button Background="Transparent" Name="PART_ButtonLibrary" VerticalAlignment="Center"/>
-                                                        <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
-                                                        <Button Name="PART_ButtonSource" VerticalAlignment="Center" />
-                                                        <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
-                                                        <ItemsControl Name="PART_ItemsPlatforms"/>
-                                                        <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                                        <ItemsControl Name="PART_ItemsDevelopers"/>
-                                                        <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                                        <ItemsControl Name="PART_ItemsPublishers"/>
-                                                        <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
-                                                        <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
-                                                        <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
-                                                        <ItemsControl Name="PART_ItemsAgeRatings" />
-                                                    </GridEx>
-                                                </ScrollViewer>
-                                                <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
+                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="20">
+                                                            <GridEx.Resources>
+                                                                <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
+                                                            </GridEx.Resources>
+                                                            <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
+                                                            <Button Background="Transparent" Name="PART_ButtonLibrary" VerticalAlignment="Center"/>
+                                                            <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
+                                                            <Button Name="PART_ButtonSource" VerticalAlignment="Center" />
+                                                            <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
+                                                            <ItemsControl Name="PART_ItemsPlatforms"/>
+                                                            <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
+                                                            <ItemsControl Name="PART_ItemsDevelopers"/>
+                                                            <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
+                                                            <ItemsControl Name="PART_ItemsPublishers"/>
+                                                            <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
+                                                            <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
+                                                            <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
+                                                            <ItemsControl Name="PART_ItemsAgeRatings" />
+                                                        </GridEx>
+                                                    </ScrollViewer>
+                                                    <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
                                                               DockPanel.Dock="Left">
-                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="20">
-                                                        <GridEx.Resources>
-                                                            <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
-                                                        </GridEx.Resources>
-                                                        <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                                        <ItemsControl Name="PART_ItemsSeries" />
+                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="20">
+                                                            <GridEx.Resources>
+                                                                <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
+                                                            </GridEx.Resources>
+                                                            <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
+                                                            <ItemsControl Name="PART_ItemsSeries" />
 
-                                                        <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
-                                                        <ItemsControl Name="PART_ItemsRegions" />
+                                                            <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
+                                                            <ItemsControl Name="PART_ItemsRegions" />
 
-                                                        <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
-                                                        <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
-                                                        <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
+                                                            <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
+                                                            <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
+                                                            <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
 
-                                                        <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
+                                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
                                                         Style="{DynamicResource TextBlockGameScore}" />
 
-                                                        <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
-                                                        <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
+                                                            <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
+                                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
                                                                 Style="{DynamicResource TextBlockGameScore}" />
 
-                                                        <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
-                                                        <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
+                                                            <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
+                                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
                                                                 Style="{DynamicResource TextBlockGameScore}" />
-                                                    </GridEx>
-                                                </ScrollViewer>
-                                            </DockPanel>
-                                        </Border>
+                                                        </GridEx>
+                                                    </ScrollViewer>
+                                                </DockPanel>
+                                            </Border>
+                                            <Border Style="{DynamicResource OutlineBorder}" Margin="20,0,30,0" Padding="15,10,15,10"/>
+                                        </Grid>
+
+
+                                        <!--#1a536865-->
+                                        <!--1a6c7786-->
+                                        <Grid Margin="20,10,30,10" Grid.Row="1" Background="{DynamicResource  LinksContainerBackgroundBrush}">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Border Style="{DynamicResource OutlineBorder}" />
+                                            <ItemsControl Grid.Row="0"  Name="PART_ItemsLinks" VerticalAlignment="Center" Margin="10" >
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemContainerStyle>
+                                                    <Style TargetType="ContentPresenter">
+                                                        <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
+                                                    </Style>
+                                                </ItemsControl.ItemContainerStyle>
+                                            </ItemsControl>
+                                        </Grid>
+                                        
+                                        
                                     </Grid>
+
+                                    <Grid Grid.Row="2" Margin="20,0,30,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="300" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="1"
+                                                Background="{DynamicResource SectionContainerBackgroundBrush}" Height="200" 
+                                                BorderBrush="DarkGray" >
+                                            <Border Style="{DynamicResource OutlineBorder}" />
+                                        </Border>
+
+
+                                    </Grid>
+                                    
+                                    
+                                    
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -361,22 +425,21 @@
         <Setter Property="Foreground" Value="{DynamicResource DetailsViewOverviewHeaderTextBlockBrush}"/>
         <Setter Property="Opacity" Value="0.32"/>
     </Style>
-    
-    <Style TargetType="Path" x:Key="VectorIcon">
-        <Setter Property="Fill" Value="#a3a3a3"/>
-        <Setter Property="Margin" Value="0"/>
-        <Setter Property="Height" Value="Auto"/>
-        <Setter Property="Width" Value="Auto"/>
-        <Setter Property="Opacity" Value="0.85"/>
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"  Value="True">
-                <Setter Property="Fill" Value="White"/>
-                <Setter Property="Opacity" Value="1.00"/>
-            </DataTrigger>
-            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton}}}"  Value="True">
-                <Setter Property="Fill" Value="White"/>
-                <Setter Property="Opacity" Value="1.00"/>
-            </DataTrigger>
-        </Style.Triggers>
+
+    <Style TargetType="Border" x:Key="OutlineBorder">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="#1A000025" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Margin" Value="-1" />
+        <Setter Property="Effect" >
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="10"
+                        Direction="0"
+                        ShadowDepth="1"
+                        Color="#1A000025"
+                        RenderingBias="Quality"/>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

@@ -297,6 +297,24 @@
         <GradientStop Color="#4D272c35" Offset="0.64"/>
         <GradientStop Color="#00272c35" Offset="1"/>
     </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="LinksContainerBackgroundBrush" GradientOrigin="0.64,0.95" Center="1.0, 0.8"
+        RadiusX="1" RadiusY="1">
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="#1a6c7786" Offset="0.4" />
+            <GradientStop Color="#1a536868" Offset="1.0" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+    
+    <RadialGradientBrush x:Key="SectionContainerBackgroundBrush" GradientOrigin="0.64,0.95" Center="1.0, 0.8"
+        RadiusX="1" RadiusY="1">
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="#4d99aecc" Offset="0.0" />
+            <GradientStop Color="#217d96b8" Offset="0.4" />
+            <GradientStop Color="#1a536868" Offset="1.0" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+
     <!--region end-->
     
 </ResourceDictionary>

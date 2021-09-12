@@ -10,6 +10,7 @@
         <Setter Property="Padding" Value="10,5,10,5" />
         <Setter Property="FontFamily" Value="Corbel"/>
         <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -49,6 +50,7 @@
         <Setter Property="Padding" Value="10,5,10,5" />
         <Setter Property="FontFamily" Value="Corbel"/>
         <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -78,6 +80,7 @@
         <Setter Property="Padding" Value="10,5,10,5" />
         <Setter Property="FontFamily" Value="Corbel"/>
         <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
