@@ -4,20 +4,20 @@
     <Style x:Key="PropertyItemButton" TargetType="Button">
         <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
         <Setter Property="Margin" Value="0,4,0,4" />
-        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource DetailsViewContainerTextBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <TextBlock FontSize="{TemplateBinding FontSize}"
+                    <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
                                Foreground="{TemplateBinding Foreground}"
                                Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
-                               TextWrapping="Wrap"/>
+                               TextWrapping="NoWrap"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
                 <Setter Property="Cursor" Value="Hand" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
