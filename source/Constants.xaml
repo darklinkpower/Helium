@@ -199,11 +199,11 @@
         <GradientStop Color="#282D35" Offset="0.4"/>
     </LinearGradientBrush>
 
-    <RadialGradientBrush x:Key="WindowBackgourndBrush" GradientOrigin="0.0,0.0" Center="0.0,0.0"
+    <RadialGradientBrush x:Key="WindowBackgourndBrush" GradientOrigin="0.57,0.37" Center="0.5,0.5"
         RadiusX="1" RadiusY="1">
         <RadialGradientBrush.GradientStops>
-            <GradientStop Color="#32373F" Offset="-0.1" />
-            <GradientStop Color="#25282E" Offset="1.1" />
+            <GradientStop Color="#2c323d" Offset="0.0" />
+            <GradientStop Color="#151616" Offset="1.0" />
         </RadialGradientBrush.GradientStops>
     </RadialGradientBrush>
 
@@ -279,8 +279,8 @@
     <!--region Details View Backgrounds brushes-->
     <LinearGradientBrush x:Key="DetailsSectionBackgroundBrush" StartPoint="0.5, 1.0" EndPoint="0.5, 0.0" >
         <GradientStop Color="#0024282f" Offset="0"/>
-        <GradientStop Color="#332b3942" Offset="0.33"/>
-        <GradientStop Color="#1ac1cacf" Offset="0.66"/>
+        <GradientStop Color="#332b3942" Offset="0.98"/>
+        <GradientStop Color="#1ac1cacf" Offset="0.99"/>
         <GradientStop Color="#4d1d1d1d" Offset="1"/>
     </LinearGradientBrush>
 
