@@ -53,7 +53,7 @@
                             </Grid>
 
                             <Grid Grid.Row="1">
-                                <Border Opacity="0.30">
+                                <Border Opacity="0.20" VerticalAlignment="Top">
                                     <Border.OpacityMask>
                                         <LinearGradientBrush StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
                                             <GradientStop Color="Black" Offset="0.8" />
@@ -584,7 +584,7 @@
                         Direction="0"
                         ShadowDepth="1"
                         Color="#1A000025"
-                        RenderingBias="Quality"/>
+                        RenderingBias="Performance"/>
             </Setter.Value>
         </Setter>
     </Style>
