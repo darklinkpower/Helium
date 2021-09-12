@@ -14,7 +14,7 @@
                                   d:DesignWidth="1280"
                                   d:DesignHeight="1280"
                                   d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}">
-                        <Grid>
+                        <Grid Margin="0,0,0,40">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="{Settings CalculatedGameDetailsIndentation}"/>
                                 <RowDefinition Height="Auto"/>
@@ -120,6 +120,7 @@
                                 </Grid>
                                 <Grid Name="DetailsGrid">
                                     <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
@@ -245,7 +246,7 @@
                                                 <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
                                                     <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
                                                     FontFamily="{DynamicResource FontIcoFont}" Style="{DynamicResource GameEditButton}" Margin="0,0,10,0"/>
-                                                    <ToggleButton Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}"/>
+                                                    <ToggleButton Name="PanelToggleButton" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}" IsChecked="True"/>
                                                 </DockPanel>
                                                 <Border/>
                                             </DockPanel>
@@ -253,6 +254,16 @@
                                     </Grid>
 
                                     <Grid Grid.Row="1">
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=PanelToggleButton, Path=IsChecked}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
@@ -265,11 +276,10 @@
                                                         <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
                                                         <Style TargetType="Label">
                                                             <Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
-                                                            <Setter Property="FontFamily" Value="Corbel"/>
                                                             <Setter Property="Foreground" Value="{DynamicResource DetailsViewContainerLabelBrush}"/>
                                                             <Setter Property="Padding" Value="0"/>
-                                                            <Setter Property="Height" Value="20"/>
                                                             <Setter Property="Margin" Value="0,0,20,0"/>
+                                                            <Setter Property="VerticalAlignment" Value="Center" />
                                                         </Style>
                                                     </DockPanel.Resources>
                                                     <Border Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
@@ -299,29 +309,27 @@
                                                     </ScrollViewer>
                                                     <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
                                                               DockPanel.Dock="Left">
-                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="20">
+                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="6">
                                                             <GridEx.Resources>
                                                                 <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
                                                             </GridEx.Resources>
                                                             <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
-                                                            <Button Background="Transparent" Name="PART_ButtonLibrary" VerticalAlignment="Center"/>
+                                                            <Button Background="Transparent" Name="PART_ButtonLibrary" />
                                                             <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
-                                                            <Button Name="PART_ButtonSource" VerticalAlignment="Center" />
+                                                            <Button Name="PART_ButtonSource" />
                                                             <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
-                                                            <ItemsControl Name="PART_ItemsPlatforms"/>
+                                                            <ItemsControl Name="PART_ItemsPlatforms" />
                                                             <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
                                                             <ItemsControl Name="PART_ItemsDevelopers"/>
                                                             <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
                                                             <ItemsControl Name="PART_ItemsPublishers"/>
                                                             <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
                                                             <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
-                                                            <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
-                                                            <ItemsControl Name="PART_ItemsAgeRatings" />
                                                         </GridEx>
                                                     </ScrollViewer>
                                                     <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
                                                               DockPanel.Dock="Left">
-                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="20">
+                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="7">
                                                             <GridEx.Resources>
                                                                 <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
                                                             </GridEx.Resources>
@@ -345,54 +353,185 @@
                                                             <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
                                                             <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
                                                                 Style="{DynamicResource TextBlockGameScore}" />
+
+                                                            <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
+                                                            <ItemsControl Name="PART_ItemsAgeRatings" />
                                                         </GridEx>
                                                     </ScrollViewer>
                                                 </DockPanel>
                                             </Border>
                                             <Border Style="{DynamicResource OutlineBorder}" Margin="20,0,30,0" Padding="15,10,15,10"/>
                                         </Grid>
-
-
-                                        <!--#1a536865-->
-                                        <!--1a6c7786-->
-                                        <Grid Margin="20,10,30,10" Grid.Row="1" Background="{DynamicResource  LinksContainerBackgroundBrush}">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto" />
-                                            </Grid.RowDefinitions>
-                                            <Border Style="{DynamicResource OutlineBorder}" />
-                                            <ItemsControl Grid.Row="0"  Name="PART_ItemsLinks" VerticalAlignment="Center" Margin="10" >
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemContainerStyle>
-                                                    <Style TargetType="ContentPresenter">
-                                                        <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
-                                                    </Style>
-                                                </ItemsControl.ItemContainerStyle>
-                                            </ItemsControl>
-                                        </Grid>
-                                        
-                                        
                                     </Grid>
 
-                                    <Grid Grid.Row="2" Margin="20,0,30,0">
+                                    <Grid Margin="20,10,30,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                        <ItemsControl Grid.Row="0" VerticalAlignment="Center" Margin="10" Name="PART_ItemsLinks">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemContainerStyle>
+                                                <Style TargetType="ContentPresenter">
+                                                    <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
+                                                </Style>
+                                            </ItemsControl.ItemContainerStyle>
+                                        </ItemsControl>
+                                    </Grid>
+
+                                    <Grid Grid.Row="3" Margin="20,0,30,0">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="300" />
+                                            <ColumnDefinition Width="400" />
                                         </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="1"
-                                                Background="{DynamicResource SectionContainerBackgroundBrush}" Height="200" 
-                                                BorderBrush="DarkGray" >
-                                            <Border Style="{DynamicResource OutlineBorder}" />
-                                        </Border>
+                                        
+                                        <StackPanel Grid.Column="0" Margin="0,0,40,0">
 
+                                            <StackPanel Name="PART_ElemGenres">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Settings DetailsVisibility.Genres}" Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                                <Label Content="{DynamicResource LOCGenreLabel}" Style="{DynamicResource FeedSectionLabel}"/>
+                                                <Grid Margin="0,10,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsGenres" VerticalAlignment="Center" Margin="10" >
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemContainerStyle>
+                                                            <Style TargetType="ContentPresenter">
+                                                                <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
+                                                            </Style>
+                                                        </ItemsControl.ItemContainerStyle>
+                                                    </ItemsControl>
+                                                </Grid>
+                                            </StackPanel>
 
+                                            <StackPanel Name="PART_ElemCategories">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Settings DetailsVisibility.Categories}" Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Game.Categories}" Value="{x:Null}">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                                <Label Content="{DynamicResource LOCGameCategoriesTitle}" Style="{DynamicResource FeedSectionLabel}" />
+                                                <Grid Margin="0,10,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsCategories" VerticalAlignment="Center" Margin="10" >
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemContainerStyle>
+                                                            <Style TargetType="ContentPresenter">
+                                                                <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
+                                                            </Style>
+                                                        </ItemsControl.ItemContainerStyle>
+                                                    </ItemsControl>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <StackPanel Name="PART_ElemFeatures">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Settings DetailsVisibility.Features}" Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                                <Label Content="{DynamicResource LOCFeaturesLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                <Grid Margin="0,10,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsFeatures" VerticalAlignment="Center" Margin="10" >
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemContainerStyle>
+                                                            <Style TargetType="ContentPresenter">
+                                                                <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
+                                                            </Style>
+                                                        </ItemsControl.ItemContainerStyle>
+                                                    </ItemsControl>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <StackPanel Name="PART_ElemTags">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Settings DetailsVisibility.Tags}" Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                                <Label Content="{DynamicResource LOCTagsLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                <Grid Margin="0,10,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsTags" VerticalAlignment="Center" Margin="10" >
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemContainerStyle>
+                                                            <Style TargetType="ContentPresenter">
+                                                                <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
+                                                            </Style>
+                                                        </ItemsControl.ItemContainerStyle>
+                                                    </ItemsControl>
+                                                </Grid>
+                                            </StackPanel>
+                                            
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="2" >
+                                            <Border 
+                                                Background="{DynamicResource SectionContainerBackgroundBrush}" Height="200">
+                                                <Border Style="{DynamicResource OutlineBorder}" />
+                                            </Border>
+                                        </StackPanel>
                                     </Grid>
-                                    
-                                    
-                                    
+
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -401,7 +540,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="Label" x:Key="HeaderLabel">
         <Setter Property="FontSize" Value="{DynamicResource FontSizeLarger}"/>
         <Setter Property="FontFamily" Value="Corbel"/>
@@ -419,11 +558,18 @@
         <Setter Property="Height" Value="20"/>
         <Setter Property="Margin" Value="0,0,20,0"/>
     </Style>
-    
+
     <Style TargetType="TextBlock" x:Key="HeaderTextBlock">
         <Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
         <Setter Property="Foreground" Value="{DynamicResource DetailsViewOverviewHeaderTextBlockBrush}"/>
         <Setter Property="Opacity" Value="0.32"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="FeedSectionLabel">
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeLarger}"/>
+        <Setter Property="FontFamily" Value="Corbel"/>
+        <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
+        <Setter Property="Foreground" Value="#94a1a6"/>
     </Style>
 
     <Style TargetType="Border" x:Key="OutlineBorder">
