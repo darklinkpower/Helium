@@ -106,7 +106,10 @@
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverBackgroundBrush" Color="#323A4B" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverInstalledBackgroundBrush" Color="#586F96" />
     <SolidColorBrush x:Key="ListViewHeaderBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
-    <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#202022" />
+    <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#2C3137" />
+    <SolidColorBrush x:Key="TopPanelBackgroundBrush1" Color="#434953" />
+    <SolidColorBrush x:Key="TopPanelBackgroundBrush2" Color="#434953" />
+    <SolidColorBrush x:Key="TopPanelBackgroundBrush3" Color="#434953" />
 
     <SolidColorBrush x:Key="ExtendedListBoxBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="FilterSelectionBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />

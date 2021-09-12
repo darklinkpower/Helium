@@ -193,30 +193,15 @@
                                                         </Button.Style>
                                                     </Button>
                                                 </DockPanel>
-                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,20,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
                                                         <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
-                                                    <Viewbox Stretch="Uniform" Height="25">
-                                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
-                                                            <Canvas.RenderTransform>
-                                                                <TranslateTransform X="0" Y="0"/>
-                                                            </Canvas.RenderTransform>
-                                                            <Canvas.Resources/>
-                                                            <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Path StrokeThickness="6" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10">
-                                                                <Path.Data>
-                                                                    <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
-                                                                </Path.Data>
-                                                            </Path>
-                                                        </Canvas>
-                                                    </Viewbox>
+                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
+
                                                     <Viewbox Height="25">
                                                         <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
                                                             <Canvas.RenderTransform>
@@ -240,14 +225,85 @@
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                                <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCCompletionStatus}"/>
                                                         <Button x:Name="PART_ButtonCompletionStatus" Opacity="1" Style="{StaticResource PropertyItemButton}" Margin="0" />
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
+                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}" Margin="0,0,20,0">
+                                                    <DockPanel.Style>
+                                                        <Style TargetType="{x:Type DockPanel}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </DockPanel.Style>
+                                                    <Viewbox Stretch="Uniform" Height="35">
+                                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                                            <Canvas.RenderTransform>
+                                                                <TranslateTransform X="0" Y="0"/>
+                                                            </Canvas.RenderTransform>
+                                                            <Canvas.Resources/>
+                                                            <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                            <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                            <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                            <Path StrokeThickness="6" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10">
+                                                                <Path.Data>
+                                                                    <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
+                                                                </Path.Data>
+                                                            </Path>
+                                                        </Canvas>
+                                                    </Viewbox>
+
+
+                                                    <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                                        <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource HeaderLabel}"/>
+                                                        <DockPanel>
+                                                            <DockPanel MinWidth="40">
+                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked}" Style="{DynamicResource HeaderTextBlock}" />
+                                                                <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
+                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total}" Style="{DynamicResource HeaderTextBlock}"/>
+                                                            </DockPanel>
+                                                            <ProgressBar x:Name="progressBar" FontSize="10" Visibility="{Binding Visibility, ElementName=label, Mode=OneWay}" Margin="5,0,0,0"
+                                                            Maximum="{PluginSettings Plugin=SuccessStory, Path=Total}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked}" HorizontalAlignment="Left"
+                                                            Background="#151619" Foreground="#2d73ff" Width="75" Height="6" Style="{DynamicResource RoundedProgressBar}">
+                                                                <ProgressBar.Resources>
+                                                                    <Style x:Key="RoundedProgressBar" TargetType="ProgressBar">
+                                                                        <Setter Property="Background" Value="{DynamicResource NormalBrushDark}"/>
+                                                                        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}"/>
+                                                                        <Setter Property="Template">
+                                                                            <Setter.Value>
+                                                                                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                                                                                    <Border BorderThickness="{TemplateBinding BorderThickness}"
+								                                                CornerRadius="{DynamicResource ControlCornerRadius}">
+                                                                                        <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                                                                            <Rectangle Fill="{TemplateBinding Background}" RadiusY="4" RadiusX="4"/>
+                                                                                            <Rectangle x:Name="PART_Track" Margin="0" RadiusY="4" RadiusX="4"/>
+                                                                                            <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+                                                                                                <Grid>
+                                                                                                    <Rectangle Fill="{TemplateBinding Foreground}" RadiusY="4" RadiusX="4"/>
+                                                                                                </Grid>
+                                                                                            </Decorator>
+                                                                                        </Grid>
+                                                                                    </Border>
+                                                                                </ControlTemplate>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Style>
+                                                                </ProgressBar.Resources>
+                                                            </ProgressBar>
+                                                        </DockPanel>
+                                                    </StackPanel>
+                                                </DockPanel>
+
+
+                                                    
+                                                    <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
                                                     <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
                                                     FontFamily="{DynamicResource FontIcoFont}" Style="{DynamicResource GameEditButton}" Margin="0,0,10,0"/>
                                                     <ToggleButton Name="PanelToggleButton" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}" IsChecked="True"/>
