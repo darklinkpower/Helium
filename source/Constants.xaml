@@ -38,7 +38,7 @@
     <!--region Custom theme colors-->
     <Color x:Key="ControlBackgroundColor">#3e4047</Color>
     <Color x:Key="ControlBackgroundColorDarker">#25272d</Color>
-    <Color x:Key="ControlBackgroundColorDark">#222429</Color>
+    <Color x:Key="ControlBackgroundColorDark">#99212124</Color>
     <Color x:Key="ControlBackgroundColorDarkHover">#3e4047</Color>
     <!--region Custom theme colors-->
 
@@ -169,8 +169,8 @@
     
     <SolidColorBrush x:Key="GlyphBrush1" Color="{DynamicResource GlyphColor}" />
     <LinearGradientBrush x:Key="GlyphBrush" StartPoint="0.0, 0.5" EndPoint="1.0, 0.5" >
-        <GradientStop Color="{DynamicResource GlyphColor}" Offset="0"/>
-        <GradientStop Color="{DynamicResource GlyphSubColor}" Offset="1"/>
+        <GradientStop Color="#26b7ff" Offset="0"/>
+        <GradientStop Color="#26b7ff" Offset="1"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
     <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource PopupBorderColor}" />
@@ -268,8 +268,13 @@
         <GradientStop Color="#3287e3" Offset="1"/>
     </LinearGradientBrush>
     
-    <SolidColorBrush x:Key="LibraryDetailsViewBackgroundBrush" Color="#24282f" />
+    <LinearGradientBrush x:Key="LibraryDetailsViewBackgroundBrush" StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
+        <GradientStop Color="#2d333c" Offset="0"/>
+        <GradientStop Color="#24282f" Offset="0.2"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="FilterPanelViewBackgroundBrush" Color="#434953" />
 
+    
     <LinearGradientBrush x:Key="MenuBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
         <GradientStop Color="#585A5C" Offset="0"/>
         <GradientStop Color="#585A5C" Offset="0.5"/>

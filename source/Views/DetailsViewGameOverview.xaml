@@ -16,7 +16,7 @@
                                   d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}">
                         <Grid Margin="0,0,0,40">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="{Settings CalculatedGameDetailsIndentation}"/>
+                                <RowDefinition MinHeight="200" Height="{Settings CalculatedGameDetailsIndentation}"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
@@ -50,6 +50,10 @@
                                         </FadeImage.ImageOpacityMask>
                                     </FadeImage>
                                 </StackPanel>
+                                <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
+                                                    DockPanel.Dock="Left" Margin="20,0,0,20"
+                                                    VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                                    RenderOptions.BitmapScalingMode="Fant" />
                             </Grid>
 
                             <Grid Grid.Row="1">
@@ -238,7 +242,7 @@
 
                                                 <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
-                                                        <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
+                                                        <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCCompletionStatus}"/>
                                                         <Button x:Name="PART_ButtonCompletionStatus" Opacity="1" Style="{StaticResource PropertyItemButton}" Margin="0" />
                                                     </StackPanel>
                                                 </DockPanel>
