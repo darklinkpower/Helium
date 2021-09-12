@@ -18,9 +18,8 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="{Settings CalculatedGameDetailsIndentation}"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
+                            
                             <!--Fast Blur-->
                             <!--<Grid x:Name="MainGrid">
                                 <Grid Visibility="Visible">
@@ -91,135 +90,145 @@
                                     </FadeImage>
                                 </StackPanel>
                             </Grid>
-
-
-
-                            <Border Grid.Row="1" Grid.RowSpan="2" Background="{DynamicResource BackdropGlass}" />
                             <Grid Grid.Row="1">
-                                <Border Padding="20,10,30,6.5" Background="{DynamicResource DetailsSectionBackgroundBrush}">
-                                    <DockPanel>
-                                        <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" Grid.RowSpan="2" Background="{DynamicResource BackdropGlass}" />
+                                <Grid Grid.Row="0">
+                                    <Border Padding="20,10,30,6.5" Background="{DynamicResource DetailsSectionBackgroundBrush}">
+                                        <DockPanel>
+                                            <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
                                                     Margin="0,0,0,0" DockPanel.Dock="Left">
-                                            <Button Name="PART_ButtonPlayAction"
+                                                <Button Name="PART_ButtonPlayAction"
                                                     Width="165" Height="45" Style="{DynamicResource PlayButton}" />
-                                            <Button Name="PART_ButtonContextAction" 
+                                                <Button Name="PART_ButtonContextAction" 
                                                     Width="165" Height="45" Style="{DynamicResource ContextButton}"/>
-                                            <Button Name="PART_ButtonMoreActions" FontFamily="{DynamicResource FontIcoFont}"
+                                                <Button Name="PART_ButtonMoreActions" FontFamily="{DynamicResource FontIcoFont}"
                                                     Width="24.5" Height="45" Margin="4.7,0,0,0">
-                                                <Button.Style>
-                                                    <Style TargetType="Button">
-                                                        <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
-                                                        <Setter Property="Template">
-                                                            <Setter.Value>
-                                                                <ControlTemplate TargetType="{x:Type Button}">
-                                                                    <Grid x:Name="Grid">
-                                                                        <Border x:Name="DefaultBorder" CornerRadius="0,2,2,0" Background="{TemplateBinding Background}"/>
-                                                                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
-                                                                            <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
+                                                    <Button.Style>
+                                                        <Style TargetType="Button">
+                                                            <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                                        <Grid x:Name="Grid">
+                                                                            <Border x:Name="DefaultBorder" CornerRadius="0,2,2,0" Background="{TemplateBinding Background}"/>
+                                                                            <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                                                                                <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
                                                                                 Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
-                                                                            <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
-                                                                        </DockPanel>
-                                                                    </Grid>
-                                                                    <ControlTemplate.Triggers>
-                                                                        <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
-                                                                            <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
-                                                                        </DataTrigger>
-                                                                        <MultiDataTrigger>
-                                                                            <MultiDataTrigger.Conditions>
-                                                                                <Condition Binding="{Binding Game.IsInstalled}" Value="True"/>
-                                                                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
-                                                                            </MultiDataTrigger.Conditions>
-                                                                            <Setter Property="Background" Value="{DynamicResource MoreButtonInstalledIsMouseOverBackgroundBrush}"/>
-                                                                        </MultiDataTrigger>
-                                                                        <MultiDataTrigger>
-                                                                            <MultiDataTrigger.Conditions>
-                                                                                <Condition Binding="{Binding Game.IsInstalled}" Value="False"/>
-                                                                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
-                                                                            </MultiDataTrigger.Conditions>
-                                                                            <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
-                                                                        </MultiDataTrigger>
-                                                                    </ControlTemplate.Triggers>
-                                                                </ControlTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </Style>
-                                                </Button.Style>
-                                            </Button>
-                                        </DockPanel>
-                                        <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
-                                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
-                                                <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
-                                                <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
-                                            </StackPanel>
-                                        </DockPanel>
+                                                                                <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                                                                            </DockPanel>
+                                                                        </Grid>
+                                                                        <ControlTemplate.Triggers>
+                                                                            <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
+                                                                                <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
+                                                                            </DataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Game.IsInstalled}" Value="True"/>
+                                                                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <Setter Property="Background" Value="{DynamicResource MoreButtonInstalledIsMouseOverBackgroundBrush}"/>
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Game.IsInstalled}" Value="False"/>
+                                                                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
+                                                                            </MultiDataTrigger>
+                                                                        </ControlTemplate.Triggers>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                            </DockPanel>
+                                            <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
+                                                    <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
+                                                    <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
+                                                </StackPanel>
+                                            </DockPanel>
 
-                                        <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
-                                            <Viewbox Stretch="Uniform" Height="25">
-                                                <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                    <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                    <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                    <Path StrokeThickness="6" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                    </Path>
-                                                </Canvas>
-                                            </Viewbox>
-                                            <Viewbox Height="25">
-                                                <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
-                                                    <Canvas.RenderTransform>
-                                                        <TranslateTransform X="0" Y="0"/>
-                                                    </Canvas.RenderTransform>
-                                                    <Canvas.Resources/>
-                                                    <Polyline Points="85.5,149.167 128,128 128,55.167 " FillRule="NonZero" StrokeThickness="16" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                                    <Path StrokeThickness="16" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
-                                                        <Path.Data>
-                                                            <PathGeometry Figures="M128 17.5c61.027 0 110.5 49.473 110.5 110.5S189.027 238.5 128 238.5S17.5 189.027 17.5 128" FillRule="NonZero"/>
-                                                        </Path.Data>
-                                                    </Path>
-                                                    <Ellipse Canvas.Left="20.9" Canvas.Top="80.3" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                                    <Ellipse Canvas.Left="44.7" Canvas.Top="45" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                                    <Ellipse Canvas.Left="80.5" Canvas.Top="21.2" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                                </Canvas>
-                                            </Viewbox>
-                                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
-                                                <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCTimePlayed}"/>
-                                                <TextBlock x:Name="PART_TextPlayTime" Style="{DynamicResource HeaderTextBlock}"/>
-                                            </StackPanel>
-                                        </DockPanel>
+                                            <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                                <Viewbox Stretch="Uniform" Height="25">
+                                                    <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                                        <Canvas.RenderTransform>
+                                                            <TranslateTransform X="0" Y="0"/>
+                                                        </Canvas.RenderTransform>
+                                                        <Canvas.Resources/>
+                                                        <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                        <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                        <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                        <Path StrokeThickness="6" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                        </Path>
+                                                    </Canvas>
+                                                </Viewbox>
+                                                <Viewbox Height="25">
+                                                    <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                                        <Canvas.RenderTransform>
+                                                            <TranslateTransform X="0" Y="0"/>
+                                                        </Canvas.RenderTransform>
+                                                        <Canvas.Resources/>
+                                                        <Polyline Points="85.5,149.167 128,128 128,55.167 " FillRule="NonZero" StrokeThickness="16" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                        <Path StrokeThickness="16" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M128 17.5c61.027 0 110.5 49.473 110.5 110.5S189.027 238.5 128 238.5S17.5 189.027 17.5 128" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                        </Path>
+                                                        <Ellipse Canvas.Left="20.9" Canvas.Top="80.3" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                        <Ellipse Canvas.Left="44.7" Canvas.Top="45" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                        <Ellipse Canvas.Left="80.5" Canvas.Top="21.2" Width="11" Height="11" Fill="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeThickness="7" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                    </Canvas>
+                                                </Viewbox>
+                                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
+                                                    <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCTimePlayed}"/>
+                                                    <TextBlock x:Name="PART_TextPlayTime" Style="{DynamicResource HeaderTextBlock}"/>
+                                                </StackPanel>
+                                            </DockPanel>
 
-                                        <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
-                                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
-                                                <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
-                                                <Button x:Name="PART_ButtonCompletionStatus" Opacity="1" Style="{StaticResource PropertyItemButton}" Margin="0" />
-                                            </StackPanel>
-                                        </DockPanel>
+                                            <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
+                                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
+                                                    <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
+                                                    <Button x:Name="PART_ButtonCompletionStatus" Opacity="1" Style="{StaticResource PropertyItemButton}" Margin="0" />
+                                                </StackPanel>
+                                            </DockPanel>
 
-                                        <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
-                                            <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
+                                            <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
+                                                <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
                                                     FontFamily="{DynamicResource FontIcoFont}" Style="{DynamicResource GameEditButton}" Margin="0,0,10,0"/>
-                                            <ToggleButton Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}"/>
+                                                <ToggleButton Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}"/>
+                                            </DockPanel>
+                                            <Border/>
                                         </DockPanel>
-                                        <Border/>
-                                    </DockPanel>
-                                </Border>
-                            </Grid>
-                            
-                            <Grid Grid.Row="2">
-                                <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}" Margin="20,0,30,0" Padding="15,10,15,10">
-                                    <DockPanel LastChildFill="False">
-                                        <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
+                                    </Border>
+                                </Grid>
+
+                                <Grid Grid.Row="1">
+                                    <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}" Margin="20,0,30,0" Padding="15,10,15,10">
+                                        <DockPanel LastChildFill="False">
+                                            <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
                                             DockPanel.Dock="Left" Height="{Settings GameDetailsCoverHeight}"
                                             StretchDirection="DownOnly" Stretch="Uniform"
                                             RenderOptions.BitmapScalingMode="Fant" />
-                                    </DockPanel>
-                                </Border>
+                                        </DockPanel>
+                                    </Border>
+                                </Grid>
                             </Grid>
+
+
+
+                            
+
                         </Grid>
                     </ScrollViewer>
                 </ControlTemplate>
