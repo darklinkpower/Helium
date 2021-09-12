@@ -22,7 +22,7 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <!--Fast Blur-->
-                            <Grid x:Name="MainGrid">
+                            <!--<Grid x:Name="MainGrid">
                                 <Grid Visibility="Visible">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="16*"/>
@@ -72,9 +72,9 @@
                                         </StackPanel>
                                     </Grid>
                                 </Grid>
-                            </Grid>
+                            </Grid>-->
                             <!--end Fast blur-->
-                            <!--<Grid Grid.Row="0">
+                            <Grid Grid.Row="0">
                                 <Border Background="#141414" Height="{Settings CalculatedGameDetailsIndentation}"/>
                                 <StackPanel>
                                     <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill" Height="{Settings CalculatedGameDetailsIndentation}"
@@ -90,13 +90,13 @@
                                         </FadeImage.ImageOpacityMask>
                                     </FadeImage>
                                 </StackPanel>
-                            </Grid>-->
+                            </Grid>
 
 
 
                             <Border Grid.Row="1" Grid.RowSpan="2" Background="{DynamicResource BackdropGlass}" />
                             <Grid Grid.Row="1">
-                                <Border Padding="10" Background="{DynamicResource DetailsSectionBackgroundBrush}">
+                                <Border Padding="20,10,30,6.5" Background="{DynamicResource DetailsSectionBackgroundBrush}">
                                     <DockPanel>
                                         <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
                                                     Margin="0,0,0,0" DockPanel.Dock="Left">
@@ -211,11 +211,10 @@
                             </Grid>
                             
                             <Grid Grid.Row="2">
-                                <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}"/>
-                                <Border Height="{Settings GameDetailsCoverHeight}" Padding="15,10,15,10">
+                                <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}" Margin="20,0,30,0" Padding="15,10,15,10">
                                     <DockPanel LastChildFill="False">
-                                    <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
-                                            DockPanel.Dock="Left"
+                                        <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
+                                            DockPanel.Dock="Left" Height="{Settings GameDetailsCoverHeight}"
                                             StretchDirection="DownOnly" Stretch="Uniform"
                                             RenderOptions.BitmapScalingMode="Fant" />
                                     </DockPanel>

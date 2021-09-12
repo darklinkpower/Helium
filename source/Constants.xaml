@@ -286,8 +286,8 @@
 
     <LinearGradientBrush x:Key="BackdropGlass" StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
         <GradientStop Color="#1a272c35" Offset="0"/>
-        <GradientStop Color="#33272c35" Offset="0.20"/>
-        <GradientStop Color="#cc272c35" Offset="0.80"/>
+        <GradientStop Color="#B3272c35" Offset="0.20"/>
+        <GradientStop Color="#4D272c35" Offset="0.80"/>
         <GradientStop Color="#00272c35" Offset="1"/>
     </LinearGradientBrush>
     <!--region end-->
