@@ -582,17 +582,8 @@
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="GameActivityFeed" Tag="{PluginSettings Plugin=GameActivity, Path=HasData}">
-                                                <StackPanel.Style>
-                                                    <Style TargetType="StackPanel">
-                                                        <Setter Property="Visibility" Value="Collapsed" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                                <Setter Property="Visibility" Value="Visible" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </StackPanel.Style>
+                                            <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginL59Stackpanel}"
+                                                        Tag="{PluginSettings Plugin=GameActivity, Path=HasData}">
                                                 <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
                                                 <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                     <Grid.RowDefinitions>
@@ -609,8 +600,8 @@
 
                                         </StackPanel>
 
-                                        <StackPanel Grid.Column="1" >
-                                            <StackPanel Name="HltbPanel" Margin="0,0,0,15">
+                                        <StackPanel Grid.Column="1">
+                                            <StackPanel Name="HltbPanel" Style="{DynamicResource PluginL59Stackpanel}" Tag="True">
                                                 <Label Content="HowLongToBeat" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
                                                     <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
@@ -623,19 +614,9 @@
                                                     </Border>
                                                 </Grid>
                                             </StackPanel>
-                                            
-                                            <StackPanel Name="SuccessStoryPanel" Margin="0,0,0,15"
+
+                                            <StackPanel Name="SuccessStoryPanel" Style="{DynamicResource PluginL59Stackpanel}"
                                                         Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
-                                                <StackPanel.Style>
-                                                    <Style TargetType="StackPanel">
-                                                        <Setter Property="Visibility" Value="Collapsed" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                                <Setter Property="Visibility" Value="Visible" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
                                                     <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
@@ -651,18 +632,8 @@
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="ScreenshotsVisualizerPanel" Margin="0,0,0,15"
+                                            <StackPanel Name="ScreenshotsVisualizerPanel" Style="{DynamicResource PluginL59Stackpanel}"
                                                         Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData}">
-                                                <StackPanel.Style>
-                                                    <Style TargetType="StackPanel">
-                                                        <Setter Property="Visibility" Value="Collapsed" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                                <Setter Property="Visibility" Value="Visible" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCSsvTitle}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
                                                     <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
@@ -737,5 +708,16 @@
                         RenderingBias="Performance"/>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="PluginL59Stackpanel">
+        <Setter Property="Tag" Value="False" />
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Setter Property="Margin" Value="0,0,0,15" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>
