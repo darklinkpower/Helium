@@ -2,7 +2,7 @@
 # Helium
 Theme inspired by Steam for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
 
-Playnite forum thread: https://playnite.link/forum/thread-000.html
+Playnite forum thread: https://playnite.link/forum/thread-811.html
 
 ## Theme goals
 - Use the Steam client as inspiration to create a polished Playnite UI.
