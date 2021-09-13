@@ -29,8 +29,8 @@ Playnite forum thread: https://playnite.link/forum/thread-000.html
 - Videos: download of trailer and microtrailer videos for use in the theme via [Extra Metadata Tools Video](https://playnite.link/forum/thread-575.html) extension.
 
 ## Screenshots
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/Screenshots/screenshot_01.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_01.jpg)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/Screenshots/screenshot_02.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_02.jpg)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/Screenshots/screenshot_03.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.jpg)
