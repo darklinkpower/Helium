@@ -357,5 +357,9 @@
     </RadialGradientBrush>
 
     <!--region end-->
+
+    <SolidColorBrush x:Key="OpaqueHighlightBrush" Color="{DynamicResource GlyphSubColor}" Opacity="0.5"/>
+    <SolidColorBrush x:Key="OpaqueHighlightBrushBright" Color="{DynamicResource GlyphColor}" Opacity="0.5"/>
+    <SolidColorBrush x:Key="OpaqueGrayHighlightBrush" Color="#4c919191" />
     
 </ResourceDictionary>
