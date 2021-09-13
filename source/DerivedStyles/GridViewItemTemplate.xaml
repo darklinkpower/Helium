@@ -5,6 +5,8 @@
                     mc:Ignorable="d">
 
     <Style x:Key="GridViewItemTemplate" TargetType="{x:Type GameListItem}">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GameListItem}">
@@ -30,16 +32,17 @@
                                     <Border CornerRadius="8" Background="{DynamicResource OpaqueGrayHighlightBrush}" Opacity="0.2"/>
                                     <ContentControl x:Name="DuplicateHider_SourceSelector1" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible" MaxHeight="25"/>
                                 </Grid>
-                                <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center"
-                                         Name="GameControls"  Visibility="Collapsed">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button Name="PART_ButtonPlay" Style="{StaticResource SimpleButton}"
-                                                Margin="20,0,2,0" VerticalAlignment="Center"
-                                                Content="&#xec74;" FontFamily="{StaticResource FontIcoFont}" />
-                                        <Button Name="PART_ButtonInfo" Style="{StaticResource SimpleButton}"
-                                                Margin="2,0,20,0" VerticalAlignment="Center"
-                                                Content="&#xef4f;" FontFamily="{StaticResource FontIcoFont}" />
-                                    </StackPanel>
+                                <Viewbox VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                         Name="GameControls" Opacity="0.15">
+                                    <Border Margin="5,50,30,5" Background="#54212124"
+                                            CornerRadius="{DynamicResource ControlCornerRadiusSmall}" Padding="1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="24" Width="24" Name="PART_ButtonPlay" Margin="0" VerticalAlignment="Center"
+                                                FontFamily="{StaticResource FontIcoFont}" Tag="Installed" Style="{DynamicResource ButtonPlay}" />
+                                            <Button Height="24" Width="24" Name="PART_ButtonInfo" Style="{DynamicResource InfoButton}"
+                                                Margin="3,0,0,0" VerticalAlignment="Center" FontFamily="{StaticResource FontIcoFont}" />
+                                        </StackPanel>
+                                    </Border>
                                 </Viewbox>
                             </Grid>
                             <TextBlock Text="{Binding DisplayName}"
@@ -53,7 +56,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding IsInstalled}" Value="False">
-                            <Setter Property="Content" Value="&#xef08;" TargetName="PART_ButtonPlay" />
+                            <Setter Property="Tag" Value="NotInstalled" TargetName="PART_ButtonPlay" />
                         </DataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
@@ -71,7 +74,7 @@
                         </MultiDataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderMouseOver"/>
-                            <Setter Property="Visibility" Value="Visible" TargetName="GameControls"/>
+                            <Setter Property="Opacity" Value="1.0" TargetName="GameControls"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -115,5 +118,104 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    
+    <Style TargetType="Button" x:Key="ButtonPlay" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Opacity" Value="0.50" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" />
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" >
+                            <ContentPresenter.Content>
+                                <Grid>
+                                    <Viewbox Stretch="Uniform" Name="PlayIcon" Visibility="Visible" Opacity="{TemplateBinding Opacity}">
+                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                            <Canvas.RenderTransform>
+                                                <TranslateTransform X="0" Y="0"/>
+                                            </Canvas.RenderTransform>
+                                            <Canvas.Resources/>
+                                            <Path Fill="{TemplateBinding Foreground}">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="M65.321 33.521c-11.274-6.615-20.342-1.471-20.342 11.52V210.96c0 12.989 9.068 18.135 20.342 11.521l137.244-82.348 c11.274-6.618 11.274-17.646 0-24.509L65.321 33.521z" FillRule="NonZero"/>
+                                                </Path.Data>
+                                            </Path>
+                                        </Canvas>
+                                    </Viewbox>
+                                    <Viewbox Stretch="Uniform" Name="DownloadIcon" Visibility="Collapsed">
+                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                            <Canvas.RenderTransform>
+                                                <TranslateTransform X="0" Y="0"/>
+                                            </Canvas.RenderTransform>
+                                            <Canvas.Resources/>
+                                            <Canvas>
+                                                <Line X1="129" Y1="182" X2="129" Y2="24" StrokeThickness="12" Stroke="{TemplateBinding Foreground}" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                                <Polyline Points="174.25,141.25 128.732,183.625 84.25,141.25" FillRule="NonZero" StrokeThickness="12" Stroke="{TemplateBinding Foreground}" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                            </Canvas>
+                                            <Canvas>
+                                                <Polyline Points="23.25,173.5 23.25,235.75 234.75,235.75 234.75,173.5" FillRule="NonZero" StrokeThickness="12" Stroke="{TemplateBinding Foreground}" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Viewbox>
+                                </Grid>
+                            </ContentPresenter.Content>
+                        </ContentPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}}" Value="NotInstalled">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="PlayIcon" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="DownloadIcon" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True">
+                            <Setter Property="Opacity" Value="1.00" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="InfoButton" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Opacity" Value="0.50" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" />
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" >
+                            <ContentPresenter.Content>
+                                <Viewbox Stretch="Uniform" Name="Path" Opacity="{TemplateBinding Opacity}">
+                                    <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources/>
+                                        <Polyline Points="86.883,110.957 152.894,110.957 152.894,181.406 177.117,181.406 177.117,202.485 86.883,202.485 86.883,181.775 109.441,181.775 109.441,130.372 86.883,130.372 " FillRule="NonZero" Fill="{TemplateBinding Foreground}"/>
+                                        <Ellipse Canvas.Left="103" Canvas.Top="42.1" Width="51" Height="51" Fill="{TemplateBinding Foreground}"/>
+                                        <Ellipse Canvas.Left="11.2" Canvas.Top="11.2" Width="233.7" Height="233.7" StrokeThickness="14" Stroke="{TemplateBinding Foreground}" StrokeMiterLimit="10"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </ContentPresenter.Content>
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="1.00" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

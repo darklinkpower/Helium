@@ -90,18 +90,18 @@
                                 Opacity="1" CornerRadius="2,0,0,2" MinHeight="{TemplateBinding MinHeight}" MinWidth="{TemplateBinding MinWidth}"/>
                         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
                             <Border Height="22" Margin="0,3,10,0">
-                                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
-                                    <Canvas Name="svg12" Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                <Viewbox Stretch="Uniform">
+                                    <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
                                         <Canvas.RenderTransform>
                                             <TranslateTransform X="0" Y="0"/>
                                         </Canvas.RenderTransform>
                                         <Canvas.Resources/>
-                                        <Canvas Name="g6">
-                                            <Line xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" X1="129" Y1="182" X2="129" Y2="24" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                                            <Polyline xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="174.25,141.25 128.732,183.625 84.25,141.25" FillRule="NonZero" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                        <Canvas>
+                                            <Line X1="129" Y1="182" X2="129" Y2="24" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                            <Polyline Points="174.25,141.25 128.732,183.625 84.25,141.25" FillRule="NonZero" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
                                         </Canvas>
-                                        <Canvas Name="g10">
-                                            <Polyline xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Points="23.25,173.5 23.25,235.75 234.75,235.75 234.75,173.5" FillRule="NonZero" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+                                        <Canvas>
+                                            <Polyline Points="23.25,173.5 23.25,235.75 234.75,235.75 234.75,173.5" FillRule="NonZero" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
                                         </Canvas>
                                     </Canvas>
                                 </Viewbox>
