@@ -374,7 +374,7 @@
                                                     
                                                     <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
                                                     <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
-                                                    FontFamily="{DynamicResource FontIcoFont}" Style="{DynamicResource GameEditButton}" Margin="0,0,10,0"/>
+                                                            FontFamily="{DynamicResource FontIcoFont}" Style="{DynamicResource GameEditButton}" Margin="0,0,10,0"/>
                                                     <ToggleButton Name="PanelToggleButton" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}" IsChecked="True"/>
                                                 </DockPanel>
                                                 <Border/>
