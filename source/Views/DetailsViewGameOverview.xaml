@@ -463,7 +463,7 @@
                                                     </Style>
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCGenreLabel}" Style="{DynamicResource FeedSectionLabel}"/>
-                                                <Grid Margin="0,0,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="Auto" />
                                                     </Grid.RowDefinitions>
@@ -498,7 +498,7 @@
                                                     </Style>
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCGameCategoriesTitle}" Style="{DynamicResource FeedSectionLabel}" />
-                                                <Grid Margin="0,0,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="Auto" />
                                                     </Grid.RowDefinitions>
@@ -530,7 +530,7 @@
                                                     </Style>
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCFeaturesLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                <Grid Margin="0,0,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="Auto" />
                                                     </Grid.RowDefinitions>
@@ -562,7 +562,7 @@
                                                     </Style>
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCTagsLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                <Grid Margin="0,0,0,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="Auto" />
                                                     </Grid.RowDefinitions>
@@ -582,21 +582,60 @@
                                                 </Grid>
                                             </StackPanel>
 
+                                            <StackPanel Name="GameActivityFeed" Tag="{PluginSettings Plugin=GameActivity, Path=HasData}">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                                <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
+                                                <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="10">
+                                                        <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,0,0,10" />
+                                                        <ContentControl x:Name="GameActivity_PluginChartLog"  Margin="0,0,0,10"/>
+                                                        <ContentControl x:Name="GameActivity_PluginButton" HorizontalAlignment="Right"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </StackPanel>
+
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="1" >
                                             <StackPanel Name="HltbPanel" Margin="0,0,0,15">
                                                 <Label Content="HowLongToBeat" Style="{DynamicResource FeedSectionLabel}"/>
-                                                <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
-                                                <Border Style="{DynamicResource OutlineBorder}" />
-                                                <Border Padding="10" >
-                                                    <StackPanel>
-                                                        <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Width="380" HorizontalAlignment="Left"/>
-                                                    </StackPanel>
-                                                </Border>
+                                                <Grid>
+                                                    <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
+                                                    <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <Border Padding="10" >
+                                                        <StackPanel>
+                                                            <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Width="380" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                                                            <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right"/>
+                                                        </StackPanel>
+                                                    </Border>
+                                                </Grid>
                                             </StackPanel>
                                             
-                                            <StackPanel Name="SuccessStoryPanel" Margin="0,0,0,15">
+                                            <StackPanel Name="SuccessStoryPanel" Margin="0,0,0,15"
+                                                        Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
                                                     <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
@@ -612,7 +651,18 @@
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="ScreenshotsVisualizerPanel" Margin="0,0,0,15">
+                                            <StackPanel Name="ScreenshotsVisualizerPanel" Margin="0,0,0,15"
+                                                        Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData}">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCSsvTitle}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
                                                     <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
