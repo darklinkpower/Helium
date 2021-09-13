@@ -8,7 +8,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GridViewGameOverview}">
-                    <Border Padding="10,0,5,0" BorderBrush="{DynamicResource PanelSeparatorBrush}"
+                    <Border Padding="10,0,5,20" BorderBrush="{DynamicResource PanelSeparatorBrush}"
                             d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}">
                         <Border.Style>
                             <Style TargetType="Border">
@@ -305,6 +305,57 @@
                                                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                                           ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
                                         </StackPanel>
+
+                                        <!--#region SuccessStory-->
+                                        <StackPanel DockPanel.Dock="Top"  Margin="5,15,5,0" Style="{DynamicResource PluginL59Stackpanel}"
+                                                    Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
+                                            <TextBlock Text="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource BaseTextBlockStyle}"
+                                                       FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                            <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
+                                            <DockPanel Margin="0,10,0,0">
+                                                <ContentControl DockPanel.Dock="Left" x:Name="SuccessStory_PluginButton" Height="40" VerticalAlignment="Center"/>
+                                                <ContentControl x:Name="SuccessStory_PluginProgressBar" Margin="5,5,20,0" VerticalAlignment="Center" Height="28" />
+                                            </DockPanel>
+                                            <ContentControl x:Name="SuccessStory_PluginCompactUnlocked" Margin="0,10,20,0" />
+                                            <ContentControl x:Name="SuccessStory_PluginCompactLocked" Margin="0,10,20,0" />
+                                            <ContentControl x:Name="SuccessStory_PluginUserStats" Margin="0,10,20,0" />
+                                            <ContentControl x:Name="SuccessStory_PluginChart" Margin="0,10,20,0" />
+                                        </StackPanel>
+                                        <!--#endregion -->
+
+                                        <!--#region HowLongToBeat-->
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0"
+                                                    Visibility="{PluginStatus Plugin=playnite-howlongtobeat-plugin, Status=Installed}">
+                                            <TextBlock Text="HowLongToBeat"
+                                                       FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
+                                            <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
+                                            <DockPanel>
+                                                <ContentControl DockPanel.Dock="Left" x:Name="HowLongToBeat_PluginButton" VerticalAlignment="Center"/>
+                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Margin="5,5,0,0" VerticalAlignment="Center"/>
+                                            </DockPanel>
+                                        </StackPanel>
+                                        <!--#endregion -->
+
+                                        <!--#region ScreenshotsVisualizer-->
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0" Style="{DynamicResource PluginL59Stackpanel}"
+                                                    Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData}">
+                                            <TextBlock Text="{DynamicResource LOCSsvTitle}"
+                                                       FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
+                                            <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
+                                            <ContentControl x:Name="ScreenshotsVisualizer_PluginSinglePicture" Margin="0,10,20,0" />
+                                            <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshots" Margin="0,10,20,0" />
+                                        </StackPanel>
+                                        <!--#endregion -->
+                                        <!--#region GameActivity-->
+                                        <StackPanel DockPanel.Dock="Top"  Margin="5,15,5,0" Style="{DynamicResource PluginL59Stackpanel}"
+                                                    Tag="{PluginSettings Plugin=GameActivity, Path=HasData}">
+                                            <TextBlock Text="{DynamicResource LOCGameActivityTitle}"
+                                                       FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
+                                            <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
+                                            <ContentControl x:Name="GameActivity_PluginButton" />
+                                            <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,5,0,0" />
+                                        </StackPanel>
+                                        <!--#endregion -->
                                     </DockPanel>
                                 </ScrollViewer>
                             </DockPanel>
