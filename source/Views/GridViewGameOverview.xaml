@@ -24,6 +24,26 @@
                             </Style>
                         </Border.Style>
                         <DockPanel>
+                            <!--#region TextBlock property sources-->
+                            <TextBlock Name="LogoPath" Tag="{DynamicResource ExtraMetadataPath}" Visibility="Collapsed">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text">
+                                            <Setter.Value>
+                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
+                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                    <Binding Source="\ExtraMetadata\games\" />
+                                                    <Binding Path="Game.Id" />
+                                                    <Binding Source="\Logo.png" />
+                                                </MultiBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <!--#endregion-->
+                            
+                            
                             <Button HorizontalAlignment="Right" VerticalAlignment="Top"
                                     Content="r" FontFamily="Marlett"
                                     Style="{DynamicResource SimpleButton}"
@@ -56,6 +76,41 @@
                                     </Style>
                                 </DockPanel.Style>
 
+                                <Grid DockPanel.Dock="Top" Tag="{DynamicResource GridViewIsLogoVisible}">
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Style.Setters>
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </Style.Setters>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding ElementName=LogoImage, Path=Source}" Value="{x:Null}">
+                                                    <Setter Property="Height" Value="0"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+                                    <Border Padding="10,0,10,10" Height="{DynamicResource GridViewLogoHeight}" MaxWidth="{Settings GrdiDetailsWitdh}">
+                                        <Image Name="LogoImage" DockPanel.Dock="Top"
+                                            Visibility="Visible" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant"
+                                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                                            StretchDirection="Both" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
+                                            <Image.Style>
+                                                <Style TargetType="Image">
+                                                    <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text}"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                            <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text, Converter={StaticResource ImageStringToImageConverter}}"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Border>
+                                </Grid>
+                                
                                 <DockPanel DockPanel.Dock="Top">
                                     <Image Name="PART_ImageIcon" DockPanel.Dock="Left" MaxHeight="32" MaxWidth="32"
                                            RenderOptions.BitmapScalingMode="Fant" Margin="0,0,10,0" />
