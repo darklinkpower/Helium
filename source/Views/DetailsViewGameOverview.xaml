@@ -20,6 +20,54 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
+                            <!--#region TextBlock property sources-->
+                            <TextBlock Name="VideoSelection" Foreground="White" Visibility="Collapsed">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text" Value="VideoTrailer.mp4"/>
+                                        <Style.Triggers>
+                                            <!--<DataTrigger Binding="{Binding ElementName=VideoFileToggleButton,Path=IsChecked}" Value="True">
+                                                <Setter Property="Text" Value="VideoTrailer.mp4" />
+                                            </DataTrigger>-->
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Name="VideoTrailerPath" Foreground="White" Tag="{DynamicResource ExtraMetadataPath}" Visibility="Collapsed">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text">
+                                            <Setter.Value>
+                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}{4}">
+                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                    <Binding Source="\ExtraMetadata\games\"/>
+                                                    <Binding Path="Game.Id"/>
+                                                    <Binding Source="\"/>
+                                                    <Binding ElementName="VideoSelection" Path="Text"/>
+                                                </MultiBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Name="LogoPath" Tag="{DynamicResource ExtraMetadataPath}" Foreground="White" Visibility="Collapsed">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text">
+                                            <Setter.Value>
+                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
+                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                    <Binding Source="\ExtraMetadata\games\" />
+                                                    <Binding Path="Game.Id" />
+                                                    <Binding Source="\Logo.png" />
+                                                </MultiBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <!--#endregion-->
+                            
                             <Grid Grid.Row="0">
                                 <Border Background="#141414" Height="{Settings CalculatedGameDetailsIndentation}">
                                     <Border.Style>
@@ -50,10 +98,31 @@
                                         </FadeImage.ImageOpacityMask>
                                     </FadeImage>
                                 </StackPanel>
+
+                                <Image Name="LogoImage" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" MaxHeight="{DynamicResource DetailsViewLogoMaxHeight}"
+                                       MaxWidth="{DynamicResource DetailsViewLogoMaxHeight}"
+                                       StretchDirection="Both" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}" Margin="20,20,30,20">
+                                    <Image.Effect>
+                                        <DropShadowEffect Direction="0" Color="#b3000000" ShadowDepth="0" BlurRadius="20" />
+                                    </Image.Effect>
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                    <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text, Converter={StaticResource ImageStringToImageConverter}}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+
+
                                 <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
-                                                    DockPanel.Dock="Left" Margin="20,0,0,20"
-                                                    VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                                    RenderOptions.BitmapScalingMode="Fant" />
+                                       DockPanel.Dock="Left" Margin="20,0,0,20"
+                                       VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                       RenderOptions.BitmapScalingMode="Fant" />
                             </Grid>
 
                             <Grid Grid.Row="1">
