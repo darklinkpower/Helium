@@ -91,7 +91,7 @@
     <SolidColorBrush x:Key="ListBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="PasswordBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="PasswordBoxIsSelectedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
-    <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="ProgressBarBackgroundBrush" Color="#212124" />
     <SolidColorBrush x:Key="RadioButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="RepeatButtonBackgroundBrush" Color="Red" />
     <SolidColorBrush x:Key="RichTextBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />

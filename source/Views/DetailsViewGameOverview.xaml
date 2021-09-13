@@ -421,7 +421,7 @@
                                                         </Image.Effect>
                                                     </Image>
 
-                                                    <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="300" Margin="0,0,15,0" Height="{Binding ElementName=PART_ImageCover, Path=ActualHeight}">
+                                                    <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="300" Margin="0,0,15,0" Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}">
                                                         <StackPanel>
                                                             <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
                                                                 Style="{DynamicResource BaseTextBlockStyle}" Visibility="Collapsed"/>
@@ -473,7 +473,7 @@
                                                             <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
 
                                                             <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
+                                                                       Style="{DynamicResource TextBlockGameScore}" />
 
                                                             <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
                                                             <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
