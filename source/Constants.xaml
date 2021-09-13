@@ -6,16 +6,11 @@
     <!--Theme settings region start-->
     <sys:Boolean x:Key="DetailsViewIsVideoPlayedByDefault">False</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewIsVideoTrailerDefault">True</sys:Boolean>
-    <sys:Boolean x:Key="DetailsViewIsLogoCoverFaded">False</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewLogoAreMediaControlsDisplayed">False</sys:Boolean>
     <sys:Double x:Key="DetailsViewLogoMaxHeight">200</sys:Double>
     <sys:Double x:Key="DetailsViewLogoMaxWidth">600</sys:Double>
     <sys:Boolean x:Key="DetailsViewIsLogoVisible">True</sys:Boolean>
-    <sys:Boolean x:Key="DetailsViewIsLogoOnLeft">False</sys:Boolean>
-    <Visibility x:Key="DetailsViewDetailsIconsVisibility">Collapsed</Visibility>
     <sys:Double x:Key="GridViewLogoHeight">100</sys:Double>
-    <sys:Boolean x:Key="GridViewIsLogoVisible">True</sys:Boolean>
-    <Visibility x:Key="GridViewDetailsIconsVisibility">Collapsed</Visibility>
     <!--region end-->
 
     <!--Extra Metadata Path values start-->
