@@ -8,6 +8,7 @@
         <Setter Property="Command" Value="{Binding ActivateCommand}" />
         <Setter Property="Margin" Value="10,8,10,0" />
         <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -20,7 +21,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource StandardWindowBorderBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonIsMouseOverBackgroundBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

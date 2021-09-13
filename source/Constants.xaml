@@ -64,7 +64,19 @@
     <!--region Custom theme colors-->
 
     <!--region Default Controls background brushes-->
-    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="#2D73FF" />
+
+    <LinearGradientBrush x:Key="ButtonBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#399AEC" Offset="0"/>
+        <GradientStop Color="#2A71D8" Offset="0.75"/>
+        <GradientStop Color="#235ECF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ButtonIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+        <GradientStop Color="#47BDFE" Offset="0"/>
+        <GradientStop Color="#3794EA" Offset="0.75"/>
+        <GradientStop Color="#3081E0" Offset="1"/>
+    </LinearGradientBrush>
+    
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="CheckboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="CheckboxIsCheckedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />

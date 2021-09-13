@@ -5,12 +5,14 @@
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="{DynamicResource SidebarItemBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TopPanelItemForegroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="BorderThickness" Value="3,0,0,0" />
+        <Setter Property="BorderThickness" Value="0,0,0,0" />
         <Setter Property="Width" Value="44" />
+        <Setter Property="Opacity" Value="0.75" />
         <Setter Property="Height" Value="44" />
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type SidebarItem}">
@@ -32,22 +34,22 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource SidebarItemIsMouseOverBackgroundBrush}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
             </Trigger>
             <DataTrigger Binding="{Binding Selected}" Value="True">
-                <Setter Property="Background" Value="{DynamicResource SidebarItemIsSelectedBackgroundBrush}" />
                 <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                <Setter Property="Opacity" Value="1.00" />
             </DataTrigger>
             <DataTrigger Binding="{Settings SidebarPosition}" Value="Right">
-                <Setter Property="BorderThickness" Value="0,0,3,0" />
+                <Setter Property="BorderThickness" Value="0,0,0,0" />
             </DataTrigger>
             <DataTrigger Binding="{Settings SidebarPosition}" Value="Top">
-                <Setter Property="BorderThickness" Value="0,3,0,0" />
+                <Setter Property="BorderThickness" Value="0,0,0,0" />
             </DataTrigger>
             <DataTrigger Binding="{Settings SidebarPosition}" Value="Bottom">
-                <Setter Property="BorderThickness" Value="0,0,0,3" />
+                <Setter Property="BorderThickness" Value="0,0,0,0" />
             </DataTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
