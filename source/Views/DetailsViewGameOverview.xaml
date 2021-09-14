@@ -414,7 +414,7 @@
                                                     <Border Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
                                                     <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
                                                         DockPanel.Dock="Left" Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}"
-                                                        StretchDirection="DownOnly" Stretch="Uniform"
+                                                        StretchDirection="Both" Stretch="Uniform"
                                                         RenderOptions.BitmapScalingMode="Fant" Margin="0,0,15,0">
                                                         <Image.Effect>
                                                             <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
