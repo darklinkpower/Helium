@@ -678,7 +678,7 @@
                                                     <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="10">
                                                         <!--MediaElement causes exception on the Blend design preview-->
                                                         <CheckBox x:Name="VideoLoaded" Visibility="Collapsed"/>
-                                                        <MediaElement x:Name="VideoTrailer" MediaElementBehaviors.Repeat="True" 
+                                                        <!--<MediaElement x:Name="VideoTrailer" MediaElementBehaviors.Repeat="True" 
                                                             Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">
                                                             <MediaElement.Style>
                                                                 <Style>
@@ -732,7 +732,7 @@
                                                                     </BeginStoryboard>
                                                                 </EventTrigger>
                                                             </MediaElement.Triggers>
-                                                        </MediaElement>
+                                                        </MediaElement>-->
                                                         <DockPanel>
                                                             <ToggleButton FontSize="40" Name="VideoPlaybackToggleButton" 
                                                                           Style="{DynamicResource VideoPlaybackToggleButton}"
@@ -752,7 +752,8 @@
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="1">
-                                            <StackPanel Name="HltbPanel" Style="{DynamicResource PluginL59Stackpanel}" Tag="True">
+                                            <StackPanel Name="HltbPanel" Style="{DynamicResource PluginL59Stackpanel}" Tag="True"
+                                                        Visibility="{PluginStatus Plugin=playnite-howlongtobeat-plugin, Status=Installed}">
                                                 <Label Content="HowLongToBeat" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
                                                     <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
