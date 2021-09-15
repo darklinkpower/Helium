@@ -506,7 +506,8 @@
                                             </ItemsControl.ItemsPanel>
                                             <ItemsControl.ItemContainerStyle>
                                                 <Style TargetType="ContentPresenter">
-                                                    <Setter Property="FrameworkElement.Margin" Value="0,0,50,0" />
+                                                    <Setter Property="FrameworkElement.Margin" Value="20,0,20,0" />
+                                                    <Setter Property="FrameworkElement.MinWidth" Value="100" />
                                                 </Style>
                                             </ItemsControl.ItemContainerStyle>
                                         </ItemsControl>
