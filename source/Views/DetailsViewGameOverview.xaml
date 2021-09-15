@@ -119,10 +119,16 @@
                                 </Image>
 
 
-                                <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
-                                       DockPanel.Dock="Left" Margin="20,0,0,20"
-                                       VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                <DockPanel Margin="20,0,30,20" LastChildFill="False">
+                                    <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
+                                       DockPanel.Dock="Left" Margin="0,0,20,0"
+                                       VerticalAlignment="Bottom"
                                        RenderOptions.BitmapScalingMode="Fant" />
+                                    <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30"
+                                                VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.7"/>
+                                </DockPanel>
+
+
                             </Grid>
 
                             <Grid Grid.Row="1">
