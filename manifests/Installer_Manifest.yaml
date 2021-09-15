@@ -6,3 +6,20 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/0.8/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_0_8.pthm
     Changelog:
       - Initial release
+  - Version: 0.9
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-09-15
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/0.9/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_0_9.pthm
+    Changelog:
+      - 'Details View: Fix certain cover images not scaling correctly'
+      - 'Details View: Fix HowLongToBeat panel showing when the extension is not installed'
+      - 'Details View: Modify links margins and minimum width'
+      - 'Details View: Fix notes not showing'
+      - 'Details View: Add support for icons of LibraryManagement extension'
+      - 'Details View: adjust margins of notes and items of genres, categories, features and tags'
+      - 'Details View: Change foreground color of uninstalled games'
+      - 'Details View: Add SystemChecker and CheckLocalizations extensions buttons.'
+      - 'Grid View: Fix darken uninstalled games setting not working and animate opacity on mouse over'
+      - 'Fix being unable to click elements at the top in created windows'
+      - 'Fix contents inside TabControl using Hand cursor'
+      - 'Remove unused ThemeModifer extension constants'
