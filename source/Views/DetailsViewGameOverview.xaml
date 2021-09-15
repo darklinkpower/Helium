@@ -124,7 +124,9 @@
                                        DockPanel.Dock="Left" Margin="0,0,20,0"
                                        VerticalAlignment="Bottom"
                                        RenderOptions.BitmapScalingMode="Fant" />
-                                    <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30"
+                                    <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Center" Margin="0,0,20,0" DockPanel.Dock="Left"/>
+                                    <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Center" Margin="0,0,0,0" DockPanel.Dock="Left"/>
+                                    <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" Margin="20,0,0,0"
                                                 VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.7"/>
                                 </DockPanel>
 
@@ -695,7 +697,7 @@
                                                     <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="10">
                                                         <!--MediaElement causes exception on the Blend design preview-->
                                                         <CheckBox x:Name="VideoLoaded" Visibility="Collapsed"/>
-                                                        <!--<MediaElement x:Name="VideoTrailer" MediaElementBehaviors.Repeat="True" 
+                                                        <MediaElement x:Name="VideoTrailer" MediaElementBehaviors.Repeat="True" 
                                                             Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">
                                                             <MediaElement.Style>
                                                                 <Style>
@@ -749,7 +751,7 @@
                                                                     </BeginStoryboard>
                                                                 </EventTrigger>
                                                             </MediaElement.Triggers>
-                                                        </MediaElement>-->
+                                                        </MediaElement>
                                                         <DockPanel>
                                                             <ToggleButton FontSize="40" Name="VideoPlaybackToggleButton" 
                                                                           Style="{DynamicResource VideoPlaybackToggleButton}"
