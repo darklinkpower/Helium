@@ -2,8 +2,6 @@ Constants:
     - DetailsViewIsVideoPlayedByDefault: Details View - Video is played automatically
     - DetailsViewIsVideoTrailerDefault: Details View - Default video is Trailer
     - DetailsViewIsLogoVisible: Details View - Logo is displayed
-    - DetailsViewIsLogoOnLeft: Details View - Logo is placed on the left
     - DetailsViewLogoMaxHeight(100,800): Details View - Max height of logos
     - DetailsViewLogoMaxWidth(100,800): Details View - Max width of logos
-    - GridViewIsLogoVisible: Grid View - Logo is displayed
     - GridViewLogoHeight(100,200): Grid View - Height of logos
