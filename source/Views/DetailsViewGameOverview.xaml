@@ -521,6 +521,30 @@
 
                                         <StackPanel Grid.Column="0" Margin="0,0,40,0">
 
+                                            <StackPanel Name="PART_ElemNotes" Margin="0,0,0,10">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Settings DetailsVisibility.Genres}" Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                                <Label Content="{DynamicResource LOCNotesLabel}" Style="{DynamicResource FeedSectionLabel}"/>
+                                                <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <TextBox Name="PART_TextNotes" IsReadOnly="True"
+                                                     BorderThickness="0" Background="Transparent"
+                                                     AcceptsReturn="True" TextWrapping="Wrap"
+                                                     Margin="0" Padding="10"/>
+                                                </Grid>
+                                            </StackPanel>
+                                            
                                             <StackPanel Name="PART_ElemGenres">
                                                 <StackPanel.Style>
                                                     <Style TargetType="StackPanel">
