@@ -34,7 +34,7 @@
 
     <Color x:Key="BlackColor">#FF000000</Color>
     <Color x:Key="WhiteColor">#FFFFFFFF</Color>
-    <Color x:Key="TextColor">#f2f2f2</Color>
+    <Color x:Key="TextColor">#f1f7ff</Color>
     <Color x:Key="TextColorDarker">#a3a3a3</Color>
     <Color x:Key="TextColorDark">#FF000000</Color>
     <Color x:Key="MainColor">#2C3A67</Color>
@@ -70,6 +70,9 @@
         <GradientStop Color="#3794EA" Offset="0.75"/>
         <GradientStop Color="#3081E0" Offset="1"/>
     </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="LibraryDetailsViewNotInstalledForegroundBrush" Color="#a3aab9" />
+    
     
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="CheckboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
