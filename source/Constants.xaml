@@ -48,7 +48,7 @@
     <Color x:Key="BackgroundToneColor">#2C3A67</Color>
     <Color x:Key="GridItemBackgroundColor">#3D4450</Color>
     <Color x:Key="PanelSeparatorColor">#16181A</Color>
-
+    <Color x:Key="WindowPanelSeparatorColor">Transparent</Color>
 
     <!--region Custom theme colors-->
     <Color x:Key="ControlBackgroundColor">#3e4047</Color>
@@ -217,6 +217,7 @@
         <GradientStop Color="#2E52B5" Offset="1"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="PanelSeparatorBrush" Color="{DynamicResource PanelSeparatorColor}" />
+    <SolidColorBrush x:Key="WindowPanelSeparatorBrush" Color="{DynamicResource WindowPanelSeparatorColor}" />
     <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource MainColorDark}" />
 
     <SolidColorBrush x:Key="PositiveRatingBrush" Color="#78ffa0" />
