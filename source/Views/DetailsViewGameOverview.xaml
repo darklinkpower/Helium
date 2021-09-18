@@ -455,11 +455,12 @@
 
                                     <Grid Grid.Row="3" Margin="20,0,30,0">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="400" />
+                                            <ColumnDefinition Width="2*" />
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition Width="1*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <StackPanel Grid.Column="0" Margin="0,0,40,0">
+                                        <StackPanel Grid.Column="0" Margin="0,0,0,0">
                                             <StackPanel Name="PART_ElemNotes" Margin="0,0,0,10">
                                                 <Label Content="{DynamicResource LOCNotesLabel}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
@@ -602,7 +603,7 @@
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginL59Stackpanel}"
+                                            <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
                                                         Tag="{PluginSettings Plugin=GameActivity, Path=HasData}">
                                                 <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
                                                 <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
@@ -618,17 +619,8 @@
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="VideoFeed" Margin="0,0,0,15" Tag="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsAnyVideoAvailable}">
-                                                <StackPanel.Style>
-                                                    <Style TargetType="StackPanel">
-                                                        <Setter Property="Visibility" Value="Collapsed" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                                <Setter Property="Visibility" Value="Visible" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </StackPanel.Style>
+                                            <StackPanel Name="VideoFeed" Margin="0,0,0,15" Style="{DynamicResource PluginStackpanelVisibility}"
+                                                        Tag="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsAnyVideoAvailable}">
                                                 <Label Content="Video" Style="{DynamicResource FeedSectionLabel}" />
                                                 <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                     <Border Style="{DynamicResource OutlineBorder}" />
@@ -638,8 +630,8 @@
 
                                         </StackPanel>
 
-                                        <StackPanel Grid.Column="1">
-                                            <StackPanel Name="HltbPanel" Style="{DynamicResource PluginL59Stackpanel}" Tag="True"
+                                        <StackPanel Grid.Column="2">
+                                            <StackPanel Name="HltbPanel" Style="{DynamicResource PluginStackpanelVisibility}" Tag="True"
                                                         Visibility="{PluginStatus Plugin=playnite-howlongtobeat-plugin, Status=Installed}">
                                                 <Label Content="HowLongToBeat" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
@@ -647,14 +639,15 @@
                                                     <Border Style="{DynamicResource OutlineBorder}" />
                                                     <Border Padding="10" >
                                                         <StackPanel>
-                                                            <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Width="380" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                                                            <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Left" Margin="0,0,0,10"
+                                                                             Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
                                                             <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right"/>
                                                         </StackPanel>
                                                     </Border>
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="SuccessStoryPanel" Style="{DynamicResource PluginL59Stackpanel}"
+                                            <StackPanel Name="SuccessStoryPanel" Style="{DynamicResource PluginStackpanelVisibility}"
                                                         Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
                                                 <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
@@ -671,7 +664,7 @@
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="ScreenshotsVisualizerPanel" Style="{DynamicResource PluginL59Stackpanel}"
+                                            <StackPanel Name="ScreenshotsVisualizerPanel" Style="{DynamicResource PluginStackpanelVisibility}"
                                                         Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData}">
                                                 <Label Content="{DynamicResource LOCSsvTitle}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid>
@@ -749,7 +742,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="StackPanel" x:Key="PluginL59Stackpanel">
+    <Style TargetType="StackPanel" x:Key="PluginStackpanelVisibility">
         <Setter Property="Tag" Value="False" />
         <Setter Property="Visibility" Value="Collapsed"/>
         <Setter Property="Margin" Value="0,0,0,15" />

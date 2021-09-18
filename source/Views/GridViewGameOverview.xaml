@@ -25,7 +25,6 @@
                         </Border.Style>
                         <DockPanel>
 
-
                             <Button HorizontalAlignment="Right" VerticalAlignment="Top"
                                     Content="r" FontFamily="Marlett"
                                     Style="{DynamicResource SimpleButton}"
@@ -270,7 +269,7 @@
                                         </StackPanel>
 
                                         <!--#region SuccessStory-->
-                                        <StackPanel DockPanel.Dock="Top"  Margin="5,15,5,0" Style="{DynamicResource PluginL59Stackpanel}"
+                                        <StackPanel DockPanel.Dock="Top"  Margin="5,15,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
                                                     Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
                                             <TextBlock Text="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource BaseTextBlockStyle}"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
@@ -300,7 +299,7 @@
                                         <!--#endregion -->
 
                                         <!--#region ScreenshotsVisualizer-->
-                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0" Style="{DynamicResource PluginL59Stackpanel}"
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
                                                     Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData}">
                                             <TextBlock Text="{DynamicResource LOCSsvTitle}"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
@@ -310,7 +309,7 @@
                                         </StackPanel>
                                         <!--#endregion -->
                                         <!--#region GameActivity-->
-                                        <StackPanel DockPanel.Dock="Top"  Margin="5,15,5,0" Style="{DynamicResource PluginL59Stackpanel}"
+                                        <StackPanel DockPanel.Dock="Top"  Margin="5,15,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
                                                     Tag="{PluginSettings Plugin=GameActivity, Path=HasData}">
                                             <TextBlock Text="{DynamicResource LOCGameActivityTitle}"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
