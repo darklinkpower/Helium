@@ -728,9 +728,9 @@
     <Style TargetType="Border" x:Key="OutlineBorder">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="#1A000025" />
-        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="IsHitTestVisible" Value="False" />
-        <Setter Property="Margin" Value="-1" />
+        <Setter Property="Margin" Value="-0.5" />
         <Setter Property="Effect" >
             <Setter.Value>
                 <DropShadowEffect BlurRadius="10"
