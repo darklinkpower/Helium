@@ -19,54 +19,6 @@
                                 <RowDefinition MinHeight="200" Height="{Settings CalculatedGameDetailsIndentation}"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-
-                            <!--#region TextBlock property sources-->
-                            <TextBlock Name="VideoSelection" Foreground="White" Visibility="Collapsed">
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Text" Value="VideoTrailer.mp4"/>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding ElementName=VideoFileToggleButton,Path=IsChecked}" Value="False">
-                                                <Setter Property="Text" Value="VideoMicrotrailer.mp4" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Name="VideoTrailerPath" Foreground="White" Tag="{DynamicResource ExtraMetadataPath}" Visibility="Collapsed">
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Text">
-                                            <Setter.Value>
-                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}{4}">
-                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                    <Binding Source="\ExtraMetadata\games\"/>
-                                                    <Binding Path="Game.Id"/>
-                                                    <Binding Source="\"/>
-                                                    <Binding ElementName="VideoSelection" Path="Text"/>
-                                                </MultiBinding>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Name="LogoPath" Tag="{DynamicResource ExtraMetadataPath}" Foreground="White" Visibility="Collapsed">
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Text">
-                                            <Setter.Value>
-                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                    <Binding Source="\ExtraMetadata\games\" />
-                                                    <Binding Path="Game.Id" />
-                                                    <Binding Source="\Logo.png" />
-                                                </MultiBinding>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <!--#endregion-->
                             
                             <Grid Grid.Row="0">
                                 <Border Background="#141414" Height="{Settings CalculatedGameDetailsIndentation}">
@@ -99,38 +51,18 @@
                                     </FadeImage>
                                 </StackPanel>
 
-                                <Image Name="LogoImage" Stretch="Uniform" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center"
-                                       HorizontalAlignment="Center" MaxHeight="{DynamicResource DetailsViewLogoMaxHeight}"
-                                       MaxWidth="{DynamicResource DetailsViewLogoMaxHeight}"
-                                       StretchDirection="Both" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}" Margin="20,20,30,20">
-                                    <Image.Effect>
-                                        <DropShadowEffect Direction="0" Color="#b3000000" ShadowDepth="0" BlurRadius="20" />
-                                    </Image.Effect>
-                                    <Image.Style>
-                                        <Style TargetType="Image">
-                                            <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text}" />
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                    <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text, Converter={StaticResource ImageStringToImageConverter}}" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Image.Style>
-                                </Image>
+                                <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" Margin="20,20,30,20"/>
 
-
-                                <DockPanel Margin="20,0,30,20" LastChildFill="False">
+                                <DockPanel Margin="20,0,30,20" LastChildFill="False" VerticalAlignment="Bottom">
                                     <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
                                        DockPanel.Dock="Left" Margin="0,0,20,0"
                                        VerticalAlignment="Bottom"
                                        RenderOptions.BitmapScalingMode="Fant" />
-                                    <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Center" Margin="0,0,20,0" DockPanel.Dock="Left"/>
-                                    <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Center" Margin="0,0,0,0" DockPanel.Dock="Left"/>
+                                    <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,20,0" DockPanel.Dock="Left" Opacity="0.60" />
+                                    <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,0,0" DockPanel.Dock="Left" Opacity="0.60" />
                                     <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" Margin="20,0,0,0"
                                                 VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.7"/>
                                 </DockPanel>
-
-
                             </Grid>
 
                             <Grid Grid.Row="1">
@@ -686,85 +618,21 @@
                                                 </Grid>
                                             </StackPanel>
 
-                                            <StackPanel Name="VideoFeed" Style="{DynamicResource PluginL59Stackpanel}"
-                                                        Tag="True">
+                                            <StackPanel Name="VideoFeed" Margin="0,0,0,15" Tag="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsAnyVideoAvailable}">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
                                                 <Label Content="Video" Style="{DynamicResource FeedSectionLabel}" />
                                                 <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
                                                     <Border Style="{DynamicResource OutlineBorder}" />
-                                                    <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="10">
-                                                        <!--MediaElement causes exception on the Blend design preview-->
-                                                        <CheckBox x:Name="VideoLoaded" Visibility="Collapsed"/>
-                                                        <MediaElement x:Name="VideoTrailer" MediaElementBehaviors.Repeat="True" 
-                                                            Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">
-                                                            <MediaElement.Style>
-                                                                <Style>
-                                                                    <Setter Property="MediaElement.Source" Value="" />
-                                                                    <Style.Triggers>
-                                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=IsActive}" Value="True">
-                                                                            <Setter Property="MediaElement.Source" Value="{Binding ElementName=VideoTrailerPath, Path=Text}" />
-                                                                        </DataTrigger>
-                                                                        <DataTrigger Binding="{Binding ElementName=VideoPlaybackToggleButton,Path=IsChecked}" Value="False">
-                                                                            <Setter Property="MediaElement.Source" Value="" />
-                                                                        </DataTrigger>
-                                                                        <DataTrigger Binding="{Binding ElementName=PART_ControlGameView, Path=IsVisible}" Value="False">
-                                                                            <Setter Property="MediaElement.Source" Value="" />
-                                                                        </DataTrigger>
-                                                                        <DataTrigger Binding="{Binding ElementName=VideoAudioToggleButton,Path=IsChecked}" Value="True">
-                                                                            <DataTrigger.EnterActions>
-                                                                                <BeginStoryboard>
-                                                                                    <Storyboard>
-                                                                                        <DoubleAnimation Storyboard.TargetProperty="Volume" From="0" To="0.5" Duration="0:0:0.2"/>
-                                                                                    </Storyboard>
-                                                                                </BeginStoryboard>
-                                                                            </DataTrigger.EnterActions>
-                                                                            <DataTrigger.ExitActions>
-                                                                                <BeginStoryboard>
-                                                                                    <Storyboard>
-                                                                                        <DoubleAnimation Storyboard.TargetProperty="Volume" From="0.5" To="0" Duration="0:0:0.2"/>
-                                                                                    </Storyboard>
-                                                                                </BeginStoryboard>
-                                                                            </DataTrigger.ExitActions>
-                                                                        </DataTrigger>
-                                                                    </Style.Triggers>
-                                                                </Style>
-                                                            </MediaElement.Style>
-                                                            <MediaElement.Triggers>
-                                                                <EventTrigger RoutedEvent="MediaElement.MediaFailed">
-                                                                    <BeginStoryboard>
-                                                                        <Storyboard>
-                                                                            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="VideoLoaded" Storyboard.TargetProperty="IsChecked">
-                                                                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False"/>
-                                                                            </BooleanAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </BeginStoryboard>
-                                                                </EventTrigger>
-                                                                <EventTrigger RoutedEvent="MediaElement.MediaOpened">
-                                                                    <BeginStoryboard>
-                                                                        <Storyboard>
-                                                                            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="VideoLoaded" Storyboard.TargetProperty="IsChecked">
-                                                                                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
-                                                                            </BooleanAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </BeginStoryboard>
-                                                                </EventTrigger>
-                                                            </MediaElement.Triggers>
-                                                        </MediaElement>
-                                                        <DockPanel>
-                                                            <ToggleButton FontSize="40" Name="VideoPlaybackToggleButton" 
-                                                                          Style="{DynamicResource VideoPlaybackToggleButton}"
-                                                                          Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-                                                                          IsChecked="{DynamicResource DetailsViewIsVideoPlayedByDefault}"/>
-                                                            <ToggleButton FontSize="40" x:Name="VideoAudioToggleButton" Style="{DynamicResource VideoAudioToggleButton}" 
-                                                                          Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" IsChecked="True" />
-                                                            <ToggleButton FontSize="40" x:Name="VideoFileToggleButton" Style="{DynamicResource VideoFileToggleButton}" 
-                                                                          Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" 
-                                                                          IsChecked="{DynamicResource DetailsViewIsVideoTrailerDefault}"/>
-                                                        </DockPanel>
-
-                                                    </StackPanel>
+                                                    <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" Margin="10"/>
                                                 </Grid>
                                             </StackPanel>
 
@@ -890,142 +758,5 @@
                 <Setter Property="Visibility" Value="Visible" />
             </DataTrigger>
         </Style.Triggers>
-    </Style>
-
-    <Style x:Key="VideoPlaybackToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Opacity" Value="0.3"/>
-        <Setter Property="FontFamily" Value="{DynamicResource FontIcoFont}"/>
-        <Setter Property="Visibility" Value="Visible"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ToggleButton">
-                    <Border x:Name="Border">
-                        <ContentPresenter x:Name="ToggleButon"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
-                                          Content="{TemplateBinding Content}"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Content" Value="&#xECB1;"/>
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Content" Value="&#xECA7;"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.8" Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.3" Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
-                        <DataTrigger Binding="{Binding ElementName=VideoTrailer, Path=Source}" Value="HideButtons">
-                            <Setter Property="Visibility" Value="Collapsed"/>
-                        </DataTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    <Style x:Key="VideoFileToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource VideoPlaybackToggleButton}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ToggleButton">
-                    <Border x:Name="Border">
-                        <ContentPresenter x:Name="ToggleButon"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
-                                          Content="{TemplateBinding Content}"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Content" Value="&#xEB0A;"/>
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Content" Value="&#xEB2C;"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.8" Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.3" Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
-                        <DataTrigger Binding="{Binding ElementName=VideoPlaybackToggleButton,Path=IsChecked}" Value="False">
-                            <Setter Property="Visibility" Value="Collapsed"/>
-                        </DataTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style x:Key="VideoAudioToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource VideoPlaybackToggleButton}">
-        <Setter Property="IsChecked" Value="False"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ToggleButton">
-                    <Border x:Name="Border">
-                        <ContentPresenter x:Name="ToggleButon"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
-                                          Content="{TemplateBinding Content}"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Content" Value="&#xEC94;"/>
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Content" Value="&#xECB8;"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.8" Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.3" Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
-                        <DataTrigger Binding="{Binding ElementName=VideoPlaybackToggleButton,Path=IsChecked}" Value="False">
-                            <Setter Property="Visibility" Value="Collapsed"/>
-                        </DataTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
     </Style>
 </ResourceDictionary>
