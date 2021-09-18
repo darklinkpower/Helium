@@ -129,7 +129,7 @@
                                     </Grid>
                                 </Border>
                                 <Grid>
-                                    <Border Background="{DynamicResource BackdropGlass2}" Height="380" VerticalAlignment="Top"/>
+                                    <Border Background="{DynamicResource BackdropGlass2}" Height="380" VerticalAlignment="Top" Margin="0,65,0,0"/>
                                 </Grid>
                                 <Grid Name="DetailsGrid">
                                     <Grid.RowDefinitions>
@@ -699,7 +699,7 @@
         <Setter Property="Foreground" Value="{DynamicResource DetailsViewOverviewHeaderLabelBrush}"/>
         <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="Opacity" Value="0.2"/>
+        <Setter Property="Opacity" Value="0.52"/>
     </Style>
 
     <Style TargetType="Label" x:Key="ContainerLabel">
