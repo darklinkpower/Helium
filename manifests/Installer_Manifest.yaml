@@ -28,6 +28,6 @@ Packages:
     ReleaseDate: 2021-09-18
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/0.10/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_0_10.pthm
     Changelog:
-      - 'Details View: Fix plugin being in the center vertically'
+      - 'Details View: Fix plugin buttons being in the center vertically'
       - 'Details View: Add logo and video support using Extra Metadata Loader extension'
       - 'Grid View: Add logo support using Extra Metadata Loader extension'
