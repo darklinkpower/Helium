@@ -15,7 +15,7 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Grid>
                         <Rectangle x:Name="HoverRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                                   Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" RadiusY="4" MaxWidth="5.5"
+                                   Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" RadiusX="3" RadiusY="4"
                                    Stroke="{x:Null}" Margin="0" MinHeight="10"
                                    Fill="{TemplateBinding Background}" />
                     </Grid>
