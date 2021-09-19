@@ -111,6 +111,7 @@
     <Color x:Key="DetailsViewContainerLabelColor">#808486</Color>
     <SolidColorBrush x:Key="DetailsViewContainerLabelBrush" Color="{DynamicResource DetailsViewContainerLabelColor}" />
     <SolidColorBrush x:Key="DetailsViewContainerTextBrush" Color="#d3d3d3" />
+    <SolidColorBrush x:Key="DetailsViewLinksTextBrush" Color="#52ffffff" />
     <SolidColorBrush x:Key="DetailsViewOverviewHeaderButtonsBrush" Color="#DBd3d8e0" />
     
     

@@ -25,4 +25,69 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <Style x:Key="PropertyItemLinksButton" TargetType="Button">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Margin" Value="0,4,0,4" />
+        <Setter Property="Background" Value="#59657180" />
+        <Setter Property="Foreground" Value="{DynamicResource DetailsViewLinksTextBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Margin="22,2,22,2">
+                        <Border Name="BorderMouseOver" Background="{TemplateBinding Background}" CornerRadius="2"
+                                Opacity="0.0"/>
+                        <Border Padding="12,4,12,4" >
+                            <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
+                               Foreground="{TemplateBinding Foreground}"
+                               Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
+                               TextWrapping="NoWrap"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True" >
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="1.0" Storyboard.TargetName="BorderMouseOver"
+                                                Duration="0:0:0.70">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.0" Storyboard.TargetName="BorderMouseOver"
+                                                Duration="0:0:0.50">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
 </ResourceDictionary>

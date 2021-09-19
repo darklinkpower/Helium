@@ -142,6 +142,8 @@
                                     <Grid Grid.Row="0">
                                         <Border Background="{DynamicResource BackdropGlass1}"/>
 
+                                        <!--This fast blur border breaks design view, hiding all elements in details
+                                        Should be disabled when working-->
                                         <Border Opacity="0.30" VerticalAlignment="Bottom">
                                             <Border.OpacityMask>
                                                 <LinearGradientBrush StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
@@ -537,22 +539,32 @@
                                     </Grid>
 
                                     <Grid Margin="20,10,30,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                        </Grid.RowDefinitions>
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Settings DetailsVisibility.Links}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
                                         <Border Style="{DynamicResource OutlineBorder}" />
-                                        <ItemsControl Grid.Row="0" VerticalAlignment="Center" Margin="10" Name="PART_ItemsLinks">
+
+                                        <ItemsControl ItemsSource="{Binding Game.Links}" Margin="0,2,0,2">
                                             <ItemsControl.ItemsPanel>
                                                 <ItemsPanelTemplate>
                                                     <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
                                                 </ItemsPanelTemplate>
                                             </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemContainerStyle>
-                                                <Style TargetType="ContentPresenter">
-                                                    <Setter Property="FrameworkElement.Margin" Value="20,0,20,0" />
-                                                    <Setter Property="FrameworkElement.MinWidth" Value="100" />
-                                                </Style>
-                                            </ItemsControl.ItemContainerStyle>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Button Content="{Binding Name}" Style="{StaticResource PropertyItemLinksButton}"
+                                                            ToolTip="{Binding Url}" ToolTipService.InitialShowDelay="500" 
+                                                            Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.OpenLinkCommand}"
+                                                            CommandParameter="{Binding}"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
                                         </ItemsControl>
                                     </Grid>
 
