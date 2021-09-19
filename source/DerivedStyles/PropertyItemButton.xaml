@@ -25,19 +25,20 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
-    <Style x:Key="PropertyItemLinksButton" TargetType="Button">
+
+    <Style x:Key="PropertyItemFeedPanelButton" TargetType="Button">
         <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-        <Setter Property="Margin" Value="0,4,0,4" />
+        <Setter Property="Margin" Value="11,1,11,1" />
+        <Setter Property="Padding" Value="12,4,12,4" />
         <Setter Property="Background" Value="#59657180" />
         <Setter Property="Foreground" Value="{DynamicResource DetailsViewLinksTextBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Grid Margin="22,2,22,2">
+                    <Grid Margin="{TemplateBinding Margin}">
                         <Border Name="BorderMouseOver" Background="{TemplateBinding Background}" CornerRadius="2"
                                 Opacity="0.0"/>
-                        <Border Padding="12,4,12,4" >
+                        <Border Padding="{TemplateBinding Padding}" >
                             <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
                                Foreground="{TemplateBinding Foreground}"
                                Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
@@ -89,5 +90,9 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
+    <Style x:Key="PropertyItemLinksPanelButton" TargetType="Button" BasedOn="{StaticResource PropertyItemFeedPanelButton}">
+        <Setter Property="Margin" Value="11,1,11,1" />
+        <Setter Property="Padding" Value="12,4,12,4" />
+    </Style>
 </ResourceDictionary>

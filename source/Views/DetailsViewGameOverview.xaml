@@ -546,12 +546,15 @@
                                                     <DataTrigger Binding="{Settings DetailsVisibility.Links}" Value="False">
                                                         <Setter Property="Visibility" Value="Collapsed" />
                                                     </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Game.Links}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </Grid.Style>
                                         <Border Style="{DynamicResource OutlineBorder}" />
 
-                                        <ItemsControl ItemsSource="{Binding Game.Links}" Margin="0,2,0,2">
+                                        <ItemsControl ItemsSource="{Binding Game.Links}" Margin="0,3,0,3">
                                             <ItemsControl.ItemsPanel>
                                                 <ItemsPanelTemplate>
                                                     <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
@@ -559,7 +562,7 @@
                                             </ItemsControl.ItemsPanel>
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
-                                                    <Button Content="{Binding Name}" Style="{StaticResource PropertyItemLinksButton}"
+                                                    <Button Content="{Binding Name}" Style="{StaticResource PropertyItemLinksPanelButton}"
                                                             ToolTip="{Binding Url}" ToolTipService.InitialShowDelay="500" 
                                                             Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.OpenLinkCommand}"
                                                             CommandParameter="{Binding}"/>
@@ -595,26 +598,28 @@
                                                             <DataTrigger Binding="{Settings DetailsVisibility.Genres}" Value="False">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
                                                             </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Game.Genres}" Value="{x:Null}">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCGenreLabel}" Style="{DynamicResource FeedSectionLabel}"/>
                                                 <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
                                                     <Border Style="{DynamicResource OutlineBorder}" />
-                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsGenres" VerticalAlignment="Center" Margin="10" >
+                                                    <ItemsControl ItemsSource="{Binding Game.Genres}" Margin="0,3,0,3">
                                                         <ItemsControl.ItemsPanel>
                                                             <ItemsPanelTemplate>
                                                                 <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
                                                             </ItemsPanelTemplate>
                                                         </ItemsControl.ItemsPanel>
-                                                        <ItemsControl.ItemContainerStyle>
-                                                            <Style TargetType="ContentPresenter">
-                                                                <Setter Property="FrameworkElement.Margin" Value="20,0,20,0" />
-                                                            </Style>
-                                                        </ItemsControl.ItemContainerStyle>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Button Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
+                                                                        Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetGenreFilterCommand}"
+                                                                        CommandParameter="{Binding}"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
                                                     </ItemsControl>
                                                 </Grid>
                                             </StackPanel>
@@ -635,21 +640,20 @@
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCGameCategoriesTitle}" Style="{DynamicResource FeedSectionLabel}" />
                                                 <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
                                                     <Border Style="{DynamicResource OutlineBorder}" />
-                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsCategories" VerticalAlignment="Center" Margin="10" >
+                                                    <ItemsControl ItemsSource="{Binding Game.Categories}" Margin="0,3,0,3">
                                                         <ItemsControl.ItemsPanel>
                                                             <ItemsPanelTemplate>
                                                                 <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
                                                             </ItemsPanelTemplate>
                                                         </ItemsControl.ItemsPanel>
-                                                        <ItemsControl.ItemContainerStyle>
-                                                            <Style TargetType="ContentPresenter">
-                                                                <Setter Property="FrameworkElement.Margin" Value="20,0,20,0" />
-                                                            </Style>
-                                                        </ItemsControl.ItemContainerStyle>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Button Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
+                                                                        Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetCategoryFilterCommand}"
+                                                                        CommandParameter="{Binding}"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
                                                     </ItemsControl>
                                                 </Grid>
                                             </StackPanel>
@@ -662,26 +666,28 @@
                                                             <DataTrigger Binding="{Settings DetailsVisibility.Features}" Value="False">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
                                                             </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Game.Features}" Value="{x:Null}">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCFeaturesLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                 <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
                                                     <Border Style="{DynamicResource OutlineBorder}" />
-                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsFeatures" VerticalAlignment="Center" Margin="10" >
+                                                    <ItemsControl ItemsSource="{Binding Game.Features}" Margin="0,3,0,3">
                                                         <ItemsControl.ItemsPanel>
                                                             <ItemsPanelTemplate>
                                                                 <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
                                                             </ItemsPanelTemplate>
                                                         </ItemsControl.ItemsPanel>
-                                                        <ItemsControl.ItemContainerStyle>
-                                                            <Style TargetType="ContentPresenter">
-                                                                <Setter Property="FrameworkElement.Margin" Value="20,0,20,0" />
-                                                            </Style>
-                                                        </ItemsControl.ItemContainerStyle>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Button Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
+                                                                        Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetFeatureFilterCommand}"
+                                                                        CommandParameter="{Binding}"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
                                                     </ItemsControl>
                                                 </Grid>
                                             </StackPanel>
@@ -694,26 +700,28 @@
                                                             <DataTrigger Binding="{Settings DetailsVisibility.Tags}" Value="False">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
                                                             </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Game.Tags}" Value="{x:Null}">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
                                                 <Label Content="{DynamicResource LOCTagsLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                 <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
                                                     <Border Style="{DynamicResource OutlineBorder}" />
-                                                    <ItemsControl Grid.Row="0"  Name="PART_ItemsTags" VerticalAlignment="Center" Margin="10" >
+                                                    <ItemsControl ItemsSource="{Binding Game.Tags}" Margin="0,3,0,3">
                                                         <ItemsControl.ItemsPanel>
                                                             <ItemsPanelTemplate>
                                                                 <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
                                                             </ItemsPanelTemplate>
                                                         </ItemsControl.ItemsPanel>
-                                                        <ItemsControl.ItemContainerStyle>
-                                                            <Style TargetType="ContentPresenter">
-                                                                <Setter Property="FrameworkElement.Margin" Value="20,0,20,0" />
-                                                            </Style>
-                                                        </ItemsControl.ItemContainerStyle>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Button Content="{Binding Name}" Style="{StaticResource PropertyItemFeedPanelButton}"
+                                                                        Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.SetTagFilterCommand}"
+                                                                        CommandParameter="{Binding}"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
                                                     </ItemsControl>
                                                 </Grid>
                                             </StackPanel>
