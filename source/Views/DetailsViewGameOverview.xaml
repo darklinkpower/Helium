@@ -317,7 +317,45 @@
                                                             </Style.Triggers>
                                                         </Style>
                                                     </DockPanel.Style>
-                                                    <Viewbox Stretch="Uniform" Height="35">
+
+                                                    <Viewbox Stretch="Uniform" Height="35" Tag="{PluginSettings Plugin=SuccessStory, Path=Is100Percent}">
+                                                        <Viewbox.Style>
+                                                            <Style TargetType="{x:Type Viewbox}">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Viewbox.Style>
+                                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                                            <Canvas.RenderTransform>
+                                                                <TranslateTransform X="0" Y="0"/>
+                                                            </Canvas.RenderTransform>
+                                                            <Canvas.Resources/>
+                                                            <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584" FillRule="NonZero" Fill="#66B9FF" StrokeThickness="10" Stroke="#226296" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                            <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544" FillRule="NonZero" Fill="#66B9FF" StrokeThickness="10" Stroke="#226296" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                            <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84" FillRule="NonZero" Fill="#66B9FF" StrokeThickness="10" Stroke="#226296" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
+                                                            <Path Fill="#FFD000" StrokeThickness="6" Stroke="#FF9100" StrokeMiterLimit="10">
+                                                                <Path.Data>
+                                                                    <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
+                                                                </Path.Data>
+                                                            </Path>
+                                                        </Canvas>
+                                                    </Viewbox>
+
+                                                    <Viewbox Stretch="Uniform" Height="35" Tag="{PluginSettings Plugin=SuccessStory, Path=Is100Percent}">
+                                                        <Viewbox.Style>
+                                                            <Style TargetType="{x:Type Viewbox}">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="False">
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Viewbox.Style>
                                                         <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
                                                             <Canvas.RenderTransform>
                                                                 <TranslateTransform X="0" Y="0"/>
