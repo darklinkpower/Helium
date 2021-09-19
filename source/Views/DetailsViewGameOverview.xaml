@@ -445,7 +445,7 @@
                                         <Grid Grid.Row="0">
                                             <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}"
                                                     Margin="20,0,30,0" Padding="15,10,15,10">
-                                                <DockPanel LastChildFill="False">
+                                                <DockPanel LastChildFill="True">
                                                     <DockPanel.Resources>
                                                         <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
                                                         <Style TargetType="Label">
@@ -456,7 +456,7 @@
                                                             <Setter Property="VerticalAlignment" Value="Center" />
                                                         </Style>
                                                     </DockPanel.Resources>
-                                                    <Border Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
+                                                    <Border DockPanel.Dock="Left" Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
                                                     <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
                                                         DockPanel.Dock="Left" Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}"
                                                         StretchDirection="Both" Stretch="Uniform"
@@ -465,73 +465,77 @@
                                                             <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
                                                         </Image.Effect>
                                                     </Image>
+                                                    <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" VerticalScrollBarVisibility="Disabled"
+                                                                  HorizontalScrollBarVisibility="Auto">
+                                                        <DockPanel>
+                                                            <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="300" Margin="0,0,15,0" >
+                                                                <StackPanel>
+                                                                    <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
+                                                                               Style="{DynamicResource BaseTextBlockStyle}" Visibility="Collapsed"/>
+                                                                    <Separator Background="{DynamicResource PanelSeparatorBrush}" Visibility="Collapsed"/>
+                                                                    <HtmlTextView Name="PART_HtmlDescription"
+                                                                                  Margin="0,5,0,5"
+                                                                                  HtmlFontSize="{DynamicResource FontSize}"
+                                                                                  HtmlFontFamily="{DynamicResource FontFamily}"
+                                                                                  HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
+                                                                                  LinkForeground="{DynamicResource GlyphColor}"                                      
+                                                                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                                                                </StackPanel>
+                                                            </ScrollViewer>
 
-                                                    <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="300" Margin="0,0,15,0" Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}">
-                                                        <StackPanel>
-                                                            <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
-                                                                Style="{DynamicResource BaseTextBlockStyle}" Visibility="Collapsed"/>
-                                                            <Separator Background="{DynamicResource PanelSeparatorBrush}" Visibility="Collapsed"/>
-                                                            <HtmlTextView Name="PART_HtmlDescription"
-                                                        Margin="0,5,0,5"
-                                                        HtmlFontSize="{DynamicResource FontSize}"
-                                                        HtmlFontFamily="{DynamicResource FontFamily}"
-                                                        HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
-                                                        LinkForeground="{DynamicResource GlyphColor}"                                      
-                                                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                                        ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                                                        </StackPanel>
+                                                            <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
+                                                                <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="6">
+                                                                    <GridEx.Resources>
+                                                                        <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
+                                                                    </GridEx.Resources>
+                                                                    <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
+                                                                    <Button Background="Transparent" Name="PART_ButtonLibrary" />
+                                                                    <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
+                                                                    <Button Name="PART_ButtonSource" />
+                                                                    <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
+                                                                    <ItemsControl Name="PART_ItemsPlatforms" />
+                                                                    <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
+                                                                    <ItemsControl Name="PART_ItemsDevelopers"/>
+                                                                    <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
+                                                                    <ItemsControl Name="PART_ItemsPublishers"/>
+                                                                    <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
+                                                                    <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
+                                                                </GridEx>
+                                                            </ScrollViewer>
+                                                            <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
+                                                                <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="7">
+                                                                    <GridEx.Resources>
+                                                                        <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
+                                                                    </GridEx.Resources>
+                                                                    <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
+                                                                    <ItemsControl Name="PART_ItemsSeries" />
+
+                                                                    <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
+                                                                    <ItemsControl Name="PART_ItemsRegions" />
+
+                                                                    <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
+                                                                    <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
+                                                                    <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
+
+                                                                    <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
+                                                                               Style="{DynamicResource TextBlockGameScore}" />
+
+                                                                    <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
+                                                                    <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
+                                                                               Style="{DynamicResource TextBlockGameScore}" />
+
+                                                                    <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
+                                                                    <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
+                                                                               Style="{DynamicResource TextBlockGameScore}" />
+
+                                                                    <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
+                                                                    <ItemsControl Name="PART_ItemsAgeRatings" />
+                                                                </GridEx>
+                                                            </ScrollViewer>
+                                                        </DockPanel>
                                                     </ScrollViewer>
-                                                    <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
-                                                              DockPanel.Dock="Left">
-                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="6">
-                                                            <GridEx.Resources>
-                                                                <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
-                                                            </GridEx.Resources>
-                                                            <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
-                                                            <Button Background="Transparent" Name="PART_ButtonLibrary" />
-                                                            <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
-                                                            <Button Name="PART_ButtonSource" />
-                                                            <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
-                                                            <ItemsControl Name="PART_ItemsPlatforms" />
-                                                            <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                                            <ItemsControl Name="PART_ItemsDevelopers"/>
-                                                            <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                                            <ItemsControl Name="PART_ItemsPublishers"/>
-                                                            <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
-                                                            <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
-                                                        </GridEx>
-                                                    </ScrollViewer>
-                                                    <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" Margin="15,0,0,0"
-                                                              DockPanel.Dock="Left">
-                                                        <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="7">
-                                                            <GridEx.Resources>
-                                                                <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
-                                                            </GridEx.Resources>
-                                                            <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                                            <ItemsControl Name="PART_ItemsSeries" />
-
-                                                            <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
-                                                            <ItemsControl Name="PART_ItemsRegions" />
-
-                                                            <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
-                                                            <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
-                                                            <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
-
-                                                            <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                                       Style="{DynamicResource TextBlockGameScore}" />
-
-                                                            <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
-                                                            <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
-                                                                Style="{DynamicResource TextBlockGameScore}" />
-
-                                                            <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
-                                                            <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
-                                                                Style="{DynamicResource TextBlockGameScore}" />
-
-                                                            <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
-                                                            <ItemsControl Name="PART_ItemsAgeRatings" />
-                                                        </GridEx>
-                                                    </ScrollViewer>
+                                                    
                                                 </DockPanel>
                                             </Border>
                                             <Border Style="{DynamicResource OutlineBorder}" Margin="20,0,30,0" Padding="15,10,15,10"/>
