@@ -468,7 +468,7 @@
                                                     <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" VerticalScrollBarVisibility="Disabled"
                                                                   HorizontalScrollBarVisibility="Auto">
                                                         <DockPanel>
-                                                            <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="300" Margin="0,0,15,0" >
+                                                            <ScrollViewer Name="PART_ElemDescription" DockPanel.Dock="Left" Width="{DynamicResource DetailsViewDescriptionWidth}" Margin="0,0,15,0" >
                                                                 <StackPanel>
                                                                     <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
                                                                                Style="{DynamicResource BaseTextBlockStyle}" Visibility="Collapsed"/>
