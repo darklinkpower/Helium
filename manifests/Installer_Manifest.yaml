@@ -31,3 +31,14 @@ Packages:
       - 'Details View: Fix plugin buttons being in the center vertically'
       - 'Details View: Add logo and video support using Extra Metadata Loader extension'
       - 'Grid View: Add logo support using Extra Metadata Loader extension'
+  - Version: 1.0
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-09-19
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.0/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_0.pthm
+    Changelog:
+      - 'Details View: Improve scaling and layout of panels for different DPIs and resolutions'
+      - 'Details View: Adjustment to panels shadow border'
+      - 'Details View: Show different icon in header when all achievements are unlocked'
+      - 'Details View: Style items in links, features, categories, genres and tags panels'
+      - "Details View: Show horizontal scrollbar in game details when contents don't fit"
+      - 'Details View: Add blur effect to details header'
