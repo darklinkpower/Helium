@@ -53,7 +53,7 @@
                                         <DoubleAnimation
                                                 Storyboard.TargetProperty="Opacity"
                                                 To="1.0" Storyboard.TargetName="BorderMouseOver"
-                                                Duration="0:0:0.70">
+                                                Duration="0:0:0.30">
                                             <DoubleAnimation.EasingFunction>
                                                 <CubicEase EasingMode="EaseOut"/>
                                             </DoubleAnimation.EasingFunction>
@@ -67,7 +67,7 @@
                                         <DoubleAnimation
                                                 Storyboard.TargetProperty="Opacity"
                                                 To="0.0" Storyboard.TargetName="BorderMouseOver"
-                                                Duration="0:0:0.50">
+                                                Duration="0:0:0.30">
                                             <DoubleAnimation.EasingFunction>
                                                 <CubicEase EasingMode="EaseOut"/>
                                             </DoubleAnimation.EasingFunction>
