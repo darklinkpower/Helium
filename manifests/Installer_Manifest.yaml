@@ -42,3 +42,4 @@ Packages:
       - 'Details View: Style items in links, features, categories, genres and tags panels'
       - "Details View: Show horizontal scrollbar in game details when contents don't fit"
       - 'Details View: Add blur effect to details header'
+      - 'Details View: Added ThemeModifier constant to modify the game description width'
