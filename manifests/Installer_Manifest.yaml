@@ -43,3 +43,11 @@ Packages:
       - "Details View: Show horizontal scrollbar in game details when contents don't fit"
       - 'Details View: Add blur effect to details header'
       - 'Details View: Added ThemeModifier constant to modify the game description width'
+  - Version: 1.1
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-09-20
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.1/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_1.pthm
+    Changelog:
+      - 'Details View: Add ThemeModifer variable to modify the description dock position'
+      - 'Details View: Performance improvement by removing panels outline border shadow effect'
+      - 'Details View: Fix score rows having different margin than other details'
