@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <Style x:Key="TextBlockGameScore" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Margin" Value="0,4,0,4" />
         <Style.Triggers>
             <Trigger Property="Tag" Value="{x:Static ScoreRating.Positive}">
                 <Setter Property="Foreground" Value="{DynamicResource PositiveRatingBrush}" />
