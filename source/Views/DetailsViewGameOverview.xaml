@@ -822,15 +822,6 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="Margin" Value="-0.5" />
-        <Setter Property="Effect" >
-            <Setter.Value>
-                <DropShadowEffect BlurRadius="10"
-                        Direction="0"
-                        ShadowDepth="1"
-                        Color="#1A000025"
-                        RenderingBias="Performance"/>
-            </Setter.Value>
-        </Setter>
     </Style>
 
     <Style TargetType="StackPanel" x:Key="PluginStackpanelVisibility">
