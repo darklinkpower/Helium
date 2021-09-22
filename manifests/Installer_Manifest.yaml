@@ -51,3 +51,9 @@ Packages:
       - 'Details View: Add ThemeModifer variable to modify the description dock position'
       - 'Details View: Performance improvement by removing panels outline border shadow effect'
       - 'Details View: Fix score rows having different margin than other details'
+  - Version: 1.2
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-09-22
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.2/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_2.pthm
+    Changelog:
+      - 'Details View: Support for ReviewViewer extension Steam reviews control'
