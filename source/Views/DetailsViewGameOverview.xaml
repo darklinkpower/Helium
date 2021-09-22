@@ -709,7 +709,7 @@
 
                                                 <StackPanel Name="VideoFeed" Margin="0,0,0,15" Style="{DynamicResource PluginStackpanelVisibility}"
                                                         Tag="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsAnyVideoAvailable}">
-                                                    <Label Content="Video" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <Label Content="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" Margin="10"/>
@@ -770,6 +770,17 @@
                                                     </Grid>
                                                 </StackPanel>
 
+                                                <StackPanel Name="ReviewsPanel" Margin="0,0,0,15"
+                                                            Visibility="{PluginStatus Plugin=Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1, Status=Installed}">
+                                                    <Label Content="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Style="{DynamicResource FeedSectionLabel}"/>
+                                                    <Grid Background="{DynamicResource SectionContainerBackgroundBrush}">
+                                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                                        <Border Padding="10">
+                                                            <ContentControl x:Name="ReviewViewer_ReviewsControl" />
+                                                        </Border>
+                                                    </Grid>
+                                                </StackPanel>
+                                                
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
