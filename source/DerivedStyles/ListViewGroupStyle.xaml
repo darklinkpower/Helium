@@ -32,11 +32,20 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBlock Text="{Binding Items.Count, Mode=OneWay, StringFormat=({0})}"
-                                           VerticalAlignment="Center" HorizontalAlignment="Left"
-                                           Style="{DynamicResource BaseTextBlockStyle}"
-                                           DockPanel.Dock="Left" TextAlignment="Center"
-                                           Visibility="{Settings ShowGroupCount}"/>
+                                <Grid DockPanel.Dock="Left" Margin="5,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" CornerRadius="4" Background="{DynamicResource GroupCountBackgroundBrush}"  Width="Auto">
+                                        <TextBlock Text="{Binding Items.Count, Mode=OneWay, StringFormat={}{0}}"
+                                               Foreground="#A5A7A9"
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               Style="{DynamicResource BaseTextBlockStyle}"
+                                               TextAlignment="Center" FontSize="{DynamicResource FontSizeSmall}"
+                                               Visibility="{Settings ShowGroupCount}"
+                                               Margin="7,0,7,0"/>
+                                    </Border>
+                                </Grid>
                             </DockPanel>
                         </ExpanderEx.Header>
                         <ItemsPresenter />
