@@ -119,6 +119,9 @@
                                                                 <DataTrigger Binding="{Binding Game.IsRunning}" Value="True">
                                                                     <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
                                                                 </DataTrigger>
+                                                                <DataTrigger Binding="{Binding Game.IsLaunching}" Value="True">
+                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
+                                                                </DataTrigger>
                                                                 <MultiDataTrigger>
                                                                     <MultiDataTrigger.Conditions>
                                                                         <Condition Binding="{Binding Game.IsInstalled}" Value="True"/>
@@ -136,6 +139,13 @@
                                                                 <MultiDataTrigger>
                                                                     <MultiDataTrigger.Conditions>
                                                                         <Condition Binding="{Binding Game.IsRunning}" Value="True"/>
+                                                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                    </MultiDataTrigger.Conditions>
+                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
+                                                                </MultiDataTrigger>
+                                                                <MultiDataTrigger>
+                                                                    <MultiDataTrigger.Conditions>
+                                                                        <Condition Binding="{Binding Game.IsLaunching}" Value="True"/>
                                                                         <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
                                                                     </MultiDataTrigger.Conditions>
                                                                     <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>

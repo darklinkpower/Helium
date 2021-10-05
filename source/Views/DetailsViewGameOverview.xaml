@@ -167,12 +167,15 @@
                                                                                 <Border x:Name="DefaultBorder" CornerRadius="0,2,2,0" Background="{TemplateBinding Background}"/>
                                                                                 <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
                                                                                     <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
-                                                                                Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                                                                                               Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
                                                                                     <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
                                                                                 </DockPanel>
                                                                             </Grid>
                                                                             <ControlTemplate.Triggers>
                                                                                 <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
+                                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
+                                                                                </DataTrigger>
+                                                                                <DataTrigger Binding="{Binding Game.IsLaunching}" Value="True">
                                                                                     <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
                                                                                 </DataTrigger>
                                                                                 <DataTrigger Binding="{Binding Game.IsRunning}" Value="True">
@@ -195,6 +198,13 @@
                                                                                 <MultiDataTrigger>
                                                                                     <MultiDataTrigger.Conditions>
                                                                                         <Condition Binding="{Binding Game.IsRunning}" Value="True"/>
+                                                                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                                    </MultiDataTrigger.Conditions>
+                                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
+                                                                                </MultiDataTrigger>
+                                                                                <MultiDataTrigger>
+                                                                                    <MultiDataTrigger.Conditions>
+                                                                                        <Condition Binding="{Binding Game.IsLaunching}" Value="True"/>
                                                                                         <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
                                                                                     </MultiDataTrigger.Conditions>
                                                                                     <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
