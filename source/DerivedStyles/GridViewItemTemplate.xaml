@@ -16,24 +16,24 @@
                                     d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
 
                                 <Grid Width="{Settings GridItemWidth}"
-                              Height="{Settings GridItemHeight}">
+                                      Height="{Settings GridItemHeight}">
                                     <Image Name="PART_ImageCover"
-                                   RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
-                                   HorizontalAlignment="Center" VerticalAlignment="Center"
-                                   Stretch="{Settings CoverArtStretch}" />
+                                           RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           Stretch="{Settings CoverArtStretch}" />
                                     <Border Background="{DynamicResource GridItemBackgroundBrush}" x:Name="TextGameName" Visibility="Collapsed">
                                         <TextBlock Text="{Binding DisplayName}"
-                                           TextWrapping="Wrap" Margin="5"
-                                           Style="{StaticResource BaseTextBlockStyle}"
-                                           TextTrimming="CharacterEllipsis" TextAlignment="Center"
-                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                   TextWrapping="Wrap" Margin="5"
+                                                   Style="{StaticResource BaseTextBlockStyle}"
+                                                   TextTrimming="CharacterEllipsis" TextAlignment="Center"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Border>
                                     <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
-                                        <Border CornerRadius="8" Background="{DynamicResource OpaqueGrayHighlightBrush}" Opacity="0.2"/>
+                                        <Border CornerRadius="8" Background="{DynamicResource OpaqueGrayHighlightBrush}" Opacity="0.3"/>
                                         <ContentControl x:Name="DuplicateHider_SourceSelector1" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible" MaxHeight="25"/>
                                     </Grid>
                                     <Viewbox VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                         Name="GameControls" Opacity="0.15">
+                                             Name="GameControls" Opacity="0.3">
                                         <Border Margin="5,50,30,5" Background="#54212124"
                                             CornerRadius="{DynamicResource ControlCornerRadiusSmall}" Padding="1">
                                             <StackPanel Orientation="Horizontal">
@@ -133,21 +133,17 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Grid>
-                        <Border x:Name="IconBackground" CornerRadius="8" Background="{DynamicResource OpaqueGrayHighlightBrush}" Opacity="0.0" Visibility="Hidden">
-                        </Border>
-                        <Image Source="{Binding Icon}" RenderOptions.BitmapScalingMode="Fant" Margin="3" Opacity="0.3"/>
+                    <Grid Margin="1,0,1,0">
+                        <Border x:Name="IconBackground" CornerRadius="8" Background="{DynamicResource OpaqueGrayHighlightBrush}" Opacity="0.5" Visibility="Visible" />
+                        <Image Source="{Binding Icon}" RenderOptions.BitmapScalingMode="Fant" Margin="3" Opacity="1.0"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Border.Visibility" Value="Visible" TargetName="IconBackground"/>
-                            <Setter Property="Border.Background" Value="{DynamicResource OpaqueGrayHighlightBrush}" TargetName="IconBackground"/>
-                            <Setter Property="Border.Opacity" Value="0.75" TargetName="IconBackground"/>
+                            <Setter Property="Border.Opacity" Value="1.0" TargetName="IconBackground"/>
                         </Trigger>
                         <DataTrigger Binding="{Binding IsCurrent}" Value="True">
-                            <Setter Property="Border.Visibility" Value="Visible" TargetName="IconBackground"/>
-                            <Setter Property="Border.Background" Value="{DynamicResource OpaqueGrayHighlightBrush}" TargetName="IconBackground" />
-                            <Setter Property="Border.Opacity" Value="1" TargetName="IconBackground"/>
+                            <Setter Property="Border.Opacity" Value="0.5" TargetName="IconBackground"/>
+                            <Setter Property="Border.Background" Value="{DynamicResource GridItemBackgroundBrush}" TargetName="IconBackground" />
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -158,7 +154,7 @@
     <Style TargetType="Button" x:Key="ButtonPlay" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Opacity" Value="0.50" />
+        <Setter Property="Opacity" Value="0.70" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
@@ -220,7 +216,7 @@
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Opacity" Value="0.50" />
+        <Setter Property="Opacity" Value="0.70" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
