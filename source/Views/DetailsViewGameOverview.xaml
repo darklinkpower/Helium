@@ -729,8 +729,20 @@
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="2">
-                                                <StackPanel Name="HltbPanel" Style="{DynamicResource PluginStackpanelVisibility}" Tag="True"
-                                                        Visibility="{PluginStatus Plugin=playnite-howlongtobeat-plugin, Status=Installed}">
+                                                <StackPanel Name="HltbPanel">
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationProgressBar, TargetNullValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, TargetNullValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
                                                     <Label Content="HowLongToBeat" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
                                                         <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
@@ -738,7 +750,7 @@
                                                         <Border Padding="10" >
                                                             <StackPanel>
                                                                 <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Left" Margin="0,0,0,10"
-                                                                             Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
+                                                                                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
                                                                 <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right"/>
                                                             </StackPanel>
                                                         </Border>
