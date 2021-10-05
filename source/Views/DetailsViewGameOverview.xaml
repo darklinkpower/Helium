@@ -261,7 +261,7 @@
                                                         <Style TargetType="{x:Type DockPanel}">
                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                             <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=HasData, TargetNullValue=False}" Value="True">
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=False}" Value="True">
                                                                     <Setter Property="Visibility" Value="Visible" />
                                                                 </DataTrigger>
                                                             </Style.Triggers>
@@ -273,7 +273,7 @@
                                                             <Style TargetType="{x:Type Viewbox}">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
                                                                 <Style.Triggers>
-                                                                    <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, TargetNullValue=False}" Value="True">
+                                                                    <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, FallbackValue=False}" Value="True">
                                                                         <Setter Property="Visibility" Value="Visible" />
                                                                     </DataTrigger>
                                                                 </Style.Triggers>
@@ -300,7 +300,7 @@
                                                             <Style TargetType="{x:Type Viewbox}">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
                                                                 <Style.Triggers>
-                                                                    <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, TargetNullValue={x:Null}}" Value="False">
+                                                                    <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, FallbackValue={x:Null}}" Value="False">
                                                                         <Setter Property="Visibility" Value="Visible" />
                                                                     </DataTrigger>
                                                                 </Style.Triggers>
@@ -327,12 +327,12 @@
                                                         <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource HeaderLabel}"/>
                                                         <DockPanel>
                                                             <DockPanel MinWidth="40">
-                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, TargetNullValue='-'}" Style="{DynamicResource HeaderTextBlock}" />
+                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}" Style="{DynamicResource HeaderTextBlock}" />
                                                                 <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
-                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, TargetNullValue='-'}" Style="{DynamicResource HeaderTextBlock}"/>
+                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}" Style="{DynamicResource HeaderTextBlock}"/>
                                                             </DockPanel>
-                                                            <ProgressBar x:Name="progressBar" FontSize="10" Visibility="{Binding Visibility, ElementName=label, Mode=OneWay}" Margin="5,0,0,0"
-                                                                         Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, TargetNullValue=0}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, TargetNullValue=0}" HorizontalAlignment="Left"
+                                                            <ProgressBar x:Name="progressBar" FontSize="10" Margin="5,0,0,0"
+                                                                         Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}" HorizontalAlignment="Left"
                                                                          Background="#151619" Foreground="#2d73ff" Width="75" Height="6" Style="{DynamicResource RoundedProgressBar}">
                                                                 <ProgressBar.Resources>
                                                                     <Style x:Key="RoundedProgressBar" TargetType="ProgressBar">
@@ -702,7 +702,7 @@
                                                 </StackPanel>
 
                                                 <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                        Tag="{PluginSettings Plugin=GameActivity, Path=HasData, TargetNullValue=False}">
+                                                        Tag="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Grid.RowDefinitions>
@@ -717,8 +717,20 @@
                                                     </Grid>
                                                 </StackPanel>
 
-                                                <StackPanel Name="VideoFeed" Margin="0,0,0,15" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                        Tag="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsAnyVideoAvailable, TargetNullValue=False}">
+                                                <StackPanel Name="VideoFeed" Margin="0,0,0,15">
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsAnyVideoAvailable, FallbackValue=False}" Value="False">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=EnableVideoPlayer, FallbackValue=False}" Value="False">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorder}" />
@@ -734,10 +746,10 @@
                                                         <Style TargetType="StackPanel">
                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                             <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationProgressBar, TargetNullValue=False}" Value="True">
+                                                                <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationProgressBar, FallbackValue=False}" Value="True">
                                                                     <Setter Property="Visibility" Value="Visible" />
                                                                 </DataTrigger>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, TargetNullValue=False}" Value="True">
+                                                                <DataTrigger Binding="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=False}" Value="True">
                                                                     <Setter Property="Visibility" Value="Visible" />
                                                                 </DataTrigger>
                                                             </Style.Triggers>
@@ -758,7 +770,7 @@
                                                 </StackPanel>
 
                                                 <StackPanel Name="SuccessStoryPanel" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                        Tag="{PluginSettings Plugin=SuccessStory, Path=HasData, TargetNullValue=False}">
+                                                        Tag="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
                                                         <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
@@ -775,7 +787,7 @@
                                                 </StackPanel>
 
                                                 <StackPanel Name="ScreenshotsVisualizerPanel" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                        Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, TargetNullValue=False}">
+                                                        Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{DynamicResource LOCSsvTitle}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
                                                         <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
