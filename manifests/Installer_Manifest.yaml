@@ -66,3 +66,19 @@ Packages:
       - 'Top Panel: View button show toggle state'
       - 'Grid View: Add Review Viewer extension support'
       - 'List View: Group count styling'
+  - Version: 1.4
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-10-06
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.4/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_4.pthm
+    Changelog:
+      - 'Details View: Change groups expanded and collapsed icons'
+      - 'Details View: Change group background color on hover'
+      - 'Details View: Fix More Actions button color not changing when game is launching'
+      - 'Details View: Adjustments to DuplicateHider extension item styles'
+      - 'Details View: Show HLTB panel only when controls have been enabled in settings'
+      - 'Grid View: Change groups expanded and collapsed icons'
+      - 'Grid View: Fix More Actions button color not changing when game is launching'
+      - 'Grid View: Adjustments to DuplicateHider extension item styles'
+      - 'List View: Change groups expanded and collapsed icons'
+      - 'List View: Change group background color on hover'
+      - 'Minor fixes and improvements'
