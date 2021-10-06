@@ -1,3 +1,6 @@
 Constants:
     - DetailsViewDescriptionWidth(150,750): 'Details View: Width of description'
     - DetailsViewDescriptionDockToRight: 'Details View: Dock description to the right'
+    - DetailsViewBackgroundVerticalAlignment: 'Details View: Vertical alignment of the background image.'
+    - DetailsViewBackgroundHorizontalAlignment: 'Details View: Horizontal alignment of the background image.'
+    - DetailsViewLogoVisibility: 'Details View: Logo visibility.'
