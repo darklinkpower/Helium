@@ -464,11 +464,11 @@
                                                                         <Button Background="Transparent" Name="PART_ButtonLibrary" />
                                                                         <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
                                                                         <Button Name="PART_ButtonSource" />
-                                                                        <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
+                                                                        <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" VerticalAlignment="Top" Margin="0,4,0,0" />
                                                                         <ItemsControl Name="PART_ItemsPlatforms" />
-                                                                        <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
+                                                                        <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" VerticalAlignment="Top" Margin="0,4,0,0" />
                                                                         <ItemsControl Name="PART_ItemsDevelopers"/>
-                                                                        <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
+                                                                        <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" VerticalAlignment="Top" Margin="0,4,0,0" />
                                                                         <ItemsControl Name="PART_ItemsPublishers"/>
                                                                         <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
                                                                         <Button Name="PART_ButtonReleaseDate" VerticalAlignment="Center" />
@@ -479,10 +479,10 @@
                                                                         <GridEx.Resources>
                                                                             <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
                                                                         </GridEx.Resources>
-                                                                        <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
+                                                                        <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" VerticalAlignment="Top" Margin="0,4,0,0" />
                                                                         <ItemsControl Name="PART_ItemsSeries" />
 
-                                                                        <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
+                                                                        <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" VerticalAlignment="Top" Margin="0,4,0,0" />
                                                                         <ItemsControl Name="PART_ItemsRegions" />
 
                                                                         <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
@@ -490,17 +490,17 @@
                                                                         <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
 
                                                                         <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                                               Style="{DynamicResource TextBlockGameScore}" />
+                                                                                   Style="{DynamicResource TextBlockGameScore}" />
 
                                                                         <Label Name="PART_ElemCommunityScore" Content="{DynamicResource LOCCommunityScore}" />
                                                                         <TextBlock Name="PART_TextCommunityScore" VerticalAlignment="Center"
-                                                                               Style="{DynamicResource TextBlockGameScore}" />
+                                                                                   Style="{DynamicResource TextBlockGameScore}" />
 
                                                                         <Label Name="PART_ElemCriticScore" Content="{DynamicResource LOCCriticScore}" />
                                                                         <TextBlock Name="PART_TextCriticScore" VerticalAlignment="Center"
-                                                                               Style="{DynamicResource TextBlockGameScore}" />
+                                                                                   Style="{DynamicResource TextBlockGameScore}" />
 
-                                                                        <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" />
+                                                                        <Label Name="PART_ElemAgeRating" Content="{DynamicResource LOCAgeRatingLabel}" VerticalAlignment="Top" Margin="0,4,0,0" />
                                                                         <ItemsControl Name="PART_ItemsAgeRatings" />
                                                                     </GridEx>
                                                                 </ScrollViewer>
