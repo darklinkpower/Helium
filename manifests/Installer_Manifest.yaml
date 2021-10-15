@@ -82,3 +82,11 @@ Packages:
       - 'List View: Change groups expanded and collapsed icons'
       - 'List View: Change group background color on hover'
       - 'Minor fixes and improvements'
+  - Version: 1.5
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-10-15
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.5/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_5.pthm
+    Changelog:
+      - 'Details View: Background color adjustments to game list expanders'
+      - 'Details View: Background color adjustment to game list panel'
+      - 'Details View: Fix certain game details labels being misaligned when they have multiple values'
