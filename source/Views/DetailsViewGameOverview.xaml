@@ -123,13 +123,13 @@
 
                                 <StackPanel Grid.Row="0" Name="DetailsTop" VerticalAlignment="Top">
                                     <Grid Name="HeaderImagesGrid" Height="{Settings CalculatedGameDetailsIndentation}">
-                                        <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" Margin="20,20,30,20">
-											<ContentControl.Style>
+                                        <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" Margin="20,20,30,20" Visibility="{DynamicResource DetailsViewLogoVisibility}" />
+										<!--	<ContentControl.Style>
 												<Style TargetType="{x:Type ContentControl}">
 													<Setter Property="Visibility" Value="{DynamicResource DetailsViewLogoVisibility}" />
 												</Style>
 											</ContentControl.Style>
-										</ContentControl>
+										</ContentControl> !-->
 
                                         <DockPanel Margin="20,0,30,20" LastChildFill="False" VerticalAlignment="Bottom">
                                             <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
