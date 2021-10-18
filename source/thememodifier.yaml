@@ -4,3 +4,5 @@ Constants:
     - DetailsViewShowInfoPanelDefault: 'Details View: Show information panel by default'
     - DetailsViewBackgroundVerticalAlignment: 'Details View: Vertical alignment of the background image'
     - DetailsViewBackgroundHorizontalAlignment: 'Details View: Horizontal alignment of the background image'
+    - DetailsViewAllowUseOfLogos: 'Details View: Allow use of Extra Metadata Loader logos'
+    - GridViewAllowUseOfLogos: 'Grid View: Allow use of Extra Metadata Loader logos'
