@@ -102,7 +102,7 @@
                                             Height="45" Margin="3.5,0,0,0" Grid.Column="1">
                                         <Button.Style>
                                             <Style TargetType="Button">
-                                                <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}" />
+                                                <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
                                                 <Setter Property="Cursor" Value="Hand"/>
                                                 <Setter Property="Template">
                                                     <Setter.Value>
@@ -111,47 +111,23 @@
                                                                 <Border x:Name="DefaultBorder" CornerRadius="0,2,2,0" Background="{TemplateBinding Background}"/>
                                                                 <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
                                                                     <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
-                                                                                Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                                                                               Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
                                                                     <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
                                                                 </DockPanel>
                                                             </Grid>
                                                             <ControlTemplate.Triggers>
-                                                                <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
-                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
+                                                                <DataTrigger Binding="{Binding ElementName=PART_ButtonPlayAction, Path=Visibility}" Value="Visible">
+                                                                    <Setter Property="Background" Value="{DynamicResource PlayButtonBackgroundBrush}"/>
                                                                 </DataTrigger>
-                                                                <DataTrigger Binding="{Binding Game.IsRunning}" Value="True">
-                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
-                                                                </DataTrigger>
-                                                                <DataTrigger Binding="{Binding Game.IsLaunching}" Value="True">
-                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledBackgroundBrush}" />
+                                                                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True">
+                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
                                                                 </DataTrigger>
                                                                 <MultiDataTrigger>
                                                                     <MultiDataTrigger.Conditions>
-                                                                        <Condition Binding="{Binding Game.IsInstalled}" Value="True"/>
                                                                         <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                                                        <Condition Binding="{Binding ElementName=PART_ButtonPlayAction, Path=Visibility}" Value="Visible"/>
                                                                     </MultiDataTrigger.Conditions>
                                                                     <Setter Property="Background" Value="{DynamicResource MoreButtonInstalledIsMouseOverBackgroundBrush}"/>
-                                                                </MultiDataTrigger>
-                                                                <MultiDataTrigger>
-                                                                    <MultiDataTrigger.Conditions>
-                                                                        <Condition Binding="{Binding Game.IsInstalled}" Value="False"/>
-                                                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
-                                                                    </MultiDataTrigger.Conditions>
-                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
-                                                                </MultiDataTrigger>
-                                                                <MultiDataTrigger>
-                                                                    <MultiDataTrigger.Conditions>
-                                                                        <Condition Binding="{Binding Game.IsRunning}" Value="True"/>
-                                                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
-                                                                    </MultiDataTrigger.Conditions>
-                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
-                                                                </MultiDataTrigger>
-                                                                <MultiDataTrigger>
-                                                                    <MultiDataTrigger.Conditions>
-                                                                        <Condition Binding="{Binding Game.IsLaunching}" Value="True"/>
-                                                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
-                                                                    </MultiDataTrigger.Conditions>
-                                                                    <Setter Property="Background" Value="{DynamicResource MoreButtonNotInstalledIsMouseOverBackgroundBrush}"/>
                                                                 </MultiDataTrigger>
                                                             </ControlTemplate.Triggers>
                                                         </ControlTemplate>
