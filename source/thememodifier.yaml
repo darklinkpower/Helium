@@ -2,5 +2,5 @@ Constants:
     - DetailsViewDescriptionWidth(150,750): 'Details View: Width of description'
     - DetailsViewDescriptionDockToRight: 'Details View: Dock description to the right'
     - DetailsViewShowInfoPanelDefault: 'Details View: Show information panel by default'
-    - DetailsViewBackgroundVerticalAlignment: 'Vertical alignment of the background image'
-    - DetailsViewBackgroundHorizontalAlignment: 'Horizontal alignment of the background image'
+    - DetailsViewBackgroundVerticalAlignment: 'Details View: Vertical alignment of the background image'
+    - DetailsViewBackgroundHorizontalAlignment: 'Details View: Horizontal alignment of the background image'
