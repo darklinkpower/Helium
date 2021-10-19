@@ -1,8 +1,24 @@
-![DownloadCount](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/total.svg)
+![DownloadCount](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/total?style=for-the-badge)
 
 # Helium Enhanced Grid Mod
 
 Project based on [Helium by darklinkpower](https://github.com/darklinkpower/Helium) for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
+
+## Relevant settings
+
+Settings used to take the preview screenshots:
+
+![settings-1](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-1.png)
+
+![settings-2](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-2.png)
+
+![settings-3](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-3.png)
+
+![settings-4](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-4.png)
+
+## Screenshots
+
+![Screenshot](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/screenshot_01.jpg)
 
 <!-- # Helium
 
