@@ -1,10 +1,10 @@
 ThemeApiVersion: 2.0.0
 Id: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2
-Name: HeliumUHD
-Author: darklinkpower
-Version: 1.5
+Name: Helium Enhanced Grid Mod
+Author: Xenor
+Version: 1.6
 Links:
-- Name: GitHub
-  Url: https://github.com/darklinkpower/Helium
-- Name: Playnite Forums thread
-  Url: https://playnite.link/forum/thread-811.html
+  - Name: GitHub
+    Url: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod
+  - Name: Orignal darklinkpower's Helium
+    Url: https://github.com/darklinkpower/Helium

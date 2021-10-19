@@ -1,10 +1,17 @@
-![DownloadCount](https://img.shields.io/github/downloads/darklinkpower/Helium/total.svg)
-# Helium
+![DownloadCount](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/total.svg)
+
+# Helium Enhanced Grid Mod
+
+Project based on [Helium by darklinkpower](https://github.com/darklinkpower/Helium) for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
+
+<!-- # Helium
+
 Theme inspired by Steam for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
 
 Playnite forum thread: https://playnite.link/forum/thread-811.html
 
 ## Theme goals
+
 - Use the Steam client as inspiration to create a polished Playnite UI.
 - Achieve a more modern and clean design with the chosen pallete and things like rounded corners in certain elements like the windows, borders, buttons and controls.
 - Improve the user experience with small animations in certain parts.
@@ -13,11 +20,13 @@ Playnite forum thread: https://playnite.link/forum/thread-811.html
 - Different aesthetic of other available themes available by default in Playnite and created by the community.
 - Achieve features that are not available by default on Playnite via community extensions
 
-## Installation 
+## Installation
+
 1. Download the latest packaged `pthm` theme file from the [Releases page.](https://github.com/darklinkpower/Helium/releases/latest)
 2. Open it to automatically install on Playnite or drag and drop it to the main Playnite window to start installation.
 
 ## Functionalities and features
+
 - Full support for features available in the default Playnite Desktop themes
 - Customization: Customization of certain aspects of the theme can be done via custom integration of the [ThemeModifier](https://github.com/Lacro59/playnite-thememodifier-plugin) extension.
 - Achievements: via custom integration of the [SuccessStory](https://github.com/Lacro59/playnite-successstory-plugin) extension.
@@ -29,8 +38,9 @@ Playnite forum thread: https://playnite.link/forum/thread-811.html
 - Videos: download of trailer and microtrailer videos for use in the theme via [Extra Metadata Tools Video](https://playnite.link/forum/thread-575.html) extension.
 
 ## Screenshots
+
 ![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_01.jpg)
 
 ![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_02.jpg)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.jpg) -->

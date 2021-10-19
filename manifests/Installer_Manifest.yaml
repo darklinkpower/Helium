@@ -1,92 +1,9 @@
-AddonId: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1
+AddonId: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2
 Packages:
-  - Version: 0.8
+  - Version: 1.6
     RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-09-13
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/0.8/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_0_8.pthm
+    ReleaseDate: 2021-10-19
+    PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.6/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_6.pthm
     Changelog:
-      - Initial release
-  - Version: 0.9
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-09-15
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/0.9/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_0_9.pthm
-    Changelog:
-      - 'Details View: Fix certain cover images not scaling correctly'
-      - 'Details View: Fix HowLongToBeat panel showing when the extension is not installed'
-      - 'Details View: Modify links margins and minimum width'
-      - 'Details View: Fix notes not showing'
-      - 'Details View: Add support for icons of LibraryManagement extension'
-      - 'Details View: adjust margins of notes and items of genres, categories, features and tags'
-      - 'Details View: Change foreground color of uninstalled games'
-      - 'Details View: Add SystemChecker and CheckLocalizations extensions buttons.'
-      - 'Grid View: Fix darken uninstalled games setting not working and animate opacity on mouse over'
-      - 'Fix being unable to click elements at the top in created windows'
-      - 'Fix contents inside TabControl using Hand cursor'
-      - 'Remove unused ThemeModifer extension constants'
-  - Version: 0.10
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-09-18
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/0.10/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_0_10.pthm
-    Changelog:
-      - 'Details View: Fix plugin buttons being in the center vertically'
-      - 'Details View: Add logo and video support using Extra Metadata Loader extension'
-      - 'Grid View: Add logo support using Extra Metadata Loader extension'
-  - Version: 1.0
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-09-19
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.0/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_0.pthm
-    Changelog:
-      - 'Details View: Improve scaling and layout of panels for different DPIs and resolutions'
-      - 'Details View: Adjustment to panels shadow border'
-      - 'Details View: Show different icon in header when all achievements are unlocked'
-      - 'Details View: Style items in links, features, categories, genres and tags panels'
-      - "Details View: Show horizontal scrollbar in game details when contents don't fit"
-      - 'Details View: Add blur effect to details header'
-      - 'Details View: Added ThemeModifier constant to modify the game description width'
-  - Version: 1.1
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-09-20
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.1/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_1.pthm
-    Changelog:
-      - 'Details View: Add ThemeModifer variable to modify the description dock position'
-      - 'Details View: Performance improvement by removing panels outline border shadow effect'
-      - 'Details View: Fix score rows having different margin than other details'
-  - Version: 1.2
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-09-22
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.2/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_2.pthm
-    Changelog:
-      - 'Details View: Support for ReviewViewer extension Steam reviews control'
-  - Version: 1.3
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-09-30
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.3/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_3.pthm
-    Changelog:
-      - 'Update to changes in Playnite 9 stable release'
-      - 'Top Panel: View button show toggle state'
-      - 'Grid View: Add Review Viewer extension support'
-      - 'List View: Group count styling'
-  - Version: 1.4
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-10-06
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.4/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_4.pthm
-    Changelog:
-      - 'Details View: Change groups expanded and collapsed icons'
-      - 'Details View: Change group background color on hover'
-      - 'Details View: Fix More Actions button color not changing when game is launching'
-      - 'Details View: Adjustments to DuplicateHider extension item styles'
-      - 'Details View: Show HLTB panel only when controls have been enabled in settings'
-      - 'Grid View: Change groups expanded and collapsed icons'
-      - 'Grid View: Fix More Actions button color not changing when game is launching'
-      - 'Grid View: Adjustments to DuplicateHider extension item styles'
-      - 'List View: Change groups expanded and collapsed icons'
-      - 'List View: Change group background color on hover'
-      - 'Minor fixes and improvements'
-  - Version: 1.5
-    RequiredApiVersion: 2.0.0
-    ReleaseDate: 2021-10-15
-    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.5/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_5.pthm
-    Changelog:
-      - 'Details View: Background color adjustments to game list expanders'
-      - 'Details View: Background color adjustment to game list panel'
-      - 'Details View: Fix certain game details labels being misaligned when they have multiple values'
+      - "Forked from Helium by darklinkpower"
+      - "Modified Grid view to better utilize displays with higher horizontal pixel count"
