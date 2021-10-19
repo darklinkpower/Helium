@@ -34,13 +34,11 @@
                                     </Grid>
                                     <Viewbox VerticalAlignment="Bottom" HorizontalAlignment="Left"
                                              Name="GameControls" Opacity="0.3">
-                                        <Border Margin="5,50,30,5" Background="#54212124"
+                                        <Border Margin="30,50,30,4" Background="#54212124"
                                             CornerRadius="{DynamicResource ControlCornerRadiusSmall}" Padding="1">
                                             <StackPanel Orientation="Horizontal">
-                                                <Button Height="24" Width="24" Name="PART_ButtonPlay" Margin="0" VerticalAlignment="Center"
-                                                FontFamily="{StaticResource FontIcoFont}" Tag="Installed" Style="{DynamicResource ButtonPlay}" />
-                                                <Button Height="24" Width="24" Name="PART_ButtonInfo" Style="{DynamicResource InfoButton}"
-                                                Margin="3,0,0,0" VerticalAlignment="Center" FontFamily="{StaticResource FontIcoFont}" />
+                                                <Button Height="12" Width="12" Name="PART_ButtonInfo" Style="{DynamicResource InfoButton}"
+                                                Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="{StaticResource FontIcoFont}" />
                                             </StackPanel>
                                         </Border>
                                     </Viewbox>
@@ -57,9 +55,6 @@
                         <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" IsHitTestVisible="False" Opacity="0.60"/>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Binding="{Binding IsInstalled}" Value="False">
-                            <Setter Property="Tag" Value="NotInstalled" TargetName="PART_ButtonPlay" />
-                        </DataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsInstalled}" Value="False" />
