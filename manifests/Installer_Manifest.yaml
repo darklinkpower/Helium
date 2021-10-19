@@ -90,3 +90,17 @@ Packages:
       - 'Details View: Background color adjustments to game list expanders'
       - 'Details View: Background color adjustment to game list panel'
       - 'Details View: Fix certain game details labels being misaligned when they have multiple values'
+  - Version: 1.6
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-10-19
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.6/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_6.pthm
+    Changelog:
+      - 'Details View: Add ThemeModifier variable to show or hide information panel when Playnite starts'
+      - 'Details View: Add ThemeModifier variables to configure horizontal and Vertical alignment of the background image'
+      - 'Details View: Add ThemeModifier variable to configure if Extra Metadata Loader logos can be used in the view'
+      - 'Details View: Fix Context action button not changing color when game is installing or uninstalling'
+      - 'Details View: Add support to show grid with game HowLongToBeat data and ThemeModifier option to enable or disable'
+      - 'Grid View: Add ThemeModifier variable to configure if Extra Metadata Loader logos can be used in the view'
+      - 'Grid View: Fix Context action button not changing color when game is installing or uninstalling'
+      - 'Grid View: Add support to show grid with game HowLongToBeat data and ThemeModifier option to enable or disable'
+      - 'Minor fixes and improvements'
