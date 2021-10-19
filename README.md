@@ -1,4 +1,7 @@
-![DownloadCount](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/total?style=for-the-badge)
+![DownloadCountTotal](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/total?label=total%20downloads&style=for-the-badge)
+![LatestVersion](https://img.shields.io/github/v/tag/XenorPLxx/Helium-Enhanced-Grid-Mod?label=Latest%20version&style=for-the-badge)
+![DownloadCountLatest](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/latest/total?style=for-the-badge)
+![License](https://img.shields.io/github/license/XenorPLxx/Helium-Enhanced-Grid-Mod?style=for-the-badge)
 
 # Helium Enhanced Grid Mod
 
