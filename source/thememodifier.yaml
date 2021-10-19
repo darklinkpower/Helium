@@ -7,3 +7,4 @@ Constants:
     - DetailsViewAllowUseOfLogos: 'Details View: Allow use of Extra Metadata Loader logos'
     - DetailsViewShowHltbDataGrid: 'Details View: Show HowLongToBeat data grid'
     - GridViewAllowUseOfLogos: 'Grid View: Allow use of Extra Metadata Loader logos'
+    - GridViewShowHltbDataGrid: 'Grid View: Show HowLongToBeat data grid'
