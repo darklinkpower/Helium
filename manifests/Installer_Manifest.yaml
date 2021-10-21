@@ -104,3 +104,10 @@ Packages:
       - 'Grid View: Fix Context action button not changing color when game is installing or uninstalling'
       - 'Grid View: Add support to show grid with game HowLongToBeat data and ThemeModifier option to enable or disable'
       - 'Minor fixes and improvements'
+  - Version: 1.7
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-10-21
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.7/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_7.pthm
+    Changelog:
+      - 'Grid View: Add highlight shine animation to covers on hover'
+      - 'Minor fixes and improvements'
