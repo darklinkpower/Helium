@@ -37,7 +37,7 @@
     <Color x:Key="MainColor">#2C3A67</Color>
     <Color x:Key="MainColorDark">#0D1225</Color>
     <Color x:Key="HoverColor">#247BA0</Color>
-    <Color x:Key="GlyphColor">#0CB5FF</Color>
+    <Color x:Key="GlyphColor">#26b7ff</Color>
     <Color x:Key="GlyphSubColor">#1E92FF</Color>
     <Color x:Key="HighlightGlyphColor">#8855CDFF</Color>
     <Color x:Key="PopupBackgroundColor">#171e26</Color>
@@ -197,12 +197,8 @@
         <GradientStop Color="#3B5670" Offset="0.5"/>
         <GradientStop Color="#374C6A" Offset="1"/>
     </LinearGradientBrush>
-    
-    <SolidColorBrush x:Key="GlyphBrush1" Color="{DynamicResource GlyphColor}" />
-    <LinearGradientBrush x:Key="GlyphBrush" StartPoint="0.0, 0.5" EndPoint="1.0, 0.5" >
-        <GradientStop Color="#26b7ff" Offset="0"/>
-        <GradientStop Color="#26b7ff" Offset="1"/>
-    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
     <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource PopupBorderColor}" />
     <SolidColorBrush x:Key="TooltipBackgroundBrush" Color="{DynamicResource BackgroundToneColor}" />
