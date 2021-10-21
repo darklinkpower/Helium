@@ -22,10 +22,18 @@
                         <ContentPresenter />
                         <Border Name="ShineBackground" Tag="False" IsHitTestVisible="False"
                                 Style="{DynamicResource AnimatedCoverShineBackground}" />
+                        <TextBlock Name="EnableHighlightAnimation" Visibility="Collapsed"
+                                   Tag="{DynamicResource GridViewEnableCoverShineAnimation}" />
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=EnableHighlightAnimation, Path=Tag}" Value="True" />
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True" />
+                            </MultiDataTrigger.Conditions>
                             <Setter Property="Tag" Value="True" TargetName="ShineBackground" />
+                        </MultiDataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" Value="{DynamicResource GridItemBackgroundBrush}" TargetName="SelectionBorder"/>
                             <Setter Property="Canvas.ZIndex" Value="90" />
                             <Trigger.EnterActions>
