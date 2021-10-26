@@ -259,16 +259,22 @@
         <GradientStop Color="#049BC3" Offset="1"/>
     </LinearGradientBrush>
 
+    <Color x:Key="PlayButtonBackgroundColor1">#4FC82F</Color>
+    <Color x:Key="PlayButtonBackgroundColor2">#2BB943</Color>
+    <Color x:Key="PlayButtonBackgroundColor3">#18B14E</Color>
     <LinearGradientBrush x:Key="PlayButtonBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
-        <GradientStop Color="#4FC82F" Offset="0"/>
-        <GradientStop Color="#2BB943" Offset="0.75"/>
-        <GradientStop Color="#18B14E" Offset="1"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor1}" Offset="0"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor2}" Offset="0.75"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor3}" Offset="1"/>
     </LinearGradientBrush>
 
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor1">#6FD51D</Color>
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor2">#4AC632</Color>
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor3">#38BE3C</Color>
     <LinearGradientBrush x:Key="PlayButtonIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
-        <GradientStop Color="#6FD51D" Offset="0"/>
-        <GradientStop Color="#4AC632" Offset="0.75"/>
-        <GradientStop Color="#38BE3C" Offset="1"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor1}" Offset="0"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor2}" Offset="0.75"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor3}" Offset="1"/>
     </LinearGradientBrush>
 
     <SolidColorBrush x:Key="MoreButtonInstalledBackgroundBrush" Color="#18B14E" />
