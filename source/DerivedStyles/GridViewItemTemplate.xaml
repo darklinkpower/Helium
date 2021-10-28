@@ -33,9 +33,24 @@
                                         <ContentControl x:Name="DuplicateHider_SourceSelector1" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible" MaxHeight="25"/>
                                     </Grid>
                                     <Viewbox VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                             Name="GameControls" Opacity="0.3">
-                                        <Border Margin="5,50,30,5" Background="#54212124"
+                                             Name="GameControls">
+                                        <Border Margin="5,50,30,5"
                                             CornerRadius="{DynamicResource ControlCornerRadiusSmall}" Padding="1">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Background" Value="#87000000" />
+                                                    <Setter Property="Opacity" Value="0.1" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type StackPanel}}, Path=IsMouseOver}" Value="True">
+                                                            <Setter Property="Opacity" Value="0.40" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True">
+                                                            <Setter Property="Background" Value="#A6000000" />
+                                                            <Setter Property="Opacity" Value="1.0" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
                                             <StackPanel Orientation="Horizontal">
                                                 <Button Height="24" Width="24" Name="PART_ButtonPlay" Margin="0" VerticalAlignment="Center"
                                                 FontFamily="{StaticResource FontIcoFont}" Tag="Installed" Style="{DynamicResource ButtonPlay}" />
@@ -74,9 +89,6 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Visibility" Value="Visible" TargetName="TextGameName"/>
                         </MultiDataTrigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Opacity" Value="1.0" TargetName="GameControls"/>
-                        </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsInstalled}" Value="False" />
@@ -154,7 +166,7 @@
     <Style TargetType="Button" x:Key="ButtonPlay" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Opacity" Value="0.70" />
+        <Setter Property="Opacity" Value="0.80" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
@@ -216,7 +228,7 @@
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Opacity" Value="0.70" />
+        <Setter Property="Opacity" Value="0.80" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
