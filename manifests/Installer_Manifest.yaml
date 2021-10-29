@@ -111,3 +111,12 @@ Packages:
     Changelog:
       - 'Grid View: Add highlight shine animation to covers on hover'
       - 'Minor fixes and improvements'
+  - Version: 1.8
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-10-28
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.8/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_8.pthm
+    Changelog:
+      - 'General: Animate PlayButton and ContextButton background color transitions'
+      - 'Details View: Animate info button and edit button opacity transitions'
+      - 'Grid View: Animate edit button opacity transitions'
+      - 'Grid View: Modified opacity changes for game item controls'
