@@ -5,6 +5,14 @@
     <!--region ThemeModifier variables-->
     <sys:Double x:Key="DetailsViewDescriptionWidth">400</sys:Double>
     <sys:Boolean x:Key="DetailsViewDescriptionDockToRight">false</sys:Boolean>
+    <sys:Boolean x:Key="DetailsViewShowInfoPanelDefault">true</sys:Boolean>
+    <VerticalAlignment x:Key="DetailsViewBackgroundVerticalAlignment">Center</VerticalAlignment>
+    <HorizontalAlignment x:Key="DetailsViewBackgroundHorizontalAlignment">Left</HorizontalAlignment>
+    <sys:Boolean x:Key="DetailsViewAllowUseOfLogos">true</sys:Boolean>
+    <sys:Boolean x:Key="DetailsViewShowHltbDataGrid">true</sys:Boolean>
+    <sys:Boolean x:Key="GridViewAllowUseOfLogos">true</sys:Boolean>
+    <sys:Boolean x:Key="GridViewShowHltbDataGrid">true</sys:Boolean>
+    <sys:Boolean x:Key="GridViewEnableCoverShineAnimation">true</sys:Boolean>
     <!--region end-->
     
     <sys:Double x:Key="FontSizeSmall">12</sys:Double>
@@ -30,7 +38,7 @@
     <Color x:Key="MainColor">#2C3A67</Color>
     <Color x:Key="MainColorDark">#0D1225</Color>
     <Color x:Key="HoverColor">#247BA0</Color>
-    <Color x:Key="GlyphColor">#0CB5FF</Color>
+    <Color x:Key="GlyphColor">#26b7ff</Color>
     <Color x:Key="GlyphSubColor">#1E92FF</Color>
     <Color x:Key="HighlightGlyphColor">#8855CDFF</Color>
     <Color x:Key="PopupBackgroundColor">#171e26</Color>
@@ -190,12 +198,8 @@
         <GradientStop Color="#3B5670" Offset="0.5"/>
         <GradientStop Color="#374C6A" Offset="1"/>
     </LinearGradientBrush>
-    
-    <SolidColorBrush x:Key="GlyphBrush1" Color="{DynamicResource GlyphColor}" />
-    <LinearGradientBrush x:Key="GlyphBrush" StartPoint="0.0, 0.5" EndPoint="1.0, 0.5" >
-        <GradientStop Color="#26b7ff" Offset="0"/>
-        <GradientStop Color="#26b7ff" Offset="1"/>
-    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
     <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource PopupBorderColor}" />
     <SolidColorBrush x:Key="TooltipBackgroundBrush" Color="{DynamicResource BackgroundToneColor}" />
@@ -255,16 +259,22 @@
         <GradientStop Color="#049BC3" Offset="1"/>
     </LinearGradientBrush>
 
+    <Color x:Key="PlayButtonBackgroundColor1">#4FC82F</Color>
+    <Color x:Key="PlayButtonBackgroundColor2">#2BB943</Color>
+    <Color x:Key="PlayButtonBackgroundColor3">#18B14E</Color>
     <LinearGradientBrush x:Key="PlayButtonBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
-        <GradientStop Color="#4FC82F" Offset="0"/>
-        <GradientStop Color="#2BB943" Offset="0.75"/>
-        <GradientStop Color="#18B14E" Offset="1"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor1}" Offset="0"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor2}" Offset="0.75"/>
+        <GradientStop Color="{DynamicResource PlayButtonBackgroundColor3}" Offset="1"/>
     </LinearGradientBrush>
 
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor1">#6FD51D</Color>
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor2">#4AC632</Color>
+    <Color x:Key="PlayButtonIsMouseOverBackgroundColor3">#38BE3C</Color>
     <LinearGradientBrush x:Key="PlayButtonIsMouseOverBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
-        <GradientStop Color="#6FD51D" Offset="0"/>
-        <GradientStop Color="#4AC632" Offset="0.75"/>
-        <GradientStop Color="#38BE3C" Offset="1"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor1}" Offset="0"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor2}" Offset="0.75"/>
+        <GradientStop Color="{DynamicResource PlayButtonIsMouseOverBackgroundColor3}" Offset="1"/>
     </LinearGradientBrush>
 
     <SolidColorBrush x:Key="MoreButtonInstalledBackgroundBrush" Color="#18B14E" />

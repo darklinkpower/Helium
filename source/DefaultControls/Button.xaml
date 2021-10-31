@@ -78,8 +78,50 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True">
-                            <Setter Property="Opacity" Value="0.30" TargetName="BorderBk" />
-                            <Setter Property="Opacity" Value="0.85" TargetName="Path" />
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderBk"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.30"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="Path"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.85"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderBk"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.14"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="Path"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.50"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -123,8 +165,50 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True">
-                            <Setter Property="Opacity" Value="0.30" TargetName="BorderBk" />
-                            <Setter Property="Opacity" Value="0.85" TargetName="Path" />
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderBk"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.30"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="Path"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.85"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderBk"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.14"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="Path"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.50"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
