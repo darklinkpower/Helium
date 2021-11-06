@@ -158,12 +158,13 @@
         <GradientStop Color="#1E1F24" Offset="0.5"/>
         <GradientStop Color="#1E1F24" Offset="1"/>
     </LinearGradientBrush>
-
-    <RadialGradientBrush x:Key="PopupBackgroundBrush" GradientOrigin="0.0,0.0" Center="0.0,0.0"
+    
+    <RadialGradientBrush x:Key="PopupBackgroundBrush" GradientOrigin="0.5,0.0" Center="0.5,0.0"
         RadiusX="1" RadiusY="1">
         <RadialGradientBrush.GradientStops>
-            <GradientStop Color="#393C43" Offset="-0.1" />
-            <GradientStop Color="#33363D" Offset="1.1" />
+            <GradientStop Color="#3c4047" Offset="0.0" />
+            <GradientStop Color="#3c4047" Offset="0.5" />
+            <GradientStop Color="#33363d" Offset="1.0" />
         </RadialGradientBrush.GradientStops>
     </RadialGradientBrush>
     
