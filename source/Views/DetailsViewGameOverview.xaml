@@ -153,7 +153,7 @@
                                         <Border Padding="20,10,30,10" x:Name="HeaderRow" Background="{DynamicResource DetailsSectionBackgroundBrush}">
                                             <DockPanel>
                                                 <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
-                                                            Margin="0,0,0,0" DockPanel.Dock="Left">
+                                                            Margin="0,0,10,0" DockPanel.Dock="Left">
                                                     <Button Name="PART_ButtonPlayAction"
                                                             MinWidth="189.5" Height="45" Style="{DynamicResource PlayButton}" />
                                                     <Button Name="PART_ButtonContextAction" 
@@ -197,14 +197,14 @@
                                                         </Button.Style>
                                                     </Button>
                                                 </DockPanel>
-                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,20,0">
+                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
                                                         <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
+                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
 
                                                     <Viewbox Height="25">
                                                         <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
@@ -229,14 +229,14 @@
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
+                                                <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCCompletionStatus}"/>
                                                         <Button x:Name="PART_ButtonCompletionStatus" Opacity="1" Style="{StaticResource PropertyItemButton}" Margin="0" />
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
+                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <DockPanel.Style>
                                                         <Style TargetType="{x:Type DockPanel}">
                                                             <Setter Property="Visibility" Value="Collapsed" />
@@ -343,7 +343,7 @@
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
+                                                <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
                                                             FontFamily="{DynamicResource FontIcoFont}" Style="{DynamicResource GameEditButton}" Margin="0,0,10,0"/>
                                                     <ToggleButton Name="PanelToggleButton" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}" IsChecked="{DynamicResource DetailsViewShowInfoPanelDefault}"/>
