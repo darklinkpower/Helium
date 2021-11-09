@@ -712,12 +712,30 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                    <StackPanel Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" Margin="10"/>
-                                                    </Grid>
+                                                    </StackPanel>
                                                 </StackPanel>
 
+                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15">
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
+                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <StackPanel Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="60" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                                        <ContentControl x:Name="NewsViewer_NewsViewerControl" Margin="10"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="2">
