@@ -120,3 +120,12 @@ Packages:
       - 'Details View: Animate info button and edit button opacity transitions'
       - 'Grid View: Animate edit button opacity transitions'
       - 'Grid View: Modified opacity changes for game item controls'
+  - Version: 1.9
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-11-09
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.9/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_9.pthm
+    Changelog:
+      - 'General: Slight change in popups background color'
+      - 'Details View: Added support for "News Viewer" extension'
+      - 'Details View: Fix incorrect margins in details header when Last Played field is disabled'
+      - 'Grid View: Fix missing cover show option not showing in grid view when configured'
