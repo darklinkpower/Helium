@@ -26,57 +26,25 @@
                                     </Border.OpacityMask>
                                     <Grid x:Name="MainGrid" Height="600">
                                         <Grid.Clip>
-                                            <RectangleGeometry Rect="0, 0, 3840, 600" />
+                                            <RectangleGeometry Rect="0, 0, 3840, 800" />
                                         </Grid.Clip>
-                                        <Grid Visibility="Visible">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="6*"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="6*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="6*"/>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="6*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5" >
-                                                <Grid.RenderTransform>
-                                                    <TransformGroup>
-                                                        <ScaleTransform ScaleX="16" ScaleY="16"/>
-                                                        <SkewTransform/>
-                                                        <RotateTransform/>
-                                                        <TranslateTransform/>
-                                                    </TransformGroup>
-                                                </Grid.RenderTransform>
-                                                <FadeImage x:Name="Fade" Visibility="Visible" Grid.Row="1" Grid.Column="1" Source="{Binding Game.DisplayBackgroundImageObject}" Stretch="UniformToFill" 
-                                                           IsBlurEnabled="True" BlurAmount="{Binding ElementName=SizeGridBlur, Path=ActualHeight}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
-                                                    <FadeImage.RenderTransform>
-                                                        <TransformGroup>
-                                                            <ScaleTransform ScaleX="-1" ScaleY="1"/>
-                                                            <SkewTransform/>
-                                                            <RotateTransform Angle="180"/>
-                                                            <TranslateTransform />
-                                                        </TransformGroup>
-                                                    </FadeImage.RenderTransform>
-                                                </FadeImage>
-                                            </Grid>
-                                            <Grid x:Name="SizeGrid" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="20*"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="20*"/>
-                                                    <RowDefinition Height="*"/>
-                                                </Grid.RowDefinitions>
-                                                <Grid x:Name="SizeGridSecond" Grid.Row="1" Grid.Column="1"/>
-                                                <StackPanel x:Name="SizeGridBlur" Grid.Row="1" Grid.Column="1" MinHeight="5">
-                                                    <Grid Height="1"/>
-                                                    <Grid Height="{Binding ElementName=SizeGridSecond, Path=ActualHeight}"/>
-                                                    <Grid Height="{Binding ElementName=SizeGridSecond, Path=ActualWidth}"/>
-                                                </StackPanel>
-                                            </Grid>
-                                        </Grid>
+                                        <Grid.CacheMode>
+                                            <BitmapCache EnableClearType="False" 
+                                                    RenderAtScale="0.05"
+                                                    SnapsToDevicePixels="False" />
+                                        </Grid.CacheMode>
+                                        <Image Stretch="UniformToFill" Source="{Binding Game.DisplayBackgroundImage, Converter={StaticResource ImageStringToImageConverterCached}}"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
+                                            <Image.Effect>
+                                                <BlurEffect Radius="100" KernelType="Gaussian" RenderingBias="Performance"/>
+                                            </Image.Effect>
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleX="-1" ScaleY="1" />
+                                                    <RotateTransform Angle="180" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
                                     </Grid>
                                 </Border>
                             </StackPanel>
@@ -93,9 +61,9 @@
                                             <GradientStop Color="Transparent" Offset="1"/>
                                         </LinearGradientBrush>
                                     </Grid.OpacityMask>
-                                    <Border Background="#141414" Height="{Binding ElementName=DetailsTop, Path=ActualHeight}">
-                                        <Border.Style>
-                                            <Style TargetType="Border">
+                                    <Grid Background="#141414" Height="{Binding ElementName=DetailsTop, Path=ActualHeight}">
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Settings DetailsVisibility.BackgroundImage}" Value="False">
@@ -106,9 +74,19 @@
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
-                                        </Border.Style>
-                                    </Border>
+                                        </Grid.Style>
+                                    </Grid>
                                     <Border>
+                                        <Border.Style>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{PluginSettings Plugin=BackgroundChanger, Path=HasDataBackground, FallbackValue=False}" Value="True">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
                                         <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill"
                                                    HorizontalAlignment="{DynamicResource DetailsViewBackgroundHorizontalAlignment}"
                                                    VerticalAlignment="{DynamicResource DetailsViewBackgroundVerticalAlignment}">
@@ -120,6 +98,11 @@
                                             </FadeImage.OpacityMask>
                                         </FadeImage>
                                     </Border>
+
+                                    <!-- BackgroundChanger plugin background -->
+                                    <ContentControl x:Name="BackgroundChanger_PluginBackgroundImage"
+                                                    HorizontalAlignment="{DynamicResource DetailsViewBackgroundHorizontalAlignment}"
+                                                    VerticalAlignment="{DynamicResource DetailsViewBackgroundVerticalAlignment}" />
                                 </Grid>
 
                                 <StackPanel Grid.Row="0" Name="DetailsTop" VerticalAlignment="Top">
