@@ -11,6 +11,7 @@
                 <ControlTemplate TargetType="{x:Type Sidebar}">
                     <Border BorderThickness="0,0,0,0" BorderBrush="{DynamicResource PanelSeparatorBrush}"
                             Background="{TemplateBinding Background}"
+                            Padding="1.5"
                             x:Name="BorderContentHolder" Margin="{TemplateBinding Padding}">
                         <DockPanel x:Name="DockContentHolder">                            
                             <Border x:Name="PART_ElemMainMenu" Background="Transparent"
