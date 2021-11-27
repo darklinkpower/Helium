@@ -129,3 +129,12 @@ Packages:
       - 'Details View: Added support for "News Viewer" extension'
       - 'Details View: Fix incorrect margins in details header when Last Played field is disabled'
       - 'Grid View: Fix missing cover show option not showing in grid view when configured'
+  - Version: 1.10
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-11-27
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.10/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_10.pthm
+    Changelog:
+      - 'Update to Playnite themes API 2.1.0'
+      - 'Fix main window not being resizable from the side the sidebar is docked to'
+      - 'Details View: Support for Background image extension BackgroundImage control'
+      - 'DetailsView: Fix links panel showing when game links count is 0'
