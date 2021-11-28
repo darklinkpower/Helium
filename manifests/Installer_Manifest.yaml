@@ -138,3 +138,9 @@ Packages:
       - 'Fix main window not being resizable from the side the sidebar is docked to'
       - 'Details View: Support for Background image extension BackgroundImage control'
       - 'DetailsView: Fix links panel showing when game links count is 0'
+  - Version: 1.11
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-11-27
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.10/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_11.pthm
+    Changelog:
+      - 'Style filter ComboBox'
