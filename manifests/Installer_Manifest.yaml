@@ -144,3 +144,11 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.10/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_11.pthm
     Changelog:
       - 'Style filter ComboBox'
+  - Version: 1.12
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-11-28
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.12/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_12.pthm
+    Changelog:
+      - 'Details View: Fix background image not showing when BackgroundChanger extension is enabled but control is disabled in settings'
+      - 'Grid View: Add support for ExtraMetadataLoader video player control'
+      - 'Grid View: Add support for NewsViewer extension control'
