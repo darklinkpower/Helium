@@ -152,3 +152,10 @@ Packages:
       - 'Details View: Fix background image not showing when BackgroundChanger extension is enabled but control is disabled in settings'
       - 'Grid View: Add support for ExtraMetadataLoader video player control'
       - 'Grid View: Add support for NewsViewer extension control'
+  - Version: 1.13
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-12-12
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.13/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_13.pthm
+    Changelog:
+      - 'General: Adjustments to ThemeModifier variable names'
+      - 'Details View: Add support for ExtraMetadataLoader extension alternative video player'
