@@ -33,18 +33,21 @@
                                                     RenderAtScale="0.05"
                                                     SnapsToDevicePixels="False" />
                                         </Grid.CacheMode>
-                                        <Image Stretch="UniformToFill" Source="{Binding Game.DisplayBackgroundImage, Converter={StaticResource ImageStringToImageConverterCached}}"
-                                               HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
-                                            <Image.Effect>
+                                        <Border RenderTransformOrigin="0.5,0.5">
+                                            <Border.Background>
+                                                <VisualBrush Visual="{Binding ElementName=BorderImageBackground}" Stretch="UniformToFill"
+                                                             AlignmentY="Center" AlignmentX="Center"/>
+                                            </Border.Background>
+                                            <Border.Effect>
                                                 <BlurEffect Radius="100" KernelType="Gaussian" RenderingBias="Performance"/>
-                                            </Image.Effect>
-                                            <Image.RenderTransform>
+                                            </Border.Effect>
+                                            <Border.RenderTransform>
                                                 <TransformGroup>
                                                     <ScaleTransform ScaleX="-1" ScaleY="1" />
                                                     <RotateTransform Angle="180" />
                                                 </TransformGroup>
-                                            </Image.RenderTransform>
-                                        </Image>
+                                            </Border.RenderTransform>
+                                        </Border>
                                     </Grid>
                                 </Border>
                             </StackPanel>
@@ -141,12 +144,12 @@
                                         </DockPanel>
                                     </Grid>
                                     <Grid Name="DetailsHeader">
-                                        <Border Opacity="1.0">
+                                        <Border>
                                             <Border.Background>
                                                 <VisualBrush Visual="{Binding ElementName=BorderImageBackground}" Stretch="None" AlignmentY="Bottom"/>
                                             </Border.Background>
                                             <Border.Effect>
-                                                <BlurEffect Radius="20" KernelType="Gaussian" RenderingBias="Performance"/>
+                                                <BlurEffect Radius="12" KernelType="Gaussian" RenderingBias="Performance"/>
                                             </Border.Effect>
                                         </Border>
                                         <Border Background="{DynamicResource BackdropGlass1}"/>
@@ -687,12 +690,9 @@
                                                 <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
                                                         Tag="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="Auto" />
-                                                        </Grid.RowDefinitions>
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
-                                                        <StackPanel Orientation="Vertical" Background="{TemplateBinding Background}" Margin="10">
+                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <StackPanel Orientation="Vertical" Margin="10">
                                                             <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,0,0,10" />
                                                             <ContentControl x:Name="GameActivity_PluginChartLog"  Margin="0,0,0,10"/>
                                                             <ContentControl x:Name="GameActivity_PluginButton" HorizontalAlignment="Right"/>
@@ -718,10 +718,12 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <StackPanel Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
-                                                        <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" Margin="10"/>
-                                                    </StackPanel>
+                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <StackPanel Orientation="Vertical" Margin="10">
+                                                            <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" />
+                                                        </StackPanel>
+                                                    </Grid>
                                                 </StackPanel>
 
                                                 <StackPanel Name="NewsFeed" Margin="0,0,0,15">
@@ -736,10 +738,12 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <StackPanel Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="60" Margin="0,0,0,10" >
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
-                                                        <ContentControl x:Name="NewsViewer_NewsViewerControl" Margin="10"/>
-                                                    </StackPanel>
+                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <StackPanel Orientation="Vertical" Margin="10">
+                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
+                                                        </StackPanel>
+                                                    </Grid>
                                                 </StackPanel>
                                                 
                                             </StackPanel>
@@ -934,6 +938,22 @@
         <Setter Property="Margin" Value="-0.5" />
     </Style>
 
+    <Style TargetType="Border" x:Key="OutlineBorderMainPanels">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SectionContainerBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Margin" Value="-0.5" />
+    </Style>
+    
+    <Style TargetType="Border" x:Key="SectionContainerMain">
+        <Setter Property="Background" Value="{DynamicResource SectionContainerMainBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="#1A000025" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Margin" Value="-0.5" />
+    </Style>
+    
     <Style TargetType="StackPanel" x:Key="PluginStackpanelVisibility">
         <Setter Property="Tag" Value="False" />
         <Setter Property="Visibility" Value="Collapsed"/>

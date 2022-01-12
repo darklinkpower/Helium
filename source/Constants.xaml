@@ -124,7 +124,7 @@
     <Color x:Key="DetailsViewContainerLabelColor">#808486</Color>
     <SolidColorBrush x:Key="DetailsViewContainerLabelBrush" Color="{DynamicResource DetailsViewContainerLabelColor}" />
     <SolidColorBrush x:Key="DetailsViewContainerTextBrush" Color="#d3d3d3" />
-    <SolidColorBrush x:Key="DetailsViewLinksTextBrush" Color="#52ffffff" />
+    <SolidColorBrush x:Key="DetailsViewLinksTextBrush" Color="#52dedede" />
     <SolidColorBrush x:Key="DetailsViewOverviewHeaderButtonsBrush" Color="#DBd3d8e0" />
     
     
@@ -339,8 +339,8 @@
     <RadialGradientBrush x:Key="LinksContainerBackgroundBrush" GradientOrigin="0.64,0.95" Center="1.0, 0.8"
         RadiusX="1" RadiusY="1">
         <RadialGradientBrush.GradientStops>
-            <GradientStop Color="#1a6c7786" Offset="0.4" />
-            <GradientStop Color="#1a536868" Offset="1.0" />
+            <GradientStop Color="#1A6c7786" Offset="0.4" />
+            <GradientStop Color="#1A536868" Offset="1.0" />
         </RadialGradientBrush.GradientStops>
     </RadialGradientBrush>
     
@@ -353,6 +353,25 @@
         </RadialGradientBrush.GradientStops>
     </RadialGradientBrush>
 
+    <RadialGradientBrush x:Key="SectionContainerMainBackgroundBrush" GradientOrigin="0.64,0.95" Center="1.0, 0.8"
+        RadiusX="1" RadiusY="1">
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="#4d6b737f" Offset="0.0" />
+            <GradientStop Color="#803e4650" Offset="0.2" />
+            <GradientStop Color="#8024282f" Offset="1.0" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="SectionContainerBorderBrush" GradientOrigin="0.64,0.95" Center="1.0, 0.8"
+        RadiusX="1" RadiusY="1">
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="#26445566" Offset="-0.1" />
+            <GradientStop Color="#14ebebfe" Offset="0.4" />
+            <GradientStop Color="#26e5e5ff" Offset="0.85" />
+            <GradientStop Color="#1a415e7f" Offset="1.1" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+    
     <!--region end-->
 
     <SolidColorBrush x:Key="OpaqueHighlightBrush" Color="{DynamicResource GlyphSubColor}" Opacity="0.5"/>
