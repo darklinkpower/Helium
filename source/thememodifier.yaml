@@ -7,6 +7,7 @@ Constants:
     - DetailsViewBackgroundHorizontalAlignment: 'Horizontal alignment of the background image'
     - DetailsViewAllowUseOfLogos: 'Allow use of Extra Metadata Loader logos'
     - DetailsViewShowHltbDataGrid: 'Show HowLongToBeat data grid'
+    - DetailsViewLibraryGameShowFavorite: 'Show favorites icon in game list'
     - "Grid View"
     - GridViewAllowUseOfLogos: 'Allow use of Extra Metadata Loader logos'
     - GridViewShowHltbDataGrid: 'Show HowLongToBeat data grid'
