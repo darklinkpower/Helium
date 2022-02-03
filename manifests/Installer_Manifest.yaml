@@ -165,3 +165,11 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.14/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_14.pthm
     Changelog:
       - 'Details View: Minor visual changes to details and plugins panels'
+  - Version: 1.15
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-02-03
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.15/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_15.pthm
+    Changelog:
+      - 'Details View: Change text color in game list depending on the game state'
+      - 'Details View: Show favorites icon in game list for games marked as favorite. Can be enabled or disabled via ThemeModifier extension'
+      - 'Grid View: Show favorites icon in game covers for games marked as favorite. Can be enabled or disabled via ThemeModifier extension'
