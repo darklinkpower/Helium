@@ -31,7 +31,6 @@
                         </DataTrigger>
                         <DataTrigger Binding="{Binding IsUninstalling}" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource LibraryDetailsViewIsLaunchingForegroundBrush}" />
-                            <Setter Property="Background" Value="Red" TargetName="Border"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding IsRunning}" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource LibraryDetailsViewIsRunningForegroundBrush}" />
