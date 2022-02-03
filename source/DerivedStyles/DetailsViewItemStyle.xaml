@@ -23,6 +23,19 @@
                         <DataTrigger Binding="{Binding IsInstalled}" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource LibraryDetailsViewNotInstalledForegroundBrush}" />
                         </DataTrigger>
+                        <DataTrigger Binding="{Binding IsLaunching}" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource LibraryDetailsViewIsLaunchingForegroundBrush}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsInstalling}" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource LibraryDetailsViewIsLaunchingForegroundBrush}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsUninstalling}" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource LibraryDetailsViewIsLaunchingForegroundBrush}" />
+                            <Setter Property="Background" Value="Red" TargetName="Border"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsRunning}" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource LibraryDetailsViewIsRunningForegroundBrush}" />
+                        </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="{DynamicResource DetailsViewItemIsMouseOverBackgroundBrush}" TargetName="Border"/>
                         </Trigger>
