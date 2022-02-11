@@ -133,10 +133,10 @@
                                                         Style="{DynamicResource ControlPanelBoolTagToVisibility}"/>
                                         
                                         <DockPanel Margin="20,0,30,20" LastChildFill="False" VerticalAlignment="Bottom">
-                                            <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
+                                            <!--<Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
                                                    DockPanel.Dock="Left" Margin="0,0,20,0"
                                                    VerticalAlignment="Bottom"
-                                                   RenderOptions.BitmapScalingMode="Fant" />
+                                                   RenderOptions.BitmapScalingMode="Fant" />-->
                                             <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,20,0" DockPanel.Dock="Left" Opacity="0.60" />
                                             <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,0,0" DockPanel.Dock="Left" Opacity="0.60" />
                                             <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" Margin="20,0,0,0"
