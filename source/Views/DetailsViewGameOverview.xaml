@@ -113,7 +113,7 @@
                                 </Grid>
 
                                 <StackPanel Grid.Row="0" Name="DetailsTop" VerticalAlignment="Top">
-                                    <Grid Name="HeaderImagesGrid" Height="{Settings CalculatedGameDetailsIndentation}">
+                                    <Grid Name="HeaderImagesGrid" Height="{Settings CalculatedGameDetailsIndentation}" MinHeight="310">
                                         <Border Panel.ZIndex="99">
                                             <Border.Style>
                                                 <Style TargetType="Border">
