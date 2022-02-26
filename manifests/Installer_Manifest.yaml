@@ -173,3 +173,12 @@ Packages:
       - 'Details View: Change text color in game list depending on the game state'
       - 'Details View: Show favorites icon in game list for games marked as favorite. Can be enabled or disabled via ThemeModifier extension'
       - 'Grid View: Show favorites icon in game covers for games marked as favorite. Can be enabled or disabled via ThemeModifier extension'
+  - Version: 1.16
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-02-25
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.16/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_16.pthm
+    Changelog:
+      - 'DetailsView: Icon will no longer show in header area'
+      - 'DetailsView: Set minimium height to Header area in details'
+      - 'GridView: Always center ExtraMetadata extension logo vertically'
+      - 'Library: Game background image on window will no longer show even if enabled since the theme was never intended to be used with it enabled'
