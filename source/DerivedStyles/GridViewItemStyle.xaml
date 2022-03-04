@@ -15,7 +15,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Grid Background="{DynamicResource GridItemBackgroundBrush}"
+                    <Grid Background="Transparent"
                           Margin="{Settings ItemSpacingMargin}"
                           x:Name="ItemGrid">
                         <Border x:Name="SelectionBorder" BorderThickness="3" Margin="-3" />

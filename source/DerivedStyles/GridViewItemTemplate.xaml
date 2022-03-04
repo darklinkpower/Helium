@@ -28,6 +28,7 @@
                                                    TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Border>
+                                    <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" IsHitTestVisible="False" Opacity="0.60"/>
                                     <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
                                         <TextBlock Text="&#xF000;" Foreground="#67b3ff"
                                                    Opacity="0.75" FontSize="16"
@@ -83,18 +84,39 @@
                                         </Border>
                                     </Viewbox>
                                 </Grid>
-                                <TextBlock Text="{Binding DisplayName}"
-                                   Style="{DynamicResource BaseTextBlockStyle}"                                                                   
-                                   TextAlignment="Center" TextTrimming="CharacterEllipsis"
-                                   VerticalAlignment="Center"
-                                   Padding="2,5,2,5" Grid.Row="1" Grid.Column="0"
-                                   Width="{Settings GridItemWidth}" 
-                                   Visibility="{Settings ShowNamesUnderCovers}" />
+                                <Border x:Name="ShowGameNameBorder" Background="Transparent">
+                                    <TextBlock x:Name="ShowGameName" Text="{Binding DisplayName}"
+                                              Style="{DynamicResource BaseTextBlockStyle}"                                                                   
+                                              TextAlignment="Center"  TextTrimming="CharacterEllipsis"
+                                              VerticalAlignment="Center"
+                                              Padding="2,5,2,5" Grid.Row="1" Grid.Column="0"
+                                              Width="{Settings GridItemWidth}" 
+                                              Visibility="{Settings ShowNamesUnderCovers}" />
+                                </Border>
+
+                                <DockPanel Width="{Settings GridItemWidth}" Visibility="{DynamicResource GridViewCoverSubtitleVisibility}">
+                                    <TextBlock Text="&#xEEDC;" FontSize="{DynamicResource FontSizeSmall}"
+                                                   FontFamily="{StaticResource FontIcoFont}"
+                                                   TextAlignment="Left" VerticalAlignment="Center"
+                                                   Padding="2,4,2,5" Margin="0,0,0,-2"
+                                                   Foreground="{DynamicResource GridViewCoverSubtitleBrush}" />
+                                    <TextBlock Text="{Binding Playtime, Mode=OneWay, Converter={StaticResource PlayTimeToStringConverter}}"
+                                                   Foreground="{DynamicResource GridViewCoverSubtitleBrush}"
+                                                   FontSize="{DynamicResource FontSizeSmall}"
+                                                   Style="{DynamicResource BaseTextBlockStyle}"                                                                   
+                                                   TextAlignment="Left" TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Center"
+                                                   Padding="3,4,2,2" />
+                                </DockPanel>
                             </StackPanel>
                         </Border>
-                        <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" IsHitTestVisible="False" Opacity="0.60"/>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Settings ShowGridItemBackground}" Value="True">
+                            <Setter Property="Padding" Value="2,5,2,5" TargetName="ShowGameName" />
+                            <Setter Property="TextAlignment" Value="Center" TargetName="ShowGameName" />
+                            <Setter Property="Background" Value="{DynamicResource GridItemBackgroundBrush}" TargetName="ShowGameNameBorder" />
+                        </DataTrigger>
                         <DataTrigger Binding="{Binding IsInstalled}" Value="False">
                             <Setter Property="Tag" Value="NotInstalled" TargetName="PART_ButtonPlay" />
                         </DataTrigger>
@@ -185,7 +207,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="Button" x:Key="ButtonPlay" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="Background" Value="Transparent" />
