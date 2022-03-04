@@ -252,7 +252,7 @@
 
                                         <!--#region ExtraMetadataLoader Video Control-->
                                         <StackPanel Name="VideoFeed" DockPanel.Dock="Top"
-                                                    Margin="5,0,5,15">
+                                                    Margin="5,25,5,0">
                                             <StackPanel.Style>
                                                 <Style TargetType="StackPanel">
                                                     <Setter Property="Visibility" Value="Visible" />
@@ -280,7 +280,7 @@
                                         <!--#endregion -->
                                         
                                         <StackPanel Name="PART_ElemNotes" DockPanel.Dock="Top"
-                                                    Margin="5,0,5,15">
+                                                    Margin="5,25,5,0">
                                             <TextBlock Text="{DynamicResource LOCNotesLabel}"
                                                        Style="{DynamicResource BaseTextBlockStyle}" />
                                             <Separator Background="{DynamicResource PanelSeparatorBrush}" Margin="0,5,0,5" />
@@ -291,7 +291,7 @@
                                         </StackPanel>
 
                                         <StackPanel Name="PART_ElemDescription" DockPanel.Dock="Top"
-                                                    Margin="5,0,5,0">
+                                                    Margin="5,25,5,0">
                                             <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}"
                                                        Style="{DynamicResource BaseTextBlockStyle}" />
                                             <Separator Background="{DynamicResource PanelSeparatorBrush}" Margin="0,5,0,5" />
@@ -305,7 +305,7 @@
                                         </StackPanel>
 
                                         <!--#region SuccessStory-->
-                                        <StackPanel DockPanel.Dock="Top"  Margin="5,15,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,25,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
                                                     Tag="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=False}">
                                             <TextBlock Text="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource BaseTextBlockStyle}"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
@@ -322,7 +322,7 @@
                                         <!--#endregion -->
 
                                         <!--#region HowLongToBeat-->
-                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0"
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,25,5,0"
                                                     Visibility="{PluginStatus Plugin=playnite-howlongtobeat-plugin, Status=Installed}">
                                             <TextBlock Text="HowLongToBeat"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
@@ -331,7 +331,10 @@
                                                 <ContentControl DockPanel.Dock="Left" x:Name="HowLongToBeat_PluginButton" VerticalAlignment="Top"/>
                                                 <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Margin="5,5,0,0" VerticalAlignment="Center"/>
                                             </DockPanel>
-                                            <GridEx Name="HltbDataGrid" ColumnCount="2" AutoLayoutColumns="2" RowCount="6" Tag="{DynamicResource GridViewShowHltbDataGrid}">
+                                            <GridEx Name="HltbDataGrid" ColumnCount="2"
+                                                    Margin="0,15,0,0"
+                                                    AutoLayoutColumns="2" RowCount="6"
+                                                    Tag="{DynamicResource GridViewShowHltbDataGrid}">
                                                 <GridEx.Style>
                                                     <Style>
                                                         <Setter Property="Control.Visibility" Value="Collapsed" />
@@ -392,7 +395,7 @@
                                         <!--#endregion -->
 
                                         <!--#region ScreenshotsVisualizer-->
-                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,25,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
                                                     Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=False}">
                                             <TextBlock Text="{DynamicResource LOCSsvTitle}"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
@@ -402,7 +405,7 @@
                                         </StackPanel>
                                         <!--#endregion -->
                                         <!--#region GameActivity-->
-                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,25,5,0" Style="{DynamicResource PluginStackpanelVisibility}"
                                                     Tag="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=False}">
                                             <TextBlock Text="{DynamicResource LOCGameActivityTitle}"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
@@ -412,7 +415,7 @@
                                         </StackPanel>
                                         <!--#endregion -->
                                         <!--#region ReviewViewer-->
-                                        <StackPanel DockPanel.Dock="Top" Margin="5,15,5,0"
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,25,5,15"
                                                     Visibility="{PluginStatus Plugin=Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1, Status=Installed}">
                                             <TextBlock Text="{DynamicResource LOCReview_Viewer_ReviewsLabel}"
                                                        FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" Style="{DynamicResource BaseTextBlockStyle}" />
@@ -422,7 +425,7 @@
                                         <!--#endregion -->
 
                                         <!--#region NewsViewer-->
-                                        <StackPanel DockPanel.Dock="Top" Margin="5,0,5,15">
+                                        <StackPanel DockPanel.Dock="Top" Margin="5,25,5,15">
                                             <StackPanel.Style>
                                                 <Style TargetType="StackPanel">
                                                     <Setter Property="Visibility" Value="Collapsed" />
