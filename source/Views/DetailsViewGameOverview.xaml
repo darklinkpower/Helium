@@ -720,6 +720,10 @@
                                                     <Label Content="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <!--Rectangle used to expand the panel while the video loads-->
+                                                        <Viewbox Stretch="Uniform" Visibility="{Binding ElementName=VideoFeed, Path=Visibility}">
+                                                            <Rectangle Width="16" Height="9" Fill="Transparent" IsHitTestVisible="False" />
+                                                        </Viewbox>
                                                         <StackPanel Orientation="Vertical" Margin="10">
                                                             <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" />
                                                         </StackPanel>
