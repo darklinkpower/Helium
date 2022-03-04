@@ -188,3 +188,13 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.17/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_17.pthm
     Changelog:
       - 'GridView: Added ThemeModifier extension option to display game name if logo is visible or not'
+  - Version: 1.18
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-03-04
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.18/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_18.pthm
+    Changelog:
+      - 'DetailsView: Prevent video panel from changing height while ExtraMetadataLoader extension video is loading'
+      - 'GridView: Add ThemeModifier extension option to show time played information under game covers (Disabled by default)'
+      - 'GridView: Adjustments to distance between sections in details'
+      - 'GridView: Prevent video section from changing height while ExtraMetadataLoader extension video is loading'
+      - 'Library: Revert change that did not allow to use configured Playnite game background in window'
