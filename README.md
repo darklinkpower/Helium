@@ -4,6 +4,13 @@ Theme inspired by Steam for [Playnite](https://github.com/JosefNemec/Playnite) D
 
 Playnite forum thread: https://playnite.link/forum/thread-811.html
 
+## Tips and donations
+All the work I do for Playnite extensions is and will always be free!
+
+I make extensions and themes to learn, have fun and to give to the community so donations are not required or requested. If you find the work being done useful and you are and in a position that allows it, you can consider making a tip to support the different Playnite related projects I work on, every little bit helps.
+
+<a href='https://ko-fi.com/darklinkpower' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## Theme goals
 - Use the Steam client as inspiration to create a polished Playnite UI.
 - Achieve a more modern and clean design with the chosen pallete and things like rounded corners in certain elements like the windows, borders, buttons and controls.
