@@ -23,7 +23,7 @@ I make extensions and themes to learn, have fun and to give to the community so 
 ## Installation
 Option A: Click the `Download` button in the [addon database entry here](https://playnite.link/addons.html#8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1) to start the install process.
 
-Option B: Download the latest packaged `pthm` theme file from the [Releases page](https://github.com/darklinkpower/Mythic/releases/latest) and open it.
+Option B: Download the latest packaged `pthm` theme file from the [Releases page](https://github.com/darklinkpower/Helium/releases/latest) and open it.
 
 Option C: Download from the Addons browser in Playnite.
 
@@ -31,6 +31,7 @@ Option C: Download from the Addons browser in Playnite.
 - Full support for features available in the default Playnite Desktop themes
 - Customization: Customization of certain aspects of the theme can be done via custom integration of the [ThemeModifier](https://playnite.link/addons.html#playnite-thememodifier-plugin) extension.
 - Achievements: via custom integration of the [SuccessStory](https://playnite.link/addons.html#playnite-successstory-plugin) extension.
+- Alternative background images: via custom integration of the [BackgroundChanger](https://playnite.link/addons.html#playnite-backgroundchanger-plugin) extension.
 - HowLongToBeat data: via custom integration of the [HowLongToBeat](https://playnite.link/addons.html#playnite-howlongtobeat-plugin) extension.
 - Game statistics: via custom integration of the [GameActivity](https://playnite.link/addons.html#playnite-gameactivity-plugin) extension.
 - Screenshots: via custom integration of the [ScreenshotsVisualizer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) extension.
