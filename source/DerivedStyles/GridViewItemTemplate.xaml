@@ -29,6 +29,10 @@
                                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Border>
                                     <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" IsHitTestVisible="False" Opacity="0.60"/>
+                                    <Border Name="ShineBackground" Tag="False" IsHitTestVisible="False"
+                                            Style="{DynamicResource AnimatedCoverShineBackground}" />
+                                    <TextBlock Name="EnableHighlightAnimation" Visibility="Collapsed"
+                                               Tag="{DynamicResource GridViewEnableCoverShineAnimation}" />
                                     <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
                                         <TextBlock Text="&#xF000;" Foreground="#67b3ff"
                                                    Opacity="0.75" FontSize="16"
@@ -112,6 +116,13 @@
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=EnableHighlightAnimation, Path=Tag}" Value="True" />
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Tag" Value="True" TargetName="ShineBackground" />
+                        </MultiDataTrigger>
                         <DataTrigger Binding="{Settings ShowGridItemBackground}" Value="True">
                             <Setter Property="Padding" Value="2,5,2,5" TargetName="ShowGameName" />
                             <Setter Property="TextAlignment" Value="Center" TargetName="ShowGameName" />
@@ -174,6 +185,100 @@
         </Setter>
     </Style>
 
+    <Style x:Key="AnimatedCoverShineBackground" TargetType="Border">
+        <Setter Property="Opacity" Value="0.00" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="1.0, 0.0" EndPoint="0.07, 1.0">
+                    <GradientStop Color="#00d2d2d2" Offset="-0.10" />
+                    <GradientStop Color="#59d2d2d2" Offset="0.18"/>
+                    <GradientStop Color="#59d2d2d2" Offset="0.22" />
+                    <GradientStop Color="Transparent" Offset="0.25" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Opacity"
+                                    To="0.90"
+                                    Duration="0:0:0.5">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+                                    To="0.35"
+                                    Duration="0:0:0.5">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Offset)"
+                                    To="0.40"
+                                    Duration="0:0:0.5">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[3].(GradientStop.Offset)"
+                                    To="0.48"
+                                    Duration="0:0:0.5">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Opacity"
+                                    To="0.00"
+                                    Duration="0:0:0.4">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+                                    To="0.18"
+                                    Duration="0:0:0.4">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Offset)"
+                                    To="0.22"
+                                    Duration="0:0:0.4">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[3].(GradientStop.Offset)"
+                                    To="0.25"
+                                    Duration="0:0:0.4">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
     <Style
         x:Key="DuplicateHider_IconContentControlStyle1"
         BasedOn="{StaticResource {x:Type ContentControl}}"
