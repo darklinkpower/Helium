@@ -198,3 +198,9 @@ Packages:
       - 'GridView: Adjustments to distance between sections in details'
       - 'GridView: Prevent video section from changing height while ExtraMetadataLoader extension video is loading'
       - 'Library: Revert change that did not allow to use configured Playnite game background in window'
+  - Version: 1.19
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-03-22
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.19/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_19.pthm
+    Changelog:
+      - 'Grid View: Fix highlight animation applying to game name area when using horizontal aspect ratios'
