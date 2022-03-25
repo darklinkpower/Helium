@@ -400,14 +400,52 @@
                                                             </Style>
                                                         </DockPanel.Resources>
                                                         <Border DockPanel.Dock="Left" Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
-                                                        <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
-                                                               DockPanel.Dock="Left" Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}"
-                                                               StretchDirection="Both" Stretch="Uniform"
-                                                               RenderOptions.BitmapScalingMode="Fant" Margin="0,0,15,0">
-                                                            <Image.Effect>
+
+                                                        <Border>
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding ElementName=BackgroundChanger_PluginCoverImage, Path=Visibility}" Value="Visible">
+                                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                            <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
+                                                                   DockPanel.Dock="Left"
+                                                                   Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}"
+                                                                   StretchDirection="Both" Stretch="Uniform"
+                                                                   RenderOptions.BitmapScalingMode="Fant" Margin="0,0,15,0">
+                                                                <Image.Effect>
+                                                                    <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
+                                                                </Image.Effect>
+                                                            </Image>
+                                                        </Border>
+                                                        
+                                                        <ContentControl x:Name="BackgroundChanger_PluginCoverImage"
+                                                                        Margin="0,0,15,0"
+                                                                        DockPanel.Dock="Left" VerticalAlignment="Bottom"
+                                                                        Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}">
+                                                            <ContentControl.Style>
+                                                                <Style TargetType="ContentControl">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                    <Style.Triggers>
+                                                                        <MultiDataTrigger>
+                                                                            <MultiDataTrigger.Conditions>
+                                                                                <Condition Binding="{PluginSettings Plugin=BackgroundChanger, Path=HasDataCover, FallbackValue=False}" Value="True" />
+                                                                                <Condition Binding="{PluginSettings Plugin=BackgroundChanger, Path=EnableCoverImage, FallbackValue=False}" Value="True" />
+                                                                            </MultiDataTrigger.Conditions>
+                                                                            <Setter Property="Visibility" Value="Visible" />
+                                                                        </MultiDataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </ContentControl.Style>
+                                                            <ContentControl.Effect>
                                                                 <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
-                                                            </Image.Effect>
-                                                        </Image>
+                                                            </ContentControl.Effect>
+                                                        </ContentControl>
+                                                        
                                                         <ScrollViewer Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}" VerticalScrollBarVisibility="Disabled"
                                                                   HorizontalScrollBarVisibility="Auto">
                                                             <DockPanel>
