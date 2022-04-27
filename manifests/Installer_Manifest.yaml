@@ -210,3 +210,12 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.20/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_20.pthm
     Changelog:
       - 'Details View: Add support for cover control of BackgroundChanger extension'
+  - Version: 1.21
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-04-27
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.21/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_21.pthm
+    Changelog:
+      - 'Filters Panel: Use hand cursor for filter selection box buttons'
+      - 'Grid View: Added library banners to covers. Disabled by default. Can be enabled with option in ThemeModifier extension. Includes option to configure the banner opacity.'
+      - 'Grid View: Fix separators colors not being consistent'
+      - 'SearchBox: Use hand mouse for text clear button'
