@@ -266,6 +266,9 @@
                                                 Style="{DynamicResource AnimatedCoverShineBackground}" />
                                         <TextBlock Name="EnableHighlightAnimation" Visibility="Collapsed"
                                                    Tag="{DynamicResource GridViewEnableCoverShineAnimation}" />
+                                    </Grid>
+                                    
+                                    <Grid Grid.Row="1" Height="{Settings GridItemHeight}">
                                         <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
                                             <TextBlock Text="&#xF000;" Foreground="#67b3ff"
                                                        Opacity="0.75" FontSize="16"
