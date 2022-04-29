@@ -233,3 +233,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.23/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_23.pthm
     Changelog:
       - 'GridView: Fix covers displaying incorrectly at certain aspect ratios and fix favorites and DuplicateHider icons placement being inconsistent if Library Banners are enabled'
+  - Version: 1.24
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-04-29
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.24/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_24.pthm
+    Changelog:
+      - 'GridView: Implemented banners for game platform. Special thanks to the Playnite community for making these banners'
