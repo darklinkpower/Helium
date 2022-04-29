@@ -431,7 +431,7 @@
     <BitmapImage x:Key="MattelIntellivisionPlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/mattel_intellivision.png'}" popt:Freeze="True" CacheOption="OnLoad" />
     <BitmapImage x:Key="NECPCFXPlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/nec_pcfx.png'}" popt:Freeze="True" CacheOption="OnLoad" />
     <BitmapImage x:Key="NECSuperGrafxPlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/nec_supergrafx.png'}" popt:Freeze="True" CacheOption="OnLoad" />
-    <BitmapImage x:Key="NECTurboGrafxPlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/nec_turbografx.png'}" popt:Freeze="True" CacheOption="OnLoad" />
+    <BitmapImage x:Key="NECTurboGrafx16PlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/nec_turbografx_16.png'}" popt:Freeze="True" CacheOption="OnLoad" />
     <BitmapImage x:Key="NECTurboGrafxCDPlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/nec_turbografx_cd.png'}" popt:Freeze="True" CacheOption="OnLoad" />
     <BitmapImage x:Key="NintendoFamicomDiskPlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/nintendo_famicom_disk.png'}" popt:Freeze="True" CacheOption="OnLoad" />
     <BitmapImage x:Key="NintendoVirtualBoyPlatformBannerBitmap" UriSource="{ThemeFile 'Images/Banners/PlatformSpecId/nintendo_virtualboy.png'}" popt:Freeze="True" CacheOption="OnLoad" />

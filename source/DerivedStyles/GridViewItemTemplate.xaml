@@ -215,8 +215,8 @@
                                                     <DataTrigger Binding="{Binding ElementName=PlatformSpecificationId, Path=Text}" Value="nec_supergrafx">
                                                         <Setter Property="Source" Value="{StaticResource NECSuperGrafxPlatformBannerBitmap}" />
                                                     </DataTrigger>
-                                                    <DataTrigger Binding="{Binding ElementName=PlatformSpecificationId, Path=Text}" Value="nec_turbografx">
-                                                        <Setter Property="Source" Value="{StaticResource NECTurboGrafxPlatformBannerBitmap}" />
+                                                    <DataTrigger Binding="{Binding ElementName=PlatformSpecificationId, Path=Text}" Value="nec_turbografx_16">
+                                                        <Setter Property="Source" Value="{StaticResource NECTurboGrafx16PlatformBannerBitmap}" />
                                                     </DataTrigger>
                                                     <DataTrigger Binding="{Binding ElementName=PlatformSpecificationId, Path=Text}" Value="nec_turbografx_cd">
                                                         <Setter Property="Source" Value="{StaticResource NECTurboGrafxCDPlatformBannerBitmap}" />
