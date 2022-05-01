@@ -301,9 +301,6 @@
                                                     <DataTrigger Binding="{Binding ElementName=PlatformName, Path=Text}" Value="PICO-8">
                                                         <Setter Property="Source" Value="{StaticResource PICO8PlatformBannerBitmap}" />
                                                     </DataTrigger>
-                                                    <DataTrigger Binding="{Binding ElementName=PlatformName, Path=Text}" Value="RPG Maker">
-                                                        <Setter Property="Source" Value="{StaticResource RPGMakerPlatformBannerBitmap}" />
-                                                    </DataTrigger>
                                                     <DataTrigger Binding="{Binding ElementName=PlatformName, Path=Text}" Value="Sega NAOMI">
                                                         <Setter Property="Source" Value="{StaticResource SegaNAOMIPlatformBannerBitmap}" />
                                                     </DataTrigger>
