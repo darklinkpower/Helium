@@ -266,9 +266,9 @@
                                     </Image>
 
                                     <Image x:Name="PlatformNameBanner" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"
-                                       RenderOptions.BitmapScalingMode="Fant"
-                                       Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
-                                       Stretch="Uniform" StretchDirection="Both">
+                                           RenderOptions.BitmapScalingMode="Fant"
+                                           Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
+                                           Stretch="Uniform" StretchDirection="Both">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Setter Property="Source" Value="{x:Null}" />
