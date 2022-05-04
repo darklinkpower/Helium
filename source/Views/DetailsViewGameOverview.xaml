@@ -915,8 +915,17 @@
                                                     </Grid>
                                                 </StackPanel>
 
-                                                <StackPanel Name="ReviewsPanel" Margin="0,0,0,15"
-                                                            Visibility="{PluginStatus Plugin=Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1, Status=Installed}">
+                                                <StackPanel Name="ReviewsPanel" Margin="0,0,0,15">
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=ReviewViewer, Path=IsControlVisible, FallbackValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid Background="{DynamicResource SectionContainerBackgroundBrush}">
                                                         <Border Style="{DynamicResource OutlineBorder}" />
