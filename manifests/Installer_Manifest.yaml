@@ -245,3 +245,14 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.25/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_25.pthm
     Changelog:
       - 'GridView: Added additional platform banners (By NatParable)'
+  - Version: 1.26
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-05-04
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.26/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_26.pthm
+    Changelog:
+      - 'DetailsView: Hide Reviews Viewer panel for games not from Steam or PC games'
+      - 'GridView: Added additional platform banners (By NatParable)'
+      - 'GridView: Fix Oculus library banner not displaying'
+      - 'GridView: Hide Reviews Viewer section for games not from Steam or PC games'
+      - 'GridView: PC games without a library plugin banner will use a PC platform banner'
+      - 'GridView: Reduce memory used by banner images'
