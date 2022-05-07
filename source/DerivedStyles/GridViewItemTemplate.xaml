@@ -81,17 +81,14 @@
                                     </TextBlock>
 
                                     <Image x:Name="PlatformBanner" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"
-                                       RenderOptions.BitmapScalingMode="Fant"
-                                       Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
-                                       Stretch="Uniform" StretchDirection="Both">
+                                           RenderOptions.BitmapScalingMode="Fant"
+                                           Visibility="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToVisibilityConverter}}"
+                                           Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
+                                           Stretch="Uniform" StretchDirection="Both">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Setter Property="Source" Value="{x:Null}" />
-                                                <Setter Property="Visibility" Value="Collapsed" />
                                                 <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToBoolConverter}}" Value="True">
-                                                        <Setter Property="Visibility" Value="Visible" />
-                                                    </DataTrigger>
                                                     <DataTrigger Binding="{Binding ElementName=PlatformSpecificationId, Path=Text}" Value="nintendo_gamecube">
                                                         <Setter Property="Source" Value="{StaticResource NintendoGamecubePlatformBannerBitmap}" />
                                                     </DataTrigger>
@@ -267,16 +264,13 @@
 
                                     <Image x:Name="PlatformNameBanner" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"
                                            RenderOptions.BitmapScalingMode="Fant"
+                                           Visibility="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToVisibilityConverter}}"
                                            Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
                                            Stretch="Uniform" StretchDirection="Both">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Setter Property="Source" Value="{x:Null}" />
-                                                <Setter Property="Visibility" Value="Collapsed" />
                                                 <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToBoolConverter}}" Value="True">
-                                                        <Setter Property="Visibility" Value="Visible" />
-                                                    </DataTrigger>
                                                     <DataTrigger Binding="{Binding ElementName=PlatformName, Path=Text}" Value="Microsoft MSX">
                                                         <Setter Property="Source" Value="{StaticResource MicrosoftMsxPlatformBannerBitmap}" />
                                                     </DataTrigger>
@@ -313,17 +307,14 @@
                                     </Image>
 
                                     <Image x:Name="LibraryBanner" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"
-                                       RenderOptions.BitmapScalingMode="Fant"
-                                       Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
-                                       Stretch="Uniform" StretchDirection="Both">
+                                           RenderOptions.BitmapScalingMode="Fant"
+                                           Visibility="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToVisibilityConverter}}"
+                                           Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
+                                           Stretch="Uniform" StretchDirection="Both">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Setter Property="Source" Value="{x:Null}" />
-                                                <Setter Property="Visibility" Value="Collapsed" />
                                                 <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToBoolConverter}}" Value="True">
-                                                        <Setter Property="Visibility" Value="Visible" />
-                                                    </DataTrigger>
                                                     <DataTrigger Binding="{Binding ElementName=PluginId, Path=Text}" Value="402674cd-4af6-4886-b6ec-0e695bfa0688">
                                                         <Setter Property="Source" Value="{StaticResource AmazonGamesLibraryBannerBitmap}" />
                                                     </DataTrigger>
@@ -400,12 +391,12 @@
 
                                     <Image x:Name="PcPlatformBanner" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"
                                            RenderOptions.BitmapScalingMode="Fant"
+                                           Visibility="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToVisibilityConverter}}"
                                            Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
                                            Stretch="Uniform" StretchDirection="Both">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Setter Property="Source" Value="{x:Null}" />
-                                                <Setter Property="Visibility" Value="Collapsed" />
                                                 <Style.Triggers>
                                                     <MultiDataTrigger>
                                                         <MultiDataTrigger.Conditions>
@@ -416,7 +407,6 @@
                                                             <Condition Binding="{Binding ElementName=LibraryBanner, Path=Visibility}" Value="Collapsed" />
                                                         </MultiDataTrigger.Conditions>
                                                         <Setter Property="Source" Value="{StaticResource PcWindowsPlatformBannerBitmap}" />
-                                                        <Setter Property="Visibility" Value="Visible" />
                                                     </MultiDataTrigger>
                                                 </Style.Triggers>
                                             </Style>
@@ -424,13 +414,13 @@
                                     </Image>
                                     
                                     <Image x:Name="UnknownBanner" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center"
-                                       RenderOptions.BitmapScalingMode="Fant"
-                                       Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
-                                       Stretch="Uniform" StretchDirection="Both">
+                                           RenderOptions.BitmapScalingMode="Fant"
+                                           Visibility="{Binding RelativeSource={RelativeSource Self}, Path=Source, Converter={StaticResource NullToVisibilityConverter}}"
+                                           Opacity="{DynamicResource GridViewCoverLibraryBannerOpacity}"
+                                           Stretch="Uniform" StretchDirection="Both">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Setter Property="Source" Value="{x:Null}" />
-                                                <Setter Property="Visibility" Value="Collapsed" />
                                                 <Style.Triggers>
                                                     <MultiDataTrigger>
                                                         <MultiDataTrigger.Conditions>
@@ -441,7 +431,6 @@
                                                             <Condition Binding="{Binding ElementName=PcPlatformBanner, Path=Visibility}" Value="Collapsed" />
                                                         </MultiDataTrigger.Conditions>
                                                         <Setter Property="Source" Value="{StaticResource PlayniteLibraryBannerBitmap}" />
-                                                        <Setter Property="Visibility" Value="Visible" />
                                                     </MultiDataTrigger>
                                                 </Style.Triggers>
                                             </Style>
