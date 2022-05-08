@@ -20,6 +20,7 @@
     <Visibility x:Key="GridViewCoverSubtitleVisibility">Collapsed</Visibility>
     <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">False</sys:Boolean>
     <sys:Boolean x:Key="GridViewEnablePlayingBorderAnimation">False</sys:Boolean>
+    <sys:Boolean x:Key="GridViewPlaceDescriptionAtBottom">False</sys:Boolean>
     <sys:Double x:Key="GridViewCoverLibraryBannerOpacity">1.0</sys:Double>
     <!--region end-->
     

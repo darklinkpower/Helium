@@ -9,6 +9,7 @@ Constants:
     - DetailsViewShowHltbDataGrid: 'Show HowLongToBeat data grid'
     - DetailsViewLibraryGameShowFavorite: 'Show favorites icon in game list'
     - "Grid View"
+    - GridViewPlaceDescriptionAtBottom: 'Place game description at the bottom'
     - GridViewDisplayGameNameIfLogoVisible: 'Display game name if logo is visible'
     - GridViewCoverSubtitleVisibility: 'Visibility of time played under game covers'
     - GridViewAllowUseOfLogos: 'Allow use of Extra Metadata Loader logos'
