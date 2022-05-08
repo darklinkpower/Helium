@@ -19,7 +19,7 @@
     <sys:Boolean x:Key="GridViewDisplayGameNameIfLogoVisible">True</sys:Boolean>
     <Visibility x:Key="GridViewCoverSubtitleVisibility">Collapsed</Visibility>
     <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">False</sys:Boolean>
-    <sys:Boolean x:Key="GridViewEnablePlayingBorderAnimation">True</sys:Boolean>
+    <sys:Boolean x:Key="GridViewEnablePlayingBorderAnimation">False</sys:Boolean>
     <sys:Double x:Key="GridViewCoverLibraryBannerOpacity">1.0</sys:Double>
     <!--region end-->
     
@@ -390,6 +390,12 @@
     <SolidColorBrush x:Key="GridViewCoverSubtitleBrush" Color="#b7b7b7" />
     <SolidColorBrush x:Key="GridViewCoverSubtitleBackgroundBrush" Color="#3d4450" />
 
+    <!-- Noise Brush obtained from https://github.com/felixkmh/StartPage-for-Playnite/-->
+    <ImageBrush x:Key="DarkNoiseBrush" ImageSource="{ThemeFile 'Images/dark_noise.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"
+                    Opacity="1" popt:Freeze="True"/>
+    <ImageBrush x:Key="WhiteNoiseBrush" ImageSource="{ThemeFile 'Images/white_noise.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"
+                    Opacity="1.0" popt:Freeze="True"/>
+    
     <sys:Int32 x:Key="BannersBitmapDecodeWidth">300</sys:Int32>
     <sys:Int32 x:Key="BannersBitmapDecodeHeight">50</sys:Int32>
     
