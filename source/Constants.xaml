@@ -19,6 +19,7 @@
     <sys:Boolean x:Key="GridViewDisplayGameNameIfLogoVisible">True</sys:Boolean>
     <Visibility x:Key="GridViewCoverSubtitleVisibility">Collapsed</Visibility>
     <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">False</sys:Boolean>
+    <sys:Boolean x:Key="GridViewEnablePlayingBorderAnimation">True</sys:Boolean>
     <sys:Double x:Key="GridViewCoverLibraryBannerOpacity">1.0</sys:Double>
     <!--region end-->
     
