@@ -19,6 +19,7 @@
     <sys:Boolean x:Key="GridViewDisplayGameNameIfLogoVisible">True</sys:Boolean>
     <Visibility x:Key="GridViewCoverSubtitleVisibility">Collapsed</Visibility>
     <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">False</sys:Boolean>
+    <sys:Boolean x:Key="GridViewCoverUseRoundedCorners">False</sys:Boolean>
     <sys:Boolean x:Key="GridViewEnablePlayingGlowBorder">False</sys:Boolean>
     <sys:Boolean x:Key="GridViewPlaceDescriptionAtBottom">False</sys:Boolean>
     <sys:Double x:Key="GridViewCoverLibraryBannerOpacity">1.0</sys:Double>
@@ -37,6 +38,11 @@
     <sys:Double x:Key="EllipseBorderThickness">0</sys:Double>
     <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
     <CornerRadius x:Key="ControlCornerRadiusSmall">3</CornerRadius>
+    <CornerRadius x:Key="GridViewCoverCornerRadius">5</CornerRadius>
+    <CornerRadius x:Key="GridViewCoverGridBackgroundDisabledCornerRadius">5,5,0,0</CornerRadius>
+    <CornerRadius x:Key="GridViewShowGameNameCornerRadius">0,0,5,5</CornerRadius>
+    <CornerRadius x:Key="GridViewSelectionBorderCornerRadius">7</CornerRadius>
+    <CornerRadius x:Key="DetailsViewCoverCornerRadius">5</CornerRadius>
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
 
     <Color x:Key="BlackColor">#FF000000</Color>
@@ -81,7 +87,8 @@
     <SolidColorBrush x:Key="LibraryDetailsViewNotInstalledForegroundBrush" Color="#a3aab9" />
     <SolidColorBrush x:Key="LibraryDetailsViewIsLaunchingForegroundBrush" Color="#26b7ff" />
     <SolidColorBrush x:Key="LibraryDetailsViewIsRunningForegroundBrush" Color="#adff2f" />
-    
+
+    <SolidColorBrush x:Key="GridViewItemMaskBackgroundBrush" Color="#282828" />
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="CheckboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="CheckboxIsCheckedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
