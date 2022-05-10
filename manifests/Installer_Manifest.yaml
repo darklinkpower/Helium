@@ -270,3 +270,10 @@ Packages:
       - 'Grid View: Added ThemeModifier option to place Description at the bottom (After extensions sections). Disabled by default.'
       - 'Grid View: Improved performance of cover highlight animations'
       - 'Grid View: Made glow border of playing games static. Can be enabled with ThemeModifier extension'
+  - Version: 1.29
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-05-09
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.29/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_29.pthm
+    Changelog:
+      - 'Grid View: Added ThemeModifier extension option to use rounded covers'
+      - 'Grid View: Removed playing game border and added animation instead (Again...). Can be enabled with ThemeModifier extension'
