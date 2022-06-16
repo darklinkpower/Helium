@@ -276,6 +276,11 @@
         <GradientStop Color="#049BC3" Offset="1"/>
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="ControlsIconsGlyphBrush" MappingMode="RelativeToBoundingBox" StartPoint="0.0, 0.0" EndPoint="1.0, 1.0" >
+        <GradientStop Color="#00CCFF" Offset="0"/>
+        <GradientStop Color="#2D73FF" Offset="1"/>
+    </LinearGradientBrush>
+    
     <Color x:Key="PlayButtonBackgroundColor1">#4FC82F</Color>
     <Color x:Key="PlayButtonBackgroundColor2">#2BB943</Color>
     <Color x:Key="PlayButtonBackgroundColor3">#18B14E</Color>

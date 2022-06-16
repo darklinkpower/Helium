@@ -25,21 +25,8 @@
                                 <Grid Width="18" Height="18" Background="Transparent">
 
                                     <Viewbox x:Name="CheckIcon" Visibility="Collapsed" Margin="1" Stretch="Uniform">
-                                        <Canvas Name="base" Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
-                                            <Canvas.RenderTransform>
-                                                <TranslateTransform X="0" Y="0"/>
-                                            </Canvas.RenderTransform>
-                                            <Canvas.Resources>
-                                                <LinearGradientBrush x:Key="linear" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
-                                                    <LinearGradientBrush.GradientStops>
-                                                        <GradientStopCollection>
-                                                            <GradientStop Color="#00CCFF" Offset="0"/>
-                                                            <GradientStop Color="#2D73FF" Offset="1"/>
-                                                        </GradientStopCollection>
-                                                    </LinearGradientBrush.GradientStops>
-                                                </LinearGradientBrush>
-                                            </Canvas.Resources>
-                                            <Path StrokeThickness="24" Stroke="{StaticResource linear}" StrokeMiterLimit="10" StrokeDashArray="365.19 365.19" StrokeLineJoin="Miter" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                            <Path StrokeThickness="24" Stroke="{DynamicResource ControlsIconsGlyphBrush}" StrokeMiterLimit="10" StrokeDashArray="365.19 365.19" StrokeLineJoin="Miter" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
                                                 <Path.Data>
                                                     <PathGeometry Figures="M206.5 45.25L95 210.75l-45.5-63" FillRule="NonZero"/>
                                                 </Path.Data>
