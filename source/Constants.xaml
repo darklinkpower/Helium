@@ -266,9 +266,8 @@
     </RadialGradientBrush>
 
     <LinearGradientBrush x:Key="StandardWindowBorderBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
-        <GradientStop Color="#049BC3" Offset="0"/>
-        <GradientStop Color="#217BBB" Offset="0.5"/>
-        <GradientStop Color="#2E52B5" Offset="1"/>
+        <GradientStop Color="#00ccff" Offset="0"/>
+        <GradientStop Color="#3366ff" Offset="1"/>
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="ProgressBarBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
