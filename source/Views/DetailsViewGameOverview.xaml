@@ -13,7 +13,8 @@
                                   Style="{DynamicResource DetailsScrollViewer}"
                                   d:DesignWidth="1280"
                                   d:DesignHeight="1280"
-                                  d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}">
+                                  d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}"
+                                  x:Name="PART_ScrollViewHost">
                         <Grid Margin="0,0,0,40">
                             <StackPanel Name="BackgroundBlurPanel">
                                 <Border Height="{Binding ElementName=HeaderImagesGrid, Path=ActualHeight}" />

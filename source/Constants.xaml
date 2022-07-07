@@ -62,6 +62,7 @@
     <Color x:Key="GridItemBackgroundColor">#3D4450</Color>
     <Color x:Key="PanelSeparatorColor">#16181A</Color>
     <Color x:Key="WindowPanelSeparatorColor">Transparent</Color>
+    <Color x:Key="DataChangeNotifColor">#ffa500</Color>
 
     <!--region Custom theme colors-->
     <Color x:Key="ControlBackgroundColor">#3e4047</Color>
@@ -118,6 +119,7 @@
     <SolidColorBrush x:Key="ThumbBackgroundBrush" Color="#606774" />
     <SolidColorBrush x:Key="ThumbIsMouseOverBackgroundBrush" Color="#7d8594" />
     <SolidColorBrush x:Key="ToggleButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="DataChangeNotifBrush" Color="{DynamicResource DataChangeNotifColor}" />
     <!--region end-->
 
     <!--region Unused Default Controls background brushes-->
