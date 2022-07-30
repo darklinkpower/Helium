@@ -357,7 +357,6 @@
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <Border/>
                                             </DockPanel>
                                         </Border>
                                     </Grid>
@@ -536,7 +535,9 @@
 
                                                     </DockPanel>
                                                 </Border>
-                                                <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" Margin="20,0,30,0" Padding="15,10,15,10" />
+                                                <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}"
+                                                        CornerRadius="0"
+                                                        Margin="20,0,30,0" Padding="15,10,15,10" />
                                             </Grid>
                                         </Grid>
 
