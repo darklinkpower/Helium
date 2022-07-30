@@ -220,5 +220,82 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="PannelFavoriteToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="#67b3ff" />
+        <Setter Property="Foreground" Value="#67b3ff" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="IsChecked" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid>
+                        <Border x:Name="BorderBk" BorderThickness="0" Background="#d3d8e0"                            
+                            CornerRadius="{DynamicResource ControlCornerRadius}" Opacity="0.14" />
+                        <Border Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" >
+                                <ContentPresenter.Content>
+                                    <Viewbox Stretch="Uniform">
+                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                            <Path x:Name="Path" Opacity="1.0" StrokeThickness="15" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding Foreground}" StrokeMiterLimit="10">
+                                                <Path.Data>
+                                                    <PathGeometry Figures="M127.755 18.624 c-2.061 0.101-3.846 1.465-4.485 3.427L98.312 96.933H18.379c-2.745 0.01-4.963 2.242-4.955 4.989 c0.006 1.572 0.754 3.05 2.019 3.984l64.925 47.476L55.41 230.873c-0.848 2.612 0.582 5.417 3.192 6.265 c1.521 0.495 3.186 0.228 4.475-0.719L128 188.945l64.926 47.474c2.212 1.624 5.324 1.144 6.947-1.071 c0.944-1.29 1.211-2.954 0.719-4.475l-24.959-77.492l64.922-47.476c2.211-1.63 2.681-4.743 1.049-6.953 c-0.934-1.265-2.41-2.015-3.984-2.02H157.69l-24.959-74.882C132.033 19.917 129.997 18.513 127.755 18.624z" FillRule="NonZero"/>
+                                                </Path.Data>
+                                            </Path>
+                                        </Canvas>
+                                    </Viewbox>
+                                </ContentPresenter.Content>
+                            </ContentPresenter>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderBk"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.30"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderBk"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.14"
+                                                Duration="0:0:0.2" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="#80ffffff" />
+                
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     
 </ResourceDictionary>
