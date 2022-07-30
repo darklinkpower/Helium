@@ -79,6 +79,7 @@
     <Color x:Key="ControlBackgroundColorDarker">#25272d</Color>
     <Color x:Key="ControlBackgroundColorDark">#99212124</Color>
     <Color x:Key="ControlBackgroundColorDarkHover">#3e4047</Color>
+    <Color x:Key="ToggleButtonNotCheckedBorderColor">#6f6d70</Color>
     <!--region Custom theme colors-->
 
     <!--region Default Controls background brushes-->
@@ -229,6 +230,7 @@
         <GradientStop Color="#374C6A" Offset="1"/>
     </LinearGradientBrush>
 
+    <SolidColorBrush x:Key="ToggleButtonNotCheckedBorderBrush" Color="{DynamicResource ToggleButtonNotCheckedBorderColor}" />
     <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
     <SolidColorBrush x:Key="HighlightGlyphBrush" Color="{DynamicResource HighlightGlyphColor}" />
     <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource PopupBorderColor}" />

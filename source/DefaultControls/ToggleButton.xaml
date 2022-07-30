@@ -9,7 +9,7 @@
     <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="{DynamicResource ToggleButtonBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ToggleButtonNotCheckedBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Padding" Value="10,5,10,5" />
@@ -40,6 +40,7 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
