@@ -366,8 +366,8 @@
         <GradientStop Color="#00272c35" Offset="1"/>
     </LinearGradientBrush>
 
-    <RadialGradientBrush x:Key="LinksContainerBackgroundBrush" GradientOrigin="0.64,0.95" Center="1.0, 0.8"
-        RadiusX="1" RadiusY="1">
+    <RadialGradientBrush x:Key="LinksContainerBackgroundBrush" Center="0.64, 0.95"
+        RadiusX="1" RadiusY="0.8">
         <RadialGradientBrush.GradientStops>
             <GradientStop Color="#1A6c7786" Offset="0.4" />
             <GradientStop Color="#1A536868" Offset="1.0" />
@@ -417,6 +417,8 @@
     <ImageBrush x:Key="WhiteNoiseBrush" ImageSource="{ThemeFile 'Images/white_noise.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"
                     Opacity="1.0" popt:Freeze="True"/>
     <BitmapImage x:Key="InnerGlowBitmap" UriSource="{ThemeFile 'Images/innerglow.png'}" popt:Freeze="True" CacheOption="OnLoad" />
+
+    <ImageBrush x:Key="DetailsPanelsBorderBrush" ImageSource="{ThemeFile 'Images/DetailsPanelsBorder.png'}" popt:Freeze="True" />
     
     <sys:Int32 x:Key="BannersBitmapDecodeWidth">300</sys:Int32>
     <sys:Int32 x:Key="BannersBitmapDecodeHeight">50</sys:Int32>

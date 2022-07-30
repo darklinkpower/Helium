@@ -531,11 +531,11 @@
 
                                                     </DockPanel>
                                                 </Border>
-                                                <Border Style="{DynamicResource OutlineBorder}" Margin="20,0,30,0" Padding="15,10,15,10"/>
+                                                <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" Margin="20,0,30,0" Padding="15,10,15,10" />
                                             </Grid>
                                         </Grid>
 
-                                        <Grid Margin="20,10,30,10" Grid.Row="2" Background="{DynamicResource  LinksContainerBackgroundBrush}">
+                                        <Grid Margin="20,10,30,10" Grid.Row="2">
                                             <Grid.Style>
                                                 <Style TargetType="Grid">
                                                     <Setter Property="Visibility" Value="Visible" />
@@ -552,6 +552,7 @@
                                                     </Style.Triggers>
                                                 </Style>
                                             </Grid.Style>
+                                            <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                             <Border Style="{DynamicResource OutlineBorder}" />
 
                                             <ItemsControl ItemsSource="{Binding Game.Links}" Margin="0,5,0,5">
@@ -581,7 +582,8 @@
                                             <StackPanel Grid.Column="0" Margin="0,0,0,0">
                                                 <StackPanel Name="PART_ElemNotes" Margin="0,0,0,10">
                                                     <Label Content="{DynamicResource LOCNotesLabel}" Style="{DynamicResource FeedSectionLabel}"/>
-                                                    <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid Margin="0,0,0,10" MinHeight="45">
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <TextBox Name="PART_TextNotes" IsReadOnly="True"
                                                      BorderThickness="0" Background="Transparent"
@@ -605,7 +607,8 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCGenreLabel}" Style="{DynamicResource FeedSectionLabel}"/>
-                                                    <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid Margin="0,0,0,10" MinHeight="45">
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <ItemsControl ItemsSource="{Binding Game.Genres}" Margin="0,3,0,3">
                                                             <ItemsControl.ItemsPanel>
@@ -639,7 +642,8 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCGameCategoriesTitle}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid Margin="0,0,0,10" MinHeight="45">
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <ItemsControl ItemsSource="{Binding Game.Categories}" Margin="0,3,0,3">
                                                             <ItemsControl.ItemsPanel>
@@ -673,7 +677,8 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCFeaturesLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid Margin="0,0,0,10" MinHeight="45">
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <ItemsControl ItemsSource="{Binding Game.Features}" Margin="0,3,0,3">
                                                             <ItemsControl.ItemsPanel>
@@ -707,7 +712,8 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCTagsLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Margin="0,0,0,10" Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45">
+                                                    <Grid Margin="0,0,0,10" MinHeight="45">
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <ItemsControl ItemsSource="{Binding Game.Tags}" Margin="0,3,0,3">
                                                             <ItemsControl.ItemsPanel>
@@ -730,6 +736,7 @@
                                                         Tag="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorderMainPanels}" />
                                                         <StackPanel Orientation="Vertical" Margin="10">
                                                             <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,0,0,10" />
@@ -758,6 +765,7 @@
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorderMainPanels}" />
                                                         <!--Rectangle used to expand the panel while the video loads-->
                                                         <Viewbox Stretch="Uniform" Visibility="{Binding ElementName=VideoFeed, Path=Visibility}">
@@ -782,6 +790,7 @@
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <Border Style="{DynamicResource OutlineBorderMainPanels}" />
                                                         <StackPanel Orientation="Vertical" Margin="10">
                                                             <ContentControl x:Name="NewsViewer_NewsViewerControl" />
@@ -811,8 +820,8 @@
                                                     </StackPanel.Style>
                                                     <Label Content="HowLongToBeat" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
-                                                        <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanels}" />
                                                         <Border Padding="10" >
                                                             <StackPanel>
                                                                 <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Left" Margin="0,0,0,10"
@@ -885,8 +894,8 @@
                                                         Tag="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
-                                                        <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanels}" />
                                                         <Border Padding="10" >
                                                             <StackPanel>
                                                                 <ContentControl x:Name="SuccessStory_PluginProgressBar"  Height="20" Margin="0,0,0,10"/>
@@ -902,8 +911,8 @@
                                                         Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{DynamicResource LOCSsvTitle}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
-                                                        <Border Background="{DynamicResource SectionContainerBackgroundBrush}" />
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanels}" />
                                                         <Border Padding="10" >
                                                             <StackPanel>
                                                                 <ContentControl x:Name="ScreenshotsVisualizer_PluginSinglePicture" Margin="0,0,0,10"/>
@@ -928,8 +937,9 @@
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Style="{DynamicResource FeedSectionLabel}"/>
-                                                    <Grid Background="{DynamicResource SectionContainerBackgroundBrush}">
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                                    <Grid>
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanels}" />
                                                         <Border Padding="10">
                                                             <ContentControl x:Name="ReviewViewer_ReviewsControl" />
                                                         </Border>
