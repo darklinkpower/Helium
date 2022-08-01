@@ -152,13 +152,9 @@
                                 CornerRadius="2,0,0,2" MinHeight="{TemplateBinding MinHeight}" MinWidth="{TemplateBinding MinWidth}"
                                 Style="{DynamicResource ContextButtonBackgroundStyle}" Tag="{TemplateBinding Tag}" />
                         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
-                            <Border Height="22" Margin="0,3,10,0">
-                                <Viewbox Stretch="Uniform">
+                            <Grid Height="22" Margin="0,3,10,0">
+                                <Viewbox Stretch="Uniform" x:Name="DownloadIcon" Visibility="Visible">
                                     <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
-                                        <Canvas.RenderTransform>
-                                            <TranslateTransform X="0" Y="0"/>
-                                        </Canvas.RenderTransform>
-                                        <Canvas.Resources/>
                                         <Canvas>
                                             <Line X1="129" Y1="182" X2="129" Y2="24" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
                                             <Polyline Points="174.25,141.25 128.732,183.625 84.25,141.25" FillRule="NonZero" StrokeThickness="12" Stroke="#FFFFFFFF" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
@@ -168,15 +164,26 @@
                                         </Canvas>
                                     </Canvas>
                                 </Viewbox>
-                            </Border>
+
+                                <Viewbox Height="18" VerticalAlignment="Center"
+                                         Stretch="Uniform" x:Name="CloseIcon" Visibility="Collapsed">
+                                    <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                        <Line X1="212" Y1="212" X2="44" Y2="44" StrokeThickness="45" Stroke="#FFFFFFFF" StrokeMiterLimit="10"/>
+                                        <Line X1="44" Y1="212" X2="212" Y2="44" StrokeThickness="45" Stroke="#FFFFFFFF" StrokeMiterLimit="10"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Grid>
                             <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
                         </DockPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="True" />
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" TargetName="Grid" Value="0.5" />
                         </Trigger>
+                        <DataTrigger Binding="{Binding Game.IsInstalled}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="DownloadIcon" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="CloseIcon" />
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -186,6 +193,7 @@
                 <Setter Property="Background" Value="{DynamicResource ContextButtonIsMouseOverBackgroundBrush}" />
                 <Setter Property="Tag" Value="True" />
             </Trigger>
+
         </Style.Triggers>
     </Style>
 
