@@ -76,17 +76,23 @@
                                         <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" VerticalAlignment="Center" />
                                     </Border>
                                 </Grid>
-                                
-                                <Grid DockPanel.Dock="Top">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Name="PART_ImageIcon" Grid.Column="0" MaxHeight="32" MaxWidth="32"
+
+                                <DockPanel DockPanel.Dock="Top">
+                                    <Image Name="PART_ImageIcon" DockPanel.Dock="Left" MaxHeight="32" MaxWidth="32"
                                            RenderOptions.BitmapScalingMode="Fant" Margin="0,0,10,0" />
+                                    <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
+                                                    DockPanel.Dock="Right">
+                                        <ContentControl.Resources>
+                                            <Style TargetType="Button" BasedOn="{StaticResource PlayersCountButtonStyle}">
+                                                <Setter Property="Foreground" Value="{DynamicResource PlayersCountGridViewForegroundBrush}" />
+                                                <Setter Property="Background" Value="Transparent" />
+                                                <Setter Property="BorderThickness" Value="0" />
+                                                <Setter Property="Padding" Value="0" />
+                                            </Style>
+                                        </ContentControl.Resources>
+                                    </ContentControl>
                                     <TextBlock Name="PART_TextDisplayName" FontSize="{DynamicResource FontSizeLarger}"
-                                               TextWrapping="Wrap" Grid.Column="1" Margin="0,0,10,0"
+                                               TextWrapping="Wrap" DockPanel.Dock="Left" Margin="0,0,10,0"
                                                Tag="{DynamicResource GridViewDisplayGameNameIfLogoVisible}"
                                                VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}">
                                         <TextBlock.Style>
@@ -109,21 +115,9 @@
                                             <DropShadowEffect ShadowDepth="3"/>
                                         </TextBlock.Effect>
                                     </TextBlock>
-                                    <StackPanel Grid.Column="2" Orientation="Horizontal"
-                                                Margin="10,0,0,0" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                Tag="{PluginSettings Plugin=NewsViewer, Path=PlayersCountAvailable, FallbackValue=False}">
-                                        <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
-                                                        FontSize="{DynamicResource FontSizeSmall}"
-                                                        Foreground="{DynamicResource PlayersCountGridViewForegroundBrush}" />
-                                        <TextBlock Foreground="{DynamicResource PlayersCountGridViewForegroundBrush}"
-                                                   FontSize="{DynamicResource FontSizeSmall}" Padding="0"
-                                                   FontFamily="{DynamicResource FontFamily}"
-                                                   VerticalAlignment="Center" HorizontalAlignment="Left"
-                                                   Tag="{DynamicResource LOC_NewsViewer_PlayersInGameViewerControl_InGameCountLabel}"
-                                                   Text="{Binding Path=Tag, RelativeSource={RelativeSource Self}, StringFormat=' {0}'}"/>
-                                    </StackPanel>
-                                </Grid>
 
+                                </DockPanel>
+                                
                                 <DockPanel DockPanel.Dock="Top" Margin="0,10,0,10">
                                     <Button Name="PART_ButtonPlayAction" Style="{DynamicResource PlayButton}" />
                                     <Button Name="PART_ButtonContextAction" Style="{DynamicResource ContextButton}" />
