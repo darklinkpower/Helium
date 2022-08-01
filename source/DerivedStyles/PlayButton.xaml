@@ -7,6 +7,8 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         <Setter Property="Padding" Value="10,5,10,5" />
+        <Setter Property="MinWidth" Value="189.5" />
+        <Setter Property="MinHeight" Value="45" />
         <Setter Property="FontFamily" Value="Corbel"/>
         <Setter Property="FontSize" Value="26.5"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -136,7 +138,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
-        <Setter Property="MinWidth" Value="165" />
+        <Setter Property="MinWidth" Value="189.5" />
         <Setter Property="MinHeight" Value="45" />
         <Setter Property="Padding" Value="10,5,10,5" />
         <Setter Property="FontFamily" Value="Corbel"/>
@@ -257,4 +259,174 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="MoreActionsButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Width" Value="24.5" />
+        <Setter Property="Height" Value="45" />
+        <Setter Property="Margin" Value="3.5,0,0,0" />
+        <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Tag" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <Border x:Name="GreenBorder" BorderBrush="{TemplateBinding BorderBrush}" Visibility="Collapsed"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,2,2,0"
+                                Style="{DynamicResource MoreActionsButtonGreenBackgroundStyle}" Tag="{TemplateBinding Tag}" />
+                        <Border x:Name="BlueBorder" BorderBrush="{TemplateBinding BorderBrush}" Visibility="Visible"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,2,2,0"
+                                Style="{DynamicResource MoreActionsButtonBlueBackgroundStyle}" Tag="{TemplateBinding Tag}" />
+                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                            <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
+                                       Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                            <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="Grid" Value="0.5" />
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Game.IsInstalled}" Value="True" />
+                                <Condition Binding="{Binding Game.IsLaunching}" Value="False" />
+                                <Condition Binding="{Binding Game.IsRunning}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="BlueBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="GreenBorder" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Tag" Value="True" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="MoreActionsButtonBlueBackgroundStyle" TargetType="Border">
+        <Style.Resources>
+            <Color x:Key="BackgroundColor1">#235ECF</Color>
+            <Color x:Key="BackgroundColor2">#235ECF</Color>
+            <Color x:Key="BackgroundColor3">#235ECF</Color>
+            <Color x:Key="IsMouseOverBackgroundColor1">#48b8fb</Color>
+            <Color x:Key="IsMouseOverBackgroundColor2">#3a9eee</Color>
+            <Color x:Key="IsMouseOverBackgroundColor3">#3287e3</Color>
+        </Style.Resources>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+                    <GradientStop Color="{StaticResource BackgroundColor1}" Offset="0"/>
+                    <GradientStop Color="{StaticResource BackgroundColor2}" Offset="0.50"/>
+                    <GradientStop Color="{StaticResource BackgroundColor3}" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                    To="{StaticResource IsMouseOverBackgroundColor1}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                    To="{StaticResource IsMouseOverBackgroundColor2}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                    To="{StaticResource IsMouseOverBackgroundColor3}"
+                                    Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                    To="{StaticResource BackgroundColor1}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                    To="{StaticResource BackgroundColor2}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                    To="{StaticResource BackgroundColor3}"
+                                    Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="MoreActionsButtonGreenBackgroundStyle" TargetType="Border">
+        <Style.Resources>
+            <Color x:Key="BackgroundColor1">#4FC82F</Color>
+            <Color x:Key="BackgroundColor2">#2BB943</Color>
+            <Color x:Key="BackgroundColor3">#18B14E</Color>
+            <Color x:Key="IsMouseOverBackgroundColor1">#6BD41F</Color>
+            <Color x:Key="IsMouseOverBackgroundColor2">#52C92D</Color>
+            <Color x:Key="IsMouseOverBackgroundColor3">#38BE3C</Color>
+        </Style.Resources>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
+                    <GradientStop Color="{StaticResource BackgroundColor1}" Offset="0"/>
+                    <GradientStop Color="{StaticResource BackgroundColor2}" Offset="0.50"/>
+                    <GradientStop Color="{StaticResource BackgroundColor3}" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                    To="{StaticResource IsMouseOverBackgroundColor1}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                    To="{StaticResource IsMouseOverBackgroundColor2}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                    To="{StaticResource IsMouseOverBackgroundColor3}"
+                                    Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                    To="{StaticResource BackgroundColor1}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                    To="{StaticResource BackgroundColor2}"
+                                    Duration="0:0:0.2" />
+                            <ColorAnimation
+                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                    To="{StaticResource BackgroundColor3}"
+                                    Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
