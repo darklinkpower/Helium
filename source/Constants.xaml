@@ -95,11 +95,16 @@
         <GradientStop Color="#3794EA" Offset="0.75"/>
         <GradientStop Color="#3081E0" Offset="1"/>
     </LinearGradientBrush>
-
+    
     <SolidColorBrush x:Key="LibraryDetailsViewNotInstalledForegroundBrush" Color="#a3aab9" />
     <SolidColorBrush x:Key="LibraryDetailsViewIsLaunchingForegroundBrush" Color="#26b7ff" />
     <SolidColorBrush x:Key="LibraryDetailsViewIsRunningForegroundBrush" Color="#adff2f" />
+    <SolidColorBrush x:Key="PlayersCountDetailsViewForegroundBrush" Color="#99ffffff" />
+    <SolidColorBrush x:Key="PlayersCountGridViewForegroundBrush" Color="#7cc53f" />
 
+    <SolidColorBrush x:Key="DetailsViewBannerPanelBorderBrush" Color="#4Dffffff" />
+    <SolidColorBrush x:Key="DetailsViewBannerPanelBackgroundBrush" Color="#4D000000" />
+    
     <SolidColorBrush x:Key="GridViewItemMaskBackgroundBrush" Color="#282828" />
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="CheckboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />

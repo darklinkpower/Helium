@@ -133,15 +133,33 @@
                                                         Tag="{DynamicResource DetailsViewAllowUseOfLogos}" 
                                                         Style="{DynamicResource ControlPanelBoolTagToVisibility}"/>
 
-                                        <DockPanel Margin="20,0,30,20" LastChildFill="False" VerticalAlignment="Bottom">
+                                        <DockPanel Margin="20,0,10,20" LastChildFill="False" VerticalAlignment="Bottom">
                                             <!--<Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
                                                    DockPanel.Dock="Left" Margin="0,0,20,0"
                                                    VerticalAlignment="Bottom"
                                                    RenderOptions.BitmapScalingMode="Fant" />-->
                                             <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,20,0" DockPanel.Dock="Left" Opacity="0.60" />
-                                            <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,0,0" DockPanel.Dock="Left" Opacity="0.60" />
-                                            <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" Margin="20,0,0,0"
-                                                VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.7"/>
+                                            <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,20,0" DockPanel.Dock="Left" Opacity="0.60" />
+                                            <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" Margin="0,0,20,0"
+                                                            VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.7"/>
+                                            <StackPanel DockPanel.Dock="Right" VerticalAlignment="Bottom"
+                                                        Margin="10,0,0,0" Style="{DynamicResource PluginStackpanelVisibility}"
+                                                        Tag="{PluginSettings Plugin=NewsViewer, Path=PlayersCountAvailable, FallbackValue=False}">
+                                                <Border BorderThickness="1" BorderBrush="{DynamicResource DetailsViewBannerPanelBorderBrush}"
+                                                        Background="{DynamicResource DetailsViewBannerPanelBackgroundBrush}"
+                                                        Padding="6,2,6,2">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
+                                                                FontSize="{DynamicResource FontSizeSmall}"
+                                                                Foreground="{DynamicResource PlayersCountDetailsViewForegroundBrush}" />
+                                                        <TextBlock Foreground="{DynamicResource PlayersCountDetailsViewForegroundBrush}"
+                                                                FontSize="{DynamicResource FontSizeSmall}" Padding="0"
+                                                                VerticalAlignment="Center" HorizontalAlignment="Left"
+                                                                Tag="{DynamicResource LOC_NewsViewer_PlayersInGameViewerControl_InGameCountLabel}"
+                                                                Text="{Binding Path=Tag, RelativeSource={RelativeSource Self}, StringFormat=' {0}'}"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </StackPanel>
                                         </DockPanel>
                                     </Grid>
                                     <Grid Name="DetailsHeader">
