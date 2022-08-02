@@ -170,8 +170,16 @@
                                                 </DockPanel>
                                                 
                                                 <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="20,0,0,0">
+                                                    <ContentControl x:Name="PlayState_GameStateSwitchControl" Margin="10,0,0,0">
+                                                        <ContentControl.Resources>
+                                                            <Style TargetType="Button" BasedOn="{StaticResource DetailsSemiTransparentButton}" >
+                                                                <Setter Property="Width" Value="32" />
+                                                                <Setter Property="Height" Value="32" />
+                                                            </Style>
+                                                        </ContentControl.Resources>
+                                                    </ContentControl>
                                                     <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
-                                                            Style="{DynamicResource GameEditButton}" Margin="0,0,0,0"/>
+                                                            Style="{StaticResource DetailsViewEditButton}" Margin="10,0,0,0"/>
                                                     <ToggleButton Name="PanelToggleButton" Margin="10,0,0,0" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}" IsChecked="{DynamicResource DetailsViewShowInfoPanelDefault}"/>
                                                     <ToggleButton Name="GameFavoriteToggleButton" Margin="10,0,0,0" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelFavoriteToggleButton}"
                                                                   Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin}"
