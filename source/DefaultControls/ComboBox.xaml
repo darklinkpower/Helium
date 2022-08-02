@@ -23,7 +23,7 @@
                                 <ToggleButton.Template>
                                     <ControlTemplate TargetType="{x:Type ToggleButton}">
                                         <DockPanel LastChildFill="False" Background="Transparent">
-                                            <Viewbox DockPanel.Dock="Right" Width="20" >
+                                            <Viewbox DockPanel.Dock="Right" Width="24">
                                                 <TextBlock Text="6" FontFamily="Marlett" Foreground="{DynamicResource GlyphBrush}"
                                                            VerticalAlignment="Center"/>
                                             </Viewbox>
