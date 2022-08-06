@@ -293,6 +293,7 @@
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Game.IsInstalled}" Value="True" />
+                                <Condition Binding="{Binding Game.IsUninstalling}" Value="False" />
                                 <Condition Binding="{Binding Game.IsLaunching}" Value="False" />
                                 <Condition Binding="{Binding Game.IsRunning}" Value="False" />
                             </MultiDataTrigger.Conditions>
