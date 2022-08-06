@@ -162,13 +162,38 @@
                                         <Border Background="{DynamicResource BackdropGlass1}"/>
                                         <Border Padding="20,10,30,10" x:Name="HeaderRow" Background="{DynamicResource DetailsSectionBackgroundBrush}">
                                             <DockPanel>
+                                                <DockPanel.Resources>
+                                                    <Style x:Key="RoundedProgressBar" TargetType="ProgressBar">
+                                                        <Setter Property="Background" Value="#151619" />
+                                                        <Setter Property="Foreground" Value="#2d73ff" />
+                                                        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}"/>
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                                                                    <Border BorderThickness="{TemplateBinding BorderThickness}"
+								                                            CornerRadius="{DynamicResource ControlCornerRadius}">
+                                                                        <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                                                            <Rectangle Fill="{TemplateBinding Background}" RadiusY="4" RadiusX="4"/>
+                                                                            <Rectangle x:Name="PART_Track" Margin="0" RadiusY="4" RadiusX="4"/>
+                                                                            <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+                                                                                <Grid>
+                                                                                    <Rectangle Fill="{TemplateBinding Foreground}" RadiusY="4" RadiusX="4"/>
+                                                                                </Grid>
+                                                                            </Decorator>
+                                                                        </Grid>
+                                                                    </Border>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </DockPanel.Resources>
                                                 <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
                                                            Margin="0,0,10,0" DockPanel.Dock="Left">
                                                     <Button Name="PART_ButtonPlayAction" Style="{DynamicResource PlayButton}" />
                                                     <Button Name="PART_ButtonContextAction" Style="{DynamicResource ContextButton}" />
                                                     <Button Name="PART_ButtonMoreActions" Style="{DynamicResource MoreActionsButton}"/>
                                                 </DockPanel>
-                                                
+
                                                 <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <ContentControl x:Name="PlayState_GameStateSwitchControl" Margin="10,0,0,0">
                                                         <ContentControl.Resources>
@@ -186,13 +211,26 @@
                                                                   IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Favorite, Mode=TwoWay, FallbackValue={StaticResource False}}"/>
                                                 </DockPanel>
                                                 
+                                                <StackPanel Margin="20,0,0,0" VerticalAlignment="Center"
+                                                            Style="{DynamicResource PluginStackpanelVisibility}"
+                                                            Tag="{PluginSettings Plugin=SteamGameStatusDetector, Path=HasData, FallbackValue=False}">
+                                                    <Label Content="{PluginSettings Plugin=SteamGameStatusDetector, Path=AppState, FallbackValue='-'}" Style="{DynamicResource HeaderLabel}"/>
+                                                    <ProgressBar FontSize="10" Margin="0,0,0,0" HorizontalAlignment="Left"
+                                                                 Maximum="{PluginSettings Plugin=SteamGameStatusDetector, Path=BytesToDownload, FallbackValue=1}"
+                                                                 Value="{PluginSettings Plugin=SteamGameStatusDetector, Path=BytesDownloaded, FallbackValue=0}"
+                                                                 Width="75" Height="6" Style="{DynamicResource RoundedProgressBar}" />
+                                                    
+                                                    <TextBlock Text="{PluginSettings Plugin=SteamGameStatusDetector, Path=DownloadProgress, FallbackValue='-'}"
+                                                               Style="{DynamicResource HeaderTextBlock}"/>
+                                                </StackPanel>
+                                                
                                                 <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
                                                         <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
                                                     </StackPanel>
                                                 </DockPanel>
-
+                                                
                                                 <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
 
                                                     <Viewbox Height="25">
@@ -303,30 +341,7 @@
                                                             <ProgressBar x:Name="progressBar" FontSize="10" Margin="5,0,0,0"
                                                                          Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}" HorizontalAlignment="Left"
                                                                          Background="#151619" Foreground="#2d73ff" Width="75" Height="6" Style="{DynamicResource RoundedProgressBar}">
-                                                                <ProgressBar.Resources>
-                                                                    <Style x:Key="RoundedProgressBar" TargetType="ProgressBar">
-                                                                        <Setter Property="Background" Value="{DynamicResource NormalBrushDark}"/>
-                                                                        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}"/>
-                                                                        <Setter Property="Template">
-                                                                            <Setter.Value>
-                                                                                <ControlTemplate TargetType="{x:Type ProgressBar}">
-                                                                                    <Border BorderThickness="{TemplateBinding BorderThickness}"
-								                                                CornerRadius="{DynamicResource ControlCornerRadius}">
-                                                                                        <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                                                                                            <Rectangle Fill="{TemplateBinding Background}" RadiusY="4" RadiusX="4"/>
-                                                                                            <Rectangle x:Name="PART_Track" Margin="0" RadiusY="4" RadiusX="4"/>
-                                                                                            <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" VerticalAlignment="Stretch">
-                                                                                                <Grid>
-                                                                                                    <Rectangle Fill="{TemplateBinding Foreground}" RadiusY="4" RadiusX="4"/>
-                                                                                                </Grid>
-                                                                                            </Decorator>
-                                                                                        </Grid>
-                                                                                    </Border>
-                                                                                </ControlTemplate>
-                                                                            </Setter.Value>
-                                                                        </Setter>
-                                                                    </Style>
-                                                                </ProgressBar.Resources>
+
                                                             </ProgressBar>
                                                         </DockPanel>
                                                     </StackPanel>
