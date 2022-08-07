@@ -1,11 +1,7 @@
 ThemeId: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1
-Recommendations:
-- AddonName: DuplicateHider
-  AddonId: felixkmh_DuplicateHider_Plugin
-  Features:
 PersistentPaths:
 - Images/Banners
-BannerBySpecIdPath: Images/Banners/PlatformSpecId
-BannerByPlatformNamePath: Images/Banners/PlatformName
+BannersBySpecIdPath: Images/Banners/PlatformSpecId
+BannersByPlatformNamePath: Images/Banners/PlatformName
 BannersByPluginIdPath: Images/Banners/PluginId
 DefaultBannerPath: Images/Banners/UnknownLibrary.png
