@@ -21,18 +21,25 @@
                                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,0,0,2"
                                 Style="{DynamicResource PlayButtonBackgroundStyle}" Tag="{TemplateBinding Tag}" />
                         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
-                            <TextBlock x:Name="Icon" Text="&#xE102;" FontFamily="Segoe UI Symbol" FontSize="18"
-                                       Foreground="#C1FFCB" VerticalAlignment="Center" Margin="0,5,6,0"/>
+                            <Viewbox Stretch="Uniform" Width="20"
+                                     VerticalAlignment="Center" Margin="0,5,8,0">
+                                <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
+                                    <Path x:Name="Icon" Fill="#c1ffcb">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M65.321 33.521c-11.274-6.615-20.342-1.471-20.342 11.52V210.96c0 12.989 9.068 18.135 20.342 11.521l137.244-82.348 c11.274-6.618 11.274-17.646 0-24.509L65.321 33.521z" FillRule="NonZero"/>
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
                             <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
                         </DockPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="True" />
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" TargetName="Grid" Value="0.5" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" TargetName="Icon"/>
+                            <Setter Property="Fill" Value="#ffffff" TargetName="Icon"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -127,6 +134,11 @@
                             <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
                         </DockPanel>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#ffffff" TargetName="Icon"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -282,7 +294,7 @@
                                 Style="{DynamicResource MoreActionsButtonBlueBackgroundStyle}" Tag="{TemplateBinding Tag}" />
                         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
                             <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
-                                       Foreground="{DynamicResource TextBrush}" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                                       Foreground="#c1ffcb" VerticalAlignment="Center" Margin="0,0,0,0"/>
                             <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
                         </DockPanel>
                     </Grid>
@@ -300,6 +312,9 @@
                             <Setter Property="Visibility" Value="Collapsed" TargetName="BlueBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="GreenBorder" />
                         </MultiDataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#ffffff" TargetName="Icon"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -315,17 +330,14 @@
         <Style.Resources>
             <Color x:Key="BackgroundColor1">#235ECF</Color>
             <Color x:Key="BackgroundColor2">#235ECF</Color>
-            <Color x:Key="BackgroundColor3">#235ECF</Color>
-            <Color x:Key="IsMouseOverBackgroundColor1">#48b8fb</Color>
+            <Color x:Key="IsMouseOverBackgroundColor1">#47bfff</Color>
             <Color x:Key="IsMouseOverBackgroundColor2">#3a9eee</Color>
-            <Color x:Key="IsMouseOverBackgroundColor3">#3287e3</Color>
         </Style.Resources>
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
                     <GradientStop Color="{StaticResource BackgroundColor1}" Offset="0"/>
-                    <GradientStop Color="{StaticResource BackgroundColor2}" Offset="0.50"/>
-                    <GradientStop Color="{StaticResource BackgroundColor3}" Offset="1"/>
+                    <GradientStop Color="{StaticResource BackgroundColor2}" Offset="0.60"/>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
@@ -342,10 +354,6 @@
                                     Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Color)"
                                     To="{StaticResource IsMouseOverBackgroundColor2}"
                                     Duration="0:0:0.2" />
-                            <ColorAnimation
-                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Color)"
-                                    To="{StaticResource IsMouseOverBackgroundColor3}"
-                                    Duration="0:0:0.2" />
                         </Storyboard>
                     </BeginStoryboard>
                 </DataTrigger.EnterActions>
@@ -359,10 +367,6 @@
                             <ColorAnimation
                                     Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Color)"
                                     To="{StaticResource BackgroundColor2}"
-                                    Duration="0:0:0.2" />
-                            <ColorAnimation
-                                    Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[2].(GradientStop.Color)"
-                                    To="{StaticResource BackgroundColor3}"
                                     Duration="0:0:0.2" />
                         </Storyboard>
                     </BeginStoryboard>
