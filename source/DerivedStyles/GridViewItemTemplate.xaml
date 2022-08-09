@@ -162,19 +162,28 @@
                                               Visibility="{Settings ShowNamesUnderCovers}" />
                                 </Border>
 
-                                <DockPanel Width="{Settings GridItemWidth}" Visibility="{DynamicResource GridViewCoverSubtitleVisibility}">
+                                <DockPanel x:Name="PlaytimeDockPanel" Width="{Settings GridItemWidth}" Visibility="{DynamicResource GridViewCoverSubtitleVisibility}">
                                     <TextBlock Text="&#xEEDC;" FontSize="{DynamicResource FontSizeSmall}"
                                                    FontFamily="{StaticResource FontIcoFont}"
                                                    TextAlignment="Left" VerticalAlignment="Center"
                                                    Padding="2,4,2,5" Margin="0,0,0,-2"
                                                    Foreground="{DynamicResource GridViewCoverSubtitleBrush}" />
-                                    <TextBlock Text="{Binding Playtime, Mode=OneWay, Converter={StaticResource PlayTimeToStringConverter}, IsAsync=True}"
-                                                   Foreground="{DynamicResource GridViewCoverSubtitleBrush}"
-                                                   FontSize="{DynamicResource FontSizeSmall}"
-                                                   Style="{DynamicResource BaseTextBlockStyle}"                                                                   
+                                    <TextBlock Foreground="{DynamicResource GridViewCoverSubtitleBrush}"
+                                                   FontSize="{DynamicResource FontSizeSmall}"                                                                 
                                                    TextAlignment="Left" TextTrimming="CharacterEllipsis"
                                                    VerticalAlignment="Center"
-                                                   Padding="3,4,2,2" />
+                                                   Padding="3,4,2,2">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Text" Value="" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=PlaytimeDockPanel, Path=Visibility}" Value="Visible">
+                                                        <Setter Property="Text" Value="{Binding Playtime, Mode=OneWay, Converter={StaticResource PlayTimeToStringConverter}, IsAsync=True}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                 </DockPanel>
                             </StackPanel>
                         </Border>
