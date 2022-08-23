@@ -294,7 +294,7 @@
                                 Style="{DynamicResource MoreActionsButtonBlueBackgroundStyle}" Tag="{TemplateBinding Tag}" />
                         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
                             <TextBlock x:Name="Icon" Text="&#xEA67;" FontFamily="{DynamicResource FontIcoFont}" FontSize="18"
-                                       Foreground="#c1ffcb" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                                       Foreground="#ffffff" VerticalAlignment="Center" Margin="0,0,0,0"/>
                             <ContentPresenter RecognizesAccessKey="True" VerticalAlignment="Center"/>
                         </DockPanel>
                     </Grid>
@@ -311,6 +311,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Visibility" Value="Collapsed" TargetName="BlueBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="GreenBorder" />
+                            <Setter Property="Foreground" Value="#c1ffcb" TargetName="Icon" />
                         </MultiDataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="#ffffff" TargetName="Icon"/>
