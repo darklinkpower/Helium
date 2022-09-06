@@ -283,3 +283,25 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.30/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_30.pthm
     Changelog:
       - 'Grid View: Game controls on covers will not be displayed when game is not hovered'
+  - Version: 1.31
+    RequiredApiVersion: 2.2.0
+    ReleaseDate: 2022-09-06
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.31/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_31.pthm
+    Changelog:
+      - 'Updated to Playnite 10 changes and made relevant modifications'
+      - 'Added GamersGate library plugin banner'
+      - 'DetailsView and GridView: Add support to display current players on Steam via NewsViewer extension control'
+      - 'DetailsView and GridView: Add support to PlayState extension game status switcher button'
+      - 'DetailsView and GridView: Animate more actions button background on mouse over'
+      - 'DetailsView: Added button to change game Favorite status using the ThemeExtras extension'
+      - 'DetailsView: Misc adjustments to panels'
+      - 'DetailsView: Trim groups text when there is not enough width available'
+      - 'General: Changed color of windows buttons'
+      - 'General: Color adustment to windows top border'
+      - 'GridView: Added button to change game Favorite status using the ThemeExtras extension'
+      - 'GridView: Added icons to details labels'
+      - 'GridView: Playing game highlight will now darken the game cover'
+      - 'GridView: Removed theme banners implementation and added support to display banners with ThemeExtras extension'
+      - 'PlayButton: Fix MoreActions button not using blue background when uninstalling'
+      - 'PlayButton: Show close icon when game is running or launching'
+      - 'Misc changes and fixes'
