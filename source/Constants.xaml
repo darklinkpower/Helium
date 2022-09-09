@@ -20,6 +20,7 @@
     <Visibility x:Key="GridViewCoverSubtitleVisibility">Collapsed</Visibility>
     <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">True</sys:Boolean>
     <sys:Boolean x:Key="GridViewCoverUseRoundedCorners">False</sys:Boolean>
+    <sys:Boolean x:Key="GridViewCoverDisplayDropShadowEffect">True</sys:Boolean>
     <sys:Boolean x:Key="GridViewEnablePlayingGlowBorder">True</sys:Boolean>
     <sys:Boolean x:Key="GridViewPlaceDescriptionAtBottom">False</sys:Boolean>
     <Visibility x:Key="GridViewDetailsIconsVisibility">Visible</Visibility>
