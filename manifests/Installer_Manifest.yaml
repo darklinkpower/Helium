@@ -305,3 +305,10 @@ Packages:
       - 'PlayButton: Fix MoreActions button not using blue background when uninstalling'
       - 'PlayButton: Show close icon when game is running or launching'
       - 'Misc changes and fixes'
+  - Version: 1.32
+    RequiredApiVersion: 2.3.0
+    ReleaseDate: 2022-09-22
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.32/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_32.pthm
+    Changelog:
+      - 'GridView: Added shadow effect to covers. Enabled by default. Can be configured with ThemeModifier extension'
+      - 'Update to Playnite 10.1 changes'
