@@ -141,14 +141,20 @@
                                             <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,20,0" DockPanel.Dock="Left" Opacity="0.60" />
                                             <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,20,0" DockPanel.Dock="Left" Opacity="0.60" />
                                             <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" Margin="0,0,20,0"
-                                                            VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.7"/>
-                                            <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
-                                                            DockPanel.Dock="Right" VerticalAlignment="Bottom">
-                                                <ContentControl.Resources>
-                                                    <Style TargetType="Button" BasedOn="{StaticResource PlayersCountButtonStyle}" />
-                                                </ContentControl.Resources>
+                                                            VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.80">
+                                                <ContentControl.Effect>
+                                                    <DropShadowEffect BlurRadius="20" RenderingBias="Performance"
+                                                                      ShadowDepth="0" Color="DarkGray" />
+                                                </ContentControl.Effect>
                                             </ContentControl>
                                         </DockPanel>
+                                        <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
+                                                        Margin="0,20,30,0"
+                                                        HorizontalAlignment="Right" VerticalAlignment="Top">
+                                            <ContentControl.Resources>
+                                                <Style TargetType="Button" BasedOn="{StaticResource PlayersCountButtonStyle}" />
+                                            </ContentControl.Resources>
+                                        </ContentControl>
                                     </Grid>
                                     <Grid Name="DetailsHeader">
                                         <Border>
