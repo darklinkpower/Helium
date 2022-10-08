@@ -494,9 +494,9 @@
                                                                         <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
                                                                         <ItemsControl Name="PART_ItemsPlatforms" />
                                                                         <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsDevelopers"/>
+                                                                        <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
                                                                         <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsPublishers"/>
+                                                                        <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
                                                                         <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
                                                                         <Button Name="PART_ButtonReleaseDate" />
                                                                     </GridEx>
