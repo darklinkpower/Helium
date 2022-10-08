@@ -312,3 +312,15 @@ Packages:
     Changelog:
       - 'GridView: Added shadow effect to covers. Enabled by default. Can be configured with ThemeModifier extension'
       - 'Update to Playnite 10.1 changes'
+  - Version: 1.33
+    RequiredApiVersion: 2.3.0
+    ReleaseDate: 2022-10-08
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.33/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_33.pthm
+    Changelog:
+      - 'Added additional platform banners'
+      - 'Details: Changed icon used for Install Directory'
+      - 'DetailsView: Moved Install Size details to the second column'
+      - 'DetailsView: Moved news viewer Players in Game control to the top right of details'
+      - 'Fix details not wrapping text when there is not enough width space'
+      - 'Fix options to hide game name from details if logo is displayed not working'
+      - 'GridView: Fix banners from some platforms not being detected and displayed'
