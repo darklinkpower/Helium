@@ -11,7 +11,7 @@
                     <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
                                Foreground="{TemplateBinding Foreground}"
                                Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
-                               TextWrapping="NoWrap"/>
+                               TextWrapping="Wrap"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

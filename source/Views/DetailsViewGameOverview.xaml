@@ -511,10 +511,10 @@
                                                                         <TextBlock Name="PART_TextInstallSize" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
                                                                         
                                                                         <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
-                                                                        <Button Name="PART_ButtonInstallDirectory" />
+                                                                        <Button Name="PART_ButtonInstallDirectory" HorizontalAlignment="Left" MaxWidth="200" />
                                                                         
                                                                         <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsSeries" />
+                                                                        <ItemsControl Name="PART_ItemsSeries" MaxWidth="200" />
 
                                                                         <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
                                                                         <ItemsControl Name="PART_ItemsRegions" />
