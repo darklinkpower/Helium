@@ -478,7 +478,7 @@
                                                                 </ScrollViewer>
 
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
+                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="7">
                                                                         <GridEx.Resources>
                                                                             <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}">
                                                                                 <Setter Property="Background" Value="Transparent" />
@@ -487,8 +487,6 @@
                                                                         </GridEx.Resources>
                                                                         <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
                                                                         <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
-                                                                        <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
-                                                                        <TextBlock Name="PART_TextInstallSize" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
                                                                         <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
                                                                         <Button Name="PART_ButtonLibrary" />
                                                                         <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
@@ -504,11 +502,14 @@
                                                                     </GridEx>
                                                                 </ScrollViewer>
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
+                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="9">
                                                                         <GridEx.Resources>
                                                                             <Style TargetType="Button" BasedOn="{StaticResource PropertyItemButton}" />
                                                                         </GridEx.Resources>
 
+                                                                        <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
+                                                                        <TextBlock Name="PART_TextInstallSize" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                                        
                                                                         <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
                                                                         <Button Name="PART_ButtonInstallDirectory" />
                                                                         
