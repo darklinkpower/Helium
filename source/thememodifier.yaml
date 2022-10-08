@@ -20,5 +20,5 @@ Constants:
     - GridViewEnablePlayingGlowBorder: 'Show glow animation if game is running'
     - GridViewLibraryGameShowFavorite: 'Show favorites icon'
     - GridViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
-    - GridViewCoverUseRoundedCorners: 'Use rounded corners'
-    - GridViewCoverDisplayDropShadowEffect: 'Use dropshadow effect'
+    - GridViewCoverUseRoundedCorners: 'Use rounded corners (Can cause performance degradation)'
+    - GridViewCoverDisplayDropShadowEffect: 'Use dropshadow effect (Can cause performance degradation)'
