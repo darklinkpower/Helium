@@ -324,3 +324,9 @@ Packages:
       - 'Fix details not wrapping text when there is not enough width space'
       - 'Fix options to hide game name from details if logo is displayed not working'
       - 'GridView: Fix banners from some platforms not being detected and displayed'
+  - Version: 1.34
+    RequiredApiVersion: 2.3.0
+    ReleaseDate: 2022-10-11
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.34/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_34.pthm
+    Changelog:
+      - 'DetailsView: Increased value of ThemeModifier extension description width setting'
