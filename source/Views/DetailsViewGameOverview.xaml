@@ -148,13 +148,16 @@
                                                 </ContentControl.Effect>
                                             </ContentControl>
                                         </DockPanel>
-                                        <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
-                                                        Margin="0,20,30,0"
+                                        <StackPanel Margin="0,0,30,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                                            <!--GridConverterGridPanelCloseButton-->
+                                            <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
+                                                        Margin="0,20,0,0"
                                                         HorizontalAlignment="Right" VerticalAlignment="Top">
-                                            <ContentControl.Resources>
-                                                <Style TargetType="Button" BasedOn="{StaticResource PlayersCountButtonStyle}" />
-                                            </ContentControl.Resources>
-                                        </ContentControl>
+                                                <ContentControl.Resources>
+                                                    <Style TargetType="Button" BasedOn="{StaticResource PlayersCountButtonStyle}" />
+                                                </ContentControl.Resources>
+                                            </ContentControl>
+                                        </StackPanel>
                                     </Grid>
                                     <Grid Name="DetailsHeader">
                                         <Border>
