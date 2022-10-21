@@ -330,3 +330,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.34/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_34.pthm
     Changelog:
       - 'DetailsView: Increased value of ThemeModifier extension description width setting'
+  - Version: 1.35
+    RequiredApiVersion: 2.3.0
+    ReleaseDate: 2022-10-20
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.35/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_35.pthm
+    Changelog:
+      - 'Fix button to close Grid View details Panel not being available when using the Details To Grid View Converter extension'
