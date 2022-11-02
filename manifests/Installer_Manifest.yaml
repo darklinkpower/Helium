@@ -336,3 +336,11 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.35/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_35.pthm
     Changelog:
       - 'Fix button to close Grid View details Panel not being available when using the Details To Grid View Converter extension'
+  - Version: 1.36
+    RequiredApiVersion: 2.3.0
+    ReleaseDate: 2022-11-01
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.36/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_36.pthm
+    Changelog:
+      - 'GridView: Added support to change the order of sections in details with ThemeModifier extension'
+      - 'GridView: Added support to collapse the details view sections'
+      - 'SearchBar: Fix view scrollbar aligning to the right when text of element in search is too long'
