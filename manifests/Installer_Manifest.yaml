@@ -344,3 +344,9 @@ Packages:
       - 'GridView: Added support to change the order of sections in details with ThemeModifier extension'
       - 'GridView: Added support to collapse the details view sections'
       - 'SearchBar: Fix view scrollbar aligning to the right when text of element in search is too long'
+  - Version: 1.37
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2022-11-10
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.37/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_37.pthm
+    Changelog:
+      - 'Update to Playnite 10.4 changes (API 2.4.0)'
