@@ -39,7 +39,7 @@ Option C: Download from the Addons browser in Playnite.
 - Logos: download of logos for use in the theme via [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429) extension.
 - Videos: download of trailer and microtrailer videos for use in the theme via [Extra Metadata Loader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429) extension.
 - Game news: via custom integration of the [News Viewer](https://playnite.link/addons.html#NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d) extension.
-- Game reviews: via custom integration of the [Review Viewer](https://playnite.link/addons.html#playnite-screenshotsvisualizer-plugin) extension.
+- Game reviews: via custom integration of the [Review Viewer](https://playnite.link/addons.html#Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1) extension.
 - Features icons: via custom integration of the [Library Management](https://playnite.link/addons.html#playnite-librarymanagement-plugin) extension.
 - Banners and other functionality: via custom integration of the [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) extension.
 
