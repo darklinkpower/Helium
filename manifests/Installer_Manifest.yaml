@@ -350,3 +350,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.37/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_37.pthm
     Changelog:
       - 'Update to Playnite 10.4 changes (API 2.4.0)'
+  - Version: 1.38
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2022-11-23
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.38/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_38.pthm
+    Changelog:
+      - 'DetailsView: Fix some elements not being aligned to the left in some circumstances'
