@@ -356,3 +356,10 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.38/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_38.pthm
     Changelog:
       - 'DetailsView: Fix some elements not being aligned to the left in some circumstances'
+  - Version: 1.39
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2023-01-02
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.39/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_39.pthm
+    Changelog:
+      - 'Fixed link to Review Viewer plugin (#36)'
+      - 'Grid View: Added ThemeModifier extension option to disable zoom on hover for covers'
