@@ -5,13 +5,14 @@
         <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
         <Setter Property="Margin" Value="0,4,0,4" />
         <Setter Property="Foreground" Value="{DynamicResource DetailsViewContainerTextBrush}" />
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
                                Foreground="{TemplateBinding Foreground}"
                                Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
-                               TextWrapping="Wrap"/>
+                               TextWrapping="{TemplateBinding TextBlock.TextWrapping}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -26,6 +27,32 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="PropertyItemButtonNoWrap" TargetType="Button">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="Margin" Value="0,4,0,4" />
+        <Setter Property="Foreground" Value="{DynamicResource DetailsViewContainerTextBrush}" />
+        <Setter Property="TextBlock.TextWrapping" Value="NoWrap" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
+                               Foreground="{TemplateBinding Foreground}"
+                               Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
+                               TextWrapping="{TemplateBinding TextBlock.TextWrapping}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <Style x:Key="PropertyItemFeedPanelButton" TargetType="Button">
         <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
         <Setter Property="Margin" Value="3,1,3,1" />
