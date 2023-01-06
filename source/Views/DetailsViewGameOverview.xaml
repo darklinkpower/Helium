@@ -138,22 +138,17 @@
                                                    DockPanel.Dock="Left" Margin="0,0,20,0"
                                                    VerticalAlignment="Bottom"
                                                    RenderOptions.BitmapScalingMode="Fant" />-->
-                                            <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,10,0" DockPanel.Dock="Left" Opacity="0.80" />
-                                            <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,10,0" DockPanel.Dock="Left" Opacity="0.80" />
-                                            <ContentControl x:Name="CheckDlc_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,10,0" DockPanel.Dock="Left" Opacity="0.80">
-                                                <ContentControl.Style>
-                                                    <Style TargetType="ContentControl">
-                                                        <Setter Property="Visibility" Value="Visible" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue=False}" Value="False">
-                                                                <Setter Property="Visibility" Value="Collapsed" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </ContentControl.Style>
-                                            </ContentControl>
+                                            <ContentControl x:Name="ScreenshotsVisualizer_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,10,0" DockPanel.Dock="Left" Opacity="0.80"
+                                                            Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                            <ContentControl x:Name="SystemChecker_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,10,0" DockPanel.Dock="Left" Opacity="0.80"
+                                                            Visibility="{PluginSettings Plugin=SystemChecker, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                            <ContentControl x:Name="CheckLocalizations_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,10,0" DockPanel.Dock="Left" Opacity="0.80"
+                                                            Visibility="{PluginSettings Plugin=CheckLocalizations, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                            <ContentControl x:Name="CheckDlc_PluginButton" Height="40" VerticalAlignment="Bottom" Margin="0,0,10,0" DockPanel.Dock="Left" Opacity="0.80"
+                                                            Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" Margin="0,0,20,0"
-                                                            VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.80">
+                                                            VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.80"
+                                                            Visibility="{PluginSettings Plugin=LibraryManagement, Path=EnableIntegrationFeatures, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                 <ContentControl.Effect>
                                                     <DropShadowEffect BlurRadius="20" RenderingBias="Performance"
                                                                       ShadowDepth="0" Color="DarkGray" />
@@ -216,7 +211,8 @@
                                                 </DockPanel>
 
                                                 <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
-                                                    <ContentControl x:Name="PlayState_GameStateSwitchControl" Margin="10,0,0,0">
+                                                    <ContentControl x:Name="PlayState_GameStateSwitchControl" Margin="10,0,0,0"
+                                                                    Visibility="{PluginSettings Plugin=PlayState, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                         <ContentControl.Resources>
                                                             <Style TargetType="Button" BasedOn="{StaticResource DetailsSemiTransparentButton}" >
                                                                 <Setter Property="Width" Value="32" />
@@ -761,7 +757,7 @@
                                                 </StackPanel>
 
                                                 <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                        Tag="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=False}">
+                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
@@ -769,7 +765,8 @@
                                                         <StackPanel Orientation="Vertical" Margin="10">
                                                             <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,0,0,10" />
                                                             <ContentControl x:Name="GameActivity_PluginChartLog"  Margin="0,0,0,10"/>
-                                                            <ContentControl x:Name="GameActivity_PluginButton" HorizontalAlignment="Right"/>
+                                                            <ContentControl x:Name="GameActivity_PluginButton" HorizontalAlignment="Right"
+                                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
@@ -805,17 +802,8 @@
                                                     </Grid>
                                                 </StackPanel>
 
-                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15">
-                                                    <StackPanel.Style>
-                                                        <Style TargetType="StackPanel">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=False}" Value="True">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </StackPanel.Style>
+                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15"
+                                                            Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
@@ -874,7 +862,8 @@
                                                             <StackPanel>
                                                                 <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Left" Margin="0,0,0,10"
                                                                                 Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
-                                                                <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right" Margin="0,0,0,10"/>
+                                                                <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right" Margin="0,0,0,10"
+                                                                                Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
                                                                 <GridEx Name="HltbDataGrid" ColumnCount="2" AutoLayoutColumns="2" RowCount="6" Tag="{DynamicResource DetailsViewShowHltbDataGrid}">
                                                                     <GridEx.Style>
@@ -939,7 +928,7 @@
                                                 </StackPanel>
 
                                                 <StackPanel Name="SuccessStoryPanel" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                        Tag="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=False}">
+                                                            Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
@@ -949,14 +938,15 @@
                                                                 <ContentControl x:Name="SuccessStory_PluginProgressBar"  Height="20" Margin="0,0,0,10"/>
                                                                 <ContentControl x:Name="SuccessStory_PluginCompactUnlocked" />
                                                                 <ContentControl x:Name="SuccessStory_PluginCompactLocked" Margin="0,0,0,10"/>
-                                                                <ContentControl x:Name="SuccessStory_PluginButton" HorizontalAlignment="Right"/>
+                                                                <ContentControl x:Name="SuccessStory_PluginButton" HorizontalAlignment="Right"
+                                                                                Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                                             </StackPanel>
                                                         </Border>
                                                     </Grid>
                                                 </StackPanel>
 
                                                 <StackPanel Name="ScreenshotsVisualizerPanel" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                        Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=False}">
+                                                            Visibility="{PluginSettings Plugin=ScreenshotsVisualizer, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCSsvTitle}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
@@ -973,17 +963,8 @@
                                                     </Grid>
                                                 </StackPanel>
 
-                                                <StackPanel Name="ReviewsPanel" Margin="0,0,0,15">
-                                                    <StackPanel.Style>
-                                                        <Style TargetType="StackPanel">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=ReviewViewer, Path=IsControlVisible, FallbackValue=False}" Value="True">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </StackPanel.Style>
+                                                <StackPanel Name="ReviewsPanel" Margin="0,0,0,15"
+                                                            Visibility="{PluginSettings Plugin=ReviewViewer, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid>
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
