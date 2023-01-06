@@ -155,6 +155,10 @@
                                                 </ContentControl.Effect>
                                             </ContentControl>
                                         </DockPanel>
+                                        <ContentControl x:Name="CheckLocalizations_PluginFlags" Height="30" Margin="20,20,0,0"
+                                                            Visibility="{PluginSettings Plugin=CheckLocalizations, Path=EnableIntegrationFlags, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                                                            Opacity="0.85" />
                                         <StackPanel Margin="0,0,30,0" VerticalAlignment="Top" HorizontalAlignment="Right">
                                             <!--GridConverterGridPanelCloseButton-->
                                             <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
