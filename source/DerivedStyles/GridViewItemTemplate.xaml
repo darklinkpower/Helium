@@ -175,7 +175,7 @@
                                                    Visibility="{Settings ShowNamesUnderCovers}" />
                                     </Border>
                                 </Grid>
-                                
+
                                 <DockPanel x:Name="PlaytimeDockPanel" Width="{Settings GridItemWidth}" Visibility="{DynamicResource GridViewCoverSubtitleVisibility}">
                                     <TextBlock Text="&#xEEDC;" FontSize="{DynamicResource FontSizeSmall}"
                                                FontFamily="{StaticResource FontIcoFont}"
@@ -189,7 +189,7 @@
                                                Padding="3,4,2,2">
                                         <TextBlock.Style>
                                             <Style TargetType="TextBlock">
-                                                <Setter Property="Text" Value="" />
+                                                <Setter Property="Text" Value="{StaticResource EmptyString}" />
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding ElementName=PlaytimeDockPanel, Path=Visibility}" Value="Visible">
                                                         <Setter Property="Text" Value="{Binding Playtime, Mode=OneWay, Converter={StaticResource PlayTimeToStringConverter}, IsAsync=True}" />
@@ -198,6 +198,21 @@
                                             </Style>
                                         </TextBlock.Style>
                                     </TextBlock>
+                                </DockPanel>
+
+                                <DockPanel x:Name="CompStatusDockPanel" Width="{Settings GridItemWidth}"
+                                           Visibility="{DynamicResource GridViewCoverCompStatusSubtitleVisibility}">
+                                    <TextBlock Text="&#xEC74;" FontSize="{DynamicResource FontSizeSmall}"
+                                               FontFamily="{StaticResource FontIcoFont}"
+                                               TextAlignment="Left" VerticalAlignment="Center"
+                                               Padding="2,4,2,5" Margin="0,0,0,-2"
+                                               Foreground="{DynamicResource GridViewCoverSubtitleBrush}" />
+                                    <TextBlock Text="{Binding CompletionStatus.Name, Mode=OneWay, IsAsync=True}"
+                                               Foreground="{DynamicResource GridViewCoverSubtitleBrush}"
+                                               FontSize="{DynamicResource FontSizeSmall}"                                                                 
+                                               TextAlignment="Left" TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Center"
+                                               Padding="3,4,2,2" />
                                 </DockPanel>
                             </StackPanel>
                         </Border>
