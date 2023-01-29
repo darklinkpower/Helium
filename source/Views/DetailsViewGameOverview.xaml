@@ -405,8 +405,9 @@
                                                                 <Setter Property="VerticalAlignment" Value="Top" />
                                                             </Style>
                                                         </DockPanel.Resources>
-                                                        <Border DockPanel.Dock="Left" Name="ContainerHeightBorder" Height="{Settings GameDetailsCoverHeight}"/>
-
+                                                        <Border DockPanel.Dock="Left" Name="ContainerHeightBorder"
+                                                                Height="{Settings GameDetailsCoverHeight}" MinHeight="150"/>
+                                                        
                                                         <Border>
                                                             <Border.Style>
                                                                 <Style TargetType="Border">
