@@ -372,3 +372,11 @@ Packages:
       - 'Details View: Fix Play button panel section changing height when resizing window if Completion Status did not fit'
       - 'DetailsView: Support to display game supported languages via CheckLocalization extension support'
       - 'Grid View: Changes to animation in game cover when game is running'
+  - Version: 1.41
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2023-01-30
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.41/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_41.pthm
+    Changelog:
+      - 'Details View: Fix details section not being visible if cover height is configured to 0'
+      - 'Grid View: Add support to display games completion status. Can be enabled with ThemeModifier extension'
+      - 'Grid View: Fix buttons collapsing if mouse is on grid item but not on cover image'
