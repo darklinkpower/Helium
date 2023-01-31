@@ -89,7 +89,7 @@
                                                            TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </Border>
-                                            <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" IsHitTestVisible="False" Opacity="0.60"/>
+                                            <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" Opacity="0.60"/>
                                             <Border x:Name="GlowPlayingBorder" Visibility="Collapsed" Tag="False"
                                                     Style="{DynamicResource CoverIsPlayingAnimatedBackground}" />
                                             <TextBlock Name="EnablePlayingGlowBorder" Visibility="Collapsed"
@@ -167,7 +167,7 @@
                                             </Style>
                                         </Border.Style>
                                         <TextBlock x:Name="ShowGameName" Text="{Binding DisplayName}"
-                                                   Style="{DynamicResource BaseTextBlockStyle}"                                                                   
+                                                   Style="{DynamicResource BaseTextBlockStyle}"
                                                    TextAlignment="Center" TextTrimming="CharacterEllipsis"
                                                    VerticalAlignment="Center"
                                                    Padding="2,5,2,5" Grid.Row="1" Grid.Column="0"
@@ -183,7 +183,7 @@
                                                Padding="2,4,2,5" Margin="0,0,0,-2"
                                                Foreground="{DynamicResource GridViewCoverSubtitleBrush}" />
                                     <TextBlock Foreground="{DynamicResource GridViewCoverSubtitleBrush}"
-                                               FontSize="{DynamicResource FontSizeSmall}"                                                                 
+                                               FontSize="{DynamicResource FontSizeSmall}"
                                                TextAlignment="Left" TextTrimming="CharacterEllipsis"
                                                VerticalAlignment="Center"
                                                Padding="3,4,2,2">
