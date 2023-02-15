@@ -199,21 +199,31 @@
                                         </TextBlock.Style>
                                     </TextBlock>
                                 </DockPanel>
-
-                                <DockPanel x:Name="CompStatusDockPanel" Width="{Settings GridItemWidth}"
-                                           Visibility="{DynamicResource GridViewCoverCompStatusSubtitleVisibility}">
-                                    <TextBlock Text="&#xEC74;" FontSize="{DynamicResource FontSizeSmall}"
+                                <Border Visibility="{DynamicResource GridViewCoverCompStatusSubtitleVisibility}">
+                                    <DockPanel x:Name="CompStatusDockPanel" Width="{Settings GridItemWidth}">
+                                        <DockPanel.Style>
+                                            <Style TargetType="DockPanel">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Game.CompletionStatus}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DockPanel.Style>
+                                        <TextBlock Text="&#xEC74;" FontSize="{DynamicResource FontSizeSmall}"
                                                FontFamily="{StaticResource FontIcoFont}"
                                                TextAlignment="Left" VerticalAlignment="Center"
                                                Padding="2,4,2,5" Margin="0,0,0,-2"
                                                Foreground="{DynamicResource GridViewCoverSubtitleBrush}" />
-                                    <TextBlock Text="{Binding CompletionStatus.Name, Mode=OneWay, IsAsync=True}"
+                                        <TextBlock x:Name="CompletionStatusName" Text="{Binding CompletionStatus.Name, Mode=OneWay, IsAsync=True}"
                                                Foreground="{DynamicResource GridViewCoverSubtitleBrush}"
                                                FontSize="{DynamicResource FontSizeSmall}"                                                                 
                                                TextAlignment="Left" TextTrimming="CharacterEllipsis"
                                                VerticalAlignment="Center"
                                                Padding="3,4,2,2" />
-                                </DockPanel>
+                                    </DockPanel>
+                                </Border>
                             </StackPanel>
                         </Border>
                     </Grid>
