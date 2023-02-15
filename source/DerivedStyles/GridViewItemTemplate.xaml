@@ -89,7 +89,7 @@
                                                            TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </Border>
-                                            <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" Opacity="0.60"/>
+                                            <Border Background="#000000" x:Name="BorderMouseOver" Visibility="Collapsed" Opacity="0.70" />
                                             <Border x:Name="GlowPlayingBorder" Visibility="Collapsed" Tag="False"
                                                     Style="{DynamicResource CoverIsPlayingAnimatedBackground}" />
                                             <TextBlock Name="EnablePlayingGlowBorder" Visibility="Collapsed"
@@ -168,7 +168,7 @@
                                         </Border.Style>
                                         <TextBlock x:Name="ShowGameName" Text="{Binding DisplayName}"
                                                    Style="{DynamicResource BaseTextBlockStyle}"
-                                                   TextAlignment="Center" TextTrimming="CharacterEllipsis"
+                                                   TextAlignment="Left" TextTrimming="CharacterEllipsis"
                                                    VerticalAlignment="Center"
                                                    Padding="2,5,2,5" Grid.Row="1" Grid.Column="0"
                                                    Width="{Settings GridItemWidth}" 
@@ -262,7 +262,7 @@
                         </MultiDataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsInstalled}" Value="False" />
+                                <Condition Binding="{Binding ElementName=BorderMouseOver, Path=Visibility}" Value="Visible" />
                                 <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True" />
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.EnterActions>
@@ -284,7 +284,7 @@
                                     <Storyboard>
                                         <DoubleAnimation
                                             Storyboard.TargetProperty="Opacity"
-                                            To="0.60" Storyboard.TargetName="BorderMouseOver"
+                                            To="0.70" Storyboard.TargetName="BorderMouseOver"
                                             Duration="0:0:0.30">
                                             <DoubleAnimation.EasingFunction>
                                                 <CubicEase EasingMode="EaseOut"/>
