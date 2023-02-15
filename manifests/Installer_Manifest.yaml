@@ -380,3 +380,11 @@ Packages:
       - 'Details View: Fix details section not being visible if cover height is configured to 0'
       - 'Grid View: Add support to display games completion status. Can be enabled with ThemeModifier extension'
       - 'Grid View: Fix buttons collapsing if mouse is on grid item but not on cover image'
+  - Version: 1.42
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2023-02-15
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.42/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_42.pthm
+    Changelog:
+      - 'Grid View: Adjustments to darkening layer of uninstalled games'
+      - 'Grid View: Fix completion status cover icon displaying when the game does not have a Completion Status set'
+      - 'Update extension links'
