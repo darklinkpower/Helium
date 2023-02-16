@@ -44,8 +44,8 @@ Option C: Download from the Addons browser in Playnite.
 - Banners and other functionality: via custom integration of the [ThemeExtras](https://playnite.link/addons.html#felixkmh_Extras_Plugin) extension.
 
 ## Screenshots
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_01.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_01.webp)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_02.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_02.webp)
 
-![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.jpg)
+![Screenshot](https://raw.githubusercontent.com/darklinkpower/Helium/master/screenshots/screenshot_03.webp)
