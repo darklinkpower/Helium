@@ -167,6 +167,7 @@
                                             </Style>
                                         </Border.Style>
                                         <TextBlock x:Name="ShowGameName" Text="{Binding DisplayName}"
+                                                   Foreground="White"
                                                    Style="{DynamicResource BaseTextBlockStyle}"
                                                    TextAlignment="Left" TextTrimming="CharacterEllipsis"
                                                    VerticalAlignment="Center"
