@@ -7,8 +7,8 @@
                     mc:Ignorable="d">
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="#3d4450" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -34,13 +34,13 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource ButtonIsMouseOverBackgroundBrush}" />
-                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Background" Value="#464d58" />
+                <Setter Property="Foreground" Value="White" />
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Background" Value="{DynamicResource ButtonIsMouseOverBackgroundBrush}" />
-                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Background" Value="#464d58" />
+                <Setter Property="Foreground" Value="White" />
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
             </Trigger>
         </Style.Triggers>
@@ -133,7 +133,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
                         <Border x:Name="BorderBk" BorderThickness="0" Background="{TemplateBinding Background}"                            
-                                CornerRadius="{DynamicResource ControlCornerRadius}" Opacity="0.14" />
+                                CornerRadius="{DynamicResource DetailsViewExtraButtonsCornerRadius}" Opacity="0.14" />
                         <Border Padding="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Opacity="0.5" Name="ContentPresenter"
@@ -239,7 +239,7 @@
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Grid>
                         <Border x:Name="BorderBk" BorderThickness="0" Background="{TemplateBinding Background}"                            
-                            CornerRadius="{DynamicResource ControlCornerRadius}" Opacity="0.14" />
+                            CornerRadius="{DynamicResource DetailsViewExtraButtonsCornerRadius}" Opacity="0.14" />
                         <Border Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -327,7 +327,7 @@
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Grid>
                         <Border x:Name="BorderBk" BorderThickness="0" Background="#d3d8e0"                            
-                            CornerRadius="{DynamicResource ControlCornerRadius}" Opacity="0.14" />
+                            CornerRadius="{DynamicResource DetailsViewExtraButtonsCornerRadius}" Opacity="0.14" />
                         <Border Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

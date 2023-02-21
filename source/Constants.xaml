@@ -51,7 +51,7 @@
     <Thickness x:Key="PopupBorderThickness">0</Thickness>
     <Thickness x:Key="ControlBorderThickness">0</Thickness>
     <sys:Double x:Key="EllipseBorderThickness">0</sys:Double>
-    <sys:Double x:Key="ControlCornerRadiusValue">5</sys:Double>
+    <sys:Double x:Key="ControlCornerRadiusValue">3</sys:Double>
     <CornerRadius x:Key="ControlCornerRadius"
                   TopLeft="{StaticResource ControlCornerRadiusValue}" 
                   TopRight="{StaticResource ControlCornerRadiusValue}"
@@ -62,6 +62,7 @@
                   TopRight="0"
                   BottomRight="0"
                   BottomLeft="{StaticResource ControlCornerRadiusValue}"/>
+    <CornerRadius x:Key="DetailsViewExtraButtonsCornerRadius">4</CornerRadius>
     <CornerRadius x:Key="ControlCornerRadiusSmall">3</CornerRadius>
     <CornerRadius x:Key="GridViewCoverCornerRadius">5</CornerRadius>
     <CornerRadius x:Key="GridViewCoverGridBackgroundDisabledCornerRadius">5,5,0,0</CornerRadius>
