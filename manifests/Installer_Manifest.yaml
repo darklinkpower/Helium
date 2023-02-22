@@ -388,3 +388,11 @@ Packages:
       - 'Grid View: Adjustments to darkening layer of uninstalled games'
       - 'Grid View: Fix completion status cover icon displaying when the game does not have a Completion Status set'
       - 'Update extension links'
+  - Version: 1.43
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2023-02-21
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.43/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_43.pthm
+    Changelog:
+      - 'Buttons: Apply Dropshadow effect when hovered or focused'
+      - 'Buttons: Change corner rardius, text and background colors'
+      - 'General adjustments the text colors'
