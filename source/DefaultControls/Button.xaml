@@ -17,16 +17,40 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"                            
-                            CornerRadius="{DynamicResource ControlCornerRadius}" Style="{DynamicResource HighlightBorder}"
-                            BorderBrush="{TemplateBinding BorderBrush}">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    <Grid>
+                        <Border x:Name="ShadowBorder" Visibility="Collapsed"
+                                Background="{Binding ElementName=Border, Path=Background}"
+                                CornerRadius="{Binding ElementName=Border, Path=CornerRadius}"
+                                BorderThickness="{Binding ElementName=Border, Path=BorderThickness}"
+                                BorderBrush="{Binding ElementName=Border, Path=BorderBrush}" />
+                        <Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"                            
+                                CornerRadius="{DynamicResource ControlCornerRadius}" Style="{DynamicResource HighlightBorder}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" />
-                    </Border>
+                        </Border>
+                    </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ShadowBorder" />
+                            <Setter Property="Effect" TargetName="ShadowBorder">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="#3d4450" Direction="270" ShadowDepth="12"
+                                                      RenderingBias="Performance"
+                                                      BlurRadius="18" Opacity="0.30" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" TargetName="Border" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="ShadowBorder" />
+                            <Setter Property="Effect" TargetName="ShadowBorder">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="#3d4450" Direction="270" ShadowDepth="12"
+                                                      RenderingBias="Performance"
+                                                      BlurRadius="18" Opacity="0.30" />
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
