@@ -38,7 +38,7 @@
                                 <Setter.Value>
                                     <DropShadowEffect Color="#3d4450" Direction="270" ShadowDepth="12"
                                                       RenderingBias="Performance"
-                                                      BlurRadius="18" Opacity="0.30" />
+                                                      BlurRadius="18" Opacity="0.25" />
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
@@ -48,7 +48,7 @@
                                 <Setter.Value>
                                     <DropShadowEffect Color="#3d4450" Direction="270" ShadowDepth="12"
                                                       RenderingBias="Performance"
-                                                      BlurRadius="18" Opacity="0.30" />
+                                                      BlurRadius="18" Opacity="0.25" />
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
@@ -58,13 +58,11 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#464d58" />
-                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="#67707b" />
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Background" Value="#464d58" />
-                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="#67707b" />
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
             </Trigger>
         </Style.Triggers>
