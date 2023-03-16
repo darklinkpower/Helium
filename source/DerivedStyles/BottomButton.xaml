@@ -6,6 +6,7 @@
         <Setter Property="Padding" Value="15,8,15,8" />
         <Setter Property="MinWidth" Value="70" />
         <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="White" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{DynamicResource ButtonIsMouseOverBackgroundBrush}" />
