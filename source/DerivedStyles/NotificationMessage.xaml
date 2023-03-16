@@ -8,6 +8,7 @@
         <Setter Property="Command" Value="{Binding ActivateCommand}" />
         <Setter Property="Margin" Value="10,8,10,0" />
         <Setter Property="Background" Value="{DynamicResource ButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="White" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
@@ -20,6 +21,7 @@
                                     VerticalAlignment="Stretch" BorderThickness="0"
                                     Command="{Binding CloseCommand}"/>
                             <TextBlock Text="{Binding Text}"
+                                       Foreground="{TemplateBinding Foreground}"
                                        Style="{DynamicResource BaseTextBlockStyle}"
                                        Margin="6,6,0,6" TextWrapping="Wrap"
                                        MinHeight="38" DockPanel.Dock="Left" />
