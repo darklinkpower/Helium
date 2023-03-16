@@ -493,9 +493,13 @@
                                                                 </ScrollViewer>
 
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="7">
+                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
                                                                         <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
                                                                         <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                                        <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
+                                                                        <TextBlock Name="PART_TextAdded" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                                        <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
+                                                                        <Button Name="PART_ButtonReleaseDate" />
                                                                         <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
                                                                         <Button Name="PART_ButtonLibrary" />
                                                                         <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
@@ -506,8 +510,6 @@
                                                                         <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
                                                                         <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
                                                                         <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
-                                                                        <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
-                                                                        <Button Name="PART_ButtonReleaseDate" />
                                                                     </GridEx>
                                                                 </ScrollViewer>
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
