@@ -396,3 +396,14 @@ Packages:
       - 'Buttons: Apply Dropshadow effect when hovered or focused'
       - 'Buttons: Change corner rardius, text and background colors'
       - 'General adjustments the text colors'
+  - Version: 1.44
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2023-03-15
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.44/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_44.pthm
+    Changelog:
+      - 'BottomButton: Set text color to white'
+      - 'Button: Changed color when button is hovered or focused'
+      - 'Details View and Grid View: Support to display game added date'
+      - 'Details View: Added dropshadow effect to details panels'
+      - 'NotificationMessage: Set text color to white'
+      - 'TopPanel: Aligner search box with main panel'
