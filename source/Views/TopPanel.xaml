@@ -199,11 +199,11 @@
                                     WindowChrome.IsHitTestVisibleInChrome="True">
                                 <Image Source="{ThemeFile 'Images/applogo.png'}"
                                        Height="40" RenderOptions.BitmapScalingMode="Fant"
-                                       Margin="10,0,5,0"/>
+                                       Margin="10,0,10,0"/>
                             </Border>
 
                             <SearchBox x:Name="PART_TextMainSearch"
-                                        Margin="5,6,0,6" DockPanel.Dock="Left"
+                                        Margin="0,6,0,6" DockPanel.Dock="Left"
                                         WindowChrome.IsHitTestVisibleInChrome="True"
                                         Width="300" />
                             
