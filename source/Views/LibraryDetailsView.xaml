@@ -105,6 +105,11 @@
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="Margin" Value="-0.5" />
         <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect RenderingBias="Performance" BlurRadius="16" ShadowDepth="0" Color="#000025" Opacity="1"/>
+            </Setter.Value>
+        </Setter>
     </Style>
     
     <Style TargetType="Border" x:Key="OutlineBorderMainPanels">
@@ -112,6 +117,11 @@
         <Setter Property="BorderBrush" Value="{DynamicResource DetailsPanelsBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect RenderingBias="Performance" BlurRadius="16" ShadowDepth="0" Color="#000025" Opacity="1"/>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="Border" x:Key="OutlineBorderSidePanels">
@@ -120,6 +130,11 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect RenderingBias="Performance" BlurRadius="16" ShadowDepth="0" Color="#000025" Opacity="1"/>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="Border" x:Key="OutlineBorderSidePanelsBorder">
