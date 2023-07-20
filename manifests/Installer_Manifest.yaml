@@ -407,3 +407,10 @@ Packages:
       - 'Details View: Added dropshadow effect to details panels'
       - 'NotificationMessage: Set text color to white'
       - 'TopPanel: Aligner search box with main panel'
+  - Version: 1.45
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2023-07-19
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.45/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_45.pthm
+    Changelog:
+      - 'Grid View: Fix Cover controls not displaying on hover on certain circumstances'
+      - 'Grid View: Replaced Origin banner with EA App library banner'
