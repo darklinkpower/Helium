@@ -757,21 +757,6 @@
                                                     </Grid>
                                                 </StackPanel>
 
-                                                <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                    <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
-                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
-                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
-                                                        <StackPanel Orientation="Vertical" Margin="10">
-                                                            <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,0,0,10" />
-                                                            <ContentControl x:Name="GameActivity_PluginChartLog"  Margin="0,0,0,10"/>
-                                                            <ContentControl x:Name="GameActivity_PluginButton" HorizontalAlignment="Right"
-                                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                                        </StackPanel>
-                                                    </Grid>
-                                                </StackPanel>
-
                                                 <StackPanel Name="VideoFeed" Margin="0,0,0,15">
                                                     <StackPanel.Style>
                                                         <Style TargetType="StackPanel">
@@ -799,6 +784,21 @@
                                                         </Viewbox>
                                                         <StackPanel Orientation="Vertical" Margin="10">
                                                             <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </StackPanel>
+                                                
+                                                <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
+                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <StackPanel Orientation="Vertical" Margin="10">
+                                                            <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,0,0,10" />
+                                                            <ContentControl x:Name="GameActivity_PluginChartLog"  Margin="0,0,0,10"/>
+                                                            <ContentControl x:Name="GameActivity_PluginButton" HorizontalAlignment="Right"
+                                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
