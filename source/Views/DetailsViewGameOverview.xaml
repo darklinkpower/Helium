@@ -605,11 +605,15 @@
                                                     <Label Content="{DynamicResource LOCNotesLabel}" Style="{DynamicResource FeedSectionLabel}"/>
                                                     <Grid Margin="0,0,0,10" MinHeight="45">
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
-                                                        <Border Style="{DynamicResource OutlineBorder}" />
-                                                        <TextBox Name="PART_TextNotes" IsReadOnly="True"
-                                                     BorderThickness="0" Background="Transparent"
-                                                     AcceptsReturn="True" TextWrapping="Wrap"
-                                                     Margin="20,0,20,0" Padding="10" VerticalAlignment="Center"/>
+                                                        <Border Style="{DynamicResource OutlineBorder}"></Border>
+                                                        <Border Padding="10">
+                                                            <TextBox Name="PART_TextNotes" IsReadOnly="True"
+                                                                 BorderThickness="0" Background="Transparent"
+                                                                 AcceptsReturn="True" TextWrapping="Wrap"
+                                                                 VerticalScrollBarVisibility="Auto"
+                                                                 MaxHeight="300"
+                                                                 Margin="20,0,20,0" VerticalAlignment="Center"/>
+                                                        </Border>
                                                     </Grid>
                                                 </StackPanel>
 
