@@ -21,7 +21,7 @@
     <Visibility x:Key="GridViewCoverCompStatusSubtitleVisibility">Collapsed</Visibility>
     <sys:Boolean x:Key="GridViewCoverDisplayLibraryBanner">True</sys:Boolean>
     <sys:Boolean x:Key="GridViewCoverUseRoundedCorners">False</sys:Boolean>
-    <sys:Boolean x:Key="GridViewCoverDisplayDropShadowEffect">True</sys:Boolean>
+    <sys:Boolean x:Key="GridViewCoverDisplayDropShadowEffect">False</sys:Boolean>
     <sys:Boolean x:Key="GridViewEnablePlayingGlowBorder">True</sys:Boolean>
     <sys:Boolean x:Key="GridViewPlaceDescriptionAtBottom">False</sys:Boolean>
     <Visibility x:Key="GridViewDetailsIconsVisibility">Visible</Visibility>
@@ -72,7 +72,7 @@
     <Thickness x:Key="SidebarItemPadding">8</Thickness>
 
     <Color x:Key="BlackColor">#FF000000</Color>
-    <Color x:Key="WhiteColor">#FFFFFFFF</Color>
+    <Color x:Key="WhiteColor">#f5f5f5</Color>
     <Color x:Key="TextColor">#dfe3e6</Color>
     <Color x:Key="TextColorDarker">#a3a3a3</Color>
     <Color x:Key="TextColorDark">#FF000000</Color>
