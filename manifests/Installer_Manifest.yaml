@@ -414,3 +414,14 @@ Packages:
     Changelog:
       - 'Grid View: Fix Cover controls not displaying on hover on certain circumstances'
       - 'Grid View: Replaced Origin banner with EA App library banner'
+  - Version: 1.46
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2023-08-07
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.46/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_46.pthm
+    Changelog:
+      - 'Details View: Move ExtraMetadata Loader extension Video section to first place in addons section'
+      - 'Details View: Set maximum height for notes and add scrollbar'
+      - 'Grid View: Add DuplicateHider extension selector to game details'
+      - 'Grid View: Disable library items dropshadow effect by default'
+      - 'Grid View: Library view items layout changes to improve performance. Duplicate Hider extension selector on covers removed for performance reasons.'
+      - 'SearchView: Fix some items images not properly scaling'
