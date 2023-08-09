@@ -155,10 +155,19 @@
                                                 </ContentControl.Effect>
                                             </ContentControl>
                                         </DockPanel>
-                                        <ContentControl x:Name="CheckLocalizations_PluginFlags" Height="30" Margin="20,20,0,0"
+                                        <StackPanel Margin="20,20,0,0"
+                                                    HorizontalAlignment="Left" VerticalAlignment="Top">
+                                            <ContentControl x:Name="CheckLocalizations_PluginFlags" Height="30"
+                                                            Margin="0,0,0,10"
                                                             Visibility="{PluginSettings Plugin=CheckLocalizations, Path=EnableIntegrationFlags, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                            HorizontalAlignment="Left" VerticalAlignment="Top"
                                                             Opacity="0.85" />
+                                            <ContentControl x:Name="DuplicateHider_SourceSelector"
+                                                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                                                        VerticalContentAlignment="Center"
+                                                        Height="24"
+                                                        RenderOptions.BitmapScalingMode="Fant" />
+                                        </StackPanel>
+
                                         <StackPanel Margin="0,0,30,0" VerticalAlignment="Top" HorizontalAlignment="Right">
                                             <!--GridConverterGridPanelCloseButton-->
                                             <ContentControl x:Name="NewsViewer_PlayersInGameViewerControl"
