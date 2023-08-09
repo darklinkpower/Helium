@@ -120,8 +120,8 @@
 
     <SolidColorBrush x:Key="DetailsViewBannerPanelBorderBrush" Color="#4Dffffff" />
     <SolidColorBrush x:Key="DetailsViewBannerPanelBackgroundBrush" Color="#4D000000" />
-    
-    <SolidColorBrush x:Key="GridViewItemMaskBackgroundBrush" Color="#282828" />
+
+    <SolidColorBrush x:Key="GridViewItemMaskBackgroundBrush" Color="#1e1e1e" />
     <SolidColorBrush x:Key="CheckboxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="CheckboxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="CheckboxIsCheckedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
