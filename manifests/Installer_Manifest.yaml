@@ -434,3 +434,9 @@ Packages:
       - 'Grid View: Improved performance when covers dropshadows are enabled'
       - 'Grid View: Fix covers rounded corners not applying when dropshadow effect is also enabled'
       - 'Grid View: Improved visibility of favorite icon on game covers'
+  - Version: 1.48
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2023-08-18
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.48/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_48.pthm
+    Changelog:
+      - 'TopPanel: Adjustment to items padding'
