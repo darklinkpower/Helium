@@ -440,3 +440,10 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.48/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_48.pthm
     Changelog:
       - 'TopPanel: Adjustment to items padding'
+  - Version: 1.49
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2023-10-10
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.49/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_49.pthm
+    Changelog:
+      - 'Add support for Play Notes extension'
+      - 'ListBox and Explorer Panel: Trim text if it does not fit in available width'
