@@ -1,6 +1,6 @@
 Constants:
     - "Details View"
-    - DetailsViewDescriptionWidth(150,1200): 'Width of description'
+    - DetailsViewDescriptionWidth(150,2400): 'Width of description'
     - DetailsViewDescriptionDockToRight: 'Dock description to the right'
     - DetailsViewShowInfoPanelDefault: 'Show information panel by default'
     - DetailsViewBackgroundVerticalAlignment: 'Vertical alignment of the background image'
