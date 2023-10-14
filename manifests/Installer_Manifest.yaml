@@ -447,3 +447,9 @@ Packages:
     Changelog:
       - 'Add support for Play Notes extension'
       - 'ListBox and Explorer Panel: Trim text if it does not fit in available width'
+  - Version: 1.50
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2023-10-14
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.50/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_50.pthm
+    Changelog:
+      - 'Details View: Increase maximum value for Details View width option in ThemeModifier extension'
