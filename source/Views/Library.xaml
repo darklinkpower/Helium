@@ -24,23 +24,43 @@
                                    HorizontalAlignment="Center" VerticalAlignment="Top" />
 
                         <TopPanel DockPanel.Dock="Top" Grid.Row="0" />
-                        
-                        <DockPanel Grid.Row="1">
-                            <FilterPanel x:Name="PART_FilterPanel"
+
+                        <Border Grid.Row="1"
+                                BorderBrush="{DynamicResource PanelSeparatorBrush}">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="BorderThickness" Value="0,1,0,0" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Settings SidebarPosition}" Value="Left">
+                                            <Setter Property="BorderThickness" Value="1,1,0,0" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Settings SidebarPosition}" Value="Right">
+                                            <Setter Property="BorderThickness" Value="0,1,1,0" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Settings SidebarPosition}" Value="Bottom">
+                                            <Setter Property="BorderThickness" Value="0,1,0,1" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+
+                            <DockPanel>
+                                <FilterPanel x:Name="PART_FilterPanel"
                                          DockPanel.Dock="{Settings FilterPanelPosition}"
                                          Width="{Settings FilterPanelWitdh}"
                                          Visibility="{Settings FilterPanelVisible}"/>
 
-                            <ExplorerPanel Visibility="{Settings ExplorerPanelVisible}"
+                                <ExplorerPanel Visibility="{Settings ExplorerPanelVisible}"
                                            DockPanel.Dock="{Settings ExplorerPanelPosition}"
                                            Width="{Settings ExplorerPanelWitdh}"/>
-                            
-                            <Grid DockPanel.Dock="Left">                                
-                                <LibraryDetailsView x:Name="PART_ViewDetails" />
-                                <LibraryGridView x:Name="PART_ViewGrid" />
-                                <LibraryListView x:Name="PART_ViewList" />
-                            </Grid>
-                        </DockPanel>
+
+                                <Grid DockPanel.Dock="Left">
+                                    <LibraryDetailsView x:Name="PART_ViewDetails" />
+                                    <LibraryGridView x:Name="PART_ViewGrid" />
+                                    <LibraryListView x:Name="PART_ViewList" />
+                                </Grid>
+                            </DockPanel>
+                        </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

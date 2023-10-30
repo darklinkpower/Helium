@@ -112,6 +112,7 @@
                                        Foreground="{TemplateBinding Foreground}"/>
                             <TextBlock Text="{DynamicResource LOCFilterActiveLabel}"
                                        Style="{DynamicResource BaseTextBlockStyle}"
+                                       Foreground="{TemplateBinding Foreground}"
                                        Margin="3,0,0,0" VerticalAlignment="Center"
                                        Name="TextFilter" />
                         </StackPanel>
@@ -119,7 +120,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="Tag" Value="{StaticResource True}">
                             <Setter Property="Visibility" Value="Visible" TargetName="TextFilter" />
-                            <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
                             <Setter Property="Background" Value="{DynamicResource TopPanelItemIsMouseOverBackgroundBrush}" />
                         </Trigger>
                         <Trigger Property="Tag" Value="{StaticResource False}">
@@ -141,15 +142,20 @@
         <Setter Property="Margin" Value="10,6,0,6" />
         <Setter Property="MinWidth" Value="35" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Border Background="Transparent">
-                        <Grid>
-                            <TextBlock Text="&#xeea3;" FontFamily="{DynamicResource FontIcoFont}" FontSize="24"
+                    <Border x:Name="Border" CornerRadius="3"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="&#xeea3;" FontFamily="{DynamicResource FontIcoFont}"
+                                       FontSize="24"
                                        Foreground="{TemplateBinding Foreground}"
                                        HorizontalAlignment="Center"/>
                             <Border CornerRadius="3" Width="15" Height="15"
@@ -185,8 +191,11 @@
                             d:DataContext="{x:Static DesignMainViewModel.DesignIntance}">
                         <Border.Style>
                             <Style TargetType="Border">
-                                <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                <Setter Property="BorderThickness" Value="0,0,0,0" />
                                 <Style.Triggers>
+                                    <DataTrigger Binding="{Settings SidebarPosition}" Value="Top">
+                                        <Setter Property="BorderThickness" Value="0,1,0,0" />
+                                    </DataTrigger>
                                     <DataTrigger Binding="{Settings ShowPanelSeparators}" Value="False">
                                         <Setter Property="BorderThickness" Value="0" />
                                     </DataTrigger>
@@ -203,9 +212,11 @@
                             </Border>
 
                             <SearchBox x:Name="PART_TextMainSearch"
-                                        Margin="0,6,0,6" DockPanel.Dock="Left"
-                                        WindowChrome.IsHitTestVisibleInChrome="True"
-                                        Width="300" />
+                                       Background="{DynamicResource TopPanelSearchBoxBackgroundBrush}"
+                                       Margin="0,6,0,6" DockPanel.Dock="Left"
+                                       WindowChrome.IsHitTestVisibleInChrome="True"
+                                       MinWidth="120"
+                                       Width="{Settings DetailsListWitdh}" />
                             
                             <StackPanel x:Name="PART_PanelMainItems" Orientation="Horizontal"
                                         VerticalAlignment="Stretch" Margin="0,6,0,6"/>

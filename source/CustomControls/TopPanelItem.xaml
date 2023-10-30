@@ -11,6 +11,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="3" />
+        <Setter Property="Opacity" Value="0.75" />
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -25,12 +26,14 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <Trigger Property="IsToggled" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
-            </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
                 <Setter Property="Background" Value="{DynamicResource TopPanelItemIsMouseOverBackgroundBrush}"/>
+                <Setter Property="Opacity" Value="1.00" />
+            </Trigger>
+            <Trigger Property="IsToggled" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+                <Setter Property="Opacity" Value="1.00" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>

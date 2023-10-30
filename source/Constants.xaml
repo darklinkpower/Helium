@@ -186,7 +186,7 @@
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverBackgroundBrush" Color="#323A4B" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverInstalledBackgroundBrush" Color="#586F96" />
     <SolidColorBrush x:Key="ListViewHeaderBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
-    <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#2C3137" />
+    <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#202126" />
     <SolidColorBrush x:Key="TopPanelBackgroundBrush1" Color="#434953" />
     <SolidColorBrush x:Key="TopPanelBackgroundBrush2" Color="#434953" />
     <SolidColorBrush x:Key="TopPanelBackgroundBrush3" Color="#434953" />
@@ -201,8 +201,9 @@
     <SolidColorBrush x:Key="SidebarItemBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="SidebarItemIsMouseOverBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="SidebarItemIsSelectedBackgroundBrush" Color="Transparent" />
-    <SolidColorBrush x:Key="TopPanelItemBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
-    <SolidColorBrush x:Key="TopPanelItemIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
+    <SolidColorBrush x:Key="TopPanelItemBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="TopPanelItemIsMouseOverBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="TopPanelSearchBoxBackgroundBrush" Color="#292c33" />
     <SolidColorBrush x:Key="TrayContextMenuBackgroundBrushBak" Color="Green" />
     <LinearGradientBrush x:Key="TrayContextMenuBackgroundBrush1" StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
         <GradientStop Color="#1E1F24" Offset="0"/>
@@ -228,7 +229,7 @@
     <!--region end-->
 
     <!--region Foreground-->
-    <SolidColorBrush x:Key="TopPanelItemForegroundBrush" Color="#4C4D50" />
+    <SolidColorBrush x:Key="TopPanelItemForegroundBrush" Color="#8f969e" />
     <SolidColorBrush x:Key="TopPanelItemIsMouseOverForegroundBrush" Color="#ffffff" />
     <!--region end-->
 

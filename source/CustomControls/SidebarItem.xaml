@@ -9,9 +9,9 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0,0,0,0" />
-        <Setter Property="Width" Value="44" />
+        <Setter Property="Width" Value="40" />
         <Setter Property="Opacity" Value="0.75" />
-        <Setter Property="Height" Value="44" />
+        <Setter Property="Height" Value="40" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
@@ -36,6 +36,7 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
                 <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
+                <Setter Property="Opacity" Value="1.00" />
             </Trigger>
             <DataTrigger Binding="{Binding Selected}" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
