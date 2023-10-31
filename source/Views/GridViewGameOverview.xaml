@@ -113,7 +113,7 @@
                                                    TextWrapping="Wrap" 
                                                    VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}">
                                             <TextBlock.Effect>
-                                                <DropShadowEffect ShadowDepth="3"/>
+                                                <DropShadowEffect ShadowDepth="2"/>
                                             </TextBlock.Effect>
                                         </TextBlock>
                                     </Border>
@@ -175,7 +175,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOCGameDetails}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <StackPanel.Resources>
@@ -201,6 +201,7 @@
                                                             <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}" />
                                                             <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
                                                             <Setter Property="Visibility" Value="{Binding ElementName=GridEx, Path=Tag}" />
+                                                            <Setter Property="VerticalAlignment" Value="Center" />
                                                         </Style>
                                                         <Style TargetType="Label">
                                                             <Setter Property="FontWeight" Value="Normal" />
@@ -432,7 +433,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -466,7 +467,7 @@
                                                 <Expander.Header>
                                                     <TextBlock Text="{DynamicResource LOCNotesLabel}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                                 </Expander.Header>
                                                 <StackPanel Margin="0,0,0,25">
                                                     <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -491,7 +492,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -513,7 +514,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -537,7 +538,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="HowLongToBeat" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -617,7 +618,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOCSsvTitle}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -635,7 +636,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -653,7 +654,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOCReview_Viewer_ReviewsLabel}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -670,7 +671,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
@@ -687,7 +688,7 @@
                                             <Expander.Header>
                                                 <TextBlock Text="DLC" Style="{DynamicResource BaseTextBlockStyle}"
                                                            Cursor="Hand"
-                                                           FontWeight="Bold" FontSize="{DynamicResource FontSizeLarge}" />
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
                                             </Expander.Header>
                                             <StackPanel Margin="0,0,0,25">
                                                 <StackPanel.Resources>
