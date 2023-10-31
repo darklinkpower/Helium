@@ -453,3 +453,17 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.50/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_50.pthm
     Changelog:
       - 'Details View: Increase maximum value for Details View width option in ThemeModifier extension'
+  - Version: 1.51
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2023-10-30
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.51/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_51.pthm
+    Changelog:
+      - 'Added: Legendary library plugin banner'
+      - 'Changed: Adjustments to menus colors'
+      - 'Changed: Theme icon'
+      - 'Changed: Color and styling changes to TopPanel, Sidebar and their elements'
+      - 'Changed: Use opacity and offset animations when displaying menus and popups'
+      - 'Changed: Make unfavorite icon in game menu yellow and other icons color changes'
+      - 'Changed: Use hand cursor in window buttons'
+      - 'Improved: performance when rounded corners are enabled'
+      - 'Improved: Reduce panels dropshadow effect radius to improve performance'
