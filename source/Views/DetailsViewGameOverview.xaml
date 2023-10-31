@@ -416,29 +416,34 @@
                                                         </DockPanel.Resources>
                                                         <Border DockPanel.Dock="Left" Name="ContainerHeightBorder"
                                                                 Height="{Settings GameDetailsCoverHeight}" MinHeight="150"/>
-                                                        
-                                                        <Border>
-                                                            <Border.Style>
-                                                                <Style TargetType="Border">
-                                                                    <Setter Property="Visibility" Value="Visible" />
+
+                                                        <Grid DockPanel.Dock="Left" Margin="0,0,15,0">
+                                                            <Grid.Style>
+                                                                <Style TargetType="Grid">
+                                                                    <Setter Property="Visibility" Value="{Binding ElementName=PART_ImageCover, Path=Visibility}" />
                                                                     <Style.Triggers>
                                                                         <DataTrigger Binding="{Binding ElementName=BackgroundChanger_PluginCoverImage, Path=Visibility}" Value="Visible">
                                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                                         </DataTrigger>
                                                                     </Style.Triggers>
                                                                 </Style>
-                                                            </Border.Style>
+                                                            </Grid.Style>
+                                                            <Border BorderThickness="8" BorderBrush="Black">
+                                                                <Border.CacheMode>
+                                                                    <BitmapCache EnableClearType="False"
+                                                                                SnapsToDevicePixels="False" />
+                                                                </Border.CacheMode>
+                                                                <Border.Effect>
+                                                                    <DropShadowEffect RenderingBias="Performance"
+                                                                                      BlurRadius="15" ShadowDepth="0"/>
+                                                                </Border.Effect>
+                                                            </Border>
                                                             <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
-                                                                   DockPanel.Dock="Left"
                                                                    Height="{Binding ElementName=ContainerHeightBorder, Path=ActualHeight}"
                                                                    StretchDirection="Both" Stretch="Uniform"
-                                                                   RenderOptions.BitmapScalingMode="Fant" Margin="0,0,15,0">
-                                                                <Image.Effect>
-                                                                    <DropShadowEffect RenderingBias="Performance" BlurRadius="15" ShadowDepth="0"/>
-                                                                </Image.Effect>
-                                                            </Image>
-                                                        </Border>
-
+                                                                   RenderOptions.BitmapScalingMode="Fant" />
+                                                        </Grid>
+                                                        
                                                         <ContentControl x:Name="BackgroundChanger_PluginCoverImage"
                                                                         Margin="0,0,15,0"
                                                                         DockPanel.Dock="Left" VerticalAlignment="Bottom"
