@@ -9,7 +9,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
+                    <TextBlock FontSize="{TemplateBinding FontSize}"
                                Foreground="{TemplateBinding Foreground}"
                                Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
                                TextWrapping="{TemplateBinding TextBlock.TextWrapping}"/>
