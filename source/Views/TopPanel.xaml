@@ -236,7 +236,8 @@
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Left"
                                         HorizontalAlignment="Center" Margin="0,5,0,5">
                                 <Grid MaxWidth="600" MinWidth="300">
-                                    <ProgressBar Name="PART_ProgressGlobal" />
+                                    <ProgressBar Name="PART_ProgressGlobal"
+                                                 Background="{DynamicResource TopPanelSearchBoxBackgroundBrush}" />
                                     <TextBlock Name="PART_TextProgressText"
                                                VerticalAlignment="Center" HorizontalAlignment="Center"
                                                Style="{DynamicResource BaseTextBlockStyle}" Margin="5,0,5,0" />
