@@ -107,7 +107,7 @@
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect RenderingBias="Performance" BlurRadius="16" ShadowDepth="0" Color="#000025" Opacity="1"/>
+                <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
             </Setter.Value>
         </Setter>
     </Style>
@@ -119,7 +119,7 @@
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect RenderingBias="Performance" BlurRadius="16" ShadowDepth="0" Color="#000025" Opacity="1"/>
+                <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
             </Setter.Value>
         </Setter>
     </Style>
@@ -132,7 +132,7 @@
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect RenderingBias="Performance" BlurRadius="16" ShadowDepth="0" Color="#000025" Opacity="1"/>
+                <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
             </Setter.Value>
         </Setter>
     </Style>
