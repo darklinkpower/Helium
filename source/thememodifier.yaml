@@ -26,6 +26,7 @@ Constants:
     - GridViewSectionOrderReviewViewer(0,12): 'ReviewViewer extension'
     - GridViewSectionOrderNewsViewer(0,12): 'NewsViewer extension'
     - GridViewSectionOrderCheckDlc(0,12): 'CheckDlc extension'
+    - GridViewSectionOrderGameRelations(0,12): 'Game Relations extension'
     - "Grid View Covers"
     - GridViewCoverZoomOnHover: 'Zoom when hovered'
     - GridViewCoverSubtitleVisibility: 'Visibility of time played under game covers'
