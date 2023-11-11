@@ -467,3 +467,9 @@ Packages:
       - 'Changed: Use hand cursor in window buttons'
       - 'Improved: performance when rounded corners are enabled'
       - 'Improved: Reduce panels dropshadow effect radius to improve performance'
+  - Version: 1.52
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2023-11-10
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.52/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_52.pthm
+    Changelog:
+      - 'Added: Support for Game Relations extension'
