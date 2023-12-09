@@ -473,3 +473,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.52/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_52.pthm
     Changelog:
       - 'Added: Support for Game Relations extension'
+  - Version: 1.53
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2023-12-09
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.53/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_53.pthm
+    Changelog:
+      - 'Fixed: Game cover container in Grid View changing height when hovering in certain aspect ratios'
