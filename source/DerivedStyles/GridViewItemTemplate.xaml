@@ -126,9 +126,10 @@
                                 </StackPanel>
 
                                 <Viewbox VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                                                 Name="GameControls"  Visibility="Collapsed">
-                                    <Border Margin="5,50,30,5"
-                                                        CornerRadius="{DynamicResource ControlCornerRadiusSmall}" Padding="1">
+                                         Margin="5"
+                                         Name="GameControls"  Visibility="Collapsed">
+                                    <Border Margin="5,0,30,5"
+                                            CornerRadius="{DynamicResource ControlCornerRadiusSmall}" Padding="1">
                                         <Border.Style>
                                             <Style TargetType="Border">
                                                 <Setter Property="Background" Value="#87000000" />
@@ -142,10 +143,11 @@
                                             </Style>
                                         </Border.Style>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Height="24" Width="24" Name="PART_ButtonPlay" Margin="0" VerticalAlignment="Center"
-                                                                FontFamily="{StaticResource FontIcoFont}" Tag="Installed" Style="{DynamicResource ButtonPlay}" />
+                                            <Button Height="24" Width="24" Name="PART_ButtonPlay" VerticalAlignment="Center"
+                                                    Margin="0,0,0,0"
+                                                    FontFamily="{StaticResource FontIcoFont}" Tag="Installed" Style="{DynamicResource ButtonPlay}" />
                                             <Button Height="24" Width="24" Name="PART_ButtonInfo" Style="{DynamicResource InfoButton}"
-                                                                Margin="3,0,0,0" VerticalAlignment="Center" FontFamily="{StaticResource FontIcoFont}" />
+                                                    Margin="3,0,0,0" VerticalAlignment="Center" FontFamily="{StaticResource FontIcoFont}" />
                                         </StackPanel>
                                     </Border>
                                 </Viewbox>
