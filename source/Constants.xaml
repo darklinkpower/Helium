@@ -439,7 +439,7 @@
     
     <SolidColorBrush x:Key="GridViewCoverSubtitleBrush" Color="#b7b7b7" />
     <SolidColorBrush x:Key="GridViewCoverSubtitleBackgroundBrush" Color="#3d4450" />
-
+    <sys:String x:Key="DefaultLinkIcon">&#xEF71;</sys:String>
     <!-- Noise Brush obtained from https://github.com/felixkmh/StartPage-for-Playnite/-->
     <ImageBrush x:Key="DarkNoiseBrush" ImageSource="{ThemeFile 'Images/dark_noise.png'}" TileMode="Tile" Viewport="0,0,100,100" ViewportUnits="Absolute"
                     Opacity="1" popt:Freeze="True"/>

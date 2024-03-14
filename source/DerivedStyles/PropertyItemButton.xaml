@@ -27,6 +27,29 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="PropertyItemLinkButton" TargetType="Button" BasedOn="{StaticResource PropertyItemButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <DockPanel>
+                        <Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18"
+                                 VerticalAlignment="Center"
+                                 Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"
+                                 RenderOptions.ClearTypeHint="Enabled" RenderOptions.BitmapScalingMode="Fant">
+                            <ContentControl Content="{Binding Value, TargetNullValue={StaticResource LinksIcon}}"
+                                            DataContext="{Binding Url, Converter={PluginConverter Plugin=ThemeExtras, Converter=UrlToAsyncIconConverter}}"/>
+                        </Viewbox>
+                        <TextBlock DockPanel.Dock="Left" FontSize="{TemplateBinding FontSize}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
+                                   TextTrimming="CharacterEllipsis"
+                                   TextWrapping="{TemplateBinding TextBlock.TextWrapping}"/>
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style x:Key="PropertyItemButtonNoWrap" TargetType="Button">
         <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
         <Setter Property="Margin" Value="0,4,0,4" />
@@ -121,5 +144,62 @@
     <Style x:Key="PropertyItemLinksPanelButton" TargetType="Button" BasedOn="{StaticResource PropertyItemFeedPanelButton}">
         <Setter Property="Margin" Value="11,1,11,1" />
         <Setter Property="Padding" Value="12,4,12,4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Margin="{TemplateBinding Margin}">
+                        <Border Name="BorderMouseOver" Background="{TemplateBinding Background}" CornerRadius="2"
+                                Opacity="0.0"/>
+                        <Border Padding="{TemplateBinding Padding}" >
+                            <DockPanel>
+                                <Viewbox DockPanel.Dock="Left" Margin="0,0,5,0" Width="18" Height="18"
+                                         VerticalAlignment="Center"
+                                         Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}"
+                                         RenderOptions.ClearTypeHint="Enabled" RenderOptions.BitmapScalingMode="Fant">
+                                    <ContentControl Content="{Binding Value, TargetNullValue={StaticResource LinksIcon}}"
+                                                    DataContext="{Binding Url, Converter={PluginConverter Plugin=ThemeExtras, Converter=UrlToAsyncIconConverter}}"/>
+                                </Viewbox>
+                                <TextBlock FontSize="{TemplateBinding FontSize}" FontWeight="Medium"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           Text="{TemplateBinding Content, Converter={StaticResource ObjectToStringConverter}}"
+                                           TextWrapping="NoWrap"/>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True" >
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="1.0" Storyboard.TargetName="BorderMouseOver"
+                                                Duration="0:0:0.30">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0.0" Storyboard.TargetName="BorderMouseOver"
+                                                Duration="0:0:0.30">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>
