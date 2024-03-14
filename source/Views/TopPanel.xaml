@@ -217,6 +217,17 @@
                                        WindowChrome.IsHitTestVisibleInChrome="True"
                                        MinWidth="120"
                                        Width="{Settings DetailsListWitdh}" />
+
+                            <Border Tag="{DynamicResource ShowNavigationButtons}"
+                                    DockPanel.Dock="Left"
+                                    Visibility="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin}"
+                                            Margin="{Binding ElementName=PART_ToggleNotifications, Path=Margin}"
+                                            Orientation="Horizontal">
+                                    <Button Style="{DynamicResource TopPanelNavigateBackButtonStyle}" Command="{PluginSettings Plugin=ThemeExtras, Path=Commands.BackCommand, FallbackValue={x:Null}}" />
+                                    <Button Style="{DynamicResource TopPanelNavigateForwardButtonStyle}" Command="{PluginSettings Plugin=ThemeExtras, Path=Commands.ForwardCommand, FallbackValue={x:Null}}" />
+                                </StackPanel>
+                            </Border>
                             
                             <StackPanel x:Name="PART_PanelMainItems" Orientation="Horizontal"
                                         VerticalAlignment="Stretch" Margin="0,6,0,6"/>

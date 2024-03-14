@@ -1,4 +1,6 @@
 Constants:
+    - "Top Panel"
+    - ShowNavigationButtons: 'Show navigation buttons'
     - "Details View"
     - DetailsViewDescriptionWidth(150,2400): 'Width of description'
     - DetailsViewDescriptionDockToRight: 'Dock description to the right'
