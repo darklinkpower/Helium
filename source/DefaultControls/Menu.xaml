@@ -185,7 +185,8 @@
                                   MaxHeight="16" MaxWidth="16"
                                   VerticalAlignment="Center" ContentSource="Icon" />
                 <Grid x:Name="GlyphPanel" Grid.Column="0" Visibility="Collapsed" Margin="5,0,-5,0" VerticalAlignment="Center">
-                    <TextBlock FontFamily="Marlett" Text="a" VerticalAlignment="Center" Style="{DynamicResource BaseTextBlockStyle}" />
+                    <TextBlock FontFamily="Marlett" Text="a" VerticalAlignment="Center" Style="{DynamicResource BaseTextBlockStyle}"
+                               Foreground="{TemplateBinding Foreground}"/>
                 </Grid>
                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Margin="5,0,5,0" Padding="5" Style="{DynamicResource BaseTextBlockStyle}"
                            Foreground="{TemplateBinding Foreground}">
