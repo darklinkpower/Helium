@@ -495,3 +495,10 @@ Packages:
     Changelog:
       - 'Changed: Changed default cover image aspect ratio to 2:3'
       - 'Fixed: Certain menu icons not changing color when hovering mouse'
+  - Version: 1.56
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2024-05-28
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.56/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_56.pthm
+    Changelog:
+      - 'Added: support for panel of VNDB Nexus extension. Note: if there is overlap of extension sections, reset the order with the ThemeModifier extension options.'
+      - 'Changed: Made progress bar of items in the sidebar smaller'
