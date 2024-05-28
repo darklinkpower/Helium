@@ -168,6 +168,7 @@
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Expander Grid.Row="{DynamicResource GridViewSectionOrderDetails}"
                                                   IsExpanded="True"
@@ -554,6 +555,21 @@
                                             </StackPanel>
                                         </Expander>
 
+                                        <Expander Grid.Row="{DynamicResource GridViewSectionOrderVndb}"
+                                                  IsExpanded="True"
+                                                  Visibility="{PluginSettings Plugin=VNDBNexus, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                  Margin="0,0,5,0">
+                                            <Expander.Header>
+                                                <TextBlock Text="VNDB" Style="{DynamicResource BaseTextBlockStyle}"
+                                                           Cursor="Hand"
+                                                           FontWeight="Medium" FontSize="{DynamicResource FontSizeLarge}" />
+                                            </Expander.Header>
+                                            <StackPanel Margin="0,0,0,25">
+                                                <Separator Background="{DynamicResource HighlightGlyphBrush}" Margin="0,5,0,5"/>
+                                                <ContentControl x:Name="VNDBNexus_VndbVisualNovelViewControl" Margin="0,10,20,0" />
+                                            </StackPanel>
+                                        </Expander>
+                                        
                                         <!--#region SuccessStory-->
                                         <Expander Grid.Row="{DynamicResource GridViewSectionOrderSuccessStory}"
                                                   IsExpanded="True"
