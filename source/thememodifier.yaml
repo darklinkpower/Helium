@@ -30,6 +30,7 @@ Constants:
     - GridViewSectionOrderNewsViewer(0,14): 'NewsViewer extension'
     - GridViewSectionOrderCheckDlc(0,14): 'CheckDlc extension'
     - GridViewSectionOrderGameRelations(0,14): 'Game Relations extension'
+    - GridViewSectionOrderSteamScreenshots(0,14): 'Steam Screenshots extension'
     - "Grid View Covers"
     - GridViewCoverZoomOnHover: 'Zoom when hovered'
     - GridViewCoverSubtitleVisibility: 'Visibility of time played under game covers'

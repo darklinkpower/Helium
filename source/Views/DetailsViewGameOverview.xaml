@@ -1067,6 +1067,20 @@
                                                     </Grid>
                                                 </StackPanel>
 
+                                                <StackPanel Name="SteamScreenshots" Style="{DynamicResource PluginStackpanelVisibility}"
+                                                            Visibility="{PluginSettings Plugin=SteamScreenshots, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <Label Content="{DynamicResource LOC_SteamScreenshots_SteamScreenshotsLabel}" Style="{DynamicResource FeedSectionLabel}"/>
+                                                    <Grid>
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanels}" />
+                                                        <Border Padding="10" >
+                                                            <StackPanel>
+                                                                <ContentControl x:Name="SteamScreenshots_SteamScreenshotsViewControl" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </Grid>
+                                                </StackPanel>
+                                                
                                                 <StackPanel Name="VNDBPanel" Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Visibility="{PluginSettings Plugin=VNDBNexus, Path=IsControlVisible, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
