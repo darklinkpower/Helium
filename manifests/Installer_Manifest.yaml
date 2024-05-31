@@ -502,3 +502,9 @@ Packages:
     Changelog:
       - 'Added: support for panel of VNDB Nexus extension. Note: if there is overlap of extension sections, reset the order with the ThemeModifier extension options.'
       - 'Changed: Made progress bar of items in the sidebar smaller'
+  - Version: 1.57
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2024-05-31
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.57/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_57.pthm
+    Changelog:
+      - 'Added: Support for Steam Screenshots extension'
