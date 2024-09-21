@@ -508,3 +508,11 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.57/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_57.pthm
     Changelog:
       - 'Added: Support for Steam Screenshots extension'
+  - Version: 1.58
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2024-09-21
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.58/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_58.pthm
+    Changelog:
+      - 'Changed: the default value in some theme options'
+      - 'Fixed: HLTB rows showing even if they have no data after its latest update'
+      - 'Reorder ThemeModifier extension sections'
