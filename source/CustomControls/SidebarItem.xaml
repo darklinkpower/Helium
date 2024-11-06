@@ -13,6 +13,7 @@
         <Setter Property="Opacity" Value="0.75" />
         <Setter Property="Height" Value="40" />
         <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="0,0,0,5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type SidebarItem}">
@@ -61,13 +62,16 @@
                 <Setter Property="Opacity" Value="1.00" />
             </DataTrigger>
             <DataTrigger Binding="{Settings SidebarPosition}" Value="Right">
+                <Setter Property="Margin" Value="0,0,0,5" />
                 <Setter Property="BorderThickness" Value="0,0,0,0" />
             </DataTrigger>
             <DataTrigger Binding="{Settings SidebarPosition}" Value="Top">
+                <Setter Property="Margin" Value="0,0,5,0" />
                 <Setter Property="BorderThickness" Value="0,0,0,0" />
             </DataTrigger>
             <DataTrigger Binding="{Settings SidebarPosition}" Value="Bottom">
                 <Setter Property="BorderThickness" Value="0,0,0,0" />
+                <Setter Property="Margin" Value="0,0,5,0" />
             </DataTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
