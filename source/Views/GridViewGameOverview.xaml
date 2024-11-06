@@ -8,21 +8,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GridViewGameOverview}">
-                    <Border Padding="10,0,5,20" BorderBrush="{DynamicResource PanelSeparatorBrush}"
+                    <Border Padding="10,0,5,20"
                             d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}">
-                        <Border.Style>
-                            <Style TargetType="Border">
-                                <Setter Property="BorderThickness" Value="1,0,0,0" />
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Settings GridViewDetailsPosition}" Value="Left">
-                                        <Setter Property="BorderThickness" Value="0,0,1,0" />
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Settings ShowPanelSeparators}" Value="False">
-                                        <Setter Property="BorderThickness" Value="0" />
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
                         <DockPanel>
 
                             <Button HorizontalAlignment="Right" VerticalAlignment="Top"

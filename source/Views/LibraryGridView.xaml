@@ -11,9 +11,24 @@
                     <DockPanel Background="{TemplateBinding Background}"
                                d:DesignWidth="1280" d:DesignHeight="960"
                                d:DataContext="{x:Static DesignMainViewModel.DesignIntance}">
-                        <GridViewGameOverview x:Name="PART_ControlGameView"
-                                              Width="{Settings GrdiDetailsWitdh}"
-                                              DockPanel.Dock="{Settings GridViewDetailsPosition}" />                   
+                        <Border BorderBrush="{DynamicResource PanelSeparatorBrush}"
+                                DockPanel.Dock="{Settings GridViewDetailsPosition}"
+                                Visibility="{Binding ElementName=PART_ControlGameView, Path=Visibility}">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="BorderThickness" Value="1,0,0,0" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Settings GridViewDetailsPosition}" Value="Left">
+                                            <Setter Property="BorderThickness" Value="0,0,1,0" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Settings ShowPanelSeparators}" Value="False">
+                                            <Setter Property="BorderThickness" Value="0" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <GridViewGameOverview x:Name="PART_ControlGameView" Width="{Settings GrdiDetailsWitdh}" />
+                        </Border>
                         <Grid DockPanel.Dock="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
