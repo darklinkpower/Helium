@@ -7,6 +7,7 @@ Constants:
     - DetailsViewShowInfoPanelDefault: 'Show information panel by default'
     - DetailsViewBackgroundVerticalAlignment: 'Vertical alignment of the background image'
     - DetailsViewBackgroundHorizontalAlignment: 'Horizontal alignment of the background image'
+    - DetailsViewEnablePanelsDropShadowEffect (Can cause performance degradation): 'Enable dropshadow effect in panels'
     - DetailsViewAllowUseOfLogos: 'Allow use of logos (Requires Extra Metadata Loader extension)'
     - DetailsViewShowHltbDataGrid: 'Show HowLongToBeat data grid'
     - DetailsViewLibraryGameShowFavorite: 'Show favorites icon in game list'

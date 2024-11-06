@@ -99,55 +99,75 @@
     </Style>
 
     <Style TargetType="Border" x:Key="OutlineBorder">
+        <Setter Property="Tag" Value="{DynamicResource DetailsViewEnablePanelsDropShadowEffect}" />
         <Setter Property="Background" Value="{DynamicResource LinksContainerBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="#1A000025" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="Margin" Value="-0.5" />
         <Setter Property="CornerRadius" Value="2" />
-        <Setter Property="Effect">
-            <Setter.Value>
-                <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
-            </Setter.Value>
-        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
     
     <Style TargetType="Border" x:Key="OutlineBorderMainPanels">
+        <Setter Property="Tag" Value="{DynamicResource DetailsViewEnablePanelsDropShadowEffect}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{DynamicResource DetailsPanelsBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="IsHitTestVisible" Value="False" />
-        <Setter Property="Effect">
-            <Setter.Value>
-                <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
-            </Setter.Value>
-        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="Border" x:Key="OutlineBorderSidePanels">
+        <Setter Property="Tag" Value="{DynamicResource DetailsViewEnablePanelsDropShadowEffect}" />
         <Setter Property="Background" Value="{DynamicResource SectionContainerBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SectionContainerBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="CornerRadius" Value="2" />
-        <Setter Property="Effect">
-            <Setter.Value>
-                <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
-            </Setter.Value>
-        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect RenderingBias="Performance" BlurRadius="3" ShadowDepth="0" Color="#000025" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="Border" x:Key="OutlineBorderSidePanelsBorder">
+        <Setter Property="Tag" Value="{DynamicResource DetailsViewEnablePanelsDropShadowEffect}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="#80252a31" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="CornerRadius" Value="2" />
-        <Setter Property="Effect">
-            <Setter.Value>
-                <DropShadowEffect RenderingBias="Performance" BlurRadius="12" ShadowDepth="0" Color="#000025" Opacity="1"/>
-            </Setter.Value>
-        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect RenderingBias="Performance" BlurRadius="12" ShadowDepth="0" Color="#000025" Opacity="1"/>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
     
     <Style TargetType="Border" x:Key="SectionContainerMain">
