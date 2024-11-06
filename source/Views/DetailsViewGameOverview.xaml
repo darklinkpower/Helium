@@ -150,7 +150,7 @@
                                                             VerticalAlignment="Bottom" DockPanel.Dock="Right" Opacity="0.80"
                                                             Visibility="{PluginSettings Plugin=LibraryManagement, Path=EnableIntegrationFeatures, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                 <ContentControl.Effect>
-                                                    <DropShadowEffect BlurRadius="20" RenderingBias="Performance"
+                                                    <DropShadowEffect BlurRadius="5" RenderingBias="Performance"
                                                                       ShadowDepth="0" Color="DarkGray" />
                                                 </ContentControl.Effect>
                                             </ContentControl>
@@ -181,6 +181,10 @@
                                     </Grid>
                                     <Grid Name="DetailsHeader">
                                         <Border>
+                                            <Border.CacheMode>
+                                                <BitmapCache EnableClearType="False" RenderAtScale="0.25"
+                                                             SnapsToDevicePixels="False" />
+                                            </Border.CacheMode>
                                             <Border.Background>
                                                 <VisualBrush Visual="{Binding ElementName=BorderImageBackground}" Stretch="None" AlignmentY="Bottom"/>
                                             </Border.Background>
@@ -445,8 +449,11 @@
                                                         <Grid DockPanel.Dock="Left" Margin="0,0,15,0">
                                                             <Grid.Style>
                                                                 <Style TargetType="Grid">
-                                                                    <Setter Property="Visibility" Value="{Binding ElementName=PART_ImageCover, Path=Visibility}" />
+                                                                    <Setter Property="Visibility" Value="Visible" />
                                                                     <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding ElementName=PART_ImageCover, Path=Source}" Value="{x:Null}">
+                                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                                        </DataTrigger>
                                                                         <DataTrigger Binding="{Binding ElementName=BackgroundChanger_PluginCoverImage, Path=Visibility}" Value="Visible">
                                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                                         </DataTrigger>
@@ -456,7 +463,7 @@
                                                             <Border BorderThickness="8" BorderBrush="Black">
                                                                 <Border.CacheMode>
                                                                     <BitmapCache EnableClearType="False"
-                                                                                SnapsToDevicePixels="False" />
+                                                                                 SnapsToDevicePixels="False" />
                                                                 </Border.CacheMode>
                                                                 <Border.Effect>
                                                                     <DropShadowEffect RenderingBias="Performance"
