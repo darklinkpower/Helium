@@ -88,7 +88,7 @@
                                 <ComboBox x:Name="PART_ComboFilterPresets"
                                           DockPanel.Dock="Left" VerticalAlignment="Center" />
                             </DockPanel>                            
-                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
+                            <ScrollViewer Margin="0,15,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
                                       DockPanel.Dock="Top" Padding="0,0,0,15">
                                 <StackPanel x:Name="PART_PanelItemsHost" />
                             </ScrollViewer>
