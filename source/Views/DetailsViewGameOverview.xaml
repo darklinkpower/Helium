@@ -454,6 +454,9 @@
                                                                         <DataTrigger Binding="{Binding ElementName=PART_ImageCover, Path=Source}" Value="{x:Null}">
                                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                                         </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding ElementName=PART_ImageCover, Path=Visibility}" Value="Collapsed">
+                                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                                        </DataTrigger>
                                                                         <DataTrigger Binding="{Binding ElementName=BackgroundChanger_PluginCoverImage, Path=Visibility}" Value="Visible">
                                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                                         </DataTrigger>
