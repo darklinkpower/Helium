@@ -528,3 +528,12 @@ Packages:
       - 'Fixed: Cover dropshadow border displaying when cover is not visible.'
       - 'Fixed: Panel separator between Library and Details on Grid View not displaying when using Details to Grid View Converter extension'
       - 'General polishing'
+  - Version: 1.60
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2024-11-09
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.60/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_60.pthm
+    Changelog:
+      - 'Improved: performance and visuals in blurred header on Details View'
+      - 'Changed: Some colors to match colors that have been updated on Steam'
+      - 'Changed: Visual changes to Filter and Notifications buttons on Top Paneñ to look similar to Steam'
+      - 'Fixed: Black rectangle artifact displaying in cover location when it is disabled in settings'
