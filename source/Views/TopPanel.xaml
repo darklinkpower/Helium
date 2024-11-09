@@ -93,23 +93,33 @@
     </Style>
 
     <Style x:Key="TopPanelFilterToggle" TargetType="CheckBox">
-        <Setter Property="MinWidth" Value="35" />
+        <Setter Property="MinWidth" Value="32" />
+        <Setter Property="MinHeight" Value="24" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Background" Value="{DynamicResource TopPanelItemBackgroundBrush}" />
+        <Setter Property="Background" Value="#25272d" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Margin" Value="10,6,0,6" />
-        <Setter Property="Foreground" Value="{DynamicResource TopPanelItemForegroundBrush}" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="Padding" Value="6,6,6,6" />
+        <Setter Property="Foreground" Value="#808080" />
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Border Background="{TemplateBinding Background}" BorderThickness="0"
-                            CornerRadius="3">
-                        <StackPanel Orientation="Horizontal" Margin="6,0,6,0">
-                            <TextBlock Text="&#xef29;"
-                                       FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center"
-                                       Foreground="{TemplateBinding Foreground}"/>
+                    <Border Background="{TemplateBinding Background}"
+                            VerticalAlignment="Center"
+                            BorderThickness="0"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="2">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Viewbox Stretch="Uniform" Width="20" Height="20"
+                                     VerticalAlignment="Center">
+                                <Canvas Width="36" Height="36">
+                                    <Path Fill="{TemplateBinding Foreground}"
+                                          Data="M34 7V11H2V7H34ZM6 20H30V16H6V20ZM10 29H26V25H10V29Z"/>
+                                </Canvas>
+                            </Viewbox>
+
                             <TextBlock Text="{DynamicResource LOCFilterActiveLabel}"
                                        Style="{DynamicResource BaseTextBlockStyle}"
                                        Foreground="{TemplateBinding Foreground}"
@@ -119,9 +129,9 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Tag" Value="{StaticResource True}">
-                            <Setter Property="Visibility" Value="Visible" TargetName="TextFilter" />
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
-                            <Setter Property="Background" Value="{DynamicResource TopPanelItemIsMouseOverBackgroundBrush}" />
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="TextFilter" />
+                            <Setter Property="Foreground" Value="#ccffffff" />
+                            <Setter Property="Background" Value="#1e90ff" />
                         </Trigger>
                         <Trigger Property="Tag" Value="{StaticResource False}">
                             <Setter Property="Visibility" Value="Collapsed" TargetName="TextFilter" />
@@ -133,39 +143,47 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource TopPanelItemIsMouseOverForegroundBrush}" />
-                <Setter Property="Background" Value="{DynamicResource TopPanelItemIsMouseOverBackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style x:Key="TopPanelNotificationsToggle" TargetType="ToggleButton">
-        <Setter Property="Margin" Value="10,6,0,6" />
-        <Setter Property="MinWidth" Value="35" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="Padding" Value="6,6,6,6" />
+        <Setter Property="MinHeight" Value="24" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Background" Value="#5c7e10" />
+        <Setter Property="Foreground" Value="#ffffff" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Border x:Name="Border" CornerRadius="3"
+                    <Border x:Name="Border" CornerRadius="2"
+                            VerticalAlignment="Center"
+                            Padding="{TemplateBinding Padding}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}">
-                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="&#xeea3;" FontFamily="{DynamicResource FontIcoFont}"
-                                       FontSize="24"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       HorizontalAlignment="Center"/>
-                            <Border CornerRadius="3" Width="15" Height="15"
-                                    Margin="20,0,0,0" Background="OrangeRed"
-                                    HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Viewbox Stretch="Uniform" Width="20" Height="20"
+                                     VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Canvas Width="36" Height="36">
+                                    <Path Fill="{TemplateBinding Foreground}"
+                                          Data="M32 24V26H4V24L8 19V12C8 9.34784 9.05357 6.8043 10.9289 4.92893C12.8043 3.05357 15.3478 2 18 2C20.6522 2 23.1957 3.05357 25.0711 4.92893C26.9464 6.8043 28 9.34784 28 12V19L32 24Z"/>
+                                    <Path Fill="{TemplateBinding Foreground}"
+                                          Data="M18 34C19.2396 33.9986 20.4483 33.6133 21.46 32.897C22.4718 32.1807 23.2368 31.1687 23.65 30H12.35C12.7632 31.1687 13.5282 32.1807 14.54 32.897C15.5517 33.6133 16.7604 33.9986 18 34Z"/>
+                                </Canvas>
+                            </Viewbox>
+                            <Border CornerRadius="3" MinWidth="15" Height="15"
+                                    Margin="3,0,0,0" Background="OrangeRed" Padding="2"
+                                    HorizontalAlignment="Left" VerticalAlignment="Center">
                                 <TextBlock Text="{Api Notifications.Count}" FontSize="12"
                                            Foreground="{DynamicResource TextBrush}"
                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
-                        </Grid>
+                        </StackPanel>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -175,7 +193,7 @@
                 <Setter Property="Visibility" Value="Collapsed"/>
             </DataTrigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Background" Value="#7da44a" />
             </Trigger>
         </Style.Triggers>
     </Style>
