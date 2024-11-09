@@ -86,14 +86,14 @@
     <Color x:Key="MainColor">#2C3A67</Color>
     <Color x:Key="MainColorDark">#0D1225</Color>
     <Color x:Key="HoverColor">#247BA0</Color>
-    <Color x:Key="GlyphColor">#26b7ff</Color>
+    <Color x:Key="GlyphColor">#1a9fff</Color>
     <Color x:Key="GlyphSubColor">#1E92FF</Color>
     <Color x:Key="HighlightGlyphColor">#8855CDFF</Color>
     <Color x:Key="PopupBackgroundColor">#171e26</Color>
     <Color x:Key="PopupBorderColor">#3e6184</Color>
     <Color x:Key="BackgroundToneColor">#2C3A67</Color>
     <Color x:Key="GridItemBackgroundColor">#3D4450</Color>
-    <Color x:Key="PanelSeparatorColor">#16181A</Color>
+    <Color x:Key="PanelSeparatorColor">#17191b</Color>
     <Color x:Key="WindowPanelSeparatorColor">Transparent</Color>
     <Color x:Key="DataChangeNotifColor">#ffa500</Color>
 
@@ -120,7 +120,7 @@
     </LinearGradientBrush>
     
     <SolidColorBrush x:Key="LibraryDetailsViewNotInstalledForegroundBrush" Color="#a3aab9" />
-    <SolidColorBrush x:Key="LibraryDetailsViewIsLaunchingForegroundBrush" Color="#26b7ff" />
+    <SolidColorBrush x:Key="LibraryDetailsViewIsLaunchingForegroundBrush" Color="#1a9fff" />
     <SolidColorBrush x:Key="LibraryDetailsViewIsRunningForegroundBrush" Color="#adff2f" />
     <SolidColorBrush x:Key="PlayersCountDetailsViewForegroundBrush" Color="#99ffffff" />
     <SolidColorBrush x:Key="PlayersCountGridViewForegroundBrush" Color="#7cc53f" />
@@ -156,7 +156,7 @@
     <SolidColorBrush x:Key="TextBoxIsMouseOverBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="TextBoxIsSelectedBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDarkHover}" />
     <SolidColorBrush x:Key="ThumbBackgroundBrush" Color="#606774" />
-    <SolidColorBrush x:Key="ThumbIsMouseOverBackgroundBrush" Color="#7d8594" />
+    <SolidColorBrush x:Key="ThumbIsMouseOverBackgroundBrush" Color="#7b8392" />
     <SolidColorBrush x:Key="ToggleButtonBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="DataChangeNotifBrush" Color="{DynamicResource DataChangeNotifColor}" />
     <!--region end-->
@@ -193,10 +193,7 @@
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverBackgroundBrush" Color="#323A4B" />
     <SolidColorBrush x:Key="DetailsViewItemIsMouseOverInstalledBackgroundBrush" Color="#586F96" />
     <SolidColorBrush x:Key="ListViewHeaderBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
-    <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#202126" />
-    <SolidColorBrush x:Key="TopPanelBackgroundBrush1" Color="#434953" />
-    <SolidColorBrush x:Key="TopPanelBackgroundBrush2" Color="#434953" />
-    <SolidColorBrush x:Key="TopPanelBackgroundBrush3" Color="#434953" />
+    <SolidColorBrush x:Key="TopPanelBackgroundBrush" Color="#171d25" />
 
     <SolidColorBrush x:Key="ExtendedListBoxBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="FilterSelectionBoxBackgroundBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
@@ -368,7 +365,7 @@
     </LinearGradientBrush>
 
     <SolidColorBrush x:Key="LibraryDetailsViewBackgroundBrush" Color="#24282f" />
-    <SolidColorBrush x:Key="FilterPanelViewBackgroundBrush" Color="#434953" />
+    <SolidColorBrush x:Key="FilterPanelViewBackgroundBrush" Color="#4c515a" />
 
     
     <LinearGradientBrush x:Key="MenuBackgroundBrush" StartPoint="0.0, 0.0" EndPoint="1.0, 0.0" >
