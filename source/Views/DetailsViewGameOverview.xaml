@@ -180,16 +180,16 @@
                                         </StackPanel>
                                     </Grid>
                                     <Grid Name="DetailsHeader">
-                                        <Border>
+                                        <Border Height="{Binding ElementName=DetailsHeader, Path=Height}" ClipToBounds="True">
                                             <Border.CacheMode>
-                                                <BitmapCache EnableClearType="False" RenderAtScale="0.25"
+                                                <BitmapCache EnableClearType="False" RenderAtScale="0.125"
                                                              SnapsToDevicePixels="False" />
                                             </Border.CacheMode>
                                             <Border.Background>
                                                 <VisualBrush Visual="{Binding ElementName=BorderImageBackground}" Stretch="None" AlignmentY="Bottom"/>
                                             </Border.Background>
                                             <Border.Effect>
-                                                <BlurEffect Radius="12" KernelType="Gaussian" RenderingBias="Performance"/>
+                                                <BlurEffect Radius="24" KernelType="Gaussian" RenderingBias="Performance"/>
                                             </Border.Effect>
                                         </Border>
                                         <Border Background="{DynamicResource BackdropGlass1}"/>
