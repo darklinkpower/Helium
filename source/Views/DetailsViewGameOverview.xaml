@@ -965,6 +965,19 @@
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
+
+                                                <StackPanel Name="WebExplorerPanel" Margin="0,0,0,15"
+                                                            Visibility="{Binding ElementName=WebExplorer_BrowserHostViewControl, Path=Content.IsControlVisible, Converter={StaticResource BooleanToVisibilityConverter}, TargetNullValue=Collapsed, FallbackValue=Collapsed}">
+                                                    <Label Content="{DynamicResource LOCWebExplorer_WebLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10"
+                                                          SnapsToDevicePixels="True" UseLayoutRounding="True">
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
+                                                        <ContentControl x:Name="WebExplorer_BrowserHostViewControl"
+                                                                        Height="{DynamicResource WebExplorerControlHeight}"
+                                                                        Margin="0,10,0,0" />
+                                                    </Grid>
+                                                </StackPanel>
                                                 
                                             </StackPanel>
 
@@ -997,6 +1010,7 @@
                                                                 <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right" Margin="0,0,0,10"
                                                                                 Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                                                 <ContentControl ContentTemplate="{DynamicResource HltbDataGridTemplate}"
+                                                                                x:Name="HltbDataGrid"
                                                                                 Tag="{DynamicResource DetailsViewShowHltbDataGrid}">
                                                                     <ContentControl.Style>
                                                                         <Style>
