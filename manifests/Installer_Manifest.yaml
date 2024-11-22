@@ -544,3 +544,10 @@ Packages:
     Changelog:
       - 'Added: Game cover banner for Riot Games Library plugin'
       - 'Added: Support to use web view component from Web Explorer extension'
+  - Version: 1.62
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2024-11-22
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.62/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_62.pthm
+    Changelog:
+      - 'Added: Star ratings from 0 to 5 will now be displayed alongside the critic, user and community numerical scores, providing a clearer visual representation of the game ratings'
+      - 'Changed: Icons on Details View & Grid View will now be displayed with rounded corners'
