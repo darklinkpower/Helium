@@ -12,6 +12,7 @@
     <sys:Boolean x:Key="DetailsViewAllowUseOfLogos">true</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewShowHltbDataGrid">true</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewEnablePanelsDropShadowEffect">False</sys:Boolean>
+    <sys:Boolean x:Key="DetailsViewDisplayGameNameIfLogoVisible">False</sys:Boolean>
     <sys:Boolean x:Key="GridViewAllowUseOfLogos">true</sys:Boolean>
     <sys:Boolean x:Key="GridViewShowHltbDataGrid">true</sys:Boolean>
     <sys:Boolean x:Key="GridViewEnableCoverShineAnimation">true</sys:Boolean>
