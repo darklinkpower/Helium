@@ -2,6 +2,7 @@ Constants:
     - "Top Panel"
     - ShowNavigationButtons: 'Show navigation buttons'
     - "Details View"
+    - DetailsViewDisplayGameNameIfLogoVisible: 'Display game name if logo is visible'
     - DetailsViewDescriptionWidth(150,2400): 'Width of description'
     - DetailsViewDescriptionDockToRight: 'Dock description to the right'
     - DetailsViewShowInfoPanelDefault: 'Show information panel by default'
