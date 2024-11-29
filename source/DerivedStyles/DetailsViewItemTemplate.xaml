@@ -39,9 +39,11 @@
                                     Margin="0,0,0,0"  
                                     Opacity="0" DockPanel.Dock="Right"
                                     Height="{Binding Height, ElementName=PART_ImageIcon, Mode=OneWay}"
+                                            MaxHeight="25"
                                     RenderOptions.BitmapScalingMode="Fant" />
                             <Image Name="PART_ImageIcon"
                                    Height="{Settings DetailsViewListIconSize}"
+                                   Width="{Settings DetailsViewListIconSize}"
                                    RenderOptions.BitmapScalingMode="Fant"
                                    DockPanel.Dock="Left" Margin="0,0,8,0" />
                             <TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" x:Name="DisplayName"
