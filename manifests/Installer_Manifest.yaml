@@ -559,3 +559,9 @@ Packages:
       - 'Added: Option to configure the display of the game name in the Details View when the logo is visible.'
       - 'Changed: Display the game name if the logo is not visible in the Details View.'
       - 'Changed: Icons in the Details View now display in a uniform square area for better alignment.'
+  - Version: 1.64
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2024-12-06
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.64/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_64.pthm
+    Changelog:
+      - 'Added: Support to display GOG Second Class Watcher extension data on Details View and Grid View'
