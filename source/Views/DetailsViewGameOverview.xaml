@@ -925,7 +925,7 @@
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
-                                                
+
                                                 <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
@@ -937,18 +937,6 @@
                                                             <ContentControl x:Name="GameActivity_PluginChartLog"  Margin="0,0,0,10"/>
                                                             <ContentControl x:Name="GameActivity_PluginButton" HorizontalAlignment="Right"
                                                                             Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                                        </StackPanel>
-                                                    </Grid>
-                                                </StackPanel>
-
-                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15"
-                                                            Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
-                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
-                                                        <Border Style="{DynamicResource OutlineBorderMainPanels}" />
-                                                        <StackPanel Orientation="Vertical" Margin="10">
-                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
@@ -1053,6 +1041,18 @@
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="2">
+                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15"
+                                                            Visibility="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <Grid>
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanels}" />
+                                                        <Border Padding="10" >
+                                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
+                                                        </Border>
+                                                    </Grid>
+                                                </StackPanel>
+                                                
                                                 <StackPanel Name="HltbPanel" Margin="0,0,0,15">
                                                     <StackPanel.Style>
                                                         <Style TargetType="StackPanel">
