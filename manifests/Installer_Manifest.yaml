@@ -565,3 +565,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.64/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_64.pthm
     Changelog:
       - 'Added: Support to display GOG Second Class Watcher extension data on Details View and Grid View'
+  - Version: 1.65
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2024-12-21
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.65/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_65.pthm
+    Changelog:
+      - 'Details View: Moved News Viewer extension news panel to make it more easily noticeable when information is available'
