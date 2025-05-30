@@ -571,3 +571,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.65/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_65.pthm
     Changelog:
       - 'Details View: Moved News Viewer extension news panel to make it more easily noticeable when information is available'
+  - Version: 1.66
+    RequiredApiVersion: 2.5.0
+    ReleaseDate: 2025-05-30
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.66/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_66.pthm
+    Changelog:
+      - 'Updated ThemeExtras game banners: Added banners for Stove and Hikari Field Importer library plugins, added Microsoft Store source banner, and recreated Steam banner to reduce color banding and blurriness.'
