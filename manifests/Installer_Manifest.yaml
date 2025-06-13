@@ -577,3 +577,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.66/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_66.pthm
     Changelog:
       - 'Updated ThemeExtras game banners: Added banners for Stove and Hikari Field Importer library plugins, added Microsoft Store source banner, and recreated Steam banner to reduce color banding and blurriness.'
+  - Version: 1.67
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2025-06-13
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.67/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_67.pthm
+    Changelog:
+      - 'Update to theme changes in Playnite v10.36'
