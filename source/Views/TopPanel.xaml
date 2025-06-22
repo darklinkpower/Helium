@@ -233,8 +233,8 @@
                                        Background="{DynamicResource TopPanelSearchBoxBackgroundBrush}"
                                        Margin="0,6,0,6" DockPanel.Dock="Left"
                                        WindowChrome.IsHitTestVisibleInChrome="True"
-                                       MinWidth="120"
-                                       Width="{Settings DetailsListWitdh}" />
+                                       Width="{DynamicResource TopPanelSearchBoxWidthHelium}"
+                                       MaxWidth="{Settings DetailsListWitdh}" />
 
                             <Border Tag="{DynamicResource ShowNavigationButtons}"
                                     DockPanel.Dock="Left"

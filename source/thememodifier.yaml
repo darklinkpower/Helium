@@ -1,6 +1,7 @@
 Constants:
     - "Top Panel"
     - ShowNavigationButtons: 'Show navigation buttons'
+    - TopPanelSearchBoxWidthHelium(80,600): 'Width of Search box'
     - "Details View"
     - DetailsViewDisplayGameNameIfLogoVisible: 'Display game name if logo is visible'
     - DetailsViewDescriptionWidth(150,2400): 'Width of description'
