@@ -1318,7 +1318,7 @@
                                                                 <DataTrigger Binding="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationListDlcNotOwned, FallbackValue=False}" Value="True" >
                                                                     <Setter Property="Visibility" Value="Visible" />
                                                                 </DataTrigger>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=CheckDlc, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" Value="False" >
+                                                                <DataTrigger Binding="{PluginSettings Plugin=CheckDlc, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" Value="Collapsed" >
                                                                     <Setter Property="Visibility" Value="Collapsed" />
                                                                 </DataTrigger>
                                                             </Style.Triggers>
