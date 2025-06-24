@@ -2,7 +2,7 @@ ThemeApiVersion: 2.8.0
 Id: b46f5ca0-be71-4398-b924-216c7c20efdd
 Name: Helium (kkcd fork)
 Author: darklinkpower, KKCD
-Version: 1.68
+Version: 1.68.1
 Links:
 - Name: GitHub
   Url: https://github.com/darklinkpower/Helium
