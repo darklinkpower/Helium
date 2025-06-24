@@ -587,7 +587,8 @@
                                                                 </ScrollViewer>
 
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
+                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="17">
+                                                                    <!-- <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8"> -->
                                                                         <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
                                                                         <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
                                                                         <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
@@ -604,10 +605,10 @@
                                                                         <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
                                                                         <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
                                                                         <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
-                                                                    </GridEx>
+                                                                    <!-- </GridEx>
                                                                 </ScrollViewer>
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="9">
+                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="9"> -->
                                                                         <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
                                                                         <TextBlock Name="PART_TextInstallSize" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
                                                                         
