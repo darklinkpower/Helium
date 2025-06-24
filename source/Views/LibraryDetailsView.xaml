@@ -95,7 +95,7 @@
         <Setter Property="FontFamily" Value="Corbel"/>
         <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         <Setter Property="Foreground" Value="#94a1a6"/>
-        <Setter Property="Margin" Value="0,0,0,10" />
+        <Setter Property="Margin" Value="-3,0,0,2" />
     </Style>
 
     <Style TargetType="Border" x:Key="OutlineBorder">
