@@ -763,7 +763,7 @@
                                                             </Border.Effect>
                                                         </Border>
                                                         <Border Padding="2">
-                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="225">
+                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="125">
                                                                 <ContentControl.Resources>
                                                                     <Style TargetType="ListBox">
                                                                         <Setter Property="Background" Value="Transparent"/>
@@ -923,26 +923,33 @@
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
                                                         <StackPanel>
                                                             <Grid>
-                                                                <!-- <Border Background="{DynamicResource HoverBrush}"/> -->
-                                                                <!-- <Border Background="{DynamicResource MenuBackgroundBrush}"/> -->
-                                                                <!-- <Border Background="{DynamicResource SectionContainerBackgroundBrush}"/> -->
                                                                 <Border Style="{DynamicResource SectionContainerMain}" />
                                                                 <Border CornerRadius="{DynamicResource ControlCornerRadius}">
-                                                                <!-- <Border Background="{DynamicResource SectionContainerMainBackgroundBrush}" /> -->
                                                                     <Border Padding="10">
                                                                         <StackPanel>
-                                                                            <Grid>
-                                                                                <Grid.ColumnDefinitions>
-                                                                                    <ColumnDefinition Width="*" />
-                                                                                    <ColumnDefinition Width="Auto" />
-                                                                                </Grid.ColumnDefinitions>
-                                                                                <StackPanel Grid.Column="0" Margin="0,0,5,0">
-                                                                                    <ContentControl x:Name="SuccessStory_PluginProgressBar" Height="25" Margin="2,2,0,2" />
-                                                                                    <!-- Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/> -->
-                                                                                </StackPanel>
-                                                                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                                                                                    <ContentControl x:Name="SuccessStory_PluginButton" HorizontalAlignment="Right" Height="25" Margin="0,2,2,2" 
-                                                                                            Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                                            <DockPanel Width="Auto" Margin="0,2,0,8">
+                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="You've unlocked "/>
+                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"/>
+                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="/"/>
+                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"/>
+                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text=" ("/>
+                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="{PluginSettings Plugin=SuccessStory, Path=Percent, FallbackValue='-'}"/>
+                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="%)"/>
+                                                                            </DockPanel>
+                                                                            <Grid Margin="0,0,0,2">
+                                                                                <Border Name="Achievements_mask" Margin="0,0,0,5"
+                                                                                    Background="#1e1e1e"
+                                                                                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                                                    Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" />
+                                                                                <StackPanel>
+                                                                                    <StackPanel.OpacityMask>
+                                                                                        <VisualBrush Visual="{Binding ElementName=Achievements_mask}"/>
+                                                                                    </StackPanel.OpacityMask>
+                                                                                    <ProgressBar x:Name="progressBar2" FontSize="10" Margin="0,0,0,5"
+                                                                                                Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}" HorizontalAlignment="Center"
+                                                                                                Background="#151619" Foreground="#2d73ff" Height="8" Style="{DynamicResource RoundedProgressBar}" 
+                                                                                                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" >
+                                                                                    </ProgressBar>
                                                                                 </StackPanel>
                                                                             </Grid>
                                                                         </StackPanel>
@@ -955,13 +962,28 @@
                                                                     <StackPanel>
                                                                         <!-- <ContentControl x:Name="SuccessStory_PluginProgressBar" Height="20" Margin="0,0,0,10"/> -->
                                                                         <ContentControl x:Name="SuccessStory_PluginCompactUnlocked" Margin="-10,0,5,10"/>
-                                                                        <Separator Margin="0,0,0,10"/>
-                                                                        <Label Content="Locked Achievements" 
-                                                                                    FontFamily="{DynamicResource FontFamily}"
-                                                                                    Foreground="{DynamicResource TextBrushDarker}" 
-                                                                                    Margin="2,0,0,5" />
-                                                                        <ContentControl x:Name="SuccessStory_PluginCompactLocked" Margin="-10,0,5,0"/>
-                                                                        
+                                                                        <StackPanel>
+                                                                            <StackPanel.Style>
+                                                                                <Style TargetType="StackPanel">
+                                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                                    <Style.Triggers>
+                                                                                        <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, FallbackValue={x:Null}}" Value="False">
+                                                                                            <Setter Property="Visibility" Value="Visible" />
+                                                                                        </DataTrigger>
+                                                                                    </Style.Triggers>
+                                                                                </Style>
+                                                                            </StackPanel.Style>
+                                                                            <Separator Margin="0,0,0,10"/>
+                                                                            <Label Content="Locked Achievements" 
+                                                                                        FontFamily="{DynamicResource FontFamily}"
+                                                                                        Foreground="{DynamicResource TextBrushDarker}" 
+                                                                                        Margin="2,0,0,5" />
+                                                                            <ContentControl x:Name="SuccessStory_PluginCompactLocked" Margin="-10,0,5,0"/>
+                                                                        </StackPanel>
+                                                                        <ContentControl x:Name="SuccessStory_PluginButton" HorizontalAlignment="Right" Height="25" Margin="0,2,2,2" 
+                                                                                            Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="You've unlocked "/>     
+                                                                        </ContentControl>
                                                                     </StackPanel>
                                                                 </Border>
                                                             </Grid>
@@ -1033,7 +1055,7 @@
                                                                     </Grid.ColumnDefinitions>
                                                                     <StackPanel Grid.Column="0" Margin="-1,0,5,5">
                                                                         <Grid>
-                                                                            <Border Name="mask"
+                                                                            <Border Name="HLTB_mask"
                                                                                     Background="#1e1e1e"
                                                                                     CornerRadius="{DynamicResource ControlCornerRadius}"
                                                                                     Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" />
@@ -1041,7 +1063,7 @@
                                                                             <StackPanel>
                                                                                 <!-- Use a VisualBrush of 'mask' as the opacity mask -->
                                                                                 <StackPanel.OpacityMask>
-                                                                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                                                                    <VisualBrush Visual="{Binding ElementName=HLTB_mask}"/>
                                                                                 </StackPanel.OpacityMask>
                                                                                 <ContentControl x:Name="HowLongToBeat_PluginProgressBar" HorizontalAlignment="Stretch" Height="25" 
                                                                                             Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
@@ -1052,26 +1074,18 @@
                                                                         <ContentControl x:Name="HowLongToBeat_PluginButton" HorizontalAlignment="Right" Height="25" 
                                                                                         Visibility="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationButton, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />   
                                                                     </StackPanel>
-                                                                    <!-- <ContentControl ContentTemplate="{DynamicResource HltbDataGridTemplate}"
-                                                                                    x:Name="HltbDataGrid"
-                                                                                    Tag="{DynamicResource DetailsViewShowHltbDataGrid}">
-                                                                        <ContentControl.Style>
-                                                                            <Style>
-                                                                                <Setter Property="Control.Visibility" Value="Collapsed" />
-                                                                                <Style.Triggers>
-                                                                                    <MultiDataTrigger>
-                                                                                        <MultiDataTrigger.Conditions>
-                                                                                            <Condition Binding="{PluginSettings Plugin=HowLongToBeat, Path=HasData, FallbackValue=False}" Value="True" />
-                                                                                            <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True" />
-                                                                                        </MultiDataTrigger.Conditions>
-                                                                                        <Setter Property="Control.Visibility" Value="Visible" />
-                                                                                    </MultiDataTrigger>
-                                                                                </Style.Triggers>
-                                                                            </Style>
-                                                                        </ContentControl.Style>
-                                                                    </ContentControl> -->
                                                                 </Grid>
-                                                                <Grid>
+                                                                <Grid Tag="{DynamicResource DetailsViewShowHltbDataGrid}">
+                                                                    <Grid.Style>
+                                                                        <Style TargetType="Grid">
+                                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True">
+                                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </Grid.Style>
                                                                     <Grid.Resources>
                                                                         <Style TargetType="Label" x:Key="HltbGridLabelStyle">
                                                                             <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
@@ -1081,7 +1095,6 @@
                                                                         </Style>
                                                                         <Style TargetType="TextBlock" x:Key="HltbGridTextStyle" BasedOn="{StaticResource BaseTextBlockStyle}">
                                                                             <Setter Property="Margin" Value="12,8,12,8" />
-                                                                            <!-- <Setter Property="Margin" Value="0,0,0,8" /> -->
                                                                             <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
                                                                             <Setter Property="FontWeight" Value="Bold" />
                                                                             <Setter Property="Visibility" Value="Visible" />
@@ -1097,9 +1110,6 @@
                                                                         <ColumnDefinition Width="*" />
                                                                         <ColumnDefinition Width="*" />
                                                                         <ColumnDefinition Width="*" />
-                                                                        <!--<ColumnDefinition Width="*" />
-                                                                        <ColumnDefinition Width="*" />
-                                                                        <ColumnDefinition Width="*" />-->
                                                                     </Grid.ColumnDefinitions>
                                                                     <StackPanel Grid.Column="0" Margin="0,0,4,0">
                                                                         <Label Content="{DynamicResource LOCHowLongToBeatMainStory}" Style="{DynamicResource HltbGridLabelStyle}"
