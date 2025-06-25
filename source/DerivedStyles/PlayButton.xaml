@@ -7,10 +7,10 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
         <Setter Property="Padding" Value="10,5,10,5" />
-        <Setter Property="MinWidth" Value="189.5" />
+        <Setter Property="MinWidth" Value="174.5" />
         <Setter Property="MinHeight" Value="45" />
         <Setter Property="FontFamily" Value="Corbel"/>
-        <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="FontSize" Value="28.5"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Tag" Value="False" />
         <Setter Property="Template">
@@ -18,7 +18,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid x:Name="Grid">
                         <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,0,0,2"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,2,2"
                                 Style="{DynamicResource PlayButtonBackgroundStyle}" Tag="{TemplateBinding Tag}" />
                         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
                             <Viewbox Stretch="Uniform" Width="20"
@@ -119,7 +119,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="10,5,10,5" />
         <Setter Property="FontFamily" Value="Corbel"/>
-        <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="FontSize" Value="28.5"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -150,11 +150,11 @@
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Typography.Capitals" Value="AllSmallCaps"/>
-        <Setter Property="MinWidth" Value="189.5" />
+        <Setter Property="MinWidth" Value="174.5" />
         <Setter Property="MinHeight" Value="45" />
         <Setter Property="Padding" Value="10,5,10,5" />
         <Setter Property="FontFamily" Value="Corbel"/>
-        <Setter Property="FontSize" Value="26.5"/>
+        <Setter Property="FontSize" Value="28.5"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Tag" Value="False" />
         <Setter Property="Template">
@@ -163,7 +163,7 @@
                     <Grid x:Name="Grid">
                         <Border x:Name="DefaultBorder" BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="2,0,0,2" MinHeight="{TemplateBinding MinHeight}" MinWidth="{TemplateBinding MinWidth}"
+                                CornerRadius="2,2,2,2" MinHeight="{TemplateBinding MinHeight}" MinWidth="{TemplateBinding MinWidth}"
                                 Style="{DynamicResource ContextButtonBackgroundStyle}" Tag="{TemplateBinding Tag}" />
                         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
                             <Grid Height="22" Margin="0,3,10,0">

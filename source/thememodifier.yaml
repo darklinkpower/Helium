@@ -2,24 +2,22 @@ Constants:
     - "Top Panel"
     - ShowNavigationButtons: 'Show navigation buttons'
     - TopPanelSearchBoxWidthHelium(80,600): 'Width of Search box'
-    - "Details View"
-    - DetailsViewDisplayGameNameIfLogoVisible: 'Display game name if logo is visible'
+    - "Details View Game Overview"
     - DetailsViewDescriptionWidth(150,2400): 'Width of description'
+    - DetailsViewLibraryGameShowFavorite: 'Show favorites icon in game list'
+    - DetailsViewShowTitleInDescription: 'Show game title in description box if there is a logo'
+    - "Grid View Game Overview"
+    - GridViewDescriptionWidth(150,2400): 'Width of description'
+    - GridViewShowTitleInDescription: 'Show game title in description box if there is a logo'
+    - "Game Overview Panel"
+    - DetailsViewDisplayGameNameIfLogoVisible: 'Display game name if logo is visible'
     - DetailsViewDescriptionDockToRight: 'Dock description to the right'
     - DetailsViewShowInfoPanelDefault: 'Show information panel by default'
     - DetailsViewBackgroundVerticalAlignment: 'Vertical alignment of the background image'
     - DetailsViewBackgroundHorizontalAlignment: 'Horizontal alignment of the background image'
-    - DetailsViewEnablePanelsDropShadowEffect (Can cause performance degradation): 'Enable dropshadow effect in panels'
     - DetailsViewAllowUseOfLogos: 'Allow use of logos (Requires Extra Metadata Loader extension)'
     - DetailsViewShowHltbDataGrid: 'Show HowLongToBeat data grid'
-    - DetailsViewLibraryGameShowFavorite: 'Show favorites icon in game list'
     - WebExplorerControlHeight(400,1800): 'Web view component height (Requires Web Explorer extension)'
-    - "Grid View Details"
-    - GridViewPlaceDescriptionAtBottom: 'Place game description at the bottom'
-    - GridViewDetailsIconsVisibility: 'Visibility of icons in details'
-    - GridViewAllowUseOfLogos: 'Allow use of logos (Requires Extra Metadata Loader extension)'
-    - GridViewDisplayGameNameIfLogoVisible: 'Display game name if logo is visible'
-    - GridViewShowHltbDataGrid: 'Show HowLongToBeat data grid (Requires HowLongToBeat extension)'
     - "Grid View Covers"
     - GridViewCoverZoomOnHover: 'Zoom when hovered'
     - GridViewCoverSubtitleVisibility: 'Visibility of time played under game covers'
@@ -30,19 +28,3 @@ Constants:
     - GridViewCoverDisplayLibraryBanner: 'Show banners (Requires ThemeExtras extension)'
     - GridViewCoverUseRoundedCorners: 'Use rounded corners (Can cause performance degradation)'
     - GridViewCoverDisplayDropShadowEffect: 'Use dropshadow effect (Can cause performance degradation)'
-    - "Grid View Details sections order"
-    - GridViewSectionOrderDetails(0,18): 'Game Details'
-    - GridViewSectionOrderVideo(0,18): 'ExtraMetadata extension video'
-    - GridViewSectionOrderNotes(0,18): 'Game Notes'
-    - GridViewSectionOrderDescription(0,18): 'Game Description'
-    - GridViewSectionOrderVndb(0,18): 'VNDB Nexus extension'
-    - GridViewSectionOrderSuccessStory(0,18): 'SuccessStory extension'
-    - GridViewSectionOrderHowLongToBeat(0,18): 'HowLongToBeat extension'
-    - GridViewSectionOrderScreenshotsVisualizer(0,18): 'ScreenshotsVisualizer extension'
-    - GridViewSectionOrderGameActivity(0,18): 'GameActivity extension'
-    - GridViewSectionOrderReviewViewer(0,18): 'ReviewViewer extension'
-    - GridViewSectionOrderNewsViewer(0,18): 'NewsViewer extension'
-    - GridViewSectionOrderCheckDlc(0,18): 'CheckDlc extension'
-    - GridViewSectionOrderGameRelations(0,18): 'Game Relations extension'
-    - GridViewSectionOrderSteamScreenshots(0,18): 'Steam Screenshots extension'
-    - GridViewSectionOrderWeb(0,18): 'Web Explorer extension'

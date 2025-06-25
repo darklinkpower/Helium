@@ -263,7 +263,7 @@
                                                            Margin="0,0,10,0" DockPanel.Dock="Left">
                                                     <Button Name="PART_ButtonPlayAction" Style="{DynamicResource PlayButton}" />
                                                     <Button Name="PART_ButtonContextAction" Style="{DynamicResource ContextButton}" />
-                                                    <Button Name="PART_ButtonMoreActions" Style="{DynamicResource MoreActionsButton}"/>
+                                                    <!-- <Button Name="PART_ButtonMoreActions" Style="{DynamicResource MoreActionsButton}"/> -->
                                                 </DockPanel>
 
                                                 <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
@@ -276,7 +276,9 @@
                                                             </Style>
                                                         </ContentControl.Resources>
                                                     </ContentControl>
-                                                    <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
+                                                    <!-- <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
+                                                            Style="{StaticResource DetailsViewEditButton}" Margin="10,0,0,0"/> -->
+                                                    <Button x:Name="PART_ButtonMoreActions" Focusable="False" Height="32" Width="32"
                                                             Style="{StaticResource DetailsViewEditButton}" Margin="10,0,0,0"/>
                                                     <ToggleButton Name="PanelToggleButton" Margin="10,0,0,0" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}" IsChecked="{DynamicResource DetailsViewShowInfoPanelDefault}"/>
                                                     <ToggleButton Name="GameFavoriteToggleButton" Margin="10,0,0,0" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelFavoriteToggleButton}"
@@ -554,7 +556,7 @@
                                                                     </Style>
                                                                 </DockPanel.Resources>
                                                                 <ScrollViewer Name="PART_ElemDescription" Tag="{DynamicResource DetailsViewDescriptionDockToRight}"
-                                                                              Width="{DynamicResource DetailsViewDescriptionWidth}" Margin="0,0,15,0">
+                                                                              Width="{DynamicResource GridViewDescriptionWidth}" Margin="0,0,15,0">
                                                                     <ScrollViewer.Style>
                                                                         <Style TargetType="ScrollViewer">
                                                                             <Setter Property="DockPanel.Dock" Value="Left" />
@@ -568,15 +570,33 @@
                                                                     <StackPanel>
                                                                         <!-- Display game name in description panel -->
                                                                         <TextBlock 
+                                                                            Margin="0,0,0,10"
                                                                             Text="{Binding Game.DisplayName}"
                                                                             TextWrapping="Wrap"
                                                                             FontFamily="{DynamicResource FontFamily}"
-                                                                            Foreground="{DynamicResource TextBrush}" />
-                                                                        <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
+                                                                            Foreground="{DynamicResource TextBrush}"
+                                                                            Tag="{DynamicResource GridViewShowTitleInDescription}">
+                                                                            <TextBlock.Style>
+                                                                                <Style TargetType="TextBlock">
+                                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                                    <Style.Triggers>
+                                                                                        <MultiDataTrigger>
+                                                                                            <MultiDataTrigger.Conditions>
+                                                                                                <Condition Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True" />
+                                                                                                <Condition Binding="{Binding ElementName=ExtraMetadataLoader_LogoLoaderControl, Path=Visibility, FallbackValue=Collapsed}" Value="Visible" />
+                                                                                                <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
+                                                                                            </MultiDataTrigger.Conditions>
+                                                                                            <Setter Property="Visibility" Value="Visible" />
+                                                                                        </MultiDataTrigger>
+                                                                                    </Style.Triggers>
+                                                                                </Style>
+                                                                            </TextBlock.Style>
+                                                                        </TextBlock>
+                                                                        <!-- <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,0,0,5"
                                                                                Style="{DynamicResource BaseTextBlockStyle}" Visibility="Collapsed"/>
-                                                                        <Separator Background="{DynamicResource PanelSeparatorBrush}" Visibility="Collapsed"/>
+                                                                        <Separator Background="{DynamicResource PanelSeparatorBrush}" Visibility="Collapsed"/> -->
                                                                         <HtmlTextView Name="PART_HtmlDescription"
-                                                                                  Margin="0,5,0,5"
+                                                                                  Margin="0,0,0,5"
                                                                                   HtmlFontSize="{DynamicResource FontSize}"
                                                                                   HtmlFontFamily="{DynamicResource FontFamily}"
                                                                                   HtmlForeground="{DynamicResource DetailsViewContainerLabelColor}"
