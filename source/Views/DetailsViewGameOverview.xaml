@@ -763,7 +763,7 @@
                                                             </Border.Effect>
                                                         </Border>
                                                         <Border Padding="2">
-                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="125">
+                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="225">
                                                                 <ContentControl.Resources>
                                                                     <Style TargetType="ListBox">
                                                                         <Setter Property="Background" Value="Transparent"/>
@@ -1336,11 +1336,14 @@
                                                         <Border Style="{DynamicResource OutlineBorderMainPanels}" />
                                                         <StackPanel Orientation="Vertical" Margin="10">
                                                             <ContentControl x:Name="CheckDlc_PluginListDlcAll" 
-                                                                    MinHeight="450" Height="Auto" Margin="0,0,0,10" />
+                                                                    Height="450" Margin="0,0,0,10" 
+                                                                    Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationListDlcAll, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                                             <ContentControl x:Name="CheckDlc_PluginListDlcOwned" 
-                                                                    MinHeight="450" Height="Auto" Margin="0,0,0,10" />
+                                                                    Height="450" Margin="0,0,0,10" 
+                                                                    Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationListDlcOwned, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                                             <ContentControl x:Name="CheckDlc_PluginListDlcNotOwned" 
-                                                                    MinHeight="450" Height="Auto" Margin="0,0,0,10" />
+                                                                    Height="450" Margin="0,0,0,10" 
+                                                                    Visibility="{PluginSettings Plugin=CheckDlc, Path=EnableIntegrationListDlcNotOwned, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                                         </StackPanel>
                                                     </Grid>
                                                 </StackPanel>
