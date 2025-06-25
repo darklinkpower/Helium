@@ -973,7 +973,18 @@
                                                                                     </Style.Triggers>
                                                                                 </Style>
                                                                             </StackPanel.Style>
-                                                                            <Separator Margin="0,0,0,10"/>
+                                                                            <Separator Margin="0,0,0,10">
+                                                                                <Separator.Style>
+                                                                                    <Style TargetType="Separator">
+                                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                                        <Style.Triggers>
+                                                                                            <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='0'}" Value="0">
+                                                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                                            </DataTrigger>
+                                                                                        </Style.Triggers>
+                                                                                    </Style>
+                                                                                </Separator.Style>
+                                                                            </Separator>
                                                                             <Label Content="Locked Achievements" 
                                                                                         FontFamily="{DynamicResource FontFamily}"
                                                                                         Foreground="{DynamicResource TextBrushDarker}" 
