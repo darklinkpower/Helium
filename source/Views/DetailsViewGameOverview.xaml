@@ -260,7 +260,7 @@
                                                     </Style>
                                                 </DockPanel.Resources>
                                                 <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
-                                                           Margin="0,0,0,0" DockPanel.Dock="Left">
+                                                           Margin="0,0,-5,0" DockPanel.Dock="Left">
                                                     <Button Name="PART_ButtonPlayAction" Style="{DynamicResource PlayButton}" />
                                                     <Button Name="PART_ButtonContextAction" Style="{DynamicResource ContextButton}" />
                                                     <!-- <Button Name="PART_ButtonMoreActions" Style="{DynamicResource MoreActionsButton}"/> -->
@@ -286,7 +286,7 @@
                                                                   IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Favorite, Mode=TwoWay, FallbackValue={StaticResource False}}"/>
                                                 </DockPanel>
                                                 
-                                                <!-- <StackPanel Margin="25,0,0,0" VerticalAlignment="Center"
+                                                <!-- <StackPanel Margin="30,0,0,0" VerticalAlignment="Center"
                                                             Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Tag="{PluginSettings Plugin=SteamGameStatusDetector, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{PluginSettings Plugin=SteamGameStatusDetector, Path=AppState, FallbackValue='-'}" Style="{DynamicResource HeaderLabel}"/>
@@ -313,7 +313,7 @@
                                                             </Style.Triggers>
                                                         </Style>
                                                     </DockPanel.Style>
-                                                    <DockPanel x:Name="PART_ElemInstallSize" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
+                                                    <DockPanel x:Name="PART_ElemInstallSize" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
                                                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                             <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCInstallSizeLabel}"/>
                                                             <TextBlock x:Name="PART_TextInstallSize" Style="{DynamicResource HeaderTextBlock}"/>
@@ -321,14 +321,14 @@
                                                     </DockPanel>
                                                 </DockPanel>
                                                 
-                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
+                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="28,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
                                                         <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
+                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,0,0">
                                                     <Viewbox Height="32" Margin="0,3,4,0">
                                                         <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
                                                             <Canvas.RenderTransform>
@@ -352,7 +352,7 @@
                                                     </StackPanel>
                                                 </DockPanel>
                                                          
-                                                <StackPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
+                                                <StackPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="34,0,0,0">
                                                     <StackPanel.Style>
                                                         <Style TargetType="StackPanel">
                                                             <Setter Property="Visibility" Value="Collapsed" />
@@ -384,7 +384,7 @@
                                                     </ContentControl>
                                                 </StackPanel>
                                                                                                 
-                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0"
+                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="34,0,0,0"
                                                            Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                            <!-- Icon for 100%d game -->
                                                     <Viewbox Stretch="Uniform" Height="32" Margin="-2,3,-2,0">
@@ -633,7 +633,7 @@
                                                                     <StackPanel>
                                                                         <!-- Display game name in description panel -->
                                                                         <TextBlock 
-                                                                            Margin="0,0,0,10"
+                                                                            Margin="0,0,0,5"
                                                                             Text="{Binding Game.DisplayName}"
                                                                             TextWrapping="Wrap"
                                                                             FontFamily="{DynamicResource FontFamily}"
@@ -846,7 +846,7 @@
                                                                 <BlurEffect Radius="10"/>
                                                             </Border.Effect>
                                                         </Border>
-                                                        <Border Padding="2">
+                                                        <Border Padding="2">5
                                                             <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="225">
                                                                 <ContentControl.Resources>
                                                                     <Style TargetType="ListBox">
