@@ -3,8 +3,8 @@ Constants:
     - ShowNavigationButtons: 'Show navigation buttons'
     - TopPanelSearchBoxWidthHelium(80,600): 'Width of Search box'
     - "Details View Game Overview"
-    - DetailsViewDescriptionWidth(150,2400): 'Width of description'
     - DetailsViewLibraryGameShowFavorite: 'Show favorites icon in game list'
+    - DetailsViewDescriptionWidth(150,2400): 'Width of description'
     - DetailsViewShowTitleInDescription: 'Show game title in description box if there is a logo'
     - "Grid View Game Overview"
     - GridViewDescriptionWidth(150,2400): 'Width of description'
@@ -12,6 +12,7 @@ Constants:
     - "Game Overview Panel"
     - DetailsViewDisplayGameNameIfLogoVisible: 'Display game name if logo is visible'
     - DetailsViewDescriptionDockToRight: 'Dock description to the right'
+    - GameOverviewShowGameSizeEvenIfInstalled: 'Show size in details panel even if the game is installed'
     - DetailsViewShowInfoPanelDefault: 'Show information panel by default'
     - DetailsViewBackgroundVerticalAlignment: 'Vertical alignment of the background image'
     - DetailsViewBackgroundHorizontalAlignment: 'Horizontal alignment of the background image'

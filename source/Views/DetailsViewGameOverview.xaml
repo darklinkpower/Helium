@@ -260,7 +260,7 @@
                                                     </Style>
                                                 </DockPanel.Resources>
                                                 <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
-                                                           Margin="0,0,10,0" DockPanel.Dock="Left">
+                                                           Margin="0,0,0,0" DockPanel.Dock="Left">
                                                     <Button Name="PART_ButtonPlayAction" Style="{DynamicResource PlayButton}" />
                                                     <Button Name="PART_ButtonContextAction" Style="{DynamicResource ContextButton}" />
                                                     <!-- <Button Name="PART_ButtonMoreActions" Style="{DynamicResource MoreActionsButton}"/> -->
@@ -286,7 +286,7 @@
                                                                   IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Favorite, Mode=TwoWay, FallbackValue={StaticResource False}}"/>
                                                 </DockPanel>
                                                 
-                                                <StackPanel Margin="20,0,0,0" VerticalAlignment="Center"
+                                                <!-- <StackPanel Margin="20,0,0,0" VerticalAlignment="Center"
                                                             Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Tag="{PluginSettings Plugin=SteamGameStatusDetector, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{PluginSettings Plugin=SteamGameStatusDetector, Path=AppState, FallbackValue='-'}" Style="{DynamicResource HeaderLabel}"/>
@@ -297,7 +297,29 @@
                                                     
                                                     <TextBlock Text="{PluginSettings Plugin=SteamGameStatusDetector, Path=DownloadProgress, FallbackValue='-'}"
                                                                Style="{DynamicResource HeaderTextBlock}"/>
-                                                </StackPanel>
+                                                </StackPanel> -->
+                                                
+                                                <DockPanel Tag="{DynamicResource GameOverviewShowGameSizeEvenIfInstalled}">
+                                                    <DockPanel.Style>
+                                                        <Style TargetType="DockPanel">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding Game.IsInstalled}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </DockPanel.Style>
+                                                    <DockPanel x:Name="PART_ElemInstallSize" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
+                                                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
+                                                            <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCInstallSizeLabel}"/>
+                                                            <TextBlock x:Name="PART_TextInstallSize" Style="{DynamicResource HeaderTextBlock}"/>
+                                                        </StackPanel>
+                                                    </DockPanel>
+                                                </DockPanel>
                                                 
                                                 <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
@@ -307,8 +329,7 @@
                                                 </DockPanel>
 
                                                 <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
-
-                                                    <Viewbox Height="25">
+                                                    <Viewbox Height="32" Margin="0,3,4,0">
                                                         <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
                                                             <Canvas.RenderTransform>
                                                                 <TranslateTransform X="0" Y="0"/>
@@ -365,7 +386,8 @@
                                                                                                 
                                                 <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0"
                                                            Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                                    <Viewbox Stretch="Uniform" Height="35">
+                                                           <!-- Icon for 100%d game -->
+                                                    <Viewbox Stretch="Uniform" Height="32" Margin="0,3,-2,0">
                                                         <Viewbox.Style>
                                                             <Style TargetType="{x:Type Viewbox}">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
@@ -376,23 +398,46 @@
                                                                 </Style.Triggers>
                                                             </Style>
                                                         </Viewbox.Style>
-                                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
-                                                            <Canvas.RenderTransform>
-                                                                <TranslateTransform X="0" Y="0"/>
-                                                            </Canvas.RenderTransform>
-                                                            <Canvas.Resources/>
-                                                            <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584" FillRule="NonZero" Fill="#66B9FF" StrokeThickness="10" Stroke="#226296" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544" FillRule="NonZero" Fill="#66B9FF" StrokeThickness="10" Stroke="#226296" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84" FillRule="NonZero" Fill="#66B9FF" StrokeThickness="10" Stroke="#226296" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Path Fill="#FFD000" StrokeThickness="6" Stroke="#FF9100" StrokeMiterLimit="10">
-                                                                <Path.Data>
-                                                                    <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
-                                                                </Path.Data>
-                                                            </Path>
-                                                        </Canvas>
+                                                        <Image Height="100" Width="100">
+                                                            <Image.Source>
+                                                                <DrawingImage x:Key="_17xct1dwtz9mcd3vgicDrawingImage">
+                                                                <DrawingImage.Drawing>
+                                                                        <DrawingGroup ClipGeometry="M0,0 V36 H36 V0 H0 Z">
+                                                                        <GeometryDrawing Geometry="F1 M36,36z M0,0z M10.1777,10.0258L10.3929,9.80693 10.3929,9.49999 10.3929,5.52777 14.2857,5.52777 14.6001,5.52777 14.8205,5.30358 18,2.06976 21.1795,5.30358 21.3999,5.52777 21.7143,5.52777 25.6071,5.52777 25.6071,9.50001 25.6071,9.80696 25.8223,10.0258 28.5553,12.8055 25.8223,15.5853 25.6071,15.8041 25.6071,16.1111 25.6071,20.0833 21.7143,20.0833 21.3999,20.0833 21.1795,20.3075 18,23.5413 14.8205,20.3075 14.6001,20.0833 14.2857,20.0833 10.3929,20.0833 10.3929,16.1111 10.3929,15.8042 10.1777,15.5853 7.44464,12.8055 10.1777,10.0258z M14.7399,28.0317L11.56,33.4221 9.85164,29.9469 9.6456,29.5278 9.17857,29.5278 6.29474,29.5278 8.68445,25.3611 12.1142,25.3611 14.7399,28.0317z M26.8214,29.5278L26.3544,29.5278 26.1484,29.9469 24.44,33.4221 21.2601,28.0317 23.8858,25.3611 27.3155,25.3611 29.7053,29.5278 26.8214,29.5278z">
+                                                                            <GeometryDrawing.Brush>
+                                                                            <LinearGradientBrush StartPoint="7.08,3.72" EndPoint="33.6694,25.0697" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1">
+                                                                                <GradientStop Color="#FF0056D6" Offset="0" />
+                                                                                <GradientStop Color="#FF1A9FFF" Offset="1" />
+                                                                            </LinearGradientBrush>
+                                                                            </GeometryDrawing.Brush>
+                                                                            <GeometryDrawing.Pen>
+                                                                            <Pen Thickness="1.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter">
+                                                                                <Pen.Brush>
+                                                                                <LinearGradientBrush StartPoint="7.08,3.72" EndPoint="33.6694,25.0697" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1">
+                                                                                    <GradientStop Color="#FF0056D6" Offset="0" />
+                                                                                    <GradientStop Color="#FF1A9FFF" Offset="1" />
+                                                                                </LinearGradientBrush>
+                                                                                </Pen.Brush>
+                                                                            </Pen>
+                                                                            </GeometryDrawing.Pen>
+                                                                        </GeometryDrawing>
+                                                                        <GeometryDrawing Brush="#FFFFC82C">
+                                                                            <GeometryDrawing.Pen>
+                                                                            <Pen Brush="#FFFFAB2C" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                                                                            </GeometryDrawing.Pen>
+                                                                            <GeometryDrawing.Geometry>
+                                                                            <EllipseGeometry RadiusX="5.5" RadiusY="5.5" Center="18,13" />
+                                                                            </GeometryDrawing.Geometry>
+                                                                        </GeometryDrawing>
+                                                                        </DrawingGroup>
+                                                                    </DrawingImage.Drawing>
+                                                                </DrawingImage>
+                                                            </Image.Source>
+                                                        </Image>
                                                     </Viewbox>
 
-                                                    <Viewbox Stretch="Uniform" Height="35">
+                                                    <Viewbox Stretch="Uniform" Height="32" Margin="0,3,-2,0">
+                                                        <!-- Icon for unfinished game -->
                                                         <Viewbox.Style>
                                                             <Style TargetType="{x:Type Viewbox}">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
@@ -403,37 +448,55 @@
                                                                 </Style.Triggers>
                                                             </Style>
                                                         </Viewbox.Style>
-                                                        <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
-                                                            <Canvas.RenderTransform>
-                                                                <TranslateTransform X="0" Y="0"/>
-                                                            </Canvas.RenderTransform>
-                                                            <Canvas.Resources/>
-                                                            <Polyline Points="111.689,174.543 97.276,245.256 78.612,208.64 41.298,217.794 66.575,149.584 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Polyline Points="189.403,149.584 214.68,217.794 177.359,208.64 158.701,245.256 144.289,174.544 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Polygon Points="108.668,171.035 81.336,179.573 75.21,152.086 47.185,146.07 55.893,119.256 34.693,100.302 55.893,81.349 47.185,54.533 75.21,48.52 81.343,21.031 108.668,29.567 127.985,8.766 147.304,29.567 174.636,21.031 180.768,48.52 208.787,54.533 200.078,81.349 221.285,100.302 200.086,119.256 208.787,146.072 180.768,152.086 174.636,179.573 147.311,171.035 127.992,191.84 " FillRule="NonZero" StrokeThickness="10" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10" StrokeLineJoin="Round"/>
-                                                            <Path StrokeThickness="6" Stroke="{DynamicResource DetailsViewHeaderIconsFillBrush}" StrokeMiterLimit="10">
-                                                                <Path.Data>
-                                                                    <PathGeometry Figures="M127.985 45.378 c30.868 0 55.979 24.638 55.979 54.923c0 30.282-25.111 54.924-55.979 54.924c-30.862 0-55.978-24.642-55.978-54.924 C72.007 70.017 97.124 45.378 127.985 45.378" FillRule="NonZero"/>
-                                                                </Path.Data>
-                                                            </Path>
-                                                        </Canvas>
+                                                        <Image Height="100" Width="100">
+                                                            <Image.Source>
+                                                                <DrawingImage x:Key="achievements_whiteDrawingImage">
+                                                                    <DrawingImage.Drawing>
+                                                                        <DrawingGroup ClipGeometry="M0,0 V36 H36 V0 H0 Z">
+                                                                            <GeometryDrawing Brush="{DynamicResource DetailsViewHeaderIconsFillBrush}" Geometry="F0 M36,36z M0,0z M10.178,10.026L10.393,9.807 10.393,5.528 14.6,5.528 14.82,5.304 18,2.07 21.18,5.304 21.4,5.528 25.607,5.528 25.607,9.807 25.822,10.026 28.555,12.806 25.822,15.585 25.607,15.804 25.607,20.083 21.4,20.083 21.18,20.308 18,23.541 14.82,20.308 14.6,20.083 10.393,20.083 10.393,15.804 10.178,15.585 7.445,12.806 10.178,10.026z M18,7.5C14.964,7.5 12.5,9.964 12.5,13 12.5,16.036 14.964,18.5 18,18.5 21.036,18.5 23.5,16.036 23.5,13 23.5,9.964 21.036,7.5 18,7.5z M14.74,28.032L11.56,33.422 9.852,29.947 9.646,29.528 6.295,29.528 8.684,25.361 12.114,25.361 14.74,28.032z M29.705,29.528L26.354,29.528 26.148,29.947 24.44,33.422 21.26,28.032 23.886,25.361 27.316,25.361 29.705,29.528z">
+                                                                                <GeometryDrawing.Pen>
+                                                                                    <Pen Brush="{DynamicResource DetailsViewHeaderIconsFillBrush}" Thickness="1.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                                                                                </GeometryDrawing.Pen>
+                                                                            </GeometryDrawing>
+                                                                        </DrawingGroup>
+                                                                    </DrawingImage.Drawing>
+                                                                </DrawingImage>
+                                                            </Image.Source>
+                                                        </Image>
                                                     </Viewbox>
 
-
                                                     <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
-                                                        <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource HeaderLabel}"/>
-                                                        <DockPanel>
-                                                            <DockPanel MinWidth="40">
-                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}" Style="{DynamicResource HeaderTextBlock}" />
-                                                                <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
-                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}" Style="{DynamicResource HeaderTextBlock}"/>
-                                                            </DockPanel>
-                                                            <ProgressBar x:Name="progressBar" FontSize="10" Margin="5,0,0,0"
-                                                                         Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}" HorizontalAlignment="Left"
-                                                                         Background="#151619" Foreground="#2d73ff" Width="75" Height="6" Style="{DynamicResource RoundedProgressBar}">
+                                                        <Label x:Name="AchievementsHeaderLabel"
+                                                                Content="{DynamicResource LOCSuccessStoryAchievements}"
+                                                                Style="{DynamicResource HeaderLabel}"
+                                                                HorizontalAlignment="Left" />
 
-                                                            </ProgressBar>
-                                                        </DockPanel>
+                                                            <Grid Width="{Binding ActualWidth, ElementName=AchievementsHeaderLabel}" HorizontalAlignment="Left">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <DockPanel Grid.Column="0" Margin="0,0,8,0">
+                                                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"
+                                                                            Style="{DynamicResource HeaderTextBlock}" />
+                                                                    <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
+                                                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"
+                                                                            Style="{DynamicResource HeaderTextBlock}"/>
+                                                                </DockPanel>
+
+                                                                <StackPanel Grid.Column="1" x:Name="DockAchievementsBar" VerticalAlignment="Center">
+                                                                    <ProgressBar x:Name="progressBar"
+                                                                                FontSize="10" Margin="0,0,0,0"
+                                                                                Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}"
+                                                                                Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}"
+                                                                                HorizontalAlignment="Left"
+                                                                                Background="#151619" Foreground="#2d73ff"
+                                                                                Height="6"
+                                                                                Style="{DynamicResource RoundedProgressBar}" 
+                                                                                Width="{Binding ActualWidth, ElementName=DockAchievementsBar}" />
+                                                                </StackPanel>
+                                                            </Grid>
                                                     </StackPanel>
                                                 </DockPanel>
                                                 
@@ -556,7 +619,7 @@
                                                                     </Style>
                                                                 </DockPanel.Resources>
                                                                 <ScrollViewer Name="PART_ElemDescription" Tag="{DynamicResource DetailsViewDescriptionDockToRight}"
-                                                                              Width="{DynamicResource DetailsViewDescriptionWidth}" Margin="0,0,15,0">
+                                                                              Width="{DynamicResource DetailsViewDescriptionWidth}" Margin="5,5,15,0">
                                                                     <ScrollViewer.Style>
                                                                         <Style TargetType="ScrollViewer">
                                                                             <Setter Property="DockPanel.Dock" Value="Left" />
@@ -629,8 +692,8 @@
                                                                 </ScrollViewer>
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
                                                                     <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="9"> -->
-                                                                        <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
-                                                                        <TextBlock Name="PART_TextInstallSize" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                                                                        <!-- <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
+                                                                        <TextBlock Name="PART_TextInstallSize" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" /> -->
                                                                         
                                                                         <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
                                                                         <Button Name="PART_ButtonInstallDirectory" HorizontalAlignment="Left" MaxWidth="200" />
@@ -783,7 +846,7 @@
                                                             </Border.Effect>
                                                         </Border>
                                                         <Border Padding="2">
-                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="125">
+                                                            <ContentControl x:Name="PlayerActivities_PluginActivities" MaxHeight="225">
                                                                 <ContentControl.Resources>
                                                                     <Style TargetType="ListBox">
                                                                         <Setter Property="Background" Value="Transparent"/>
@@ -936,43 +999,102 @@
 
                                             <StackPanel Grid.Column="2">
 
-                                                <StackPanel Name="SuccessStoryPanel" Style="{DynamicResource PluginStackpanelVisibility}"
+                                                <StackPanel Name="SuccessStoryPanel" Style="{DynamicResource PluginStackpanelVisibility}" ClipToBounds="False"
                                                             Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <Label Content="{DynamicResource LOCSuccessStoryAchievements}" Style="{DynamicResource FeedSectionLabel}"/>
-                                                    <Grid>
-                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
-                                                        <StackPanel>
-                                                            <Grid>
-                                                                <Border Style="{DynamicResource SectionContainerMain}" />
-                                                                <Border CornerRadius="{DynamicResource ControlCornerRadius}">
-                                                                    <Border Padding="10">
-                                                                        <StackPanel>
-                                                                            <DockPanel Width="Auto" Margin="0,2,0,8">
-                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="You've unlocked "/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="/"/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text=" ("/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="{PluginSettings Plugin=SuccessStory, Path=Percent, FallbackValue='-'}"/>
-                                                                                <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="%)"/>
-                                                                            </DockPanel>
-                                                                            <Grid Margin="0,0,0,2">
-                                                                                <Border Name="Achievements_mask" Margin="0,0,0,5"
-                                                                                    Background="#1e1e1e"
-                                                                                    CornerRadius="{DynamicResource ControlCornerRadius}"
-                                                                                    Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" />
-                                                                                <StackPanel>
-                                                                                    <StackPanel.OpacityMask>
-                                                                                        <VisualBrush Visual="{Binding ElementName=Achievements_mask}"/>
-                                                                                    </StackPanel.OpacityMask>
-                                                                                    <ProgressBar x:Name="progressBar2" FontSize="10" Margin="0,0,0,5"
-                                                                                                Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}" HorizontalAlignment="Center"
-                                                                                                Background="#151619" Foreground="#2d73ff" Height="8" Style="{DynamicResource RoundedProgressBar}" 
-                                                                                                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" >
-                                                                                    </ProgressBar>
-                                                                                </StackPanel>
-                                                                            </Grid>
-                                                                        </StackPanel>
+                                                    <Grid ClipToBounds="False">
+                                                        <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" ClipToBounds="False" />
+                                                        <StackPanel ClipToBounds="False">
+                                                            <Grid ClipToBounds="False">
+                                                                <Border Style="{DynamicResource SectionContainerMain}" ClipToBounds="False" />
+                                                                <Border CornerRadius="{DynamicResource ControlCornerRadius}" ClipToBounds="False" >
+                                                                    <Border Padding="10" ClipToBounds="False">
+                                                                        <Grid ClipToBounds="False">
+                                                                            <Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition Width="Auto" />
+                                                                                <ColumnDefinition Width="*" />
+                                                                            </Grid.ColumnDefinitions>
+                                                                            
+                                                                            <Image Height="50" Width="50" ClipToBounds="False" Grid.Column="0" Panel.ZIndex="99" Margin="-21,-6,13,0">
+                                                                                <Image.Style>
+                                                                                    <Style TargetType="{x:Type Image}">
+                                                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                                                        <Style.Triggers>
+                                                                                            <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, FallbackValue=False}" Value="True">
+                                                                                                <Setter Property="Visibility" Value="Visible" />
+                                                                                            </DataTrigger>
+                                                                                        </Style.Triggers>
+                                                                                    </Style>
+                                                                                </Image.Style>
+                                                                                <Image.RenderTransform>
+                                                                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                                                                </Image.RenderTransform>
+                                                                                <Image.Source>
+                                                                                    <DrawingImage x:Key="_17xct1dwtz9mcd3vgicDrawingImage">
+                                                                                    <DrawingImage.Drawing>
+                                                                                            <DrawingGroup ClipGeometry="M0,0 V36 H36 V0 H0 Z">
+                                                                                            <GeometryDrawing Geometry="F1 M36,36z M0,0z M10.1777,10.0258L10.3929,9.80693 10.3929,9.49999 10.3929,5.52777 14.2857,5.52777 14.6001,5.52777 14.8205,5.30358 18,2.06976 21.1795,5.30358 21.3999,5.52777 21.7143,5.52777 25.6071,5.52777 25.6071,9.50001 25.6071,9.80696 25.8223,10.0258 28.5553,12.8055 25.8223,15.5853 25.6071,15.8041 25.6071,16.1111 25.6071,20.0833 21.7143,20.0833 21.3999,20.0833 21.1795,20.3075 18,23.5413 14.8205,20.3075 14.6001,20.0833 14.2857,20.0833 10.3929,20.0833 10.3929,16.1111 10.3929,15.8042 10.1777,15.5853 7.44464,12.8055 10.1777,10.0258z M14.7399,28.0317L11.56,33.4221 9.85164,29.9469 9.6456,29.5278 9.17857,29.5278 6.29474,29.5278 8.68445,25.3611 12.1142,25.3611 14.7399,28.0317z M26.8214,29.5278L26.3544,29.5278 26.1484,29.9469 24.44,33.4221 21.2601,28.0317 23.8858,25.3611 27.3155,25.3611 29.7053,29.5278 26.8214,29.5278z">
+                                                                                                <GeometryDrawing.Brush>
+                                                                                                <LinearGradientBrush StartPoint="7.08,3.72" EndPoint="33.6694,25.0697" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1">
+                                                                                                    <GradientStop Color="#FF0056D6" Offset="0" />
+                                                                                                    <GradientStop Color="#FF1A9FFF" Offset="1" />
+                                                                                                </LinearGradientBrush>
+                                                                                                </GeometryDrawing.Brush>
+                                                                                                <GeometryDrawing.Pen>
+                                                                                                <Pen Thickness="1.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter">
+                                                                                                    <Pen.Brush>
+                                                                                                    <LinearGradientBrush StartPoint="7.08,3.72" EndPoint="33.6694,25.0697" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1">
+                                                                                                        <GradientStop Color="#FF0056D6" Offset="0" />
+                                                                                                        <GradientStop Color="#FF1A9FFF" Offset="1" />
+                                                                                                    </LinearGradientBrush>
+                                                                                                    </Pen.Brush>
+                                                                                                </Pen>
+                                                                                                </GeometryDrawing.Pen>
+                                                                                            </GeometryDrawing>
+                                                                                            <GeometryDrawing Brush="#FFFFC82C">
+                                                                                                <GeometryDrawing.Pen>
+                                                                                                <Pen Brush="#FFFFAB2C" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                                                                                                </GeometryDrawing.Pen>
+                                                                                                <GeometryDrawing.Geometry>
+                                                                                                <EllipseGeometry RadiusX="5.5" RadiusY="5.5" Center="18,13" />
+                                                                                                </GeometryDrawing.Geometry>
+                                                                                            </GeometryDrawing>
+                                                                                            </DrawingGroup>
+                                                                                        </DrawingImage.Drawing>
+                                                                                    </DrawingImage>
+                                                                                </Image.Source>
+                                                                            </Image>
+
+                                                                            <StackPanel Grid.Column="1">
+                                                                                <DockPanel Width="Auto" Margin="0,2,0,10">
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="You've unlocked " />
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="all achievements! "
+                                                                                        Visibility="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="/"/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text=" ("/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="{PluginSettings Plugin=SuccessStory, Path=Percent, FallbackValue='-'}"/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrushDarker}" Text="%)"/>
+                                                                                </DockPanel>
+                                                                                <Grid Margin="0,0,0,2">
+                                                                                    <Border Name="Achievements_mask" Margin="0,0,0,5"
+                                                                                        Background="#1e1e1e"
+                                                                                        CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" />
+                                                                                    <StackPanel>
+                                                                                        <StackPanel.OpacityMask>
+                                                                                            <VisualBrush Visual="{Binding ElementName=Achievements_mask}"/>
+                                                                                        </StackPanel.OpacityMask>
+                                                                                        <ProgressBar x:Name="progressBar2" FontSize="10" Margin="0,0,0,5"
+                                                                                                    Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}" Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}" HorizontalAlignment="Center"
+                                                                                                    Background="#151619" Foreground="#2d73ff" Height="8" Style="{DynamicResource RoundedProgressBar}" 
+                                                                                                    Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}" >
+                                                                                        </ProgressBar>
+                                                                                    </StackPanel>
+                                                                                </Grid>
+                                                                            </StackPanel>
+                                                                        </Grid>
                                                                     </Border>
                                                                 </Border>
                                                             </Grid>

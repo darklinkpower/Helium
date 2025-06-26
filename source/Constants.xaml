@@ -6,6 +6,7 @@
     <!--region ThemeModifier variables-->
     <sys:Double x:Key="DetailsViewDescriptionWidth">700</sys:Double>
     <sys:Boolean x:Key="DetailsViewDescriptionDockToRight">false</sys:Boolean>
+    <sys:Boolean x:Key="GameOverviewShowGameSizeEvenIfInstalled">false</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewShowInfoPanelDefault">true</sys:Boolean>
     <VerticalAlignment x:Key="DetailsViewBackgroundVerticalAlignment">Center</VerticalAlignment>
     <HorizontalAlignment x:Key="DetailsViewBackgroundHorizontalAlignment">Left</HorizontalAlignment>
