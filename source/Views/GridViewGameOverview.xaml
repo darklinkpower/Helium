@@ -707,6 +707,7 @@
 
                                                                         <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
                                                                         <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
+                                                                        
                                                                         <Label Name="PART_ElemUserScore" Content="{DynamicResource LOCUserScore}" />
                                                                         <StackPanel Orientation="Horizontal"
                                                                                     Visibility="{Binding ElementName=PART_TextUserScore, Path=Visibility}">

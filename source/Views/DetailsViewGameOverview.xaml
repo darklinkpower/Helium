@@ -286,7 +286,7 @@
                                                                   IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Favorite, Mode=TwoWay, FallbackValue={StaticResource False}}"/>
                                                 </DockPanel>
                                                 
-                                                <!-- <StackPanel Margin="25,0,0,0" VerticalAlignment="Center"
+                                                <!-- <StackPanel Margin="20,0,0,0" VerticalAlignment="Center"
                                                             Style="{DynamicResource PluginStackpanelVisibility}"
                                                             Tag="{PluginSettings Plugin=SteamGameStatusDetector, Path=HasData, FallbackValue=False}">
                                                     <Label Content="{PluginSettings Plugin=SteamGameStatusDetector, Path=AppState, FallbackValue='-'}" Style="{DynamicResource HeaderLabel}"/>
@@ -313,7 +313,7 @@
                                                             </Style.Triggers>
                                                         </Style>
                                                     </DockPanel.Style>
-                                                    <DockPanel x:Name="PART_ElemInstallSize" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
+                                                    <DockPanel x:Name="PART_ElemInstallSize" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                             <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCInstallSizeLabel}"/>
                                                             <TextBlock x:Name="PART_TextInstallSize" Style="{DynamicResource HeaderTextBlock}"/>
@@ -321,15 +321,16 @@
                                                     </DockPanel>
                                                 </DockPanel>
                                                 
-                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
+                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
                                                         <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
-                                                    <Viewbox Height="32" Margin="0,3,4,0">
+                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
+
+                                                    <Viewbox Height="25">
                                                         <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
                                                             <Canvas.RenderTransform>
                                                                 <TranslateTransform X="0" Y="0"/>
@@ -352,7 +353,7 @@
                                                     </StackPanel>
                                                 </DockPanel>
                                                          
-                                                <StackPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0">
+                                                <StackPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel.Style>
                                                         <Style TargetType="StackPanel">
                                                             <Setter Property="Visibility" Value="Collapsed" />
@@ -384,10 +385,10 @@
                                                     </ContentControl>
                                                 </StackPanel>
                                                                                                 
-                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="25,0,0,0"
+                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0"
                                                            Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                            <!-- Icon for 100%d game -->
-                                                    <Viewbox Stretch="Uniform" Height="32" Margin="-2,3,-2,0">
+                                                    <Viewbox Stretch="Uniform" Height="35">
                                                         <Viewbox.Style>
                                                             <Style TargetType="{x:Type Viewbox}">
                                                                 <Setter Property="Visibility" Value="Collapsed" />
@@ -436,7 +437,7 @@
                                                         </Image>
                                                     </Viewbox>
 
-                                                    <Viewbox Stretch="Uniform" Height="32" Margin="-2,3,-2,0">
+                                                    <Viewbox Stretch="Uniform" Height="35">
                                                         <!-- Icon for unfinished game -->
                                                         <Viewbox.Style>
                                                             <Style TargetType="{x:Type Viewbox}">
@@ -670,39 +671,39 @@
                                                                 </ScrollViewer>
 
                                                                 <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
-                                                                        <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
-                                                                        <Button Name="PART_ButtonSource" />
-
-                                                                        <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
-                                                                        <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
-
-                                                                        <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsSeries" MaxWidth="200" />
-
-                                                                        <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
-                                                                        <Button Name="PART_ButtonReleaseDate" />
-
-                                                                        <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
-                                                                        <ItemsControl Name="PART_ItemsRegions" />
-
+                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="17">
+                                                                    <!-- <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8"> -->
                                                                         <Label Name="PART_ElemRecentActivity" Content="{DynamicResource LOCRecentActivityLabel}" />
                                                                         <TextBlock Name="PART_TextRecentActivity" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
                                                                         <Label Name="PART_ElemAdded" Content="{DynamicResource LOCDateAddedLabel}" />
                                                                         <TextBlock Name="PART_TextAdded" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" />
-                                                                    </GridEx>
-                                                                </ScrollViewer>
-                                                                <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
-                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="8">
+                                                                        <Label Name="PART_ElemReleaseDate" Content="{DynamicResource LOCGameReleaseDateTitle}" />
+                                                                        <Button Name="PART_ButtonReleaseDate" />
                                                                         <Label Name="PART_ElemLibrary" Content="{DynamicResource LOCGameProviderTitle}" />
                                                                         <Button Name="PART_ButtonLibrary" />
+                                                                        <Label Name="PART_ElemSource" Content="{DynamicResource LOCSourceLabel}" />
+                                                                        <Button Name="PART_ButtonSource" />
                                                                         <Label Name="PART_ElemPlatform" Content="{DynamicResource LOCPlatformTitle}" />
                                                                         <ItemsControl Name="PART_ItemsPlatforms" />
+                                                                        <Label Name="PART_ElemDevelopers" Content="{DynamicResource LOCDeveloperLabel}" />
+                                                                        <ItemsControl Name="PART_ItemsDevelopers" MaxWidth="180" />
+                                                                        <Label Name="PART_ElemPublishers" Content="{DynamicResource LOCPublisherLabel}" />
+                                                                        <ItemsControl Name="PART_ItemsPublishers" MaxWidth="180" />
+                                                                    <!-- </GridEx>
+                                                                </ScrollViewer>
+                                                                <ScrollViewer Margin="15,0,0,0" DockPanel.Dock="Left">
+                                                                    <GridEx ColumnCount="2" AutoLayoutColumns="2" RowCount="9"> -->
+                                                                        <!-- <Label Name="PART_ElemInstallSize" Content="{DynamicResource LOCInstallSizeLabel}" />
+                                                                        <TextBlock Name="PART_TextInstallSize" Style="{DynamicResource BaseTextBlockStyle}" VerticalAlignment="Center" /> -->
                                                                         
                                                                         <Label Name="PART_ElemInstallDirectory" Content="{DynamicResource LOCGameInstallDirTitle}" />
                                                                         <Button Name="PART_ButtonInstallDirectory" HorizontalAlignment="Left" MaxWidth="200" />
+
+                                                                        <Label Name="PART_ElemSeries" Content="{DynamicResource LOCSeriesLabel}" />
+                                                                        <ItemsControl Name="PART_ItemsSeries" MaxWidth="200" />
+
+                                                                        <Label Name="PART_ElemRegion" Content="{DynamicResource LOCRegionLabel}" />
+                                                                        <ItemsControl Name="PART_ItemsRegions" />
                                                                         
                                                                         <Label Name="PART_ElemVersion" Content="{DynamicResource LOCVersionLabel}" />
                                                                         <Button Name="PART_ButtonVersion" VerticalAlignment="Center" />
