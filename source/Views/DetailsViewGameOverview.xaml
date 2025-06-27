@@ -978,8 +978,38 @@
                                                     </Grid>
                                                 </StackPanel>
 
-                                                <StackPanel Name="GameActivityFeed" Style="{DynamicResource PluginStackpanelVisibility}"
-                                                            Visibility="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                <StackPanel Name="GameActivityFeed" Margin="0,0,0,15">
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                            <Style.Triggers>
+                                                                <!-- If no controls are enabled, hide the panel. -->
+                                                                <MultiDataTrigger>
+                                                                    <MultiDataTrigger.Conditions>
+                                                                        <Condition Binding="{PluginSettings Plugin=GameActivity, Path=EnableIntegrationButton, FallbackValue=False}" Value="False" />
+                                                                        <Condition Binding="{PluginSettings Plugin=GameActivity, Path=EnableIntegrationChartTime, FallbackValue=False}" Value="False" />
+                                                                        <Condition Binding="{PluginSettings Plugin=GameActivity, Path=EnableIntegrationChartLog, FallbackValue=False}" Value="False" />
+                                                                    </MultiDataTrigger.Conditions>
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </MultiDataTrigger>
+                                                                <!-- If only the log control is enabled, but there is no log data, hide the panel. -->
+                                                                <MultiDataTrigger>
+                                                                    <MultiDataTrigger.Conditions>
+                                                                        <Condition Binding="{PluginSettings Plugin=GameActivity, Path=EnableIntegrationButton, FallbackValue=False}" Value="False" />
+                                                                        <Condition Binding="{PluginSettings Plugin=GameActivity, Path=EnableIntegrationChartTime, FallbackValue=False}" Value="False" />
+                                                                        <Condition Binding="{PluginSettings Plugin=GameActivity, Path=EnableIntegrationChartLog, FallbackValue=True}" Value="False" />
+                                                                        <Condition Binding="{PluginSettings Plugin=GameActivity, Path=HasDataLog, FallbackValue=False}" Value="False" />
+                                                                    </MultiDataTrigger.Conditions>
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </MultiDataTrigger>
+                                                                <!-- If there is no data, hide the panel. -->
+                                                                <DataTrigger Binding="{PluginSettings Plugin=GameActivity, Path=HasData, FallbackValue=False}" Value="False">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
+
                                                     <Label Content="{DynamicResource LOCGameActivityTitle}" Style="{DynamicResource FeedSectionLabel}" />
                                                     <Grid Background="{DynamicResource SectionContainerMainBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorderSidePanelsBorder}" />
