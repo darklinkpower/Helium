@@ -1233,7 +1233,7 @@
                                                                     <StackPanel Grid.Column="0" Margin="0,0,4,0">
                                                                         <Label Content="{DynamicResource LOCHowLongToBeatMainStory}" Style="{DynamicResource HltbGridLabelStyle}"
                                                                                 Visibility="{Binding ElementName=MainStoryFormat, Path=Visibility}" />
-                                                                        <Border Background="{DynamicResource WindowBackgourndBrush}"
+                                                                        <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}"
                                                                                 CornerRadius="{DynamicResource ControlCornerRadius}">
                                                                             <TextBlock Name="MainStoryFormat" Style="{DynamicResource HltbGridTextStyle}"
                                                                                     Text="{PluginSettings Plugin=HowLongToBeat, Path=MainStoryFormat, FallbackValue='-'}" />
@@ -1242,7 +1242,7 @@
                                                                     <StackPanel Grid.Column="1" Margin="4,0,4,0">
                                                                         <Label Content="{DynamicResource LOCHowLongToBeatMainExtra}" Style="{DynamicResource HltbGridLabelStyle}"
                                                                                 Visibility="{Binding ElementName=MainExtraFormat, Path=Visibility}" />
-                                                                        <Border Background="{DynamicResource WindowBackgourndBrush}"
+                                                                        <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}"
                                                                                 CornerRadius="{DynamicResource ControlCornerRadius}">
                                                                             <TextBlock Name="MainExtraFormat" Style="{DynamicResource HltbGridTextStyle}"
                                                                                     Text="{PluginSettings Plugin=HowLongToBeat, Path=MainExtraFormat, FallbackValue='-'}" />
@@ -1252,7 +1252,7 @@
                                                                         <Label Content="{DynamicResource LOCHowLongToBeatCompletionist}"
                                                                                 Style="{DynamicResource HltbGridLabelStyle}"
                                                                                 Visibility="{Binding ElementName=CompletionistFormat, Path=Visibility}" />
-                                                                        <Border Background="{DynamicResource WindowBackgourndBrush}"
+                                                                        <Border Background="{DynamicResource GameInfoContainerBackgroundBrush}"
                                                                                 CornerRadius="{DynamicResource ControlCornerRadius}">
                                                                             <TextBlock Name="CompletionistFormat" Style="{DynamicResource HltbGridTextStyle}"
                                                                                     Text="{PluginSettings Plugin=HowLongToBeat, Path=CompletionistFormat, FallbackValue='-'}" />
