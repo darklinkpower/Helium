@@ -1332,9 +1332,10 @@
 
                                                                             <StackPanel Grid.Column="1">
                                                                                 <DockPanel Width="Auto" Margin="0,2,0,10">
-                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="You've unlocked " />
-                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}" Text="all achievements! "
-                                                                                        Visibility="{PluginSettings Plugin=SuccessStory, Path=Is100Percent, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                                                                    <TextBlock Foreground="{DynamicResource TextBrush}">
+                                                                                            <Run Text="{DynamicResource LOCSuccessStoryProgress}" />
+                                                                                            <Run Text="" />
+                                                                                    </TextBlock>
                                                                                     <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"/>
                                                                                     <TextBlock Foreground="{DynamicResource TextBrush}" Text="/"/>
                                                                                     <TextBlock Foreground="{DynamicResource TextBrush}" Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"/>
