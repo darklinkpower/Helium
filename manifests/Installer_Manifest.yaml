@@ -590,3 +590,10 @@ Packages:
     Changelog:
       - 'Top Panel: Added option to configure the width of the search box'
       - 'Note: Added options can be configured using the ThemeModifier extension'
+  - Version: 1.69
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2025-07-12
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.69/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_69.pthm
+    Changelog:
+      - 'Changed: Layout and visual changes to SuccessStory and HowLongToBeat extensions panels on Details View (By kushagr-m)'
+      - 'Fixed: Some extensions panels being displayed when they should not in some cases (By kushagr-m)'
