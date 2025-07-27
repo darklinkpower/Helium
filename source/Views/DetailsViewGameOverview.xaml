@@ -446,32 +446,29 @@
                                                                 Style="{DynamicResource HeaderLabel}"
                                                                 HorizontalAlignment="Left" />
 
-                                                            <Grid Width="{Binding ActualWidth, ElementName=AchievementsHeaderLabel}" HorizontalAlignment="Left">
-                                                                <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="Auto" />
-                                                                    <ColumnDefinition Width="*" />
-                                                                </Grid.ColumnDefinitions>
+                                                        <DockPanel LastChildFill="False">
+                                                            <DockPanel Margin="0,0,8,0">
+                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"
+                                                                        Style="{DynamicResource HeaderTextBlock}" />
+                                                                <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
+                                                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"
+                                                                        Style="{DynamicResource HeaderTextBlock}"/>
+                                                            </DockPanel>
 
-                                                                <DockPanel Grid.Column="0" Margin="0,0,8,0">
-                                                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"
-                                                                            Style="{DynamicResource HeaderTextBlock}" />
-                                                                    <TextBlock Text="/" Style="{DynamicResource HeaderTextBlock}" />
-                                                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"
-                                                                            Style="{DynamicResource HeaderTextBlock}"/>
-                                                                </DockPanel>
-
-                                                                <StackPanel Grid.Column="1" x:Name="DockAchievementsBar" VerticalAlignment="Center">
-                                                                    <ProgressBar x:Name="progressBar"
-                                                                                FontSize="10" Margin="0,0,0,0"
-                                                                                Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}"
-                                                                                Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}"
-                                                                                HorizontalAlignment="Left"
-                                                                                Background="#151619" Foreground="#2d73ff"
-                                                                                Height="6"
-                                                                                Style="{DynamicResource RoundedProgressBar}" 
-                                                                                Width="{Binding ActualWidth, ElementName=DockAchievementsBar}" />
-                                                                </StackPanel>
-                                                            </Grid>
+                                                            <StackPanel x:Name="DockAchievementsBar"
+                                                                        VerticalAlignment="Center"
+                                                                        MinWidth="70" HorizontalAlignment="Left">
+                                                                <ProgressBar x:Name="progressBar"
+                                                                            FontSize="10" Margin="0,0,0,0"
+                                                                            Maximum="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue=0}"
+                                                                            Value="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue=0}"
+                                                                            HorizontalAlignment="Left"
+                                                                            Background="#151619" Foreground="#2d73ff"
+                                                                            Height="6"
+                                                                            Style="{DynamicResource RoundedProgressBar}" 
+                                                                            Width="{Binding ActualWidth, ElementName=DockAchievementsBar}" />
+                                                            </StackPanel>
+                                                        </DockPanel>
                                                     </StackPanel>
                                                 </DockPanel>
 
