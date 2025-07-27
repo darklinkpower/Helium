@@ -597,3 +597,9 @@ Packages:
     Changelog:
       - 'Changed: Layout and visual changes to SuccessStory and HowLongToBeat extensions panels on Details View (By kushagr-m)'
       - 'Fixed: Some extensions panels being displayed when they should not in some cases (By kushagr-m)'
+  - Version: 1.70
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2025-07-27
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.70/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_70.pthm
+    Changelog:
+      - 'Fixed: Achievements progress bar in header on Details View being very narrow when Playnite is set to certain languages'
