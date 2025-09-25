@@ -1,4 +1,4 @@
-AddonId: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1
+﻿AddonId: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1
 Packages:
   - Version: 0.8
     RequiredApiVersion: 2.0.0
@@ -535,7 +535,7 @@ Packages:
     Changelog:
       - 'Improved: performance and visuals in blurred header on Details View'
       - 'Changed: Some colors to match colors that have been updated on Steam'
-      - 'Changed: Visual changes to Filter and Notifications buttons on Top Paneñ to look similar to Steam'
+      - 'Changed: Visual changes to Filter and Notifications buttons on Top PaneÃ± to look similar to Steam'
       - 'Fixed: Black rectangle artifact displaying in cover location when it is disabled in settings'
   - Version: 1.61
     RequiredApiVersion: 2.5.0
@@ -603,3 +603,9 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.70/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_70.pthm
     Changelog:
       - 'Fixed: Achievements progress bar in header on Details View being very narrow when Playnite is set to certain languages'
+  - Version: 1.71
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2025-09-25
+    PackageUrl: https://github.com/darklinkpower/Helium/releases/download/1.71/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb1_1_71.pthm
+    Changelog:
+      - 'Add banner image for HoYoPlay library plugin games'
